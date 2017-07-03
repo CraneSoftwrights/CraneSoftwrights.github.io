@@ -1,0 +1,265 @@
+<?xml version="1.0"?>
+<!--
+PUBLIC "+//ISBN 1-894049::CSL::Articles//DOCUMENT XML.COM Article MS Stylesheet//EN"
+Copyright (C) Crane Softwrights Ltd. - http://www.CraneSoftwrights.com
+
+    1999-05-30 16:50
+
+CAVEAT - The XSL syntax used in this file follows only a working draft of
+         the XSL recommendation and is not necessarily representative of 
+         any finalized or authorized recommendation.
+-->
+
+<!DOCTYPE xsl:stylesheet [
+        <!--because XSL stylesheets are XML documents, all forms of
+            XML file content minimization are available to be used-->
+
+<!ENTITY nbsp "&#160;">
+<!ENTITY common-colour "#003300">
+<!ENTITY URLset                 "Set of URL Addresses">
+
+        <!--the following are small values and sets of CSS properties 
+            shared in a number of CSS declaration groups used throughout
+            the stylesheet-->
+<!ENTITY  mainFontSize          "18pt">
+<!ENTITY  textFontSize          "12pt">
+<!ENTITY  monoFontSize          "10pt">
+<!ENTITY  firstSectionFontSize  "16pt">
+<!ENTITY  secondSectionFontSize "14pt">
+<!ENTITY  otherSectionFontSize  "&textFontSize;">
+<!ENTITY  sectionTitleCommon    "display:block;
+                                 font-weight:bold;
+                                 font-style:italic;">
+]>
+
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/TR/WD-xsl"
+                xmlns="http://www.w3.org/TR/REC-html40"
+                result-ns="">
+
+<!-- default behaviour - - - - - - - - - - - - - - - - - - - - - - - - -->
+
+<xsl:template><xsl:apply-templates/></xsl:template>
+<xsl:template match="text()"><xsl:value-of select="."/></xsl:template>
+
+<!-- selective behaviour - - - - - - - - - - - - - - - - - - - - - - - -->
+
+<xsl:template match="/">                    <!--root rule-->
+  <html>
+    <head>
+      <title><xsl:value-of select="/article/title"/> - 
+             <xsl:value-of select="/article/author/name"/></title>
+      <style type="text/css">
+
+        A:visited { color: blue }
+
+        <!--I've chosen here to use class sheets where an entire
+            declaration group is used in multiple places;
+            
+            For all other styles, where the declaration group contents 
+            are unique, or the purpose of the sheet is distinct, I've 
+            directly used the STYLE= attr in the DIV or SPAN element-->
+                                            <!--main article title-->
+          .maintitle {display:block;
+                      text-align:center;
+                      font-weight:bold;
+                      color: &common-colour;;
+                      font-size:&mainFontSize;}
+                                            <!--section titles-->
+          .gensectiontitle {&sectionTitleCommon;
+                            color: &common-colour;;
+                            margin-top: &firstSectionFontSize;;
+                            font-size: &firstSectionFontSize;}
+      </style>
+<meta name="description" content="Crane Softwrights Ltd. is a Computer
+Systems Analysis consulting company specializing in structured text
+processing using the SGML family of standards and products, including DSSSL,
+HyTime, XML and XSL."/>
+<meta name="keyword" content="DSSSL Training - DSSSL Consulting - ISO/IEC-10179 - ISO-10179"/>
+<meta name="keyword" content="SGML Training - SGML Consulting - ISO-8879"/>
+<meta name="keyword" content="XML Consulting - W3C XML WG"/>
+<meta name="keyword" content="XSL Consulting - W3C XML WG"/>
+<meta name="keyword" content="OmniMark Training - OmniMark Consulting"/>
+<meta name="keywords" content="SGML,DSSSL,XML,XSL,OmniMark,consulting,training,Crane,Softwrights,ISO,Kars,Ontario,Canada,Ottawa"/>
+    </head>
+    <body style="font-size:&textFontSize;">
+
+<table>
+<tr>
+<td valign="top" width="100%">
+
+
+<xsl:for-each select="/article/title">
+  <h1 class="maintitle"><xsl:apply-templates/></h1>
+  <h4 style="text-align:center">
+    <a><xsl:attribute name="href">
+        mailto:<xsl:value-of select="/article/author/name/@email"/>
+       </xsl:attribute>
+       <xsl:value-of select="/article/author/name"/></a>
+  - <a><xsl:attribute name="href">
+        <xsl:value-of select="/article/author/affil/@url"/>
+       </xsl:attribute>
+       <xsl:value-of select="/article/author/affil"/></a></h4>
+</xsl:for-each>  
+</td>
+<td valign="top" width="3">
+</td>
+<td valign="top" width="145">
+<A HREF="http://www.CraneSoftwrights.com/">
+<img src="/crane.gif" alt="Crane Logo" width="140" height="113" border="0"/></A>
+</td>
+<td valign="top" width="145">
+<h3>CRANE<BR/>SOFTWRIGHTS<BR/>LTD.</h3>
+<h6>
+BOX 266,<BR/>
+KARS, ONTARIO<BR/>
+CANADA K0A-2E0<BR/>
+</h6>
+</td>
+</tr>
+</table>
+
+
+      <xsl:apply-templates/>                <!--main article content-->
+
+      <P>&nbsp;</P><FONT FACE="Georgia,Times New Roman,Times Roman,Times"
+      SIZE="-1" COLOR="#000080"><P><BR/></P><P>Copyright (C)
+      <xsl:value-of select="/article/copyright"/></P></FONT>
+    </body>
+  </html>
+</xsl:template>
+
+<xsl:template match="article/title">        <!--title the article-->
+</xsl:template>
+
+<xsl:template match="copyright"/>  <!--show when needed, not in parse order-->
+
+<xsl:template match="author"/>                <!--author of document-->
+                     <!--don't show in parse order, shown with title-->
+
+<xsl:template match="section">     <!--a section of the article-->
+  <xsl:apply-templates/>           <!--nothing special-->
+</xsl:template>
+
+<xsl:template match="section/title">
+  <xsl:choose>
+    <xsl:when test="../../../../section"> <!--three or more levels down-->
+      <h4  style="font-weight : bold;
+                  color: &common-colour;;
+                  margin-top : &otherSectionFontSize;;
+                  font-size : &otherSectionFontSize;">
+        <xsl:apply-templates/></h4>
+    </xsl:when>
+    <xsl:when test="../../../section">    <!--only two levels down-->
+      <h3 style="font-weight : bold;
+                  color: &common-colour;;
+                  margin-top : &otherSectionFontSize;;
+                  font-size : &secondSectionFontSize;">
+        <xsl:apply-templates/></h3>
+    </xsl:when>
+    <xsl:otherwise>
+      <h2  style="font-weight : bold;
+                  color: &common-colour;;
+                  margin-top : &otherSectionFontSize;;
+                  font-size : &firstSectionFontSize;">
+        <xsl:apply-templates/></h2>
+    </xsl:otherwise>
+  </xsl:choose>
+</xsl:template>
+
+<xsl:template match="sidebar">                  <!--sidebar stuff-->
+  <span style="float: right; 
+               clear: right; 
+               background-color: #eeeeee;
+               width:            40%;
+               border-style:     solid;
+               border-color:     red;
+               border-width:     2pt;
+               padding-top:      4pt;
+               padding-bottom:   4pt;
+               padding-left:     10pt;
+               padding-right:    10pt;
+               margin-top:       5pt;
+               margin-bottom:    5pt;
+               margin-left:      5pt;
+               margin-right:     5pt;">
+        <hr style="display:none"/>
+        <xsl:apply-templates/>
+        <hr style="display:none"/>
+        </span>
+</xsl:template>
+
+ <!--note the following template rule is the only specification difference
+     from the "xmlcom.xsl" stylesheet; that stylesheet is assumed to be
+     used for HTML rendering only and not XML rendering; this stylesheet
+     is assumed to be used for XML rendering only, therefore, it must
+     suppress those sidebars indicating they are to be suppressed-->
+<xsl:template match="sidebar[@xml-rendering='suppress']"/>
+
+<xsl:template match="sidebar/title">
+  <h3  style="text-align:center;
+              font-weight:bold;
+              text-decoration:underline">
+  <a>
+    <xsl:attribute name="name">
+      <xsl:value-of select="../@id"/></xsl:attribute>
+    <span style="display:none">Sidebar: </span>
+    <xsl:apply-templates/></a></h3>
+</xsl:template>
+
+                        <!--generic content of the article-->
+
+<xsl:template match="para">             <!--a block of information-->
+  <p style="margin-top: &textFontSize;"><xsl:apply-templates/></p>
+</xsl:template>
+
+<xsl:template match="emph">             <!--emphasized content-->
+  <i><xsl:apply-templates/>
+  </i></xsl:template>    <!--whitespace removed for IE5 rendering-->
+
+<xsl:template match="image">            <!--image with a caption-->
+  <center>
+    <img>
+      <xsl:attribute name="src"><xsl:value-of select="@href"/>
+        </xsl:attribute>
+      <xsl:attribute name="alt"><xsl:value-of select="."/><!--caption-->
+        </xsl:attribute>
+    </img>
+    <br/><b><xsl:value-of select="."/></b></center>
+</xsl:template>
+
+<xsl:template match="extlink">          <!--an external link-->
+  <a><xsl:attribute name="href">
+      <xsl:value-of select="@href"/></xsl:attribute>
+    <xsl:apply-templates/></a></xsl:template>
+
+<xsl:template match="intlink">          <!--an internal reference-->
+  <a><xsl:attribute name="href">
+      #<xsl:value-of select="@idref"/></xsl:attribute>
+    <xsl:value-of select="id(@idref)/title"/></a></xsl:template>
+
+<xsl:template match="extlinkset">   <!--handy, dandy collection of URLs-->
+  <table border="1" summary="&URLset;" style="margin-top:&textFontSize;">
+    <xsl:for-each select="extlink" order-by="@href">
+      <tr valign="top">
+        <td><a>
+               <xsl:attribute name="href">
+                 <xsl:value-of select="@href"/>
+               </xsl:attribute>
+               <samp style="font-size:&monoFontSize;"
+                 ><xsl:value-of select="@href"/></samp></a></td>
+        <td><xsl:value-of select="."/></td>
+      </tr>
+    </xsl:for-each>
+  </table>
+</xsl:template>
+
+                                        <!--monospaced presentation-->
+<xsl:template match="monospc">
+  <samp style="font-size:&monoFontSize;"
+       ><xsl:apply-templates/></samp></xsl:template><!--note whitespace-->
+
+<xsl:template match="section/monospc|sidebar/monospc">
+  <pre style="font-size:&monoFontSize;"><xsl:apply-templates/></pre>
+</xsl:template>
+
+</xsl:stylesheet>

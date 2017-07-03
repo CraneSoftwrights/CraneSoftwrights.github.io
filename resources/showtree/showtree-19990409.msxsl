@@ -1,0 +1,190 @@
+<?xml version="1.0"?>
+<xsl:stylesheet
+       xmlns:xsl="http://www.w3.org/TR/WD-xsl"
+       result-ns="">
+<!--
+PUBLIC "+//ISBN 1-894049::CSL::XSL::Debug//DOCUMENT Show All Nodes MS Stylesheet//EN"
+Copyright (C) Crane Softwrights Ltd. - http://www.CraneSoftwrights.com
+
+  1999-04-09 09:20
+  
+  This stylesheet will report the node structure and content of an input
+  document, noting the ordinal positions in the hierarchy of each component 
+  of the ancestry.
+  
+  This stylesheet exposes root, element, attribute, text, comment, 
+  and pi nodes.  Note that attribute nodes are counted as if they were child
+  nodes of element nodes (per W3C), though the Microsoft model does not have
+  all attribute nodes as siblings of the child element nodes.
+  
+  This stylesheet does not (cannot?) expose the namespace nodes (only other 
+  kinds of node).
+  
+CAVEAT - The XSL syntax used in this file follows only a working draft of
+         the XSL Specification, uses Microsoft extensions, and is not 
+         necessarily representative of any finalized or authorized 
+         specification.
+-->
+
+<xsl:template match="/">
+  <html>
+    <head>
+      <title>SHOWTREE Stylesheet - http://www.CraneSoftwrights.com/resources/</title>
+    </head>
+    <body>
+      <h2>SHOWTREE Stylesheet</h2>
+      <p><xsl:eval>this.url</xsl:eval><br/>
+      <a href="http://www.CraneSoftwrights.com/resources/">http://www.CraneSoftwrights.com/resources/</a></p>
+      <samp>
+      Root:<br/>
+      <xsl:apply-templates select="*|text()|comment()|pi()|@*"/>
+      </samp>
+    </body>
+  </html>
+</xsl:template>
+
+<xsl:script>
+  function nodeNumber( node ){                  //return node number
+    ret = 1;                                    //there's at least one node
+    nd = node.previousSibling;
+    while( nd ){
+      if( nd.nodeTypeString == "attribute" )    //there's at least one attr
+        ret = ret + ((node.parentNode).attributes).length; //actual count
+      else
+        ret = ret + 1;                          //one more node
+      nd = nd.previousSibling;                  //check previous
+    }
+  return( ret );
+  }  
+   
+  function attrNumber( attr, element ){         //return attribute number
+    map = element.attributes;
+    total = map.length;
+    for( item = 0; item != total; ++item )      //find attribute by name
+      if( map.item( item ).nodeName == attr.nodeName )
+        return( item + 1 );                     //found!
+    return( 0 );                                //shouldn't happen
+  }
+</xsl:script>
+
+<!--for every type of node:
+     - increment node counter
+     - show name of node
+     - show context of node
+     - show value of node -->
+
+<xsl:template match="*">                            <!--an element-->
+  <xsl:apply-templates select="..">                 <!--show element context-->
+    <xsl:template match="/"/>
+    <xsl:template match="*">
+      <xsl:apply-templates select=".."/><xsl:eval>nodeNumber( this )</xsl:eval>.</xsl:template>      
+  </xsl:apply-templates>
+  <xsl:eval>nodeNumber( this )</xsl:eval>
+  Element '<xsl:eval>this.nodeName</xsl:eval>'      <!--node type and name-->
+  (<xsl:apply-templates select="..">                <!--show element context-->
+    <xsl:template match="/"/>
+    <xsl:template match="*">
+      <xsl:apply-templates select="..">
+        <xsl:template match="/"/>
+        <xsl:template match="*">
+          <xsl:apply-templates select=".."/><xsl:eval>this.nodeName</xsl:eval>,</xsl:template>
+      </xsl:apply-templates>
+      <xsl:eval>this.nodeName</xsl:eval></xsl:template>
+  </xsl:apply-templates>):
+  <xsl:choose>
+    <xsl:when test="*|text()|comment()|pi()|@*">   <!--node children-->
+        <br/>
+        <xsl:apply-templates select="*|text()|comment()|pi()|@*"/>
+    </xsl:when>
+                                                   <!--node value-->
+    <xsl:otherwise>EMPTY<br/>
+</xsl:otherwise>
+  </xsl:choose>
+</xsl:template>
+
+<xsl:template match="@*">                           <!--an attribute-->
+  <xsl:apply-templates select="..">                 <!--show element context-->
+    <xsl:template match="*">
+      <xsl:apply-templates select=".."/><xsl:eval>nodeNumber( this )</xsl:eval>.</xsl:template>      
+    <xsl:template match="/"/>
+  </xsl:apply-templates>
+  <xsl:eval>attrNumber( this, this.selectSingleNode("..") )</xsl:eval>
+  Attribute '<xsl:eval>this.nodeName</xsl:eval>'      <!--node type and name-->
+  (<xsl:apply-templates select="..">                <!--show element context-->
+    <xsl:template match="/"/>
+    <xsl:template match="*">
+      <xsl:apply-templates select="..">
+        <xsl:template match="/"/>
+        <xsl:template match="*">
+          <xsl:apply-templates select=".."/><xsl:eval>this.nodeName</xsl:eval>,</xsl:template>
+      </xsl:apply-templates>
+      <xsl:eval>this.nodeName</xsl:eval></xsl:template>
+  </xsl:apply-templates>):
+  {<xsl:value-of select="."/>}<br/>
+</xsl:template>
+
+<xsl:template match="comment()">                    <!--a comment-->
+  <xsl:apply-templates select="..">                 <!--show element context-->
+    <xsl:template match="/"/>
+    <xsl:template match="*">
+      <xsl:apply-templates select=".."/><xsl:eval>nodeNumber( this )</xsl:eval>.</xsl:template>      
+  </xsl:apply-templates>
+  <xsl:eval>nodeNumber( this )</xsl:eval>
+  Comment                                           <!--node type and no name-->
+  (<xsl:apply-templates select="..">                <!--show element context-->
+    <xsl:template match="/"/>
+    <xsl:template match="*">
+      <xsl:apply-templates select="..">
+        <xsl:template match="/"/>
+        <xsl:template match="*">
+          <xsl:apply-templates select=".."/><xsl:eval>this.nodeName</xsl:eval>,</xsl:template>
+      </xsl:apply-templates>
+      <xsl:eval>this.nodeName</xsl:eval></xsl:template>
+  </xsl:apply-templates>):
+  {<xsl:value-of select="."/>}<br/>
+</xsl:template>
+
+<xsl:template match="pi()">                         <!--a processing inst.-->
+  <xsl:apply-templates select="..">                 <!--show element context-->
+    <xsl:template match="/"/>
+    <xsl:template match="*">
+      <xsl:apply-templates select=".."/><xsl:eval>nodeNumber( this )</xsl:eval>.</xsl:template>      
+  </xsl:apply-templates>
+  <xsl:eval>nodeNumber( this )</xsl:eval>
+  Proc. Inst.
+  '<xsl:eval>this.nodeName</xsl:eval>'              <!--node type and name-->
+  (<xsl:apply-templates select="..">                <!--show element context-->
+    <xsl:template match="/"/>
+    <xsl:template match="*">
+      <xsl:apply-templates select="..">
+        <xsl:template match="/"/>
+        <xsl:template match="*">
+          <xsl:apply-templates select=".."/><xsl:eval>this.nodeName</xsl:eval>,</xsl:template>
+      </xsl:apply-templates>
+      <xsl:eval>this.nodeName</xsl:eval></xsl:template>
+  </xsl:apply-templates>):
+  {<xsl:value-of select="."/>}<br/>
+</xsl:template>
+
+<xsl:template match="text()">                       <!--a text node-->
+  <xsl:apply-templates select="..">                 <!--show element context-->
+    <xsl:template match="/"/>
+    <xsl:template match="*">
+      <xsl:apply-templates select=".."/><xsl:eval>nodeNumber( this )</xsl:eval>.</xsl:template>      
+  </xsl:apply-templates>
+  <xsl:eval>nodeNumber( this )</xsl:eval>
+  Text                                              <!--node type and no name-->
+  (<xsl:apply-templates select="..">                <!--show element context-->
+    <xsl:template match="/"/>
+    <xsl:template match="*">
+      <xsl:apply-templates select="..">
+        <xsl:template match="/"/>
+        <xsl:template match="*">
+          <xsl:apply-templates select=".."/><xsl:eval>this.nodeName</xsl:eval>,</xsl:template>
+      </xsl:apply-templates>
+      <xsl:eval>this.nodeName</xsl:eval></xsl:template>
+  </xsl:apply-templates>):
+  {<xsl:value-of select="."/>}<br/>
+</xsl:template>
+
+</xsl:stylesheet>

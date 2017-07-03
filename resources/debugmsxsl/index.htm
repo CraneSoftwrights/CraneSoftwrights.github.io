@@ -1,0 +1,340 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<title>Debugging Stylesheets Using Microsoft IE5 XSL Processing</title>
+<meta name="description" content="Debugging Stylesheets Using Microsoft IE5 XSL Processing">
+<meta name="keywords" content="XSL, Microsoft MSXSL">
+</head>
+<body bgcolor="#ffffff">
+<table>
+<tr>
+<td valign=top>
+<h1>Crane Softwrights Ltd.</h1>
+<h2>Resource Library - Debugging Stylesheets Using Microsoft IE5 XSL Processing</h2>
+<p>
+This has turned out to be a frequently asked question on the XSL maillist
+<a href="http://www.CraneSoftwrights.com/links/xsl-list.htm">XSL-List info and archive:  http://www.mulberrytech.com/xsl/xsl-list</a>
+so now this resource can be refered to as a summary of a methodology to
+debug stylesheets being developed for the Microsoft IE5 XSL engine.
+This is useful because the menu function View/Source in IE5 shows the XML
+source, not the HTML resulting from the transformation described by the
+XSL stylesheet.
+<p>
+The page below is excerpted from the XSLT training materials 
+that can be obtained through the
+<a href="http://www.CraneSoftwrights.com/training/">http://www.CraneSoftwrights.com/training/</a>
+page:
+<ul>
+<li><b>Practical Transformation Using XSLT and XPath</b>
+<br>XSL Transformations and the XML Path Language
+<br><i>(Sixth Edition - ISBN 1-894049-03-9 - 1999-11-19)</i>
+</ul>
+<p>
+The XSL engine in Internet Explorer 5 can be invoked using a tool from Microsoft
+named the Windows Scripting Host.  The script described below will load an XML
+document and an XSL stylesheet and emit the results of transforming the XML
+using the XSL.
+<p>
+By directing the emitted results to a file, the behaviour of the XSL engine
+on a given stylesheet is revealed, thus helping with the debugging of the
+stylesheet logic.
+</td>
+<td valign=top width=3>
+<img src="../../vbar.gif" alt=" " width=1 height=300>
+</td>
+<td valign=top>
+<img src="http://www.CraneSoftwrights.com/resources/debugmsxsl/crane.gif" alt="Crane Logo" width=140 height=113>
+<h3>CRANE<BR>SOFTWRIGHTS<BR>LTD.</h3>
+<h6>
+BOX 266,<BR>
+KARS, ONTARIO<BR>
+CANADA K0A-2E0<BR>
+<BR>
++1&nbsp;(613)&nbsp;489-0999&nbsp;(Voice)<BR>
++1&nbsp;(613)&nbsp;489-0995&nbsp;(Fax)<BR>
+</h6>
+</td>
+</tr>
+</table>
+<p>
+
+
+
+<hr noshade="noshade">
+<table
+summary="Page title, host and instructor logos, navigation"
+width="100%"
+><tr
+valign="top"
+><td
+width="80%"
+><font
+size="5"
+color="#006400"
+><b
+>&#13;Invoking the Microsoft XSL Processor (cont.)</b
+></font
+><font
+size="2"
+color="#006400"
+><br>&nbsp;<br>Module 11: 
+Sample Tool Information<br>Lesson 11-2: 
+Microsoft Internet Explorer 5</font
+></td
+></tr
+></table
+>
+
+<hr
+noshade="noshade">
+<font
+size="4"
+><b
+>&#13;Using the processor from the MSDOS command line:</b
+></font
+>
+<ul
+>&#13;<li
+type="disc"
+><font
+size="4"
+><b
+>&#13;a command line scripting environment from Microsoft executes JavaScript applications</b
+></font
+>
+<ul
+>&#13;<li
+type="disc"
+><font
+size="4"
+><b
+>&#13;<a
+href="http://www.CraneSoftwrights.com/links/wsh.htm"
+alt="http://msdn.microsoft.com/scripting/windowshost/"
+><samp
+><font
+size="4"
+color="#191970"
+><b
+>http://msdn.microsoft.com/scripting/windowshost/</b
+></font
+></samp
+></a
+> - Windows Scripting Host</b
+></font
+>
+</li
+>
+<li
+type="disc"
+><font
+size="4"
+><b
+>&#13;any associated stylesheet declaration in the XML file is ignored</b
+></font
+>
+</li
+>
+</ul
+>
+</li
+>
+<li
+type="disc"
+><font
+size="4"
+><b
+>&#13;a simple script adapted from one posted to the XSL mail list invokes the processor after loading two Document Object Model (DOM) objects, using the system character set when emitting the result tree (for example, the Latin1 character set on Western European Windows systems and the Shift-JIS character set on Japanese Windows systems):</b
+></font
+>
+</li
+>
+</ul
+>
+<pre
+><font
+size="4"
+color="#191970"
+><b
+>//File:  msxsl.js - 1999-08-13 15:40
+//Info:  http://www.CraneSoftwrights.com/links/msxsl.htm
+//Args:  input-file style-file output-file
+var xml  = WScript.CreateObject("Microsoft.XMLDOM");          //input
+xml.validateOnParse=false;
+xml.load(WScript.Arguments(0));
+var xsl  = WScript.CreateObject("Microsoft.XMLDOM");          //style
+xsl.validateOnParse=false;
+xsl.load(WScript.Arguments(1));
+var out = WScript.CreateObject("Scripting.FileSystemObject"); //output
+var replace = true; var unicode = false; //output file properties
+var hdl = out.CreateTextFile( WScript.Arguments(2), replace, unicode )
+hdl.write( xml.transformNode( xsl.documentElement ));  
+//eof
+</b
+></font
+></pre
+>
+<font
+size="4"
+><b
+>&#13;A sample invocation batch file (the <samp
+><font
+size="4"
+color="#191970"
+><b
+>cscript</b
+></font
+></samp
+> program is from the Windows Scripting Host utility):</b
+></font
+>
+<pre
+><font
+size="4"
+color="#191970"
+><b
+>@echo off
+REM msxsl.bat
+REM check arguments: %1=source XML, %2=script MSXSL, %3=result HTML
+cscript //nologo ..\prog\msxsl.js %1 %2 %3
+REM post-process results
+</b
+></font
+></pre
+>
+<font
+size="4"
+><b
+>&#13;A sample invocation:</b
+></font
+>
+<pre
+><font
+size="4"
+color="#191970"
+><b
+>X:\samp&#62;..\prog\msxsl hello.xml hello.msxsl hello.mshtm
+X:\samp&#62;type hello.mshtm
+&#60;b&#62;&#60;i&#62;&#60;u&#62;Hello world.&#60;/u&#62;&#60;/i&#62;&#60;/b&#62;
+
+X:\samp&#62;
+</b
+></font
+></pre
+>
+
+
+<font
+size="4"
+><b
+>&#13;Using the following script, adapted for these materials with permission from Makoto Murata, the MSXSL engine can also do transformations from XML into XML using the UTF-8 character set to emit the result tree:</b
+></font
+>
+<pre
+><font
+size="4"
+color="#191970"
+><b
+>//File:  msxslu8.js - 1999-09-21 21:20
+//Info:  http://www.CraneSoftwrights.com/links/msxsl.htm
+//Args:  input-file style-file output-file
+var xml  = WScript.CreateObject("Microsoft.XMLDOM");          //input
+xml.validateOnParse=false;
+xml.load(WScript.Arguments(0));
+var xsl  = WScript.CreateObject("Microsoft.XMLDOM");          //style
+xsl.validateOnParse=false;
+xsl.load(WScript.Arguments(1));                                      
+var out = WScript.CreateObject("Microsoft.XMLDOM");           //output
+out.async = false;
+out.validateOnParse=false;
+xml.transformNodeToObject( xsl, out );  
+out.save(WScript.Arguments(2));
+//eof
+</b
+></font
+></pre
+>
+<font
+size="4"
+><b
+>&#13;The two above processes are distinguished by the target of the transformation process:</b
+></font
+>
+<ul
+>&#13;<li
+type="disc"
+><font
+size="4"
+><b
+>&#13;the system character set is used when writing the result of transforming the input XML document directly into a stream of characters</b
+></font
+>
+</li
+>
+<li
+type="disc"
+><font
+size="4"
+><b
+>&#13;the UTF-8 character set is used when writing out the instance serialization of the object created when transforming the input XML document into a new XML document object</b
+></font
+>
+</li
+>
+</ul
+>
+
+
+
+
+
+
+
+
+<hr
+noshade="noshade"><table
+summary="Frame navigation, identifier, copyrights"
+width="100%"
+><tr
+><td
+align="center"
+colspan="2"
+><font
+size="1"
+color="#8b0000"
+><i
+>PUBLIC +//ISBN 1-894049::CSL::Courses::PTUX//DOCUMENT Practical Transformation Using XSLT and XPath 1999-09-25 11:30//EN</i
+></font
+></td
+></tr
+><tr
+><td
+width="50%"
+align="LEFT"
+><font
+size="2"
+color="#8b0000"
+><i
+><br></i
+></font
+></td
+><td
+width="50%"
+align="RIGHT"
+><font
+size="2"
+color="#8b0000"
+><i
+>&#13;                Copyright &copy; Crane Softwrights Ltd.
+                <br>http://www.CraneSoftwrights.com (233) </i
+></font
+></td
+></tr
+></table
+>
+
+<hr noshade="noshade">
+<p>If anyone has comments on this document, they are welcome to send them to
+<samp><a href="mailto:debugmsxsl@CraneSoftwrights.com">debugmsxsl@CraneSoftwrights.com</a></samp>.
+
+<h5>1999-11-19 14:40</h5>

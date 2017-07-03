@@ -1,0 +1,110 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- Created by JADE transform of SGML to HTML: 2002-12-11T08:41:19 --><HTML
+><TITLE
+>XSL-FO in the real world</TITLE
+><BODY
+><H1
+>XSL-FO in the real world</H1
+><P
+>Author: G. Ken Holman<BR>Date: $Date: 2002/12/11 13:41:14 $(UTC)</P
+><P
+><I
+>Copyright (C) 2002 Crane Softwrights Ltd.</I
+></P
+><H2
+>Table of Contents</H2
+><TABLE
+summary="Table of Contents"
+><TR
+><TD
+>1 </TD
+><TD
+><A
+HREF="#ID-1"
+>XSL-FO brings new power to the information publisher</A
+></TD
+></TR
+><TR
+><TD
+>2 </TD
+><TD
+><A
+HREF="#ID-2"
+>XSL-FO in the real world</A
+></TD
+></TR
+><TR
+><TD
+>3 </TD
+><TD
+><A
+HREF="#ID-3"
+>XSL-FO and our choices</A
+></TD
+></TR
+></TABLE
+><H2
+><A
+NAME="ID-1"
+>1: XSL-FO brings new power to the information publisher</A
+></H2
+><P>The XSL-FO 1.0 Recommendation <A
+HREF="http://www.w3.org/TR/xsl/"
+TARGET="_blank"
+><SAMP
+>http://www.w3.org/TR/xsl/</SAMP
+></A
+> is now over a year old and it is exciting to see a number of commercial implementations and open source or free projects available for the Extensible Stylesheet Language Formatting Objects.  XSL-FO is used extensively on a daily basis at Crane Softwrights Ltd. for quality print-oriented results in many areas.<P>Formatting objects express the semantics of paginated formatting intent.  To get professional-quality print results from XML, one transforms their XML instances into instances of the XML vocabulary that has been associated with the formatting semantics.  Much as one would transform their XML instances into instance of HTML for display in web browsers, XSL-FO formatting engines interpret our intent expressed in instances of the XSL-FO XML vocabulary to produce a paginated result.<P>Pagination differs from the infinite-length, variable width browser screens we have become so very used to working with.  But for many developers, paginated page-based fixed-size-folio printable results have been left by the wayside while they focus on the HTML displays they are comfortable with.  This, unfortunately, leaves a whole constituency of potential users of Web Services and XML-encoded information disenfranchised.  Think of those non-developers you know who still rely on the printed form, perhaps printing out every email message or every web screen so they can better comprehend what they are reading, not because of the content, but because of the medium. <P>Consider also how simple requests can often result in copious amounts of information or how many volumes of information we may have that we need to disseminate.  How many people are truly satisfied with their information experience when having to deal with a printed web screen?  How can we expect to properly navigate such a volume of data and ensure our users have the easiest access to the amount they have to deal with?<P>The semantics of pagination improve the printed result over the dynamic browser screen print function because of the nature of how information is consumed by the reader in these two very different environments.  Navigation in the browser experience is automated; the reader of a Web screen need not know where hyperlinks to information are to be able to successfully change focus to a new location within the information set, because the browser is responsible for traversing the link.  Navigation in the printed form is the responsibility of the human reading the pages.  This burdens the publisher of the information with the obligation of providing navigational hints to the reader to make the reading experience easy and obstacle free.  Common navigational tools used for the printed form include headers, footers, page numbers and page number citations.  Judicious design and use of these tools by the publisher of content will make the message  more easily accessible to the human audience of the information.<P>The partner Recommendation to XSL-FO is the Extensible Stylesheet Language Transformations (XSLT) <A
+HREF="http://www.w3.org/TR/xslt"
+TARGET="_blank"
+><SAMP
+>http://www.w3.org/TR/xslt</SAMP
+></A
+> though these two standards are surely not wedded together.  Although the predominant use of XSL-FO will be as the result of transforming XML information using XSLT, XSL-FO engines will work on any XML instance of the pagination vocabulary regardless of how it was generated.  One can regard XSL-FO as a layout language of the printed form irrespective of whatever programming language or database extraction or document editing tool is used.  Indeed, the free AbiWord word processor <A
+HREF="http://www.abisource.com"
+TARGET="_blank"
+><SAMP
+>http://www.abisource.com</SAMP
+></A
+> already implements a "Save As XSL-FO" function.  There is also a free resource on Crane's web site for the dumping and display of Unicode characters and their hexadecimal code points using a Python program to directly generate an instance of XSL-FO XML for rendering by an XSL-FO engine, without any use of XSLT.<H2
+><A
+NAME="ID-2"
+>2: XSL-FO in the real world</A
+></H2
+><P>In addition to helping to serve the wonderful world of Web Services to a whole new audience, XSL-FO opens doors for both the traditional publishing experience and new publishing paradigms.<P>Crane Softwrights Ltd. authors and publishes training material for XML technologies.  Our two flagship products are "Practical Transformation Using XSLT and XPath" (Tenth Edition ISBN 1-894049-08-X) and "Practical Formatting Using XSL-FO" (Fourth Edition ISBN 1-894049-11-X).  The first editions of these electronic publications predate all of the paper publications in each of these two subjects.<P>In our view of this new publishing paradigm, XML technologies play a critical role to make this publishing effort a successful venture for a small company.  XSLT is used to leverage a single authored set of content into instructor-led training material for ourselves and our licensees around the world (creating both HTML projection slides and paper handouts), and commercial book publishing in both electronic and paper forms.  XSL-FO and XSLT are used at Crane to produce 11 electronic renditions of the book: five in U.S. letter paper size PDF, five in international A4 paper size PDF, and one in a hyperlinked monospaced accessible presentation suitable for unsighted customers using on-screen text readers.  Two full-size renditions of the PDF files are also richly hyperlinked making the navigation experience successful both in paper form and electronically in a PDF viewer.<P>In this publishing scenario, the negligible cost of publishing new editions for existing customers allows all customers to enjoy perpetual no-charge updates for all future editions of the titles that they purchase.  Free previews are made openly downloadable from Crane's web site and licenses are sold to individuals, and both a single geographic site or world-wide license for staff members of a company.  See <A
+HREF="http://www.CraneSoftwrights.com/training"
+TARGET="_blank"
+><SAMP
+>http://www.CraneSoftwrights.com/training</SAMP
+></A
+> for more details and free downloads.<P>This leverage extends to the traditional publishing experience.  Prentice Hall has purchased the print rights to each of these books Crane sells electronically, producing the paper-based renditions respectively as "Definitive XSLT and XPath" (ISBN 0-13-065196-6 December 2001 <A
+HREF="http://www.CraneSoftwrights.com/links/dxx-info.htm"
+TARGET="_blank"
+><SAMP
+>http://www.CraneSoftwrights.com/links/dxx-info.htm</SAMP
+></A
+>) and "Definitive XSL-FO" (ISBN 0-13-140374-5 February 2003 <A
+HREF="http://www.CraneSoftwrights.com/links/dxf-info.htm"
+TARGET="_blank"
+><SAMP
+>http://www.CraneSoftwrights.com/links/dxf-info.htm</SAMP
+></A
+>).  The XML content is delivered directly from Crane to the talented editor Dmitry Kirsanov <A
+HREF="http://www.kirsanov.com"
+TARGET="_blank"
+><SAMP
+>http://www.kirsanov.com</SAMP
+></A
+> who polishes up the English to Prentice Hall standards, produces a print image using his own XSL-FO stylesheets to his professional design of the layout, and delivers to Prentice Hall the fully composed PDF file ready for reproduction. We believe "Definitive XSLT and XPath" is the very first commercial trade book paper-based publication produced with XSL-FO.<P>The leverage promised by XML is realized after the first book is done and the second and subsequent books are produced by each player.  As we create new training materials, we reuse the XSLT and XSL-FO stylesheets and production environment for all of the target uses for training.  We then turn around and publish the materials commercially from our web site.  If the topic is of interest in the print world, the Prentice-Hall-styled stylesheets are ready for them to use for the document model we created for our authoring.<H2
+><A
+NAME="ID-3"
+>3: XSL-FO and our choices</A
+></H2
+><P>XSL-FO gives us the power to give our users our information in an alternative presentation than we have been using in the past with web browsers.  This improves the consumption of large amounts of information by providing well-known navigation tools consistent with other sources of information our users take advantage of.<P>The traditional promise of XML publishing, one source with many target formats and audiences, can be realized in the printed medium with XSL-FO, producing professional quality results.  Consider how you can integrate our traditional publishing responsibilities (user manuals, reports, etc) with your new powerful XML information systems to produce a self-consistent multi-media collection of integrated information assets.<P>The new promise of Web services can reach a new audience or give an existing audience a choice in how to accept large amounts of information, giving our users a better information experience and more value in the services they are paying for.  Consider how you can integrate on-the-fly PDF generation as part of your service offering.<P>We developers may have been reluctant to address the print medium in favor of dynamic displays and may have been postponing addressing our traditional publishing requirements while we have been exploring the power XML gives us in marshaling our information.  Now that printable results can be easily produced using XSLFO, we should be considering the role that automated pagination can play in rounding out our offerings with quality print products while further leveraging our investment in markup.<HR><PRE
+>XSL-FO in the real world
+G. Ken Holman
+Copyright (C) 2002 Crane Softwrights Ltd.
+$Date: 2002/12/11 13:41:14 $(UTC)</PRE
+></BODY
+></HTML
+>

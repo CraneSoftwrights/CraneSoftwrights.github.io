@@ -1,0 +1,43 @@
+<!--
+  Sample article DTD for XML.COM
+  +//ISBN 1-894049::CSL::Articles//DTD XML.COM Article//EN
+  G. Ken Holman
+  mailto:gkholman@CraneSoftwrights.com
+  http://www.CraneSoftwrights.com
+  
+  1999-04-22 12:50
+-->
+
+                                                     <!--main structure-->
+<!ELEMENT article    ( title, author, copyright, section+ )>
+<!ELEMENT author     ( name, affil )>         <!--who wrote the article-->
+<!ELEMENT name       ( #PCDATA )>
+<!ATTLIST name       email CDATA #REQUIRED>
+<!ELEMENT affil      ( #PCDATA )>                      <!--affilliation-->
+<!ATTLIST affil      url CDATA #IMPLIED>
+<!ELEMENT copyright  ( #PCDATA )>                            <!--rights-->
+                                                  <!--article hierarchy-->
+<!ELEMENT section    ( title, 
+                       ( para | monospc | sidebar | image | extlinkset )+, 
+                       section* )>
+                                                  <!--a side discussion-->
+<!ATTLIST section    id ID #REQUIRED>
+<!ELEMENT sidebar    ( title, ( para | monospc )+ )>
+<!ATTLIST sidebar    id ID #REQUIRED
+                     xml-rendering ( suppress | preserve ) "preserve">
+<!ELEMENT title      ( #PCDATA )>               <!--titles of all kinds-->
+                                                    <!--article content-->
+<!ELEMENT para       ( #PCDATA | sidebar | 
+                       emph | monospc | extlink | intlink )*>
+<!ELEMENT emph       ( #PCDATA )>                          <!--emphasis-->
+<!ELEMENT monospc    ( #PCDATA )>                    <!--code fragments-->
+<!ELEMENT image      ( #PCDATA )>                <!--image with caption-->
+<!ATTLIST image      href CDATA #REQUIRED>
+
+<!ELEMENT extlinkset ( extlink+ )>                    <!--a set of URLs-->
+<!ELEMENT extlink    ( #PCDATA | monospc )*>          <!--external link-->
+<!ATTLIST extlink    href CDATA #REQUIRED>
+<!ELEMENT intlink    EMPTY>                           <!--internal link-->
+<!ATTLIST intlink    idref IDREF #REQUIRED>  <!--point to titled object-->
+
+<!--end of file-->

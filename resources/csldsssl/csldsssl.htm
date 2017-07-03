@@ -1,0 +1,1593 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<!-- CSL DSSSL Stylesheet - http://www.CraneSoftwrights.com -->
+<!-- 1998-11-03T11:16:12 -->
+<html
+><head
+><title
+>CSLDSSSL - An Annotatable DSSSL Stylesheet</title
+></head
+><body
+><center
+><h1
+><u
+>CSLDSSSL - An Annotatable DSSSL Stylesheet</u
+></h1
+></center
+><h3
+><a
+name="toc"
+>Table of Contents</a
+></h3
+><p
+>&nbsp;&nbsp;&nbsp;&nbsp;<a
+href="#P1"
+>1. Introduction</a
+><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a
+href="#P1-1"
+>1.1. Assumptions</a
+><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a
+href="#P1-1-1"
+>1.1.1. Print Rendering</a
+><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a
+href="#P1-1-2"
+>1.1.2. HTML Rendering</a
+><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a
+href="#P1-2"
+>1.2. Sample Windows Environment</a
+><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a
+href="#P1-2-1"
+>1.2.1. Support Files</a
+><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a
+href="#P1-2-2"
+>1.2.2. Sample Script Use</a
+><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a
+href="#P1-2-3"
+>1.2.3. Documentation of the Sample Script</a
+><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a
+href="#P1-2-4"
+>1.2.4. Environment Variables</a
+><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a
+href="#P1-3"
+>1.3. Creation of CSLDSSSL Documentation</a
+><br>&nbsp;&nbsp;&nbsp;&nbsp;<a
+href="#P2"
+>2. Definitions</a
+><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a
+href="#P2-1"
+>2.1. Command-line Manipulated Variables</a
+><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a
+href="#P2-2"
+>2.2. Dimensions</a
+><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a
+href="#P2-3"
+>2.3. Common Strings</a
+><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a
+href="#P2-4"
+>2.4. Print Semantics Font Related Variables</a
+><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a
+href="#P2-5"
+>2.5. Non-standard Function Definitions</a
+><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a
+href="#P2-6"
+>2.6. Inherited Characteristic Initial Values</a
+><br>&nbsp;&nbsp;&nbsp;&nbsp;<a
+href="#P3"
+>3. Support Procedures</a
+><br>&nbsp;&nbsp;&nbsp;&nbsp;<a
+href="#P4"
+>4. Root Construction</a
+><br>&nbsp;&nbsp;&nbsp;&nbsp;<a
+href="#P5"
+>5. High-level Constructs</a
+><br>&nbsp;&nbsp;&nbsp;&nbsp;<a
+href="#P6"
+>6. Display of Raw DSSSL Script</a
+><br>&nbsp;&nbsp;&nbsp;&nbsp;<a
+href="#P7"
+>7. Low-level Constructs</a
+><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a
+href="#P7-1"
+>7.1. Part Referencing</a
+><br>&nbsp;&nbsp;&nbsp;&nbsp;<a
+href="#P8"
+>8. Meta-data Information</a
+><br>&nbsp;&nbsp;&nbsp;&nbsp;<a
+href="#P9"
+>9. Default Construction Rule</a
+><br>&nbsp;&nbsp;&nbsp;&nbsp;<a
+href="#P10"
+>10. Table of Contents Processing</a
+><br>&nbsp;&nbsp;&nbsp;&nbsp;<a
+href="#P11"
+>11. Index of Definitions Processing</a
+><br>&nbsp;&nbsp;&nbsp;&nbsp;<a
+href="#P12"
+>12. Distilling of the DSSSL Script</a
+><br></p
+><h2
+><a
+name="P1"
+>1. Introduction</a
+></h2
+><p
+>This environment models and supports an annotatable DSSSL stylesheet.
+Annotations take the form of formal documentation, formatted as
+a printed manual, split into sections, sub-sections and 
+sub-sub-sections.  The public identifier for the document model
+(available at 
+<a
+href="http://www.CraneSoftwrights.com"
+>http://www.CraneSoftwrights.com</a
+>)
+is one of either of the two following values supported in the catalogue:</p
+><pre
+>+//IDN CraneSoftwrights.com::CSL//DTD An Annotatable DSSSL Stylesheet//EN"</pre
+><pre
+>+//ISBN 1-894049::CSL//DTD An Annotatable DSSSL Stylesheet//EN</pre
+><p
+>When one writes DSSSL scripts using the Annotatable DSSSL Stylesheet
+document model, this environment provides a DSSSL stylesheet to use to document
+that script in three renderings: print, HTML, and an unannotated DSSSL 
+distillation.</p
+><p
+>This environment's documentation stylesheet uses standardized DSSSL print 
+semantics for the print rendering,
+and custom SGML syntax semantics as defined
+in the DSSSL engine named JADE 
+(<a
+href="http://www.jclark.com/jade"
+>http://www.jclark.com/jade</a
+>)
+for the HTML and raw DSSSL renderings.
+Refer to the command-line
+documentation <a
+href="#P2-1"
+>2.1. Command-line Manipulated Variables</a
+> for details on how the invocation
+uses the setting of different variables to
+engage the different renderings from the same script.</p
+><h3
+><a
+name="P1-1"
+>1.1. Assumptions</a
+></h3
+><h4
+><a
+name="P1-1-1"
+>1.1.1. Print Rendering</a
+></h4
+><p
+>This version of the stylesheet assumes imperial measurements for the
+page dimensions.  All values can be changed to metric measurements in the
+root construction rule <a
+href="#P4"
+>4. Root Construction</a
+>, or dynamically at invocation 
+with a command line option 
+documented in <a
+href="#P2-1"
+>2.1. Command-line Manipulated Variables</a
+>.</p
+><h4
+><a
+name="P1-1-2"
+>1.1.2. HTML Rendering</a
+></h4
+><p
+>This version of the stylesheet assumes the HTML 3.2 Recommendation for
+markup, with the exception of including by default
+a colour background attribute for
+a table which is not defined in the recommendation.  Refer to the command-line
+documentation <a
+href="#P2-1"
+>2.1. Command-line Manipulated Variables</a
+> for details on how to keep strictly
+to the HTML 3.2 recommendation.</p
+><h3
+><a
+name="P1-2"
+>1.2. Sample Windows Environment</a
+></h3
+><h4
+><a
+name="P1-2-1"
+>1.2.1. Support Files</a
+></h4
+><p
+>The file <samp
+>csldsssl.soc</samp
+> is an SGML-Open standard format
+catalogue of the public identifiers for the environment.</p
+><p
+>The file <samp
+>sample.sgm</samp
+> is a simple example stylesheet.</p
+><p
+>The file <samp
+>csldsssl.sgm</samp
+> is the DSSSL script used to produce
+the documentation for an annotated stylesheet.</p
+><p
+>The file <samp
+>dsssl.dtd</samp
+> is architectural meta-DTD for DSSSL.</p
+><p
+>Two entity files <samp
+>iso-lat1.ent</samp
+> and <samp
+>iso-num.ent</samp
+>
+include the SDATA declarations for entities helpful in writing the prose
+of the documentation in an annotated stylesheet.</p
+><h4
+><a
+name="P1-2-2"
+>1.2.2. Sample Script Use</a
+></h4
+><p
+>Consider a DSSSL stylesheet that is an instance of the CSLDSSSL
+document model is named <samp
+>sample.sgm</samp
+> (the extension
+chosen because of the rich element structure), and the document
+being processed is <samp
+>mydoc.sgm</samp
+>, then the JADE invocation is
+(in part):</p
+><pre
+>  jade -d sample.sgm -c csldsssl.soc mydoc.sgm</pre
+><h4
+><a
+name="P1-2-3"
+>1.2.3. Documentation of the Sample Script</a
+></h4
+><p
+>The batch file <samp
+>csldsssl.bat</samp
+> is a representative invocation
+of this documentation environment in Windows, 
+using JADE as an example DSSSL engine.  It
+assumes the DSSSL script is in an SGML instance with the filename extension
+of <samp
+>.SGM</samp
+>.</p
+><p
+>There is one mandatory argument to the invocation batch file: the
+name (without <samp
+>.SGM</samp
+> suffix) of the instance to be processed.  
+Up to 8 other arguments for JADE may be included after the mandatory 
+argument.</p
+><p
+>For the one <samp
+>.SGM</samp
+> input, three outputs are created:
+an <samp
+>.HTM</samp
+> file for browsing, an <samp
+>.RTF</samp
+> file for printing,
+and a <samp
+>.DSL</samp
+> file for information.  Note the <samp
+>.DSL</samp
+> file is
+only a distillation of the DSSSL code fragments from the annotated stylesheet,
+and itself can be used with the unannotated version of the stylesheet.  It is
+not necessary to create the <samp
+>.DSL</samp
+> file to use with a DSSSL-conforming
+engine, because the <samp
+>.SGM</samp
+> file itself conforms to the DSSSL
+architecture.</p
+><p
+>To create the three documentation files of the <samp
+>sample.sgm</samp
+> 
+DSSSL stylesheet, one would execute the one command:</p
+><pre
+>  csldsssl sample</pre
+><p
+>To limit the HTML documentation produced to strictly follow the
+HTML 3.2 document model, add the setting of a switch:</p
+><pre
+>  csldsssl sample -V strict</pre
+><h4
+><a
+name="P1-2-4"
+>1.2.4. Environment Variables</a
+></h4
+><p
+>The supplied example invocation
+batch file has one environment variable dependency, the directory in which
+the CSLDSSSL documentation script file is found.  For example:</p
+><pre
+>        SET csldsssl=c:\csldsssl\</pre
+><p
+>Note the directory name is suffixed with a subdirectory
+separator character (backslash for Windows).</p
+><p
+>The invocation also assumes the JADE executable is on the path.</p
+><h3
+><a
+name="P1-3"
+>1.3. Creation of CSLDSSSL Documentation</a
+></h3
+><p
+>This documentation file is, itself, the output of the environment's stylesheet
+applied to itself.</p
+><p
+>The invocation used of the sample batch file to produce 
+this documentation is:</p
+><pre
+>        csldsssl csldsssl</pre
+><h2
+><a
+name="P2"
+>2. Definitions</a
+></h2
+><h3
+><a
+name="P2-1"
+>2.1. Command-line Manipulated Variables</a
+></h3
+><p
+>When using JADE, these variable are turned to true with the following
+command line option:</p
+><pre
+>       -V variable-name</pre
+><p
+>The <samp
+>noscript</samp
+> variable defaults to false 
+which will not suppress the printing of
+script text in the documentation.  When true, the script text is
+suppressed from the printing of the documentation.</p
+><table
+border="1"
+bgcolor="#d0ffd0"
+><tr
+><td
+><pre
+>(define noscript #f)    ;set to true to suppress script text in output docs</pre
+></td
+></tr
+></table
+><p
+>The <samp
+>html</samp
+> variable defaults to false which will
+produce standard DSSSL flow objects.  When true, the script will
+produce non-standard SGML flow objects supported by JADE.</p
+><table
+border="1"
+bgcolor="#d0ffd0"
+><tr
+><td
+><pre
+>(define html #f)    ;set to true to produce SGML flow objects of HTML</pre
+></td
+></tr
+></table
+><p
+>The <samp
+>strict</samp
+> variable defaults to false allowing non-standard
+HTML 3.2 syntax to be generated.</p
+><table
+border="1"
+bgcolor="#d0ffd0"
+><tr
+><td
+><pre
+>(define strict #f)  ;set to true to produce strict HTML 3.2 syntax</pre
+></td
+></tr
+></table
+><p
+>The <samp
+>metric</samp
+> variable defaults to false thereby engaging
+imperial measurements when using print semantics.</p
+><table
+border="1"
+bgcolor="#d0ffd0"
+><tr
+><td
+><pre
+>(define metric #f)  ;set to true to use metric measurements</pre
+></td
+></tr
+></table
+><h3
+><a
+name="P2-2"
+>2.2. Dimensions</a
+></h3
+><table
+border="1"
+bgcolor="#d0ffd0"
+><tr
+><td
+><pre
+>                                        ;metric ;imperial
+(define page-width          (if metric  210mm   8.5in))
+(define page-height         (if metric  297mm   11in))
+(define left-margin         (if metric  13mm    .5in))
+(define right-margin        (if metric  13mm    .5in))
+(define header-margin       (if metric  13mm    .5in))
+(define footer-margin       (if metric  13mm    .5in))
+(define top-margin          (if metric  25mm    1in))
+(define bottom-margin       (if metric  25mm    1in))
+(define box-start-indent    (if metric  6mm     .25in))
+(define box-end-indent      (if metric  6mm     .25in))
+(define toc-start-indent    (if metric  13mm    .5in))
+(define toc-end-indent      (if metric  20mm    .75in))
+(define toc-item-indent     (if metric  20mm    .75in))
+(define index-col-sep       (if metric  6mm     .25in))</pre
+></td
+></tr
+></table
+><h3
+><a
+name="P2-3"
+>2.3. Common Strings</a
+></h3
+><table
+border="1"
+bgcolor="#d0ffd0"
+><tr
+><td
+><pre
+>                                        ;metric ;imperial
+(define toc-string          "Table of Contents")
+(define defn-string         "Index of Definitions")</pre
+></td
+></tr
+></table
+><h3
+><a
+name="P2-4"
+>2.4. Print Semantics Font Related Variables</a
+></h3
+><table
+border="1"
+bgcolor="#d0ffd0"
+><tr
+><td
+><pre
+>(define default-font-size    12pt)          ;main body of text
+(define title-font-sizes     '(18pt 17pt 16pt 15pt 14pt 13pt))
+(define main-title-font-size 16pt)
+(define part-title-font-size 14pt)
+(define serif-font           "Times New Roman") ;should be "iso-serif"
+(define monospaced-font-size 10pt)
+(define monospaced-font      "Courier New")     ;should be "iso-monospc"</pre
+></td
+></tr
+></table
+><h3
+><a
+name="P2-5"
+>2.5. Non-standard Function Definitions</a
+></h3
+><p
+><b
+>Note these function may not be supported
+by all DSSSL engines; the declarations used are those 
+recognized by JADE.</b
+></p
+><p
+>The <samp
+>(debug)</samp
+> function is available to be used for 
+diagnostic purposes. 
+It may be that the function isn't actually called anywhere
+for a particular revision of the script.</p
+><table
+border="1"
+bgcolor="#d0ffd0"
+><tr
+><td
+><pre
+>(define debug
+  (external-procedure "UNREGISTERED::James Clark//Procedure::debug"))</pre
+></td
+></tr
+></table
+><p
+>The <samp
+>(if-first-page)</samp
+> function is used to remove the
+redundant page header on the first page of the printed output.</p
+><table
+border="1"
+bgcolor="#d0ffd0"
+><tr
+><td
+><pre
+>(define if-first-page
+  (external-procedure "UNREGISTERED::James Clark//Procedure::if-first-page"))</pre
+></td
+></tr
+></table
+><p
+>These <samp
+>JADE SGML Syntax Flow Objects</samp
+>
+declare the non-DSSSL standard flow objects for emitting
+SGML syntax as supported by JADE.</p
+><table
+border="1"
+bgcolor="#d0ffd0"
+><tr
+><td
+><pre
+>(declare-flow-object-class element
+  "UNREGISTERED::James Clark//Flow Object Class::element")
+(declare-flow-object-class empty-element
+  "UNREGISTERED::James Clark//Flow Object Class::empty-element")
+(declare-flow-object-class document-type
+  "UNREGISTERED::James Clark//Flow Object Class::document-type")
+(declare-flow-object-class processing-instruction
+  "UNREGISTERED::James Clark//Flow Object Class::processing-instruction")
+(declare-flow-object-class entity
+  "UNREGISTERED::James Clark//Flow Object Class::entity")
+(declare-flow-object-class entity-ref
+  "UNREGISTERED::James Clark//Flow Object Class::entity-ref")
+(declare-flow-object-class formatting-instruction
+  "UNREGISTERED::James Clark//Flow Object Class::formatting-instruction")
+(declare-characteristic preserve-sdata?
+  "UNREGISTERED::James Clark//Characteristic::preserve-sdata?"
+  #t)</pre
+></td
+></tr
+></table
+><h3
+><a
+name="P2-6"
+>2.6. Inherited Characteristic Initial Values</a
+></h3
+><table
+border="1"
+bgcolor="#d0ffd0"
+><tr
+><td
+><pre
+>(declare-initial-value font-size        default-font-size)
+(declare-initial-value font-family-name serif-font)
+(declare-initial-value min-leading      0pt) ;stretch line height to fit
+(declare-initial-value quadding         'justify)</pre
+></td
+></tr
+></table
+><h2
+><a
+name="P3"
+>3. Support Procedures</a
+></h2
+><p
+>The <samp
+>construct</samp
+> function captures the construction rule
+for both print and SGML semantics without replicating the condition
+test in the syntax of every construction rule.</p
+><table
+border="1"
+bgcolor="#d0ffd0"
+><tr
+><td
+><pre
+>(define (construct print sgml)
+    (if html sgml print))       ;use SGML semantics if HTML requested.</pre
+></td
+></tr
+></table
+><p
+>The <samp
+>make-elem</samp
+> and <samp
+>make-emptelem</samp
+> functions
+create SGML flow objects with the optional supply of attributes.</p
+><table
+border="1"
+bgcolor="#d0ffd0"
+><tr
+><td
+><pre
+>(define (make-elem gi #!optional (a '()) (content (process-children)))
+    (make element
+        gi:         gi
+        attributes: a
+        content))
+
+(define (make-emptelem gi #!optional (a '()))
+    (make empty-element
+        gi:         gi
+        attributes: a))</pre
+></td
+></tr
+></table
+><p
+>The <samp
+>part-depth</samp
+>, <samp
+>part-list</samp
+> and 
+<samp
+>part-list-name</samp
+> functions 
+calculate the depth of parts
+and subparts of the given node, and the formatted string.</p
+><table
+border="1"
+bgcolor="#d0ffd0"
+><tr
+><td
+><pre
+>(define (part-depth nd)
+    (length (hierarchical-number-recursive "part" nd)))
+    
+(define (part-list nd delim suffix)
+    (string-append
+        (format-number-list (hierarchical-number-recursive 
+                                "PART" 
+                                (if (equal? (gi nd) "PART")
+                                    (node-list-first (children nd))
+                                    nd))
+                            "1" delim)
+        (if suffix delim "")))
+        
+(define (part-list-name nd prefix)
+    (string-append (if prefix "#" "")
+                   "P" 
+                   (part-list (current-node) "-" #f)))&#13;</pre
+></td
+></tr
+></table
+><p
+>The <samp
+>first-descendant-sosofo</samp
+> function builds on the 
+assumed lazy evaluation of lists to efficiently return the content of 
+the node of the given generic identifier as a sosofo.</p
+><table
+border="1"
+bgcolor="#d0ffd0"
+><tr
+><td
+><pre
+>(define (first-descendant-sosofo giFind)
+    (literal                                            ;make a sosofo
+        (data                                           ;of the data
+            (node-list-first                            ;of the first
+                (select-elements
+                    (descendants                        ;of the descendants
+                        (if (gi (current-node))
+                            (current-node)
+                            (node-property 'docelem
+                                (current-node))))
+                    giFind)))))                         ;with the given name</pre
+></td
+></tr
+></table
+><h2
+><a
+name="P4"
+>4. Root Construction</a
+></h2
+><table
+border="1"
+bgcolor="#d0ffd0"
+><tr
+><td
+><pre
+>(root
+    (let* ((title-sosofo (first-descendant-sosofo "TITLE")))
+        (construct
+            (make simple-page-sequence
+                page-width:     page-width
+                page-height:    page-height
+                left-margin:    left-margin
+                right-margin:   right-margin
+                header-margin:  header-margin
+                footer-margin:  footer-margin
+                top-margin:     top-margin
+                bottom-margin:  bottom-margin
+                center-header:  (if-first-page (empty-sosofo) title-sosofo)
+                left-footer:    (first-descendant-sosofo "INFO")
+                right-footer:   (first-descendant-sosofo "DATE")
+                center-footer:  (page-number-sosofo)
+                (process-children))
+            (sosofo-append              ;assume HTML 3.2
+                (make document-type
+                    name:      "html"
+                    public-id: "-//W3C//DTD HTML 3.2 Final//EN")
+                (make formatting-instruction
+                    data:      (string-append "&#60;" 
+                                 "!-- CSL DSSSL Stylesheet - "
+                                 "http://www.CraneSoftwrights.com --&#62;
+&#60;"
+                                 "!-- " (time-&#62;string (time)) " --&#62;
+"))
+                (make-elem "html" '()
+                    (sosofo-append
+                        (make-elem "head" '()       ;HTML meta-data
+                            (make-elem "title" '()  ;set to script title
+                                title-sosofo))
+                        (make-elem "body" '()       ;add documentation
+                                (process-children))))))))</pre
+></td
+></tr
+></table
+><h2
+><a
+name="P5"
+>5. High-level Constructs</a
+></h2
+><p
+>The <samp
+>csldsssl</samp
+> and <samp
+>spec</samp
+> and <samp
+>part</samp
+>
+elements comprise the high-level constructs other than the
+<samp
+>dsssl</samp
+> element.</p
+><table
+border="1"
+bgcolor="#d0ffd0"
+><tr
+><td
+><pre
+>(element csldsssl
+    (sosofo-append      ;change the rendered order of the authored information
+        (process-first-descendant "title")
+        (toc)                                       ;injected table of contents
+        (process-first-descendant "spec")
+        (index)                                     ;injected index
+        (process-first-descendant "meta")))
+    
+(element spec
+    (process-children))
+    
+(element part
+    (process-children))</pre
+></td
+></tr
+></table
+><h2
+><a
+name="P6"
+>6. Display of Raw DSSSL Script</a
+></h2
+><p
+>The text of the DSSSL script itself is displayed 
+if the invocation is not engaged to suppress the display, as defined
+in <a
+href="#P2-1"
+>2.1. Command-line Manipulated Variables</a
+>.</p
+><table
+border="1"
+bgcolor="#d0ffd0"
+><tr
+><td
+><pre
+>(element dsssl
+    (if (not noscript)          ;if body text is being displayed
+        (construct              ;render verbatim
+            (make box
+                display?: #t
+                space-before:        default-font-size
+                start-indent:        box-start-indent
+                end-indent:          box-end-indent
+                keep-with-previous?: #t
+                (make paragraph
+                    start-indent:     0pt
+                    end-indent:       0pt
+                    lines:            'asis
+                    font-family-name: monospaced-font
+                    font-size:        monospaced-font-size
+                    (process-children)))
+            (make-elem "table" (if strict   ;then don't set background
+                                    '(("border" "1"))
+                                    '(("border" "1") ("bgcolor" "#d0ffd0")))
+                (make-elem "tr" '()         ;single row and cell
+                    (make-elem "td" '()
+                        (make-elem "pre")))))
+        (empty-sosofo)))        ;suppress it</pre
+></td
+></tr
+></table
+><h2
+><a
+name="P7"
+>7. Low-level Constructs</a
+></h2
+><p
+>The <samp
+>title</samp
+>, <samp
+>para</samp
+>, <samp
+>emph</samp
+>,
+<samp
+>partref</samp
+>, <samp
+>defn</samp
+> and <samp
+>samp</samp
+> elements
+comprise the low-level constructs.</p
+><table
+border="1"
+bgcolor="#d0ffd0"
+><tr
+><td
+><pre
+>(element (csldsssl title)                   ;the title of the entire stylesheet
+    (construct
+        (make paragraph
+            font-size:      main-title-font-size
+            font-weight:    'bold
+            quadding:       'center
+            (make score
+                type:       'after
+                (process-children)))
+        (make-elem "center" '()             ;use HTML heading levels
+            (make-elem "h1" '()
+                (make-elem "u")))))
+           
+(element title                              ;the title of a part
+    (let* ((depth      (part-depth (current-node)))
+           (report     (if (&#62; depth 5)
+                           (error (string-append "Part depth is too deep: "
+                                                 (number-&#62;string depth)
+                                                 " (maximum is 5 levels)."))
+                           ""))
+           (depth-list (part-list (current-node) "." #t))
+           (title-content (sosofo-append (literal depth-list)
+                                         (literal " ")
+                                         (process-children)))
+           (part-id    (attribute-string "ID" (parent (current-node)))))
+        (construct
+            (let* ((pts (list-ref title-font-sizes depth)))
+                (make paragraph
+                    space-before:    pts
+                    font-size:       pts
+                    font-weight:     'bold
+                    keep-with-next?: #t
+                    title-content))
+            (make-elem (string-append "h" (number-&#62;string (+ depth 1)))
+                       '()
+                (make-elem "a" 
+                           (list (list "name" 
+                                       (part-list-name (current-node) #f)))
+                    title-content)))))
+    
+(element para                               ;a typical paragraph
+    (construct
+        (make paragraph
+            space-before:           default-font-size
+            keep-with-previous?:    (if (equal? (child-number) 1)
+                                        #t
+                                        #f)
+            (process-children))
+        (make-elem "p")))
+
+(element emph                               ;emphasized content
+    (construct
+        (make sequence
+            font-weight: 'bold
+            (process-children))
+        (make-elem "b")))
+        
+(element defn                               ;the name of something being
+    (construct                              ;defined in the part
+        (make sequence
+            font-family-name: monospaced-font
+            (process-children))
+        (make-elem "samp")))
+        
+(element (para pre)                         ;pre-formatted text in a para
+    (construct
+        (make sequence                      ;don't break the line
+            font-family-name: monospaced-font
+            (process-children))
+        (make-elem "samp")))
+
+(element pre                                ;some pre-formatted text alone
+    (construct
+        (make paragraph                     ;lines of text on their own
+            space-before:           default-font-size
+            font-family-name:       monospaced-font
+            lines:                  'asis
+            keep-with-previous?:    (if (equal? (child-number) 1)
+                                        #t
+                                        #f)
+            (process-children))
+        (make-elem "pre")))
+
+(element extref                             ;a reference possibly outside doc
+    (construct
+        (make sequence
+            font-family-name: monospaced-font
+            (process-children))
+        (make-elem "a" `(("href" ,(attribute-string "HREF"))))))</pre
+></td
+></tr
+></table
+><h3
+><a
+name="P7-1"
+>7.1. Part Referencing</a
+></h3
+><p
+>A part of the documentation can be referenced, and in so doing, the
+referenced part number and title is rendered in a hyper-link to the part
+itself.</p
+><table
+border="1"
+bgcolor="#d0ffd0"
+><tr
+><td
+><pre
+>(element partref
+    (with-mode partref                      ;process the referenced element
+        (process-element-with-id (attribute-string "IDREF"))))
+
+(mode partref        
+    (element part
+        (process-first-descendant "TITLE")) ;only process the title child
+        
+    (element title                          ;display part number information
+        (let* ((part-id (attribute-string "ID" (parent (current-node))))
+               (content (sosofo-append
+                            (literal (part-list (element-with-id part-id) 
+                                     "." #t))
+                            (literal " ")
+                            (process-children))))
+            (construct                          ;as a hyperlink
+                (make score
+                    type: 'after
+                    (make link
+                        destination: (current-node-address)
+                        content))
+                (make-elem "a" 
+                           (list (list "href"
+                                       (part-list-name 
+                                            (element-with-id part-id) #t)))
+                    content))))
+)</pre
+></td
+></tr
+></table
+><h2
+><a
+name="P8"
+>8. Meta-data Information</a
+></h2
+><p
+>Render the information about the script in a mono-spaced font
+in order to distinguish the information from the body of the document.</p
+><table
+border="1"
+bgcolor="#d0ffd0"
+><tr
+><td
+><pre
+>(element meta               ;separate meta-data from rest with a rule
+    (construct
+        (empty-sosofo)      ;already placed in the footer
+        (sosofo-append
+            (make-emptelem "hr" '(("noshade" "noshade")))
+            (make-elem "pre" '()
+                (process-children)))))
+            
+(element date               ;display without ornamentation
+    (construct
+        (make paragraph
+            font-family-name: monospaced-font
+            (process-children))
+        (sosofo-append
+            (process-children)
+            (literal "
+"))))
+
+(element info               ;display without ornamentation
+    (construct
+        (make paragraph
+            font-family-name: monospaced-font
+            (process-children))
+        (sosofo-append
+            (process-children)
+            (literal "
+"))))</pre
+></td
+></tr
+></table
+><h2
+><a
+name="P9"
+>9. Default Construction Rule</a
+></h2
+><p
+>Handle all elements not explicitly handled by reporting an error
+that there exists no construction rule for the given element.</p
+><table
+border="1"
+bgcolor="#d0ffd0"
+><tr
+><td
+><pre
+>(default                        ;handle all elements not explicitly handled
+    (let* ((report              ;dummy needed for assignment, but not used
+            (if (equal? (element-number (current-node)) 1)
+                (error          ;trigger the DSSSL-defined error function
+                    (string-append "A construction rule for elements named '"
+                                   (gi (current-node))
+                                   "' isn't defined."))
+                "")))           ;don't repeat error for every occurence
+        (process-children)))</pre
+></td
+></tr
+></table
+><h2
+><a
+name="P10"
+>10. Table of Contents Processing</a
+></h2
+><p
+>The TOC is composed of entries to each of the parts, to all
+depth levels.</p
+><table
+border="1"
+bgcolor="#d0ffd0"
+><tr
+><td
+><pre
+>(define (toc)
+    (let* ((contents
+                (with-mode toc
+                    (process-node-list
+                        (select-elements
+                            (descendants 
+                                (node-property 
+                                    'docelem 
+                                    (node-property 
+                                        'grove-root (current-node))))
+                            "PART")))))
+        (construct
+            (sosofo-append
+                (make paragraph
+                    space-before:    part-title-font-size
+                    space-after:     default-font-size
+                    font-size:       part-title-font-size
+                    font-weight:     'bold
+                    keep-with-next?: #t
+                    (literal toc-string))
+                contents)
+            (sosofo-append
+                (make-elem "h3" '()
+                    (make-elem "a" '(("name" "toc"))
+                        (literal toc-string)))
+                (make-elem "p" '()
+                    contents)))))
+                
+(mode toc
+    (element part
+        (process-first-descendant "TITLE"))
+
+    (element title
+        (let* ((ref (literal (part-list (current-node) "." #t))))
+            (construct
+                (make paragraph
+                    start-indent:               (+ toc-start-indent
+                                                   toc-item-indent)
+                    first-line-start-indent:    (- toc-item-indent)
+                    end-indent:                 toc-end-indent
+                    (make line-field
+                        field-width:            toc-item-indent
+                        (make link
+                            destination: (current-node-address)
+                            ref))
+                    (make link
+                        destination: (current-node-address)
+                        (process-children))
+                    (make leader)
+                    (make link
+                        destination: (current-node-address)
+                        (current-node-page-number-sosofo)))
+                (let* ((name (part-list-name (current-node) #t)))
+                    (sosofo-append
+                        (let loop ((countdown (* 4 
+                                                 (part-depth (current-node)))))
+                            (if (equal? countdown 0)
+                                (empty-sosofo)
+                                (sosofo-append
+                                    (make entity-ref
+                                        name: "nbsp")
+                                    (loop (- countdown 1)))))
+                        (make-elem "a" `(("href" ,name))
+                            (sosofo-append
+                                ref
+                                (literal " ")
+                                (process-children)))
+                        (make-emptelem "br"))))))
+)</pre
+></td
+></tr
+></table
+><h2
+><a
+name="P11"
+>11. Index of Definitions Processing</a
+></h2
+><p
+>For those scripts choosing to use the <samp
+>defn</samp
+> element, an
+index of definitions is added to the end of the report.  Note that this
+version of the script does not sort the index.</p
+><p
+>First, be able to determine the precence of any <samp
+>defn</samp
+> element
+in the script.</p
+><table
+border="1"
+bgcolor="#d0ffd0"
+><tr
+><td
+><pre
+>(define (defn-present?)             ;boolean presence of any defn element
+    (&#62; (node-list-length
+            (node-list-first        ;hopefully save time with lazy evaluation
+                (select-elements
+                    (descendants 
+                        (node-property 
+                            'docelem 
+                            (node-property 
+                                'grove-root (current-node))))
+                    "DEFN")))
+       0))</pre
+></td
+></tr
+></table
+><p
+>Sort the definitions alphabetically (not supported at this time).</p
+><table
+border="1"
+bgcolor="#d0ffd0"
+><tr
+><td
+><pre
+>(define (sort-entries unsorted)
+    unsorted)</pre
+></td
+></tr
+></table
+><p
+>Format in a similar fashion to the TOC.</p
+><table
+border="1"
+bgcolor="#d0ffd0"
+><tr
+><td
+><pre
+>(define (index)
+    (if (defn-present?)
+        (let* ((entries-unsorted                            ;get all entries
+                    (select-elements
+                        (descendants 
+                            (node-property 
+                                'docelem 
+                                (node-property 
+                                    'grove-root (current-node))))
+                        "DEFN"))
+               (entries (sort-entries entries-unsorted))    ;determine order
+               (contents                                    ;calculate contents
+                    (with-mode index
+                        (process-node-list entries))))
+            (construct
+                (sosofo-append
+                    (make paragraph
+                        space-before:    part-title-font-size
+                        space-after:     default-font-size
+                        font-size:       part-title-font-size
+                        font-weight:     'bold
+                        keep-with-next?: #t
+                        (literal defn-string))
+                    (make table
+                        (make table-column width: (table-unit 1))
+                        (make table-column width: (table-unit 3))
+                        contents))
+                (sosofo-append
+                    (make-elem "h3" '()
+                        (make-elem "a" '(("name" "index"))
+                            (literal defn-string)))
+                    (make-elem "table" '()
+                        contents))))
+        (empty-sosofo)))
+        
+(mode index                         ;present a node formatted for an index
+    (element defn
+        (let* ((part     (ancestor "PART"))
+               (part-ref (process-node-list part))
+               (addr     (node-list-address part))
+               (name     (part-list-name (current-node) #t)))
+            (construct
+                (make table-row
+                    (make table-cell
+                        (make paragraph
+                            (make link
+                                destination: addr
+                                (process-children))))
+                    (make table-cell
+                        (make paragraph
+                            start-indent:   index-col-sep
+                            (make link
+                                destination: addr
+                                part-ref))))
+                (make-elem "tr" '()
+                    (sosofo-append
+                        (make-elem "td" '()
+                            (make-elem "a" `(("href" ,name))
+                                (process-children)))
+                        (make-elem "td" '()
+                            (make-elem "a" `(("href" ,name))
+                                part-ref)))))))
+                        
+    (element part
+        (process-first-descendant "TITLE"))
+        
+    (element title
+        (sosofo-append
+            (literal (part-list (current-node) "." #t))
+            (literal " ")
+            (process-children)))
+)</pre
+></td
+></tr
+></table
+><h2
+><a
+name="P12"
+>12. Distilling of the DSSSL Script</a
+></h2
+><p
+>These rules will process the DSSSL architectural version of the
+input document.  For JADE, this is engaged with the command line option:</p
+><pre
+>       -A dsssl</pre
+><p
+>The end result is a DSSSL stylesheet conforming to the
+unannotated version of this document model,
+without any documentation (only the concatenation of all body portions).</p
+><p
+>Note that code this will not preserve general entities for "&#60;" and "&#38;"
+characters, or any named general entities such as "RE".</p
+><table
+border="1"
+bgcolor="#d0ffd0"
+><tr
+><td
+><pre
+>(element dsssl-specification
+    (sosofo-append
+        (make document-type             ;declare the document type
+            name:      "style"
+            public-id: 
+              "+//ISBN 1-894049::CSL//DTD An Annotatable DSSSL Stylesheet//EN")
+        (process-children)))            ;the body of the specification
+        
+(element style-specification            ;satisfy heritage to single body
+    (process-children))
+
+(element style-specification-body       ;accommodate missing newlines
+    (make formatting-instruction
+        data: (string-append "
+" (data (current-node)) "
+")))
+
+; end of DSSSL</pre
+></td
+></tr
+></table
+><h3
+><a
+name="index"
+>Index of Definitions</a
+></h3
+><table
+><tr
+><td
+><a
+href="#P2-1"
+>noscript</a
+></td
+><td
+><a
+href="#P2-1"
+>2.1. Command-line Manipulated Variables</a
+></td
+></tr
+><tr
+><td
+><a
+href="#P2-1"
+>html</a
+></td
+><td
+><a
+href="#P2-1"
+>2.1. Command-line Manipulated Variables</a
+></td
+></tr
+><tr
+><td
+><a
+href="#P2-1"
+>strict</a
+></td
+><td
+><a
+href="#P2-1"
+>2.1. Command-line Manipulated Variables</a
+></td
+></tr
+><tr
+><td
+><a
+href="#P2-1"
+>metric</a
+></td
+><td
+><a
+href="#P2-1"
+>2.1. Command-line Manipulated Variables</a
+></td
+></tr
+><tr
+><td
+><a
+href="#P2-5"
+>(debug)</a
+></td
+><td
+><a
+href="#P2-5"
+>2.5. Non-standard Function Definitions</a
+></td
+></tr
+><tr
+><td
+><a
+href="#P2-5"
+>(if-first-page)</a
+></td
+><td
+><a
+href="#P2-5"
+>2.5. Non-standard Function Definitions</a
+></td
+></tr
+><tr
+><td
+><a
+href="#P2-5"
+>JADE SGML Syntax Flow Objects</a
+></td
+><td
+><a
+href="#P2-5"
+>2.5. Non-standard Function Definitions</a
+></td
+></tr
+><tr
+><td
+><a
+href="#P3"
+>construct</a
+></td
+><td
+><a
+href="#P3"
+>3. Support Procedures</a
+></td
+></tr
+><tr
+><td
+><a
+href="#P3"
+>make-elem</a
+></td
+><td
+><a
+href="#P3"
+>3. Support Procedures</a
+></td
+></tr
+><tr
+><td
+><a
+href="#P3"
+>make-emptelem</a
+></td
+><td
+><a
+href="#P3"
+>3. Support Procedures</a
+></td
+></tr
+><tr
+><td
+><a
+href="#P3"
+>part-depth</a
+></td
+><td
+><a
+href="#P3"
+>3. Support Procedures</a
+></td
+></tr
+><tr
+><td
+><a
+href="#P3"
+>part-list</a
+></td
+><td
+><a
+href="#P3"
+>3. Support Procedures</a
+></td
+></tr
+><tr
+><td
+><a
+href="#P3"
+>part-list-name</a
+></td
+><td
+><a
+href="#P3"
+>3. Support Procedures</a
+></td
+></tr
+><tr
+><td
+><a
+href="#P3"
+>first-descendant-sosofo</a
+></td
+><td
+><a
+href="#P3"
+>3. Support Procedures</a
+></td
+></tr
+><tr
+><td
+><a
+href="#P5"
+>csldsssl</a
+></td
+><td
+><a
+href="#P5"
+>5. High-level Constructs</a
+></td
+></tr
+><tr
+><td
+><a
+href="#P5"
+>spec</a
+></td
+><td
+><a
+href="#P5"
+>5. High-level Constructs</a
+></td
+></tr
+><tr
+><td
+><a
+href="#P5"
+>part</a
+></td
+><td
+><a
+href="#P5"
+>5. High-level Constructs</a
+></td
+></tr
+><tr
+><td
+><a
+href="#P7"
+>title</a
+></td
+><td
+><a
+href="#P7"
+>7. Low-level Constructs</a
+></td
+></tr
+><tr
+><td
+><a
+href="#P7"
+>para</a
+></td
+><td
+><a
+href="#P7"
+>7. Low-level Constructs</a
+></td
+></tr
+><tr
+><td
+><a
+href="#P7"
+>emph</a
+></td
+><td
+><a
+href="#P7"
+>7. Low-level Constructs</a
+></td
+></tr
+><tr
+><td
+><a
+href="#P7"
+>partref</a
+></td
+><td
+><a
+href="#P7"
+>7. Low-level Constructs</a
+></td
+></tr
+><tr
+><td
+><a
+href="#P7"
+>defn</a
+></td
+><td
+><a
+href="#P7"
+>7. Low-level Constructs</a
+></td
+></tr
+><tr
+><td
+><a
+href="#P7"
+>samp</a
+></td
+><td
+><a
+href="#P7"
+>7. Low-level Constructs</a
+></td
+></tr
+></table
+><hr
+noshade="noshade"><pre
+>1998-11-03 10:40
+&copy;CSL - http://www.CraneSoftwrights.com&#13;</pre
+></body
+></html
+>

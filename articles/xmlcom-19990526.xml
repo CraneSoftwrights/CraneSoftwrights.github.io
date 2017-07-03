@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml-stylesheet type="text/xsl" href="article-small.msxsl"?>
+<!--
+PUBLIC "+//ISBN 1-894049::CSL::Articles//DOCUMENT XML.COM Response Article
+        1999-05-28 07:50//EN"
+Copyright (C) 1999 Crane Softwrights Ltd. - http://www.CraneSoftwrights.com
+-->
+<!DOCTYPE article 
+   PUBLIC "+//ISBN 1-894049::CSL::Articles//DTD XML.COM Article//EN" 
+   "xmlcom.dtd">
+<article>
+<title> Vive la différence!</title>
+<author>
+<name email="xmlcom-article@CraneSoftwrights.com">G. Ken Holman</name>
+<affil url="http://www.CraneSoftwrights.com/links/xmlcom-info.htm">Crane Softwrights Ltd.</affil>
+</author>
+<copyright>1999 Crane Softwrights Ltd.</copyright>
+<section id="intro">
+<title>Introduction</title>
+<para>
+In Tim Bray's <extlink href="http://www.xml.com/xml/pub/1999/05/xsl/EdNote.html">editorial</extlink> to the <extlink href="http://www.xml.com/xml/pub/99/05/20">May 20, 1999 issue of XML.com</extlink>, publisher Dale Dougherty wisely states that the usefulness of alternating broadsides may be over. He is referring to <extlink href="http://www.xml.com/xml/pub/1999/04/holman/xsl.html">my article describing XSL</extlink> and <extlink href="http://www.xml.com/xml/pub/1999/05/xsl/xslconsidered.html">Michael Leventhal's article denouncing XSL</extlink>.  I didn't consider my original contribution a "broadside" and I don't wish this article to be one either, but I would like to position my first article and my own opinions about these technologies in light of a few of Michael's comments considering XSL as harmful, as I did not feel the need at the time to bare my feelings.</para>
+<para>
+Note that links in that editorial lead one to an publicly viewable and participatory forum of an excellent discussion of the comparison of XSL and CSS (I didn't copy those links here in order to reduce maintenance).  Much of the discussion is of high caliber and interest, and a number of technical issues identified by Michael have been discussed by people far more able than me.  I refer you to their deliberations and I will focus this contribution to some observations and non-technical arguments.</para>
+<para>
+As always, I'm not talking <emph>for</emph> the XSL community and I'm <emph>not</emph> on the XSL Working Group so I certainly should not be construed as talking for anyone else other than myself.  My interest in XSL is that I write about and teach the technology and I use it at times in my day-to-day work in an independent consultancy.  My objective in writing my first article in this series was to respond to Tim's request to have an article to help people understand what XSL is and how it is used; a logical extension of my teaching and my commercial training materials.</para>
+</section>
+<section id="first">
+<title>
+The Objectives of My First Article</title>
+<para>
+It was my intention to help people understand the role of XSL, how the technology relates to other technologies, and the basics of how the technology works.  While overly long (that's unfortunately my style) in my attempt to be illustrative, my objective was to relate sufficient tutorial information to supplement the reference-oriented working draft so that people could begin experimenting or using the technology.</para>
+<para>
+I included a number of links to publicly available resources and both non-commercial and commercial tutorials and training materials.  As well, the complete XSL source (for two experimental implementations; this is a working draft of a recommendation after all) for the article rendering was included.  With the generous permission of XMLNews, I also was allowed to include some work I've done there where I've used XSL and DOM/JavaScript in concert.</para>
+<para>
+My (obviously) failed attempt to defuse any controversy regarding CSS was to illustrate how I utilized XSL and CSS in my work with browser screens (and in the article itself).  I regret not having referred in more detail to my use of XSL and DOM/JavaScript in the article, but will do so below.</para>
+<para>
+In no way did I knowingly present XSL as a replacement for all uses of CSS/DOM/JavaScript.</para>
+<para>
+It is unfortunate that three days after submitting the article for final proofing and publishing, and one day before being made available on the web site, that the most recent working draft of XSL was issued and I was unable to do more than refer to where the information can be located.</para>
+<para>
+Finally, I was asked by XML.com to write an article regarding the IE5 implementation of XSL which, necessarily, focuses on the browser for rendering, hence I did not go into a lot of detail about print.  I feel the distinctions between browser rendering and print rendering will blur as screen technologies improve and people begin looking at books on their screen in familiar publishing presentations as printed books.</para>
+</section>
+<section id="interp">
+<title>
+My Interpretation of the Premise of Michael's Article</title>
+<para>
+Starting with a premise of necessarily doing things only one way will, by definition, refute any arguments in support of doing the same or similar things in other ways.</para>
+<para>
+I find this difficult to counter, and in my opinion, the entire article was built on the premise that XSL must be considered harmful because anything and everything that can be done by XSL can also be done by using the existing recommendations JavaScript, DOM and CSS.</para>
+<para>
+Arguments of easy or hard, pretty or ugly, obfuscating or clear, supportive or damaging are subjective and I won't presume to judge anyone who holds opinions in these wide spectra.</para>
+</section>
+<section id="noharm">
+<title>
+How I Consider XSL as Not Harmful</title>
+<para>
+(I often dislike the use of analogy, but here goes)  A carpenter has many tools in the toolbox, some of which accomplish the same task.  Perhaps a newer tool sits next to a traditional tool, each serving the same purpose, but each one geared to accomplish the same task using different approaches or having different benefits.  Perhaps one of these tools is easier for the carpenter to use than the other, but the other is useful in certain situations. Having created the first of these tools, the manufacturer's innovation (built on experience) was not stymied in the creation of new tools, nor was the carpenter blind to the utility or benefits of what new tools can offer.  Nor has the creation of newer tools always halted the manufacture of the older tools where the older tools still have a role in the carpenter's toolbox.</para>
+<para>
+XSL should not be considered harmful because it is only an alternative method of manipulating structured information, useful in certain situations (not every situation), more easily understood and used by certain people (not everyone), and built upon lessons learned in the information publishing industry and standards (not brought forward on a whim).</para>
+<para>
+The April release of XSL Formatting Objects working draft and the presentations by XSL developers at the recent WWW8 conference in Toronto both underscore the <emph>compatibility</emph> of XSL formatting objects with CSS formatting constructs. XSL <emph>builds on existing CSS properties</emph> in two non-conflicting ways: by providing finer piecemeal manipulation of identified sub-properties of CSS properties (in conjunction with the complete CSS properties themselves), as well as supplementing the CSS properties with print-oriented properties necessarily different to accommodate the different kinds of formatting demands for traditional paper layouts (be they actually rendered in hard copy, in audio, on high-performance screen displays, or otherwise).</para>
+<para>
+If it is perceived from the working draft that one needs a "preparatory brain transplant" to use XSL, then that only points to the need for tutorial publications (of which there are many for CSS).  Since February I have been teaching XSL and publishing training materials that have been well received by programmers and non-programmers alike.  I refer you again to the list of resources in my other article for excellent contributions from many members of the XSL user community.</para>
+<para>
+XSL is a new technology that is being developed to be available to be used in an open fashion. The lack of recommendation status has not prevented the creation of numerous implementations exploring this technology, nor suppressed interest in obtaining training materials and attending courses.  Until the period of experimentation and innovation is over and the recommendation is approved, I withhold comment regarding specific incompatible early-stage implementations other than to reiterate my strongly held view that in general all such experimentation and innovation should be distinguished from that which is published in the working drafts.</para>
+</section>
+<section id="diffs">
+<title>
+The Differences and the Opportunities to Co-exist</title>
+<para>
+I am a second-generation computer programmer and literally learned imperative programming under my father's tutelage when I was young.  I've been programming in the imperative style for almost 28 years and I understand the desire of many people to use an imperative language like JavaScript.  Global variables sure come in handy though I confess the side-effects of the use of global variables by different processes have certainly resulted in some long nights of debugging (recall I mentioned in my article my big bugaboo about stylesheets (and programming in general) is maintenance).</para>
+<para>
+But a few years ago I learned a new (at that time) technology called DSSSL that taught me about declarative programming and side-effect free languages.  Some readers may remember my embarrassing attempts to shoehorn my long-held practices into the new environment.  But my story echoes the testimony of others in the open discussion forum that the declarative style of programming can be learned and embraced.  Side-effect free programs do not break when they are mixed with other side-effect free programs (a maintenance bonanza!).  Declarative programs can be mixed with other declarative programs in predictable ways.  The use of XML as a syntax for XSL gives us all the maintenance benefits of a flexible markup language.  For large organizations with many contributors to a single coherent information management product, these combine to make XSL <emph>very</emph> attractive and I urge you to consider these important maintenance issues when deciding what strategy to use for deployment. Moreover, I believe strongly that non-programmers will have an easier time learning declarative programming than I did because of the baggage I carried from my imperative programming upbringing.  This is being borne out in the testimonials we read.</para>
+<para>
+I would characterize an imperative language as one where the writer is responsible for the minutiae of implementation within the framework of an algorithm (also written by the writer).  I characterize a declarative language as one where the interpreting engine is responsible for the minutiae of implementation within the framework of an algorithm written by the writer.  This minutiae includes optimization and accommodating nuances often beyond the capabilities of many writers.  Yes, there are complex declarative programs just as there are complex imperative programs.  There are also straightforward declarative programs just as there are straightforward imperative programs. I see no basis to come down on one side or the other as being better or worse in subjective measurements.  Let's provide more than one approach to our community of users rather than shoehorn everyone's capabilities and everyone's problems into a single approach.</para>
+<para>
+Considering again at the technology I presented in my first article, look closely at the <extlink href="http://www.xml.com/1999/04/holman/xmlnews-viewer/viewer.htm">
+XMLNews XML/XSL Demonstration</extlink>.  In the XSL stylesheets you can examine for yourself, specifically <extlink href="http://www.xml.com/1999/04/holman/xmlnews-viewer/support/controls.msxsl"><monospc>http://www.xml.com/1999/04/holman/xmlnews-viewer/support/controls.msxsl</monospc></extlink>, you will see how XSL patterns trigger the creation of JavaScript with DOM functionality.  Each of the control files are XML files with associated XSL stylesheets.  The stylesheets have templates of HTML and templates of JavaScript that combine, based on the XML source, to dynamically create as long or as short a JavaScript program as is required to meet the needs of the data.  Modifying the XML source, without touching the XSL stylesheets, will trigger the creation of as much JavaScript as is required to meet the need.</para>
+<para>
+I feel this illustrates the compatibility of XSL with DOM/JavaScript, showing where each can be used for different purposes to be combined to a coherent result.  XML is driving the dynamic synthesis of the source of the program being executed in the browser.</para>
+<para>
+Finally, the differences of XSL formatting objects and flow objects to CSS properties gives layout control to meet the needs of traditional pagination presentations not considered by the CSS designers.  The principles behind the additions are based on years of experience with other technologies.  Flowing information to different visible regions (including header, footer, and footnote regions to name a few) requires a formatting model with queues of layout information and inter-region co-operation not possible in a formatting model designed primarily for a browser screen.  Common characteristics are named and utilized in a common fashion between CSS and XSL. An interesting development I urge you to follow is <extlink href="http://www.jtauber.com/fop/">
+James Tauber's FOP</extlink>, demonstrated at WWW8 translating an instance of XSL formatting objects directly to PDF.
+</para>
+</section>
+<section id="concl">
+<title>
+Conclusion</title>
+<para>
+In my original article I described how the XSL technology works and illustrated how XSL can be used in partnership with CSS, DOM and JavaScript.</para>
+<para>
+I am not swayed by Michael's article to believe that XSL represents a threat to these other technologies, nor that XSL will have little or insufficient acceptance in our growing and evolving community of users.</para>
+<para>
+I maintain there is no real controversy to duke out in the industry because the loud ruckus I refer to is being heard repeatedly from the same small contingent and appears to not be very prevalent, nor does it prevent people from discovering the utility of XSL.</para>
+<para>
+I remain convinced we can still have it both ways and have different tools for use in different purposes to be wielded by different stakeholders and different types of users in our community.</para>
+<para>
+<emph>Vive la différence (long-live the difference)!</emph></para>
+</section>
+</article>

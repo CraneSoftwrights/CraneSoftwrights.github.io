@@ -1,0 +1,153 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<!-- Created by JADE transform of SGML to HTML: 2001-02-15T09:06:26 --><HTML
+><TITLE
+>Some Ad-hoc Questions Regarding Markup</TITLE
+><BODY
+><TABLE
+><TR
+><TD
+><H1
+>Some Ad-hoc Questions Regarding Markup</H1
+><P
+>Author: G. Ken Holman, Crane Softwrights Ltd.<BR>Date: $Date: 2001/02/15 14:06:20 $(UTC)</P
+><P
+><I
+>Copyright (C) 2001 Crane Softwrights Ltd.</I
+><BR><A
+HREF="http://www.CraneSoftwrights.com"
+>http://www.CraneSoftwrights.com</A
+><BR></P
+></TD
+><TD
+><IMG
+ALT=" "
+SRC="http://www.CraneSoftwrights.com/vbar.gif"
+WIDTH="1"
+HEIGHT="200"></TD
+><TD
+><IMG
+ALT="Crane Logo"
+width="140"
+height="113"
+SRC="http://www.CraneSoftwrights.com/crane.gif"></TD
+></TR
+></TABLE
+><H2
+>Table of Contents</H2
+><TABLE
+><TR
+><TD
+>1 </TD
+><TD
+><A
+HREF="#ID-1"
+>Questions from Jake Knoppers 2001-02-08 18:31</A
+></TD
+></TR
+><TR
+><TD
+>2 </TD
+><TD
+><A
+HREF="#ID-2"
+>Answer Posted to Discussion List</A
+></TD
+></TR
+></TABLE
+><H2
+><A
+NAME="ID-1"
+>1: Questions from Jake Knoppers 2001-02-08 18:31</A
+></H2
+><P>Ken,<P>In many ISO/IEC standardization areas as well as in "standardization" consortia I note the use of the term "XML". Could you provide an "SC34" looking out perspective on these development, i.e. how JTC1/SC34 looks at them?<P>Secondly, could you also provide a few comments on XML as a meta-markup language, its work on processing languages, stylesheets, linking, etc. ?<P>How are SGML, HTML and XML related? Can I use one of them to create specific markup language?<H2
+><A
+NAME="ID-2"
+>2: Answer Posted to Discussion List</A
+></H2
+><P>Jake, thank you for your questions, as I think it often helps to get a broad overview of things.  Unfortunately, my short response has to be a bit shallow in order to be broad enough in my time available.  I cover the topics you ask in my training material and instructor-led training sessions in more depth, but hopefully this overview will address your immediate requirements for a response.<P>This is *not* an official CAC/ISO/IEC JTC 1/SC 34 response, this is only my private opinions being expressed in response to your private question to me about how I see the roles of these technologies and the roles of the organizations.<P>The Extensible Markup Language (XML) <A
+HREF="http://www.w3.org/TR/REC-xml"
+><SAMP
+>http://www.w3.org/TR/REC-xml</SAMP
+></A
+> is defined by and effectively "owned" by the W3C Consortium (read: "MIT").  It is a meta-markup language, or a generalized markup language, not really a markup language.  Using XML, as with using the Standard Generalized Markup Language (SGML), one marks up textual information using a "vocabulary", a collection of hierarchically organized elements and attributes, that mean something to some process acting on the information.  The vocabulary is the markup language, while XML is the meta-markup language one uses to define the markup language and/or mark up information accordingly.<P>What marked-up information "means" to any given process is exactly what the process wants it to mean ... there are no methods of specifying or standardizing the semantics of information, other than in prose intended for a human to tell them what the *intended* meaning is.  This is a very important nuance that is often overlooked.<P>So, you ask "How are SGML, HTML and XML related?"  SGML is a very powerful, flexible, expressive meta markup language giving a lot of control at the lexical, syntactic and model levels to the user to mark up their information.  Such grandiose functionality is very expensive to implement in tools.  XML simplifies the requirements by solidifying the lexical environment, simplifying the syntactic environment, and allowing the model to be implicit rather than explicit as with SGML.  Without going into the technical details, these apparent "restrictions" actually make XML far far easier to define, implement and deploy.  To accommodate these exploitable features, SC34 published a technical corrigendum to SGML such that all of XML can successfully be specified as an application profile of SGML.  Note, however, that no such profile has been formally published as a separate specification of XML within the ISO ... it is debatable if doing this helps.<P>The HyperText Markup Language (HTML) <A
+HREF="http://www.w3.org/TR/REC-html40/"
+><SAMP
+>http://www.w3.org/TR/REC-html40/</SAMP
+></A
+> is a vocabulary of elements and attributes used for relating information and painting browser screens, formally defined using the modeling language of SGML.  The Extensible HyperText Markup Language (XHTML) <A
+HREF="http://www.w3.org/TR/xhtml1"
+><SAMP
+>http://www.w3.org/TR/xhtml1</SAMP
+></A
+> is a vocabulary of elements and attributes, formally defined using the modeling language of XML.  In both cases, the modeling language is the set of declarations and comments in the Document Type Definition (DTD).  The declarations define the structure of the vocabulary while the comments define the intended semantics.  All along SGML has documented that the comments of the DTD are an essential component to the document model in order that the intended semantics of the information be communicated to users.<P>Anyone can define their own vocabulary of elements and attributes and then mark up their information according to that vocabulary.  If they want the XML 1.0 processor to validate the structure of the information according to a document model, a DTD is developed for that vocabulary.  There are already hundreds, if not thousands, of XML vocabularies whose elements and attributes are defined by DTDs.<P>Many users of structured information have expressive document modeling requirements that go beyond the features and functionality of Document Type Definitions as defined in XML 1.0.  The effort at the W3C to express some of these requirements is XML Schema <A
+HREF="http://www.w3.org/TR/xmlschema-0/"
+><SAMP
+>http://www.w3.org/TR/xmlschema-0/</SAMP
+></A
+>.  There are numerous other efforts to express document modeling requirements, also known as document grammars, including RELAX <A
+HREF="http://www.xml.gr.jp/relax/"
+><SAMP
+>http://www.xml.gr.jp/relax/</SAMP
+></A
+> (a Japanese National Body submission), TREX <A
+HREF="http://www.thaiopensource.com/trex/"
+><SAMP
+>http://www.thaiopensource.com/trex/</SAMP
+></A
+> (a submission by the preeminent industry expert James Clark; currently being considered as a technical committee project under the OASIS industry consortium), and Hook (a grassroots structure specification language developed by Rick Jellife the creator of Schematron <A
+HREF="http://www.ascc.net/xml/resource/schematron/schematron.html"
+><SAMP
+>http://www.ascc.net/xml/resource/schematron/schematron.html</SAMP
+></A
+>, an assertion specification language).  As you can see, there are already many ways to define a grammar for XML documents, and I'm quite sure we will see many more that will meet requirements not currently met by those methods that are available today.<P>Note that XML Schema is defined as an XML vocabulary to define XML vocabularies.  An important aspect of XML Schema is the ability to prescribe the format of information content (the data types).  Both RELAX and TREX normatively reference the use of XML Schema's data typing facilities.<P>A quick comment about Schematron ... this is not a grammar specification language as are DTDs, XML Schema, RELAX, TREX and Hook.  Using Schematron, one specifies assertions that must be true about an instance of marked up information, validated after creation, not during creation (though authoring tools could take advantage of the set of assertions during the creation process to assist the author in maintaining the information according to the assertions).<P>You ask about linking and stylesheets.  There are W3C Recommendations published and in development that capture agreed-upon semantics of linking and styling.  <P>Recognizing that the user community can agree upon common semantics of what it means, or what one wishes to express, when associating (linking) two or more pieces of information, the W3C is coming up with Recommendations one would use when modeling their information.  One would incorporate into their document models the agreed-upon mini-vocabularies according to the published semantics of linking and thereby allow their information to be accommodated by vendor tools that implement these semantics.  If everyone had their own ideas about linking, which they are more than welcome to have and use if they wish, then they would be burdened with writing the tools to implement their semantics.  By adopting accepted semantics, they can take advantage of vendor tools implementing the W3C Recommendations, and have their information more portable to other users who have also adopted the same semantics.<P>Actually, this comment is true about modeling as well.  Users are *not* required to use a modeling language defined by the W3C or anyone else ... it is just that if they choose to use some other modeling language they have to identify vendor tools or create their own tools that accommodate that other modeling language.  There are no precepts that require users of XML to use any tools whatsoever.<P>Stylesheet technology is being recommended by W3C and implemented by vendors.  The subject of a whole other discussion, suffice it to say that the W3C has created two new vocabularies for stylesheets.  One is a vocabulary that one uses to specify how structured information is converted from one vocabulary to another (the user's vocabulary into any result desired).  The other is a vocabulary of pagination semantics.  Again, the user can choose to define their own transformation and pagination semantics, but if they choose to adopt the W3C-defined semantics then they can take advantage of vendor tools that implement these concepts and vocabularies.<P>Regarding processing languages, there are no restrictions on what programming languages can be used to work with XML, other than the availability of the off-the-shelf methods by which XML documents are processed by the applications that are written.  One could write their own XML processor to integrate into their applications, but there are many already available for free for numerous languages.  To date, two methods in particular have become popular: a tree-oriented approach to the information using the Document Object Model (DOM) <A
+HREF="http://www.w3.org/TR/DOM-Level-2"
+><SAMP
+>http://www.w3.org/TR/DOM-Level-2</SAMP
+></A
+>, and a stream-oriented approach to the information using the Simple API for XML (SAX) <A
+HREF="http://www.megginson.com/SAX/"
+><SAMP
+>http://www.megginson.com/SAX/</SAMP
+></A
+>.  As I stated briefly above, how an application treats information will ultimately decide what the semantics are of that information for that particular treatment.  I think formalized semantic description is still a long way away.<P>SGML will not go away, as some people need the expressiveness offered by the flexibility and power of all the features of SGML.  I feel the role of SC34 is to continue the development of the SGML family of recommendations, keeping in mind at all times the applicability of the developments to the community of XML users.  I even think that for every new development in SC34 the committee has a responsibility to ensure an XML expression of the same functionality isn't precluded, whether SC34 undertakes the XML expression itself or not.  Witness for example how SGML Topic Maps (ISO/IEC 13250:2000) from SC34 has initiated the industry development of XML Topic Maps <A
+HREF="http://www.TopicMaps.org"
+><SAMP
+>http://www.TopicMaps.org</SAMP
+></A
+>.<P>In eCommerce situations, we will see (and have already seen!) a plethora of private and public ideas about what the semantics of commerce are.  These semantics will be expressed in vocabularies that will be supported by tools prepared to implement and act on those semantics.  As I've tried to underscore above, there are no "right" or "wrong" semantics ... there are just "agreed-upon" semantics between users.  If two users cannot agree on the semantics of doing business, no markup language in the world is going to help them.  <P>The ebXML joint project <A
+HREF="http://www.ebxml.org/"
+><SAMP
+>http://www.ebxml.org/</SAMP
+></A
+> between UN/CEFACT <A
+HREF="http://www.unece.org/"
+><SAMP
+>http://www.unece.org/</SAMP
+></A
+> and OASIS <A
+HREF="http://www.oasis-open.org/"
+><SAMP
+>http://www.oasis-open.org/</SAMP
+></A
+> brings together commerce experts from around the world to develop commerce-related vocabularies expressing agreed-upon semantics for commerce as understood by the participants.  The objective is to create a set of robust interoperable vocabularies that businesses and organizations around the world can agree upon such that they can interchange commerce information on a global basis.<P>So, how will you express those semantics when you want to create a markup language?  Using elements and attributes to mark up your information reflecting the meaning of your data within the confines of the agreed-upon semantics.  How will you (or others) *formalize* the markup language?  Using whatever grammar modeling language you or they wish that accommodates the needs.  Who will standardize the modeling languages to be used?  Anyone at all: W3C, ISO, James, Rick, Company X, Vendor Y ... there are no technical restrictions on the definitions of grammars and tools.  Which are the "right modeling languages" to use?  Whichever are acceptable to the parties engaging in the interchange of information.  <P>And the interchange of information is what it all comes down to.<P>Jake, you are welcome to share this response with anyone, but please ensure anything you use directly from this response is attributed what I've said here.  I've copied this response to <A
+HREF="http://www.CraneSoftwrights.com/articles/qmarkup.htm"
+><SAMP
+>http://www.CraneSoftwrights.com/articles/qmarkup.htm</SAMP
+></A
+> as a public document and will update the document based on feedback.  I hope this helps.<P>(C) Copyright 2001 Crane Softwrights Ltd. and G. Ken Holman <A
+HREF="http://www.CraneSoftwrights.com/bio/gkholman.htm"
+><SAMP
+>http://www.CraneSoftwrights.com/bio/gkholman.htm</SAMP
+></A
+> This original work may only be quoted or used if attributed to the author.  Private comments are welcome at <A
+HREF="mailto:feedback@CraneSoftwrights.com"
+><SAMP
+>mailto:feedback@CraneSoftwrights.com</SAMP
+></A
+> anytime.<HR><PRE
+>Some Ad-hoc Questions Regarding Markup
+G. Ken Holman, Crane Softwrights Ltd.
+$Date: 2001/02/15 14:06:20 $(UTC)</PRE
+></BODY
+></HTML
+>

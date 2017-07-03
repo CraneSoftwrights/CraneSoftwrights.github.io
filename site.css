@@ -1,0 +1,121 @@
+/*
+ Cascading style sheet for Crane's web site
+ $Id: site.css,v 1.21 2013/06/22 21:24:42 admin Exp $
+*/
+
+/*============================= Body stuff ==================================*/
+
+.body   { background-image: url("cranebigclip.gif");
+          background-repeat:no-repeat;
+          background-position:100% 45pt;
+          background-attachment:fixed;
+          margin: 1em;
+          background-color:white; color:black;
+	}
+
+table,
+.global { font-family: Verdana, Arial, Helvetica, sans-serif;
+          font-size: 10pt; line-height:13pt }
+
+#header { position:fixed;
+          width: 100%;
+          height: 113px;
+          top: 0;
+          right: 0;
+          bottom: auto;
+          left: 0; }
+
+#body { position:relative;
+        top:113px; bottom:auto; right:0; left:0 }
+
+.nostate:link    { color: blue } /* homogenize all same-page links */
+.nostate:visited { color: blue }
+
+                          /* distinguish links that open up target windows */
+.externalt { border-color:#e0ffe0; border:dotted; border-width:0px 1px 1px 1px;
+            text-decoration: none; padding-left:2pt; padding-right:2pt;
+            border-bottom-style:solid; border-top-style:hidden }
+
+.external { border-color:blue; border-bottom-style:dashed;
+            border-width:0px 1px 1px 2px;
+            text-decoration: none;  }
+.external:visited { border-color:purple }
+.noborder { border: none }
+
+.timestamp { font-size:80%; font-weight:bold }
+
+.legend  { line-height:1em }
+.legenda { color: blue }
+
+.robots:link    { color:white; font-size:1pt }
+.robots:visited { color:white; font-size:1pt }
+
+/*======================== HTML constructs ==================================*/
+
+td { font-family: Verdana, Arial, Helvetica, sans-serif; }
+
+th { font-family: Verdana, Arial, Helvetica, sans-serif; }
+
+h2 { font-size:120%; font-weight:bold; 
+     margin-bottom:-12pt; margin-top:18pt; margin-right:48pt
+   }
+
+h3 { font-size:110%; font-weight:bold; 
+     margin-bottom:-11pt; margin-top:16.5pt; margin-right:48pt
+   }
+
+h4 { font-size:1em; font-weight:bold; 
+     margin-bottom:-10pt; margin-top:15pt; margin-right:48pt
+   }
+
+h5 { font-size:1em; font-weight:bold; 
+     margin-bottom:-10pt; margin-top:15pt; margin-right:48pt
+   }
+
+h6 { font-size:1em; font-weight:bold; 
+     margin-bottom:-10pt; margin-top:15pt; margin-right:48pt
+   }
+
+ul li { list-style-type:disc; margin-top:0pt; margin-bottom:0pt }
+
+p  { margin-top:1em; margin-bottom:0pt }
+
+/*====================== banners and letterhead =============================*/
+
+.bannerTop {  background-color:#f4f4f4
+           }
+
+.banner { text-align:center; line-height:1.5em;
+        }
+
+.bannerEntry { padding-left:12pt; padding-right:12pt; white-space:nowrap;
+               font-style:italic }
+
+.letterheadCompany { font-family: Times, serif; font-size:140%;
+                     font-weight:bold
+                   }
+.letterheadAddress { font-family: Times, serif; font-size:120%
+                   }
+.letterheadSite    { padding-top:10pt; text-align:center;
+                   }
+.letterheadTopic   { font-size:180%; font-weight:bold; line-height:120%;
+                     padding-top:10pt; padding-bottom:5pt
+                   }
+.letterheadOther   { padding-top:5pt; font-size:1em
+	           }
+
+.footerLinkHeadings { font-size:80%; font-weight:bold }
+
+.button
+	{color:white; background-color: #FFA500;
+	font-size:80%; font-weight:bold;
+	line-height:2.4em;
+	white-space:nowrap;
+	padding:1px 2px 2px 2px;
+	text-decoration:none;
+	border:1px #960 solid;
+	}
+.button:hover
+	{color:white; background-color: #F88C00;}
+
+/* end of file */

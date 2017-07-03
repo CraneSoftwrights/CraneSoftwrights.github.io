@@ -1,0 +1,516 @@
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   
+      <title>Back of the Book Index - Crane Softwrights Ltd.</title>
+      <link type="text/css" rel="stylesheet" href="../../site.css">
+      <link rel="shortcut icon" href="../../favicon.ico">
+      <meta name="description" content="Crane Softwrights Ltd. is a Computer Systems Analysis consulting and training company specializing in  structured text processing using the XML and SGML families of technologies.">
+      <meta name="keyword" content="XML Consulting - W3C XML">
+      <meta name="keyword" content="XSL Consulting - W3C XSL">
+      <meta name="keyword" content="XSL Training - W3C XSL">
+      <meta name="keywords" content="SGML,DSSSL,XML,XSLT,XSL-FO,XQuery,UBL,code list, Universal Business Language, OmniMark,consulting,training, Crane,Softwrights,ISO,Ottawa,Ontario,Canada,Ottawa">
+   </head>
+   <body class="body global"><a name="_top"></a><table class="global" summary="banner navigation">
+         <tr valign="top">
+            <td width="100%">
+               <div align="center" class="bannerTop banner"></div>
+               
+                 
+                 
+                 
+               <h2>Back of the Book Indexes using XSL-FO 1.0</h2>
+               
+               
+               <h3>Introduction</h3>
+               
+               
+               <p>This describes a fully unattended batch methodology for
+                  producing "back of the book indexes" using XSL-FO 1.0 and a free
+                  tool available on the Web. We hope that other free tools can be
+                  identified for use in this process, and we will maintain this page
+                  with the list as they are found.
+               </p>
+               
+               
+               <p>Certainly such functionality will be available in a future
+                  version of XSL-FO, but this methodology can help users of XSL-FO
+                  1.0.
+               </p>
+               
+               
+               <p>One might think after a quick read of XSL-FO that indexing is
+                  implicitly supported, but this turns out not to be the case.
+                  Generating tables of content is very straightforward, because each
+                  table of content entry has a single page number citation. There is
+                  no need to do arbitration between multiple page number citations
+                  for a single entry.
+               </p>
+               
+               
+               <p>This need for arbitrating page number citations is the problem
+                  with supporting a back of the book index in XSL-FO. The
+                  transformation process does not know where the page breaks will
+                  occur in the formatting process. If a particular index entry is
+                  cited a number of times on a single page, it is unsightly to have
+                  the page number repeated in the rendering. It is also common to
+                  have citations found on each of a sequence of pages rationalized
+                  into a range.
+               </p>
+               
+               
+               <p>Moreover, there is no single algorithm for massaging a
+                  collection of page number citations into solitary page numbers,
+                  page ranges or a combination of the two that might overlap. Perhaps
+                  a particular citation should be in bold font to reflect some
+                  semantic of why the page number is being cited, and that it should
+                  not participating in range reduction. There may be other reasons
+                  specific to the book why particular citations should not
+                  participate in range reduction or should be rendered with
+                  specialized formatting.
+               </p>
+               
+               
+               <p>For these reasons, it will be a challenge to standardize a
+                  particular implementation of an index accepted by all users or
+                  utilized to produce all kinds of indexes needed.
+               </p>
+               
+               
+               <p>This methodology describes an unattended batch approach that
+                  puts the massaging of index entries into the hands of the user of
+                  XSL-FO such that a fully customized index can be rendered on an
+                  arbitrary document. This is a proven methodology and has been put
+                  in place for Crane's next publishing cycle of its electronic
+                  books.
+               </p>
+               
+               
+               <h3>The methodology</h3>
+               
+               
+               <p>This is a two-pass methodology, determining during the first
+                  pass what the index information is to be added, and then
+                  reproducing the original results with the index information as an
+                  addition input to the formatting transformation. The same
+                  stylesheet is used for both passes, with the different behaviors
+                  triggered by the absence or presence of the filename for an XML
+                  expression of the index information.
+               </p>
+               
+               
+               <p>The following diagram summarizes the flow of information in this
+                  methodology:
+               </p>
+               
+               
+               <center><img alt="Flow diagram" src="bbi-flow.gif"></center>
+               
+               
+               <h4>Step 1 - Produce index instance in FO</h4>
+               
+               
+               <p>This runs the original document through the first pass,
+                  prefixing the formulated body pages with extractable index
+                  information and page number citations.
+               </p>
+               
+               
+               <p>The extractable index is rendered as composed markup, exposing
+                  the angle brackets and all aspects of XML markup onto the canvas.
+                  The demonstration places page number citations between the
+                  attribute quotes such that the composed version of the page will
+                  have decimal page numbers in the attributes.
+               </p>
+               
+               
+               <p>For example, the following FO:</p>
+               
+               <pre>
+ &lt;inline keep-together="always"&gt;&amp;lt;p &lt;/inline&gt;
+ &lt;inline keep-together="always"&gt;s="&lt;page-number-citation 
+                                   ref-id="d0e16"/&gt;"/&amp;gt;&lt;/inline&gt;
+</pre>
+               
+               <p>uses inline keeps in order to ensure the line breaks will not
+                  disturb the well-formed XML syntax and will render the following on
+                  the canvas:
+               </p>
+               
+               <pre>
+  &lt;p s="17"/&gt;
+</pre>
+               
+               <p>which can then be extracted by a tool that reads the PDF file
+                  and writes out simple text. The stylesheet writer can make this
+                  markup as simple or as complex as desired in order to implement any
+                  desired semantics for normalizing page ranges or perhaps
+                  highlighting particular page entries.
+               </p>
+               
+               
+               <p>Note the first page sequence of the body must have an explicit
+                  <samp>initial-page-number="1"</samp> property otherwise the prefix
+                  of the two index pages would skew the proper page number of the
+                  body since the final result doesn't have this prefix. Since this
+                  page number is odd, the extractable index will always take up an
+                  even number of pages. The demonstration assumes the index
+                  information, when composed, will fit in less than two pages.
+               </p>
+               
+               
+               <p>Note that Crane's flow happens to put a dummy page at the end
+                  where the index belongs, so that page number citations in the body
+                  to the first index page are resolved in the first pass with the
+                  correct page number.
+               </p>
+               
+               
+               <h4>Step 2 - Produce PDF from FO</h4>
+               
+               
+               <p>This runs the XSL-FO engine, creating the PDF page images and
+                  resolving the page number citations found in the exposed XML. The
+                  resulting attribute values displayed on the canvas have true page
+                  numbers.
+               </p>
+               
+               
+               <p>Note the page dimensions used are exaggerated for two
+                  reasons
+               </p>
+               
+               
+               <ul>
+                  
+                  <li>
+                     
+                     <p>the more real-estate that is available, the more index
+                        information will fit on the two prefix pages (any information on a
+                        third page would be lost in the next step)
+                     </p>
+                     
+                  </li>
+                  
+                  
+                  <li>
+                     
+                     <p>a page with an exaggerated size would not be mistakenly used in
+                        a production environment
+                     </p>
+                     
+                  </li>
+                  
+               </ul>
+               
+               
+               <p>The Crane stylesheets use an exaggerated page length of 200
+                  inches and a page width of 50 inches to get a lot of real estate to
+                  work with.
+               </p>
+               
+               
+               <h4>Step 3 - Extract XML instance from PDF</h4>
+               
+               
+               <p>The index information is at the beginning of the document
+                  because the length of the document is unknown and the tool being
+                  used cannot address the end of the document.
+               </p>
+               
+               
+               <p>The free <samp>pdftotext</samp> tool is part of the 
+                  
+                  Xpdf
+                   package version 2.01 from <a target="_blank" href="http://www.foolabs.com/xpdf/" class="external "><samp>
+                        http://www.foolabs.com/xpdf/</samp></a>. This tool extracts as many
+                  pages as requested into a simple text file, and follows each page
+                  with a form-feed (hex <samp>0C</samp>) character. In this case, it
+                  is assumed all the information will be on the first two pages (the
+                  ones with the exaggerated page sizes). We also found the use of the
+                  Courier font produced the most consistent results with this tool.
+                  Note the use of arguments in this example:
+               </p>
+               
+               <pre>
+pdftotext -f 1 -l 2 -layout file.pdf file.txt
+</pre>
+               
+               <p>invokes the process for only the first two pages (first=1 and
+                  last=2) and engages a mode of operation that produces clean text
+                  for large files.
+               </p>
+               
+               
+               <p>An <samp>egrep</samp> pass removes all lines that contain
+                  form-feeds, changing the extracted text into a well-formed XML
+                  file.
+               </p>
+               
+               
+               <p>We welcome any suggestions for alternative tools to extract the
+                  text of a PDF file as a simple text file, and will maintain the
+                  list in the section below.
+               </p>
+               
+               
+               <h4>Step 4 - Massage index information</h4>
+               
+               
+               <p>This converts the raw collection of index information into that
+                  subset to be rendered. Duplicate page numbers are removed and
+                  sequential page numbers are changed into a range. Crane's
+                  stylesheets also distinguish important page citations, such as term
+                  definitions, and protect these from being subsumed by a range.
+               </p>
+               
+               
+               <h4>Step 5 - Produce final instance in FO</h4>
+               
+               
+               <p>This reformats the entire document, but doesn't add the prefix
+                  because of the presence of an XML file of massaged index
+                  information. The index information from the external file is
+                  formatted just as if it had been authored or found as a part of the
+                  main body of XML. Crane's stylesheets introduce hyperlinks from the
+                  index entries to the pages on which the indexed items are found
+                  (this is not part of this simple demo).
+               </p>
+               
+               
+               <h4>Step 6 - Produce PDF from FO</h4>
+               
+               
+               <p>The final instance is formatted and there are no pages with
+                  exaggerated sizes.
+               </p>
+               
+               
+               <h3>The demo</h3>
+               
+               
+               <p>The latest package of demonstration files is: <a href="bbi-20021213-0250.zip"><samp>
+                        bbi-20021213-0250.zip</samp></a></p>
+               
+               
+               <p><samp>The demonstration files include all input, temporary and
+                     output files in a sample run of the methodology. The files in the
+                     demo are as follows:</samp></p>
+               
+               
+               <ul>
+                  
+                  <li>
+                     
+                     <p><samp><samp>doc.bat</samp> choreographs the process</samp></p>
+                     
+                  </li>
+                  
+                  
+                  <li>
+                     
+                     <p><samp>doc.xml</samp> is the source document to be published
+                     </p>
+                     
+                  </li>
+                  
+                  
+                  <li>
+                     
+                     <p><samp>doc.xsl</samp> is the stylesheet
+                     </p>
+                     
+                  </li>
+                  
+                  
+                  <li>
+                     
+                     <p><samp>doc-index.xsl</samp> prepares the index information
+                     </p>
+                     
+                  </li>
+                  
+                  
+                  <li>
+                     
+                     <p><samp>doc.pdf</samp> is the final output
+                     </p>
+                     
+                  </li>
+                  
+                  
+                  <li>
+                     
+                     <p><samp>temp-raw.fo</samp> is the first pass XSL-FO output with
+                        the raw index information
+                     </p>
+                     
+                  </li>
+                  
+                  
+                  <li>
+                     
+                     <p><samp>temp-raw.pdf</samp> is the formatted result of the raw
+                        index information
+                     </p>
+                     
+                  </li>
+                  
+                  
+                  <li>
+                     
+                     <p><samp>temp-raw-index.txt</samp> is the raw index information as
+                        a text file
+                     </p>
+                     
+                  </li>
+                  
+                  
+                  <li>
+                     
+                     <p><samp>temp-raw-index.xml</samp> is the raw index information as
+                        an XML file
+                     </p>
+                     
+                  </li>
+                  
+                  
+                  <li>
+                     
+                     <p><samp>temp-index.xml</samp> is the massaged index
+                        information
+                     </p>
+                     
+                  </li>
+                  
+                  
+                  <li>
+                     
+                     <p><samp>temp.fo</samp> is the second pass XSL-FO with the complete
+                        index information
+                     </p>
+                     
+                  </li>
+                  
+               </ul>
+               
+               
+               <p>The following is the choreography of the process in the
+                  demonstration, expressed as an MSDOS batch file:
+               </p>
+               
+               <pre>
+rem Step 0 - clean up environment
+
+if exist doc.pdf del doc.pdf
+if exist temp-*.* del temp-*.*
+
+rem Step 1 - produce index instance in FO
+
+call xslt doc.xml doc.xsl temp-raw.fo
+
+rem Step 2 - produce PDF from FO
+
+call xslfo temp-raw.fo temp-raw.pdf
+
+rem Step 3 - extract XML instance from PDF
+
+call pdftotext -f 1 -l 2 -layout temp-raw.pdf temp-raw-index.txt
+egrep -v ^L temp-raw-index.txt &gt;temp-raw-index.xml
+
+rem Step 4 - massage index information
+
+call xslt temp-raw-index.xml doc-index.xsl temp-index.xml
+
+rem Step 5 - produce final instance in FO
+
+call xslt doc.xml doc.xsl temp.fo "index-file=temp-index.xml"
+
+rem Step 6 - produce PDF from FO
+
+call xslfo temp.fo doc.pdf
+
+rem Done
+</pre>
+               
+               <h3>Available page extraction tools</h3>
+               
+               
+               <p>The following tools have been identified as successfully
+                  extracting a particular number of pages of composed text from the
+                  output of an XSL-FO processor:
+               </p>
+               
+               
+               <ul>
+                  
+                  <li>
+                     
+                     <p><samp>pdftotext</samp> in 
+                        Xpdf
+                         Version 2.01 from <a href="http://www.foolabs.com/xpdf/"><samp>
+                              http://www.foolabs.com/xpdf/</samp></a></p>
+                     
+                  </li>
+                  
+               </ul>
+               
+               
+               <p>Please help us build up this list if you can.</p>
+               
+               
+            </td>
+            <td width="200" style="border-left:solid 1pt; padding-left:5px"><img src="http://www.CraneSoftwrights.com/crane.gif" height="113" width="140" alt="Crane logo"><div class="letterheadCompany"><b> CRANE<br> SOFTWRIGHTS<br> LTD.<br></b></div>
+               <div style="text-align:center;padding-top:1em"><small><a target="_blank" href="http://www.CraneSoftwrights.com/training/crane-courses.rss" class="button"><span style="background-color:orange;color:white;font-weight:bold">&nbsp;TRAINING&nbsp;RSS&nbsp;XML&nbsp;</span></a></small><br><small><a target="_blank" href="http://www.CraneSoftwrights.com/resources/crane-resources.rss" class="button"><span style="background-color:orange;color:white;font-weight:bold">&nbsp;RESOURCES&nbsp;RSS&nbsp;XML&nbsp;</span></a></small></div>
+               <div style="text-align:center">
+                  <div style="display:inline-block">
+                     <div style="text-align:center;padding-top:0pt;border:2px solid;border-radius:10px;width:120px;background-color:#f5deb3">
+                        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank"><small><br><i>Please consider to</i></small><br><input type="hidden" name="cmd" value="_s-xclick"><input type="hidden" name="hosted_button_id" value="M4JQ6QH6T9JB6"><input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!"><img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1"><br><small><i>towards our<br>free resources.</i></small></form>
+                     </div>
+                  </div>
+               </div>
+               <div class="letterheadSite" style="padding-top:0pt">
+                  <center class="letterheadTopic">Back of the Book Index</center>
+                  <center class="letterheadOther"><a class="nostate" href="http://www.CraneSoftwrights.com/index.htm">Home</a></center>
+                  <center class="letterheadOther"><a class="nostate" href="http://www.CraneSoftwrights.com/training/index.htm">Training videos, books &amp; free excerpts</a></center>
+                  <center class="letterheadOther"><a class="nostate" href="http://www.CraneSoftwrights.com/resources/index.htm">Free resources</a></center>
+                  <center class="letterheadOther"><a class="nostate" href="http://www.CraneSoftwrights.com/schedule.htm">Training schedule and course syllabi</a></center>
+                  <center class="letterheadOther"><a class="nostate" href="http://www.CraneSoftwrights.com/training/licensed.htm">Training licensing</a></center>
+                  <center class="letterheadOther"><a class="nostate" href="http://www.CraneSoftwrights.com/training/testimon.htm">Testimonials</a></center>
+                  <center class="letterheadOther"><a class="nostate" href="http://www.CraneSoftwrights.com/bio/gkholman.htm">G. Ken Holman</a></center>
+                  <center class="letterheadOther"><a class="nostate" href="http://www.CraneSoftwrights.com/contact.htm">Company &amp; contact information</a></center>
+                  <center class="letterheadOther"><a class="nostate" href="http://www.CraneSoftwrights.com/goubl/index.htm">goUBL.com</a></center>
+                  <center class="letterheadOther"><a class="nostate" href="http://www.CraneSoftwrights.com/site.htm">Site map</a></center>
+               </div>
+               <div style="text-align:center; padding-top:1em">
+                  <div style="display:inline-block"><a href="http://www.CraneSoftwrights.com/links/ptux-coupon.htm" target="_blank"><img src="http://www.CraneSoftwrights.com/trainingblaze.png" target="_blank"></a></div>
+               </div>
+               <div class="letterheadAddress"><small><br>+1&nbsp;(613)&nbsp;489-0999&nbsp;(Voice)<br>+1&nbsp;(613)&nbsp;489-0995&nbsp;(Fax)<br><br><a href="mailto:info@CraneSoftwrights.com">info@CraneSoftwrights.com</a><br><br></small></div>
+            </td>
+         </tr>
+      </table>
+      <hr>
+      <p class="legend"><small><i><b>Link traversal:</b> This web site relies heavily on client-side redirection.  If certain links do not work for you, please ensure you have this
+               behaviour enabled in your browser.</i></small></p>
+      <p class="footerLinkHeadings">Site navigation:</p>
+      <div class="bannerTop">
+         <div align="center" class="banner"><span class="bannerEntry"><a class="nostate" href="http://www.CraneSoftwrights.com/index.htm">Home</a></span> <span class="bannerEntry"><a class="nostate" href="http://www.CraneSoftwrights.com/training/index.htm">Training&nbsp;videos,&nbsp;books&nbsp;&amp;&nbsp;free&nbsp;excerpts</a></span> <span class="bannerEntry"><a class="nostate" href="http://www.CraneSoftwrights.com/resources/index.htm">Free&nbsp;resources</a></span> <span class="bannerEntry"><a class="nostate" href="http://www.CraneSoftwrights.com/schedule.htm">Training&nbsp;schedule&nbsp;and&nbsp;course&nbsp;syllabi</a></span> <span class="bannerEntry"><a class="nostate" href="http://www.CraneSoftwrights.com/training/licensed.htm">Training&nbsp;licensing</a></span> <span class="bannerEntry"><a class="nostate" href="http://www.CraneSoftwrights.com/training/testimon.htm">Testimonials</a></span> <span class="bannerEntry"><a class="nostate" href="http://www.CraneSoftwrights.com/bio/gkholman.htm">G.&nbsp;Ken&nbsp;Holman</a></span> <span class="bannerEntry"><a class="nostate" href="http://www.CraneSoftwrights.com/contact.htm">Company&nbsp;&amp;&nbsp;contact&nbsp;information</a></span> <span class="bannerEntry"><a class="nostate" href="http://www.CraneSoftwrights.com/goubl/index.htm">goUBL.com</a></span> <span class="bannerEntry"><a class="nostate" href="http://www.CraneSoftwrights.com/site.htm">Site&nbsp;map</a></span> 
+         </div>
+      </div>
+      <p class="legend"><small><i><b>Small print:</b>
+               All use of this web site and all business conducted 
+               with Crane Softwrights Ltd. is subject to the legal disclaimers 
+               detailed at 
+               <a target="_blank" href="http://www.CraneSoftwrights.com/legal" class="external legenda">http://www.CraneSoftwrights.com/legal</a>
+               ... please contact us if you have any questions.
+               All trademarks, servicemarks, registered trademarks, and registered servicemarks are the property of their respective owners.
+               </i></small></p>
+      <p class="legend"><small><i><b>Link legend: </b>links that are
+               <span class="external legenda">marked with this dotted underline</span>
+               will open up a new browser window, otherwise the
+               same browser window is used for the link 
+               target.<small><a href="/donotlook.htm" class="robots">&nbsp;</a></small>
+               <!--the preceding link is only for the use of robots, not visitors--></i></small></p>
+      <p class="timestamp">Last changed: $Date: 2006/12/27 22:39:22 $(UTC) <a class="external" target="_blank" href="http://www.CraneSoftwrights.com/legal/privacy.htm">(Privacy policy)</a><br></p>
+   </body>
+</html>

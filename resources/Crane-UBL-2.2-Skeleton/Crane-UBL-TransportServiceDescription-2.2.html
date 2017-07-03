@@ -1,0 +1,157 @@
+<html> 
+   
+   <!--$Id: Crane-UBL-TransportServiceDescription-2.2.html,v 1.3 2017/01/23 21:25:44 admin Exp $-->
+   
+   <!--A conceptual form-filling application creating OASIS UBL instances 
+      from user interaction using XSLT 2.0 behind the scenes-->
+   
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      
+      <title>Transport Service Description - UBL skeleton creation in a browser</title>
+      
+      
+   </head>
+   
+   <body>
+      
+      <!--first, engage Saxon-CE (Client Edition) from http://saxon.sf.net-->
+      <script type="text/javascript" language="javascript" src="../Saxonce/Saxonce.nocache.js"></script>
+      
+      <!--next engage the UBL form-filling stylesheet-->
+      <script type="application/xslt+xml" language="xslt2.0" src="Crane-UBL-TransportServiceDescription-2.2.xsl" data-initial-template="start"></script>
+      
+      
+      <!--create a skeleton within which pieces of the result will be written-->
+      <h2>Create a skeleton UBL Transport Service Description 2.2 document:
+         <sup style="font-size:.4em"><a href="#help">(HELP)</a></sup>
+         
+      </h2>
+      
+      
+      <!--this table has the header information-->
+      <a name="content"></a>
+      
+      <div id="content">
+         Loading ... <i>(this may take a while for large document types;
+            in fact <b>it may take so long that your browser will warn you</b> about
+            the script taking too long and might be hanging; please be patient as
+            there is a lot of data; please tell your browser to continue running
+            the script)</i>
+         
+      </div>
+      
+      <hr>
+      <a name="result"></a>
+      
+      <div id="result"></div>
+      
+      <hr>
+      <a name="help"></a>
+      
+      
+      <div style="text-align:center;padding-top:0pt;border:2px solid;border-radius:10px;width:120px;background-color:#f5deb3">
+         
+         
+         <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+            <small><br><i>Please consider to</i></small>
+            <br>
+            <input type="hidden" name="cmd" value="_s-xclick">
+            <input type="hidden" name="hosted_button_id" value="M4JQ6QH6T9JB6">
+            <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+            <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+            <br>
+            <small><i>towards our<br>free resources.</i></small>
+            
+         </form>
+         
+         
+      </div>
+      
+      <h3>Help information</h3>
+      
+      <p>
+         Use this to create initial skeleton instances of an <a target="_blank" href="http://docs.oasis-open.org/ubl/UBL-2.2.html">OASIS UBL 2.2
+            document</a> created by the <a target="_blank" href="http://www.oasis-open.org/committees/ubl">OASIS UBL technical
+            committee</a>.
+         The end result will not be schema valid because of the
+         absence of attribute values and certain required values (such as dates).
+         It is expected that the instance displayed will be selected, copied
+         and pasted by you into your favourite XML editor.
+         
+      </p>
+      
+      <p>
+         This will not read existing instances.  This is only for prototyping
+         the overall initial structure of a document.
+         
+      </p>
+      
+      <p>
+         The hyperlinked question marks will open another browser window and load
+         all of the model information into that window from the OASIS web site.
+         Once loaded, navigation in that window will be quite quick.  A suggested
+         mode of operation is to have both windows open and visible at the same
+         time so that each time you click on the question mark the other window
+         updates with the complete model information.
+         
+      </p>
+      
+      <p>
+         <b>IMPORTANT: This experimental environment may be removed at any time.</b>
+         
+      </p>
+      
+      <p>
+         <b>Credit:</b> This tool is based on the Saxon-CE (Client Edition)
+         browser-based XSLT 2.0 processor found at <a href="http://saxon.sf.net" target="_blank"><samp>http://saxon.sf.net</samp></a>.
+         This powerful tool runs a conforming XSLT 2.0 processor in the browser
+         as compiled JavaScript (hence the performance basis on the speed of your
+         browser).
+         
+      </p>
+      
+      <hr>
+      
+      <h3>Important notes:</h3>
+      <pre>
+    <small>This program works entirely within the user's browser.  At no time is any
+information sent back to the server.  Accessing the page loads the HTML,
+loads the Saxon-CE processor, loads the stylesheet and loads the model
+information.  Once loaded and the user begins interaction, there is no
+access to the server.
+
+Because of this browser-based approach, your performance is limited to the
+performance of your JavaScript engine in your browser and the speed of the
+data connection in order to download the large file of model information.
+AS A RESULT THIS APPLICATION RUNS MORE SLOWLY THAN SERVER BASED PROGRAMS!
+Please do not expect the results to be shown quickly, but once shown, it is
+intended to be very useful information.  We welcome suggestions for new
+features but we will keep in mind the restricted nature of the environment.
+
+Copyright (C) - Crane Softwrights Ltd.
+              - http://www.CraneSoftwrights.com/links/res-skeleton.htm
+
+THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR
+IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
+OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN
+NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED
+TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+Note: for your reference, the above is the "Modified BSD license", this text
+      was obtained 2003-07-26 at http://www.xfree86.org/3.3.6/COPYRIGHT2.html#5
+
+THE AUTHOR MAKES NO REPRESENTATION ABOUT THE SUITABILITY OF THIS CODE FOR ANY
+PURPOSE.</small>
+   </pre>
+      <pre id="version"></pre>
+      <div id="debug"></div>
+      <pre id="tree" style="white-space:pre"></pre>
+      </body>
+   
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<title>Debugging Stylesheets Using Microsoft IE5 XSL Processing</title>
+<meta name="description" content="Debugging Stylesheets Using Microsoft IE5 XSL Processing">
+<meta name="keywords" content="XSL, Microsoft MSXML">
+</head>
+<body bgcolor="#ffffff">
+<table>
+<tr>
+<td valign=top>
+<h1>Crane Softwrights Ltd.</h1>
+<h2>Resource Library - Debugging Stylesheets Using Microsoft IE5 XSL Processing</h2>
+<p>
+This has turned out to be a frequently asked question on the XSL maillist
+<a href="http://www.CraneSoftwrights.com/links/xsl-list.htm">XSL-List info and archive:  http://www.mulberrytech.com/xsl/xsl-list</a>
+so now this resource can be refered to as a summary of a methodology to
+debug stylesheets being developed for the Microsoft IE5 XSL engine.
+This is useful because the menu function View/Source in IE5 shows the XML
+source, not the HTML resulting from the transformation described by the
+XSL stylesheet.
+<p>
+The page below is excerpted from <!--a revision to an upcoming edition of-->
+the XSLT training materials that can be obtained through the
+<a href="http://www.CraneSoftwrights.com/training/">http://www.CraneSoftwrights.com/training/</a>
+page:
+<ul>
+<li><b>Practical Transformation Using XSLT and XPath</b>
+<br>XSL Transformations and the XML Path Language
+<br><i>(Ninth Edition - ISBN 1-894049-06-3 - 2001-01-19)</i>
+</ul>
+</td>
+<td valign=top width=3>
+<img src="../../vbar.gif" alt=" " width=1 height=300>
+</td>
+<td valign=top>
+<img src="http://www.CraneSoftwrights.com/resources/debugmsxml/crane.gif" alt="Crane Logo" width=140 height=113>
+<h3>CRANE<BR>SOFTWRIGHTS<BR>LTD.</h3>
+<h6>
+BOX 266,<BR>
+KARS, ONTARIO<BR>
+CANADA K0A-2E0<BR>
+<BR>
++1&nbsp;(613)&nbsp;489-0999&nbsp;(Voice)<BR>
++1&nbsp;(613)&nbsp;489-0995&nbsp;(Fax)<BR>
+</h6>
+</td>
+</tr>
+</table>
+<p>
+The XSL engine in Internet Explorer 5 (see
+<a href="http://www.netcrucible.com/xslt/msxml-faq.htm">http://www.netcrucible.com/xslt/msxml-faq.htm</a>
+for very helpful information regarding XSLT in IE5) can be invoked using a tool from Microsoft
+named the Windows Scripting Host.  The script described below will load an XML
+document and an XSL stylesheet and emit the results of transforming the XML
+using the XSL.
+<p>
+By directing the emitted results to a file, the behaviour of the XSL engine
+on a given stylesheet is revealed, thus helping with the debugging of the
+stylesheet logic.
+<p>
+This environment is also useful for creating a collection of static HTML pages
+that will reflect the same result as running IE5 from a browser, thus
+simultaneously supporting IE5 and non-IE5 browsers with the identical presentation.
+<p>
+
+
+Section D-5: Microsoft Internet Explorer 5 (Page 368)
+<hr noshade="noshade">
+
+
+The MSXML processor can be used from the MSDOS command line to emit transformations using the system character set:
+
+<ul>
+<li type="disc">
+a command line scripting environment from Microsoft executes JavaScript applications
+<ul>
+<li type="disc">
+<a href="http://www.CraneSoftwrights.com/links/wsh.htm" alt="http://msdn.microsoft.com/scripting/windowshost/"><samp>http://msdn.microsoft.com/scripting/windowshost/</samp></a> - Windows Scripting Host
+</li>
+</ul>
+</li>
+</ul>
+
+The following is a simple script adapted from one posted to the XSL mail list.  This invokes the MSXML processor after loading two Document Object Model (DOM) objects.  In the following code, the processor uses the system character encoding when emitting the result tree (for example, the Latin1 character set on Western European Windows systems and the Shift-JIS character set on Japanese Windows systems).
+<pre>//File:  msxml.js - 2000-04-20 16:30
+//Info:  http://www.CraneSoftwrights.com/links/msxml.htm
+//Args:  input-file style-file output-file
+var xml  = WScript.CreateObject("Microsoft.XMLDOM");          //input
+xml.validateOnParse=false;
+xml.load(WScript.Arguments(0));
+var xsl  = WScript.CreateObject("Microsoft.XMLDOM");          //style
+xsl.validateOnParse=false;
+xsl.load(WScript.Arguments(1));
+var out = WScript.CreateObject("Scripting.FileSystemObject"); //output
+var replace = true; var unicode = false; //output file properties
+var hdl = out.CreateTextFile( WScript.Arguments(2), replace, unicode )
+hdl.write( xml.transformNode( xsl.documentElement ));
+//eof
+</pre>
+
+
+The following is a sample invocation batch file (the <samp>cscript</samp> program is from the Windows Scripting Host utility):
+<pre>@echo off
+REM msxml.bat
+REM check arguments: %1=source XML, %2=script MSXML, %3=result HTML
+cscript //nologo ..\prog\msxml.js %1 %2 %3
+REM post-process results
+</pre>
+
+The following is a sample invocation:
+<pre>X:\samp&gt;..\prog\msxml hello.xml hello.xsl hello.mshtm
+X:\samp&gt;type hello.mshtm
+&lt;b&gt;&lt;i&gt;&lt;u&gt;Hello world.&lt;/u&gt;&lt;/i&gt;&lt;/b&gt;
+X:\samp&gt;
+</pre>
+
+
+In the following code, the processor uses the UTF-8 character encoding when emitting the result tree (adapted with kind permission from Makoto Murata)
+<ul>
+<li type="disc">
+using the following script, adapted for these materials with kind permission from Makoto Murata, the MSXML processor performs transformations from XML into XML using the UTF-8 character set to emit the result tree:
+</li>
+</ul>
+<pre>//File:  msxmlu8.js - 2000-04-20 16:30
+//Info:  http://www.CraneSoftwrights.com/links/msxml.htm
+//Args:  input-file style-file output-file
+var xml  = WScript.CreateObject("Microsoft.XMLDOM");          //input
+xml.validateOnParse=false;
+xml.load(WScript.Arguments(0));
+var xsl  = WScript.CreateObject("Microsoft.XMLDOM");          //style
+xsl.validateOnParse=false;
+xsl.load(WScript.Arguments(1));
+var out = WScript.CreateObject("Microsoft.XMLDOM");           //output
+out.async = false;
+out.validateOnParse=false;
+xml.transformNodeToObject( xsl, out );
+out.save(WScript.Arguments(2));
+//eof
+</pre>
+
+
+The two above processes are distinguished by the target of the transformation process:
+<ul>
+<li type="disc">
+the system character set is used when writing the result of transforming the input XML document directly into a stream of characters
+</li>
+<li type="disc">
+the UTF-8 character set is used when writing out the instance serialization of the object created when transforming the input XML document into a new XML document object
+</li>
+</ul>
+
+<hr noshade="noshade">
+<p>If anyone has comments on this document, they are welcome to send them to
+<samp><a href="mailto:debugmsxml@CraneSoftwrights.com">debugmsxml@CraneSoftwrights.com</a></samp>.
+
+<h5>$Date: 2001/01/20 10:27:03 $(UTC)</h5>

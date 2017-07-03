@@ -1,0 +1,209 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<title>Page Sequence Master Interleave (PSMI)</title>
+<meta name="description" content="Page Sequence Master Interleave (PSMI)">
+<meta name="keywords" content="XSL-FO, XSL">
+</head>
+<body bgcolor="#ffffff">
+<table>
+<tr>
+<td valign=top>
+<h1>Crane Softwrights Ltd.</h1>
+<h2>Page Sequence Master Interleave (PSMI)</h2>
+
+<h3>
+Background</h3>
+
+<p>
+The sequencing of page geometry available in
+<a href="http://www.w3.org/TR/xsl/">http://www.w3.org/TR/xsl/ (XSL-FO 1.0)</a>
+does not accommodate the need to change the page geometry based on content in the flow found inside a page sequence.
+An instance of the XSL-FO 1.0 vocabulary is fairly flat, with block-level constructs as the children of paginated flows in page sequences, and does not allow page sequences to nest.
+When a given construct in the flow needs a different page geometry than its sibling constructs, it is the responsibility of the process creating the XSL-FO instance to package the siblings in separate sibling page sequences.</p>
+<p>
+When using XSLT, these XSL-FO block-level constructs are often triggered from processing deep within the hierarchical source instance, from template rules matching elements that have been pushed from other elements.  Sibling constructs in the XSL-FO flow are very often not found as sibling constructs in the XML that created the XSL-FO flow.</p>
+<p>
+Publishing requirements rarely need these deeply nested constructs to trigger an alternative page geometry than the page geometry of the current page sequence, but when this is the case it can be very awkward to write the XSLT to accommodate aberrant constructs.  When found not very deep in the document structure, a common approach is to recursively walk through the structure up until the aberrant construct, process the construct in a different geometry, and then continue walking until the next aberrant construct is found.  Such a strategy throws away the inherent XSLT processing model of acting on the levels of a hierarchical data structure.</p>
+<p>
+This Page Sequence Master Interleave (PSMI) formatting semantic makes the job of interleaving page sequence master references much easier when dealing with deeply nested source XML structure.</p>
+</td>
+
+<td valign=top width=3>
+<img src="vbar.gif" alt=" " width=1 height=300>
+</td>
+<td valign=top>
+<img src="http://www.CraneSoftwrights.com/resources/psmi/crane.gif" alt="Crane Logo" width=140 height=113>
+<h3>CRANE<BR>SOFTWRIGHTS<BR>LTD.</h3>
+<h6>
+BOX 266,<BR>
+KARS, ONTARIO<BR>
+CANADA K0A-2E0<BR>
+<BR>
++1&nbsp;(613)&nbsp;489-0999&nbsp;(Voice)<BR>
++1&nbsp;(613)&nbsp;489-0995&nbsp;(Fax)<BR>
+</h6>
+</td>
+</tr>
+</table>
+
+<h3>
+Example</h3>
+
+<p>
+Consider the real-world situation that triggered the need for this in our own experience where we needed to accommodate landscaped tables in the middle of flow.  Every other construct, and all other tables, were to be printed in portrait geometry, but the user periodically called for a "top-level" (block-level) landscaped table somewhere deep in the structure of the document.</p>
+
+<p>
+The first thought was to just change the orientation of the reference area in which the table was rendered.  Since a table isn't a reference area, a block container was introduced into the flow and the reference orientation altered 90 degrees in order to lay the table on its side.  This was entirely acceptable for small tables, but when the table needs to flow to the next page, the container is limited in size to the page it is on and an overflow condition is triggered.  The answer is to switch the page sequence to a landscaped geometry, put only the landscaped table in this new geometry, and then switch back to the portrait geometry until the next landscaped table is found.  But since these pages are siblings, and the building of the result is hierarchical, the non-hierarchical strategy of recursive calls walking sequentially through content is the only way to produce the desired result using only XSL-FO semantics.</p>
+
+<p>
+There is no way (that we could think of) to just have the page-level table continued in rotated mode on subsequent pages of the portrait geometry using only XSL-FO semantics.  If someone knows how this can be done, please let us know and we won't need to continue supporting this customized semantic.</p>
+
+<p>
+Think of how difficult the XSLT stylesheet must be to switch page sequences according to XSL-FO semantics.  One must only process as much of the content up to the first landscaped table in the first page sequence, then startup a new page sequence just for the landscaped table, then repeat the process recursively for any and all constructs after the landscaped table.  This breaks the hierarchical process inherent in markup processing for which XSLT is designed.</p>
+
+<p>
+Note the issue is moot for a landscaped construct found within another construct (such as a list item's body), since the geometry of the list item body is stuck in the portrait page geometry and any overflow condition of the landscaped construct is a true overflow condition.  The need for PSMI only arises when dealing with a page-level construct that needs to start on a new page in a new page geometry.</p>
+
+<h3>
+The PSMI process</h3>
+
+<p>
+The PSMI semantic is implemented for all XSL-FO engines through the use of the supplied XSLT stylesheet acting on the result of one's transformation to rearrange and restructure page sequences to accommodate interleaved page sequence masters as properly ordered XSL-FO page sequences.</p>
+
+<center><img src="psmi.gif"></center>
+
+<p>
+One writes their XSLT producing XSL-FO+PSMI as they would for just XSL-FO.  The PSMI stylesheet translates an XSL-FO+PSMI instance into a pure XSL-FO instance, thus allowing PSMI to be used with any XSL-FO engine.  To be truly independent, this two-step process happens outside of the XSL-FO engine since XSL-FO engines only implement a single transformation before interpreting the XSL-FO vocabulary.</p>
+
+<center><img src="psmiflow.gif"></center>
+
+<p>
+An example process using nameless XSL processors:</p>
+<pre>
+  xslt example.xml example.xsl example.psmi   ;produce the XSL-FO+psmi
+  xslt example.psmi psmi.xsl example.fo       ;interpret the psmi
+  XSL-FO example.fo example.pdf                ;interpret the XSL-FO
+</pre>
+
+<p>
+If an XSL-FO engine requires both an XML instance and an XSLT stylesheet to operate, and not just an XSL-FO instance, one can do the two-step transformation outside of the engine and then supply the result XSL-FO instance as the XML input and the identity transform (<samp>&lt;xsl:copy-of select="/"/&gt;</samp> supplied in the package as <samp>copyofall.xsl</samp>) as the XSLT stylesheet.</p>
+
+<h3>
+Landscape alternatives</h3>
+<p>
+When choosing to switch the page geometry to another orientation, one could choose from a couple of alternatives based on the formatting requirement.</p>
+
+<p>
+To preserve the binding (headers and footers), one could maintain the same geometry of the portrait dimensions in the landscape presentation and only change the reference orientation of the body region of the page.  If, say, 90&deg; was used then all content in the body would be in landscape but the headers and footers would remain in portrait.  This is the basis of the included <samp>example.xsl</samp> (above).</p>
+
+<p>
+Alternatively, one may wish to have different headers and footers because the content is in landscape.  This is the basis of the included <samp>example2.xsl</samp> which also shows the page dimensions of the landscape geometry having been swapped from those of the portrait geometry:</p>
+
+<center><img src="psmi2.gif"></center>
+
+<h3>
+The PSMI semantic and vocabulary</h3>
+
+<p>
+The entire vocabulary consists of one element type that has only one attribute which is required.
+
+<p>
+The one <samp>&lt;{http://www.CraneSoftwrights.com/resources/psmi}:page-sequence></samp> construct is a block-level construct that must be an immediate child of an <samp>&lt;{http://www.w3.org/1999/XSL/Format}:flow&gt;</samp> construct and not a descendant of any other PSMI construct.  An error is reported and transformation halts if the PSMI construct is found anywhere it is not allowed, and no result is produced.</p>
+
+<p>
+The PSMI page sequence has the same XSL-FO namespace children as the XSL-FO page sequence, but only one of the attributes (<samp>master-reference=</samp> which is required) and no inheritable attributes or extension attributes.  If you wish to specify inheritable attributes, these can go on the flow child of the PSMI page sequence.
+
+
+<p>
+The stylesheet writer's normal course of business is to emit page- or column-level block constructs as children of the flow of a page sequence.  When an alternative page geometry is needed for one of these top-level block constructs, this construct is put out as a child of a PSMI page sequence's flow in the XSL-FO flow, instead of just simply as a child of the XSL-FO flow as in <samp>example3.psmi</samp>, which also shows overriding the portrait footer with a landscape footer:</p>
+
+<pre>
+  &lt;fo:page-sequence master-reference="frame-portrait">
+    &lt;fo:title>A test sequence in portrait&lt;/fo:title>
+
+    &lt;fo:static-content flow-name="frame-before">
+      &lt;fo:block text-align="center">Common header&lt;/fo:block>
+    &lt;/fo:static-content>
+    &lt;fo:static-content flow-name="frame-after">
+      &lt;fo:block text-align="center">Portrait footer&lt;/fo:block>
+    &lt;/fo:static-content>
+    &lt;fo:flow flow-name="frame-body">
+      &lt;fo:block>Block before change in geometry&lt;/fo:block>
+      <b>&lt;psmi:page-sequence master-reference="frame-land"></b>
+        &lt;fo:title>Landscape page&lt;/fo:title>
+        &lt;fo:static-content flow-name="frame-after">
+          &lt;fo:block text-align="center">Landscape footer&lt;/fo:block>
+        &lt;/fo:static-content>
+        &lt;fo:flow flow-name="frame-body">
+          &lt;fo:block>Block in landscape geometry&lt;/fo:block>
+        &lt;/fo:flow>
+      <b>&lt;/psmi:page-sequence></b>
+      &lt;fo:block>Block after change in geometry&lt;/fo:block>
+    &lt;/fo:flow>
+  &lt;/fo:page-sequence>
+</pre>
+
+<p>
+Any title and static content children of the XSL-FO page sequence parent of the PSMI page sequence that are not already specified in the PSMI page sequence are copied to the resulting interleaved page sequence.  The XSL-FO page sequence is split into as many adjacent page sequences as necessary around the interleaved PSMI page sequences.</p>
+
+<center><img src="psminest.gif"></center>
+
+<p>Specifying any attributes on a PSMI page sequence other than the master reference name will trigger a warning report, as the construct's content is meant in principle to be part of the parent page sequence, and is only being placed in a separate page sequence to accommodate the need for a different geometry, not the need for different page sequence properties.</p>
+
+<h4>
+Caveats</h4>
+<p>
+The breaking of the page sequence in which the PSMI construct is found necessarily produces multiple sibling page sequences.  Care is taken in this environment to preserve the page sequence properties that can be preserved (such as <samp>force-page-count="end-on-even"</samp>), but nothing can be done for those properties that cannot be preserved (such as <samp>force-page-count="even"</samp>).   When a property value cannot be guaranteed, a warning message is emitted using <samp>&lt;xsl:message&gt;</samp>, but processing continues to produce a result.</p>
+
+<h4>
+Download</h4>
+
+<p>
+The current package of the PSMI environment is found in the resource directory:</p>
+
+<pre>
+    <a href="http://www.CraneSoftwrights.com/resources/index.htm#psmi"><samp>http://www.CraneSoftwrights.com/resources/</samp></a>
+</pre>
+
+<p>
+The first example stylesheet and source files illustrate the ease of use of the PSMI semantic in that the table constructs being flowed to the result are deep in a hierarchical structure.  One of the tables is indicated to be landscape orientation, but has enough rows to cover three pages.  To use pure XSL-FO to switch between page geometries, one would need to sequentially walk through all candidate constructs for the portrait geometry, encapsulating those in a page sequence, begin the next page sequence in landscape geometry for the table, then return back to the portrait geometry.</p>
+
+<p>
+Using the PSMI, one simply encapsulates the table in a PSMI page sequence child of the XSL-FO page sequence flow.  The PSMI stylesheet then does the dirty work of breaking up an XSL-FO flow containing PSMI page sequences into sibling XSL-FO page sequences.</p>
+
+<h4>Quick vocabulary summary</h4>
+
+<p>
+The name of the only element is:
+<pre>
+  <{http://www.CraneSoftwrights.com/resources/psmi}:page-sequence>
+</pre>
+<p>
+The name of the only attribute, and it is required, is:
+<pre>
+  master-reference=
+</pre>
+<p>
+The element cannot have any other attributes specified, not even any inheritable attributes for use by descendant constructs.  The element children are the same as <samp>&lt;{http://www.w3.org/1999/XSL/Format}:page-sequence&gt;</samp> children.
+<p>
+The only presence rules are that it be an immediate child of <samp>&lt;{http://www.w3.org/1999/XSL/Format}:flow&gt;</samp> and not be a descendant of any other PSMI construct in the instance.
+
+
+
+<h4>
+Feedback</h4>
+
+<p>
+While the PSMI environment meets our own needs for interleaved page sequence master references, we will consider enhancing this environment based on suggestions for consideration.  We would only consider general features of a wide interest, but would appreciate any ideas you think might improve this free resource.</p>
+
+<p>
+As stated above, if you think we are out-to-lunch with this idea and have totally overlooked an existing easy-to-use XSL 1.0 approach to the problem of lengthy rotated tables, please let us know (soon!).</p>
+
+
+<hr noshade="noshade">
+<p>If anyone has comments on this document or the tool itself, 
+they are welcome to send them to
+<samp><a href="mailto:info@CraneSoftwrights.com">info@CraneSoftwrights.com</a></samp>.
+
+<h5>$Date: 2008/08/05 00:50:05 $(UTC)</h5>

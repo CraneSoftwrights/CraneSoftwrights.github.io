@@ -1,0 +1,230 @@
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   
+      <title>Bit testing in XSLT - Crane Softwrights Ltd.</title>
+      <link type="text/css" rel="stylesheet" href="../../site.css">
+      <link rel="shortcut icon" href="../../favicon.ico">
+      <meta name="description" content="Crane Softwrights Ltd. is a Computer Systems Analysis consulting and training company specializing in  structured text processing using the XML and SGML families of technologies.">
+      <meta name="keyword" content="XML Consulting - W3C XML">
+      <meta name="keyword" content="XSL Consulting - W3C XSL">
+      <meta name="keyword" content="XSL Training - W3C XSL">
+      <meta name="keywords" content="SGML,DSSSL,XML,XSLT,XSL-FO,XQuery,UBL,code list, Universal Business Language, OmniMark,consulting,training, Crane,Softwrights,ISO,Ottawa,Ontario,Canada,Ottawa">
+   </head>
+   <body class="body global"><a name="_top"></a><table class="global" summary="banner navigation">
+         <tr valign="top">
+            <td width="100%">
+               <div align="center" class="bannerTop banner"></div>
+               
+                 
+                 
+                 
+               <h2>Bit testing in XSLT</h2>
+               
+               
+               <p>The information below is an extract from a panel presentation at
+                  XML DevCon London February 2001 responding to a question submitted
+                  prior to the conference.
+               </p>
+               
+               
+               <p>Question submitted by Kimberly Hahn:</p>
+               
+               <pre>
+A trick that programmers often use to determine settings is to
+store those settings as an integer in the database (2 for blue
+background, 4 for open full screen on initial load, etc. the
+field would store 6 if the user wanted both turned on).  Then
+use bit-wise operations to determine if the particular setting
+the programmer was interested in has been turned on or off
+((40 and 8) &gt; 1 being true so 8 is on, (40 and 4)&gt;1 being
+false so 4 is not on).  It does not appear that XSLT supports
+this type of operation.  Is there a way of achieving this
+without resorting to script in the transformation, in other
+words using the Microsoft xslt extension that allows you to
+use script?
+</pre>
+               <hr noshade>
+               
+               <p>Bit testing can be done without scripting use modulo arithmetic
+                  in binary. Consider the testing of bit 7 in the number 480:
+               </p>
+               
+               
+               <center><img src="bits.gif" alt="bits.gif" border="0"></center>
+               
+               
+               <p>To strip out the bits above the bit desired, the remainder is
+                  calculated from the next highest binary number of the bit (in this
+                  case 256).
+               </p>
+               
+               
+               <p>To strip out the bits below the bit desired, the remainder is
+                  calculated from the binary number of the bit (in this case 128),
+                  and then subtracted from the previous remainder.
+               </p>
+               
+               
+               <p>The resulting number is non-zero if the bit is turned on, and
+                  zero if the bit is turned off.
+               </p>
+               
+               
+               <p>The following stylesheet illustrates this:</p>
+               
+               <pre>
+&lt;?xml version="1.0"?&gt;
+&lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                version="1.0"&gt;
+
+&lt;xsl:output method="text"/&gt;
+
+&lt;xsl:param name="num"/&gt;
+
+&lt;!--summary of powers of two--&gt;
+&lt;xsl:variable name="bit15" select="32768"/&gt;
+&lt;xsl:variable name="bit14" select="16384"/&gt;
+&lt;xsl:variable name="bit13" select="8192"/&gt;
+&lt;xsl:variable name="bit12" select="4096"/&gt;
+&lt;xsl:variable name="bit11" select="2048"/&gt;
+&lt;xsl:variable name="bit10" select="1024"/&gt;
+&lt;xsl:variable name="bit9"  select="512"/&gt;
+&lt;xsl:variable name="bit8"  select="256"/&gt;
+&lt;xsl:variable name="bit7"  select="128"/&gt;
+&lt;xsl:variable name="bit6"  select="64"/&gt;
+&lt;xsl:variable name="bit5"  select="32"/&gt;
+&lt;xsl:variable name="bit4"  select="16"/&gt;
+&lt;xsl:variable name="bit3"  select="8"/&gt;
+&lt;xsl:variable name="bit2"  select="4"/&gt;
+&lt;xsl:variable name="bit1"  select="2"/&gt;
+&lt;xsl:variable name="bit0"  select="1"/&gt;
+
+&lt;xsl:template name="bit"&gt;
+  &lt;xsl:param name="bit" select="1"/&gt;
+  &lt;xsl:choose&gt;
+    &lt;xsl:when test="( $num mod ( $bit * 2 ) ) -
+                    ( $num mod ( $bit     ) )"&gt;1&lt;/xsl:when&gt;
+    &lt;xsl:otherwise&gt;0&lt;/xsl:otherwise&gt;
+  &lt;/xsl:choose&gt;
+&lt;/xsl:template&gt;
+
+&lt;xsl:template match="/"&gt;
+  &lt;xsl:text&gt;Bit 7 on? &lt;/xsl:text&gt;
+  &lt;xsl:choose&gt;
+    &lt;xsl:when test="( $num mod 256 ) - ( $num mod 128 )"&gt;yes&lt;/xsl:when&gt;
+    &lt;xsl:otherwise&gt;no&lt;/xsl:otherwise&gt;
+  &lt;/xsl:choose&gt;
+
+  &lt;xsl:text&gt;
+Bit 0 on? &lt;/xsl:text&gt;
+  &lt;xsl:choose&gt;
+    &lt;xsl:when test="( $num mod 2 )"&gt;yes&lt;/xsl:when&gt;
+    &lt;xsl:otherwise&gt;no&lt;/xsl:otherwise&gt;
+  &lt;/xsl:choose&gt;
+
+  &lt;xsl:text&gt;
+Binary:&lt;/xsl:text&gt;
+  &lt;xsl:call-template name="bit"&gt;&lt;xsl:with-param name="bit" select="$bit15"/&gt;&lt;/xsl:call-template&gt;
+  &lt;xsl:call-template name="bit"&gt;&lt;xsl:with-param name="bit" select="$bit14"/&gt;&lt;/xsl:call-template&gt;
+  &lt;xsl:call-template name="bit"&gt;&lt;xsl:with-param name="bit" select="$bit13"/&gt;&lt;/xsl:call-template&gt;
+  &lt;xsl:call-template name="bit"&gt;&lt;xsl:with-param name="bit" select="$bit12"/&gt;&lt;/xsl:call-template&gt;
+  &lt;xsl:call-template name="bit"&gt;&lt;xsl:with-param name="bit" select="$bit11"/&gt;&lt;/xsl:call-template&gt;
+  &lt;xsl:call-template name="bit"&gt;&lt;xsl:with-param name="bit" select="$bit10"/&gt;&lt;/xsl:call-template&gt;
+  &lt;xsl:call-template name="bit"&gt;&lt;xsl:with-param name="bit" select="$bit9"/&gt;&lt;/xsl:call-template&gt;
+  &lt;xsl:call-template name="bit"&gt;&lt;xsl:with-param name="bit" select="$bit8"/&gt;&lt;/xsl:call-template&gt;
+  &lt;xsl:call-template name="bit"&gt;&lt;xsl:with-param name="bit" select="$bit7"/&gt;&lt;/xsl:call-template&gt;
+  &lt;xsl:call-template name="bit"&gt;&lt;xsl:with-param name="bit" select="$bit6"/&gt;&lt;/xsl:call-template&gt;
+  &lt;xsl:call-template name="bit"&gt;&lt;xsl:with-param name="bit" select="$bit5"/&gt;&lt;/xsl:call-template&gt;
+  &lt;xsl:call-template name="bit"&gt;&lt;xsl:with-param name="bit" select="$bit4"/&gt;&lt;/xsl:call-template&gt;
+  &lt;xsl:call-template name="bit"&gt;&lt;xsl:with-param name="bit" select="$bit3"/&gt;&lt;/xsl:call-template&gt;
+  &lt;xsl:call-template name="bit"&gt;&lt;xsl:with-param name="bit" select="$bit2"/&gt;&lt;/xsl:call-template&gt;
+  &lt;xsl:call-template name="bit"&gt;&lt;xsl:with-param name="bit" select="$bit1"/&gt;&lt;/xsl:call-template&gt;
+  &lt;xsl:call-template name="bit"&gt;&lt;xsl:with-param name="bit" select="$bit0"/&gt;&lt;/xsl:call-template&gt;
+
+&lt;/xsl:template&gt;
+
+&lt;/xsl:stylesheet&gt;
+</pre>
+               
+               <p>The following illustrates the invocation of the stylesheet:</p>
+               
+               <pre>
+S:\conferences\2001\Camelot-London&gt;xt test.xsl test.xsl num=480
+Bit 7 on? yes
+Bit 0 on? no
+Binary:0000000111100000
+S:\conferences\2001\Camelot-London&gt;xt test.xsl test.xsl num=270
+Bit 7 on? no
+Bit 0 on? no
+Binary:0000000100001110
+S:\conferences\2001\Camelot-London&gt;xt test.xsl test.xsl num=127
+Bit 7 on? no
+Bit 0 on? yes
+Binary:0000000001111111
+S:\conferences\2001\Camelot-London&gt;xt test.xsl test.xsl num=128
+Bit 7 on? yes
+Bit 0 on? no
+Binary:0000000010000000
+S:\conferences\2001\Camelot-London&gt;xt test.xsl test.xsl num=65535
+Bit 7 on? yes
+Bit 0 on? yes
+Binary:1111111111111111
+S:\conferences\2001\Camelot-London&gt;
+</pre>
+               
+               </td>
+            <td width="200" style="border-left:solid 1pt; padding-left:5px"><img src="http://www.CraneSoftwrights.com/crane.gif" height="113" width="140" alt="Crane logo"><div class="letterheadCompany"><b> CRANE<br> SOFTWRIGHTS<br> LTD.<br></b></div>
+               <div style="text-align:center;padding-top:1em"><small><a target="_blank" href="http://www.CraneSoftwrights.com/training/crane-courses.rss" class="button"><span style="background-color:orange;color:white;font-weight:bold">&nbsp;TRAINING&nbsp;RSS&nbsp;XML&nbsp;</span></a></small><br><small><a target="_blank" href="http://www.CraneSoftwrights.com/resources/crane-resources.rss" class="button"><span style="background-color:orange;color:white;font-weight:bold">&nbsp;RESOURCES&nbsp;RSS&nbsp;XML&nbsp;</span></a></small></div>
+               <div style="text-align:center">
+                  <div style="display:inline-block">
+                     <div style="text-align:center;padding-top:0pt;border:2px solid;border-radius:10px;width:120px;background-color:#f5deb3">
+                        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank"><small><br><i>Please consider to</i></small><br><input type="hidden" name="cmd" value="_s-xclick"><input type="hidden" name="hosted_button_id" value="M4JQ6QH6T9JB6"><input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!"><img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1"><br><small><i>towards our<br>free resources.</i></small></form>
+                     </div>
+                  </div>
+               </div>
+               <div class="letterheadSite" style="padding-top:0pt">
+                  <center class="letterheadTopic">Bit testing in XSLT</center>
+                  <center class="letterheadOther"><a class="nostate" href="http://www.CraneSoftwrights.com/index.htm">Home</a></center>
+                  <center class="letterheadOther"><a class="nostate" href="http://www.CraneSoftwrights.com/training/index.htm">Training videos, books &amp; free excerpts</a></center>
+                  <center class="letterheadOther"><a class="nostate" href="http://www.CraneSoftwrights.com/resources/index.htm">Free resources</a></center>
+                  <center class="letterheadOther"><a class="nostate" href="http://www.CraneSoftwrights.com/schedule.htm">Training schedule and course syllabi</a></center>
+                  <center class="letterheadOther"><a class="nostate" href="http://www.CraneSoftwrights.com/training/licensed.htm">Training licensing</a></center>
+                  <center class="letterheadOther"><a class="nostate" href="http://www.CraneSoftwrights.com/training/testimon.htm">Testimonials</a></center>
+                  <center class="letterheadOther"><a class="nostate" href="http://www.CraneSoftwrights.com/bio/gkholman.htm">G. Ken Holman</a></center>
+                  <center class="letterheadOther"><a class="nostate" href="http://www.CraneSoftwrights.com/contact.htm">Company &amp; contact information</a></center>
+                  <center class="letterheadOther"><a class="nostate" href="http://www.CraneSoftwrights.com/goubl/index.htm">goUBL.com</a></center>
+                  <center class="letterheadOther"><a class="nostate" href="http://www.CraneSoftwrights.com/site.htm">Site map</a></center>
+               </div>
+               <div style="text-align:center; padding-top:1em">
+                  <div style="display:inline-block"><a href="http://www.CraneSoftwrights.com/links/ptux-coupon.htm" target="_blank"><img src="http://www.CraneSoftwrights.com/trainingblaze.png" target="_blank"></a></div>
+               </div>
+               <div class="letterheadAddress"><small><br>+1&nbsp;(613)&nbsp;489-0999&nbsp;(Voice)<br>+1&nbsp;(613)&nbsp;489-0995&nbsp;(Fax)<br><br><a href="mailto:info@CraneSoftwrights.com">info@CraneSoftwrights.com</a><br><br></small></div>
+            </td>
+         </tr>
+      </table>
+      <hr>
+      <p class="legend"><small><i><b>Link traversal:</b> This web site relies heavily on client-side redirection.  If certain links do not work for you, please ensure you have this
+               behaviour enabled in your browser.</i></small></p>
+      <p class="footerLinkHeadings">Site navigation:</p>
+      <div class="bannerTop">
+         <div align="center" class="banner"><span class="bannerEntry"><a class="nostate" href="http://www.CraneSoftwrights.com/index.htm">Home</a></span> <span class="bannerEntry"><a class="nostate" href="http://www.CraneSoftwrights.com/training/index.htm">Training&nbsp;videos,&nbsp;books&nbsp;&amp;&nbsp;free&nbsp;excerpts</a></span> <span class="bannerEntry"><a class="nostate" href="http://www.CraneSoftwrights.com/resources/index.htm">Free&nbsp;resources</a></span> <span class="bannerEntry"><a class="nostate" href="http://www.CraneSoftwrights.com/schedule.htm">Training&nbsp;schedule&nbsp;and&nbsp;course&nbsp;syllabi</a></span> <span class="bannerEntry"><a class="nostate" href="http://www.CraneSoftwrights.com/training/licensed.htm">Training&nbsp;licensing</a></span> <span class="bannerEntry"><a class="nostate" href="http://www.CraneSoftwrights.com/training/testimon.htm">Testimonials</a></span> <span class="bannerEntry"><a class="nostate" href="http://www.CraneSoftwrights.com/bio/gkholman.htm">G.&nbsp;Ken&nbsp;Holman</a></span> <span class="bannerEntry"><a class="nostate" href="http://www.CraneSoftwrights.com/contact.htm">Company&nbsp;&amp;&nbsp;contact&nbsp;information</a></span> <span class="bannerEntry"><a class="nostate" href="http://www.CraneSoftwrights.com/goubl/index.htm">goUBL.com</a></span> <span class="bannerEntry"><a class="nostate" href="http://www.CraneSoftwrights.com/site.htm">Site&nbsp;map</a></span> 
+         </div>
+      </div>
+      <p class="legend"><small><i><b>Small print:</b>
+               All use of this web site and all business conducted 
+               with Crane Softwrights Ltd. is subject to the legal disclaimers 
+               detailed at 
+               <a target="_blank" href="http://www.CraneSoftwrights.com/legal" class="external legenda">http://www.CraneSoftwrights.com/legal</a>
+               ... please contact us if you have any questions.
+               All trademarks, servicemarks, registered trademarks, and registered servicemarks are the property of their respective owners.
+               </i></small></p>
+      <p class="legend"><small><i><b>Link legend: </b>links that are
+               <span class="external legenda">marked with this dotted underline</span>
+               will open up a new browser window, otherwise the
+               same browser window is used for the link 
+               target.<small><a href="/donotlook.htm" class="robots">&nbsp;</a></small>
+               <!--the preceding link is only for the use of robots, not visitors--></i></small></p>
+      <p class="timestamp">Last changed: $Date: 2006/12/27 19:59:11 $(UTC) <a class="external" target="_blank" href="http://www.CraneSoftwrights.com/legal/privacy.htm">(Privacy policy)</a><br></p>
+   </body>
+</html>

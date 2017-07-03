@@ -1,0 +1,288 @@
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   
+      <title>XSLStyle&#8482; - Crane Softwrights Ltd.</title>
+      <link type="text/css" rel="stylesheet" href="../../site.css">
+      <link rel="shortcut icon" href="../../favicon.ico">
+      <meta name="description" content="Crane Softwrights Ltd. is a Computer Systems Analysis consulting and training company specializing in  structured text processing using the XML and SGML families of technologies.">
+      <meta name="keyword" content="XML Consulting - W3C XML">
+      <meta name="keyword" content="XSL Consulting - W3C XSL">
+      <meta name="keyword" content="XSL Training - W3C XSL">
+      <meta name="keywords" content="SGML,DSSSL,XML,XSLT,XSL-FO,XQuery,UBL,code list, Universal Business Language, OmniMark,consulting,training, Crane,Softwrights,ISO,Ottawa,Ontario,Canada,Ottawa">
+   </head>
+   <body class="body global"><a name="_top"></a><table class="global" summary="banner navigation">
+         <tr valign="top">
+            <td width="100%">
+               <div align="center" class="bannerTop banner"><span class="bannerEntry"><a class="nostate" href="#Sect1">1. XSLStyle&#8482;&nbsp;documentation&nbsp;environment&nbsp;for&nbsp;XSLT&nbsp;stylesheets</a></span>
+                  
+               </div>
+               
+                 
+                 
+               
+               
+               <h2><a name="Sect1">1. XSLStyle&#8482; documentation environment for XSLT stylesheets</a></h2>
+               <div align="right" class="uplinkdiv"><i><small><a href="#_top" class="nostate">Top</a></small></i></div>
+               <div align="center" class="banner"><span class="bannerEntry"><a class="nostate" href="#Sect1.1">1.1. Introduction</a></span>
+                  <span class="bannerEntry"><a class="nostate" href="#Sect1.2">1.2. History</a></span>
+                  <span class="bannerEntry"><a class="nostate" href="#Sect1.3">1.3. Download</a></span>
+                  <span class="bannerEntry"><a class="nostate" href="#Sect1.4">1.4. Use</a></span>
+                  <span class="bannerEntry"><a class="nostate" href="#Sect1.5">1.5. Documentation</a></span>
+                  <span class="bannerEntry"><a class="nostate" href="#Sect1.6">1.6. Summary</a></span>
+                  <span class="bannerEntry"><a class="nostate" href="#Sect1.7">1.7. Testimonials</a></span>
+                  
+               </div>
+               
+               
+               <h3><a name="Sect1.1">1.1. Introduction</a></h3>
+               <div align="right" class="uplinkdiv"><i><small><a href="#Sect1" class="nostate">Section</a> <a href="#_top" class="nostate">Top</a></small></i></div>
+               
+               <p>
+                  At XML'2004 and XTech'2005 I demonstrated to attendees my technique for embedding an arbitrary formatting vocabulary into
+                  an XSLT stylesheet in such a way that by dragging the stylesheet into an XSLT-aware web browser, the stylesheet is formatted
+                  into a fully-documented report of all the documentation found therein, plus a report of any inconsistencies detected.
+                  
+               </p>
+               
+               <p>
+                  The benefits of this would not be immediately obvious to writers of monolithic stylesheets.  However, for large stylesheet
+                  libraries with multiple stylesheet fragments being referenced in an import tree, one can easily lose track of where things
+                  can be found and how things are related in the stylesheet fragments.  This fully documented report keys off of the import
+                  tree for a stylesheet and summarizes all of the top level elements from all of the stylesheet fragments into a single hyperlinked
+                  alphabetized index indicating in which modules each named top-level construct can be found.  Two of my customers have stylesheet
+                  libraries with dozens of stylesheet fragments in the import tree from a single XSLT stylesheet.
+               </p>
+               
+               <p>
+                  Performing a view/source on the reported document in the browser reveals the actual stylesheet, though typically this would
+                  be examined in a text editor.
+               </p>
+               
+               
+               
+               <h3><a name="Sect1.2">1.2. History</a></h3>
+               <div align="right" class="uplinkdiv"><i><small><a href="#Sect1" class="nostate">Section</a> <a href="#_top" class="nostate">Top</a></small></i></div>
+               
+               <p>
+                  This stylesheet came about from my own need to check for completeness, because not only does the stylesheet format the embedded
+                  documentation, it checks that the embedded documentation is "complete" with respect to its own rules for what constitutes
+                  completeness.  I experimented with the need to force the stylesheet writer to document all of the top-level constructs in
+                  an XSLT stylesheet, and for constructs like <samp>xsl:template</samp> check for the presence of <samp>xsl:param</samp> and associated documentation.
+               </p>
+               
+               <p>
+                  Thus, from a programmer's perspective of documentation completeness, a "clean" report of the stylesheet would give the stylesheet
+                  writer the assurance that not only every top-level element in the stylesheet was formally documented, but that all of the
+                  parameters of templates were also documented.  All this and all of the top-level elements are indexed from all modules in
+                  the import tree.  All this would, hopefully, promote easier maintenance downstream.
+               </p>
+               
+               <p>
+                  I then deployed this embedding the DocBook vocabulary in a customer's set of stylesheets in a stylesheet library, followed by embedding the Intelligence Community's
+                  vocabulary in another customer's set of stylesheets in a different library.  Interestingly, the IC vocabulary documents the
+                  stylesheets that present the IC vocabulary in HTML, so it is recursive in that the stylesheets are formatting their own documentation
+                  in Internet Explorer.
+               </p>
+               
+               <p>
+                  In both cases, I deployed very large XSLT stylesheet libraries following my practice of extensively using namespaces (I'm
+                  a big fan of XML namespaces) to qualify the names of top-level constructs.  The level of consistency checking implemented
+                  in each case is less than what is done in the current stock XSLStyle&#8482;, primarily because the stylesheet writers had not yet
+                  embraced the consistency checking, but also because more consistency checks have come to mind after working with both of these
+                  stylesheet libraries.  Getting stylesheet writers to embrace the documentation and business-rule enforcement has not been
+                  easy.
+               </p>
+               
+               <p>
+                  I made XSLStyle&#8482; publicly available in November 2005 and announced it at XML'2005.  In March 2006 I revamped it to be more
+                  easily adaptable to new embedded vocabularies other than DocBook.  This required turning the import tree inside out, so users
+                  updating to the March 2006 environment from the November 2005 environment need to know that the top of the import tree has
+                  changed to how it is documented below.
+               </p>
+               
+               <p>Over the years since, this package has been updated to enforce a number of stylesheet-writing rules for XSLT 2.0 such as declaring
+                  types for parameters, functions, and top-level variables, as well as reporting the arity of functions in declarations and
+                  the index.
+               </p>
+               
+               
+               
+               <h3><a name="Sect1.3">1.3. Download</a></h3>
+               <div align="right" class="uplinkdiv"><i><small><a href="#Sect1" class="nostate">Section</a> <a href="#_top" class="nostate">Top</a></small></i></div>
+               
+               <p>
+                  The current download package supports DocBook, DITA or XHTML as the documentation vocabulary embedded within the XSLStyle&#8482;
+                  scaffolding and is <a href="../index.htm#xslstyle">found at the main resources index entry</a>.  It includes a complete snapshot of the DocBook HTML stylesheets, and a subset snapshot of the DITA HTML stylesheets.  Of course you can use your own stylesheet installation
+                  by changing the relevant <samp>xsl:import</samp> statements in <samp>xslstyle-{vocabulary}.xsl</samp> and deleting the delivered subdirectory.
+               </p>
+               
+               <p>You can create your own XSLStyle&#8482; environment for a different vocabulary for the embedded documentation by writing <samp>xslstyle-{vocabulary}.xsl</samp> and importing the <samp>xslstyle-core.xsl</samp> as is done in <samp>xslstyle-docbook.xsl</samp>.
+               </p>
+               
+               <p>Using CSS stylesheets you can decorate your formatted results with quite stunning appearances.  Contributed appearances are
+                  included in the package, as well as a debug appearance exposing CSS style names to help you develop your own appearance.
+               </p>
+               
+               
+               
+               
+               <h3><a name="Sect1.4">1.4. Use</a></h3>
+               <div align="right" class="uplinkdiv"><i><small><a href="#Sect1" class="nostate">Section</a> <a href="#_top" class="nostate">Top</a></small></i></div>
+               
+               <p>
+                  To see the XSLStyle&#8482; stylesheets in operation, they are themselves documented using XSLStyle&#8482; conventions, so you have three
+                  options to view the documentation and completeness report (though they are complete so you won't see any errors; I will add
+                  tests in the future to illustrate incomplete reports):
+               </p>
+               
+               <p>
+                  (1) - open up Internet Explorer and drag <samp>xslstyle-docbook.xsl</samp> from an open folder onto the browser canvas which automatically uses the embedded stylesheet association for the location
+                  of the formatting stylesheet
+               </p>
+               
+               <blockquote>
+                  
+                  <p>
+                     Note that Internet Explorer does not recognize hyperlinks when browsing a file with extension "<samp>.xsl</samp>" so none of the links actually work, but you can check the presence of the inconsistency report and jump to the bottom of
+                     the file if it exists.   Note the next option.
+                     
+                  </p>
+                  
+               </blockquote>
+               
+               
+               <p>
+                  (2) - browse the test harness <samp>xslstyle-docbook.xml</samp> that is a skeleton XSLT stylesheet with a <samp>.xml</samp> extension; this adds a redundant layer to the import tree, but Internet Explorer deigns to allow hyperlinks to work for this
+                  XML file even though it doesn't for the XSLT XML file.
+               </p>
+               
+               
+               <p>
+                  (3) - run a standalone XSLT transformation engine to produce an HTML result that can be browsed in any browser, as in the
+                  following Saxon invocation that specifies the use of stylesheet association for the location of the formatting stylesheet
+                  (note this has already been done and is viewable in the <samp>xslstyle.html</samp> in the package):
+               </p>
+               <pre>java -jar %saxon%saxon.jar -o xslstyle-docbook.html -a xslstyle-docbook.xsl
+</pre>
+               
+               <p>
+                  Note that XSLStyle&#8482; does not yet work by dragging a stylesheet or a stylesheet harness into Firefox because a required extension function (the conversion of a result-tree fragment into a node-set) is not available in its
+                  embedded XSLT processor.
+               </p>
+               
+               
+               
+               <h3><a name="Sect1.5">1.5. Documentation</a></h3>
+               <div align="right" class="uplinkdiv"><i><small><a href="#Sect1" class="nostate">Section</a> <a href="#_top" class="nostate">Top</a></small></i></div>
+               
+               <p>
+                  The documentation is embedded in the stylesheet using the stylesheet's own documentation framework.  To review the documentation,
+                  just drag the <samp>xslstyle-docbook.xml</samp> test harness, or the <samp>xslstyle-docbook.xsl</samp> stylesheet from a folder into Internet Explorer or any other web
+                  browser that supports XSLT 1.0 with an extension for the conversion of a result tree fragment into a node set.
+               </p>
+               
+               <p>
+                  Alternatively, one can just browse <samp>xslstyle-docbook.html</samp> which was created using <samp>xslstyle-docbook.xsl</samp> to format itself.
+               </p>
+               
+               
+               
+               
+               <h3><a name="Sect1.6">1.6. Summary</a></h3>
+               <div align="right" class="uplinkdiv"><i><small><a href="#Sect1" class="nostate">Section</a> <a href="#_top" class="nostate">Top</a></small></i></div>
+               
+               
+               <p>
+                  This environment is a good example of the power of namespaces in that a complete suite of stylesheets using namespace-qualified
+                  top-level elements can incorporate an off-the-shelf XSLT library (first in the two independent cases I've used of DocBook and the IC vocabulary, and now a third case of yet another custom vocabulary but now with a commonly imported sub-tree) without
+                  interfering with the library, and produce a formatted HTML result suitable for a browser.
+                  
+               </p>
+               
+               
+               <p>
+                  We are pleased to make available this resource free for public use,
+                  provided on an "AS IS" basis without formal support or warranty of any kind.  Please see the licensing information in the
+                  stylesheets for details.
+               </p>
+               
+               <p>
+                  We would appreciate any feedback you have, or suggestions for changes and
+                  improvements; please forward your comments to
+                  <samp><a href="mailto:info@CraneSoftwrights.com">info@CraneSoftwrights.com</a></samp>.
+               </p>
+               
+               
+               
+               
+               <h3><a name="Sect1.7">1.7. Testimonials</a></h3>
+               <div align="right" class="uplinkdiv"><i><small><a href="#Sect1" class="nostate">Section</a> <a href="#_top" class="nostate">Top</a></small></i></div>
+               
+               <p>We are starting to find some testimonials on the use of XSLStyle&#8482;, such as from <a href="../../links/testimon-xs-1.htm" target="_blank" class="external ">Florent Georges</a>.
+               </p>
+               
+               <p>If you have a testimonial to share, please let us know.</p>
+               
+               
+               
+               
+            </td>
+            <td width="200" style="border-left:solid 1pt; padding-left:5px"><img src="http://www.CraneSoftwrights.com/crane.gif" height="113" width="140" alt="Crane logo"><div class="letterheadCompany"><b> CRANE<br> SOFTWRIGHTS<br> LTD.<br></b></div>
+               <div style="text-align:center;padding-top:1em"><small><a target="_blank" href="http://www.CraneSoftwrights.com/training/crane-courses.rss" class="button"><span style="background-color:orange;color:white;font-weight:bold">&nbsp;TRAINING&nbsp;RSS&nbsp;XML&nbsp;</span></a></small><br><small><a target="_blank" href="http://www.CraneSoftwrights.com/resources/crane-resources.rss" class="button"><span style="background-color:orange;color:white;font-weight:bold">&nbsp;RESOURCES&nbsp;RSS&nbsp;XML&nbsp;</span></a></small></div>
+               <div style="text-align:center">
+                  <div style="display:inline-block">
+                     <div style="text-align:center;padding-top:0pt;border:2px solid;border-radius:10px;width:120px;background-color:#f5deb3">
+                        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank"><small><br><i>Please consider to</i></small><br><input type="hidden" name="cmd" value="_s-xclick"><input type="hidden" name="hosted_button_id" value="M4JQ6QH6T9JB6"><input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!"><img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1"><br><small><i>towards our<br>free resources.</i></small></form>
+                     </div>
+                  </div>
+               </div>
+               <div class="letterheadSite" style="padding-top:0pt">
+                  <center class="letterheadTopic">XSLStyle&#8482;</center>
+                  <center class="letterheadOther"><a class="nostate" href="http://www.CraneSoftwrights.com/index.htm">Home</a></center>
+                  <center class="letterheadOther"><a class="nostate" href="http://www.CraneSoftwrights.com/training/index.htm">Training videos, books &amp; free excerpts</a></center>
+                  <center class="letterheadOther"><a class="nostate" href="http://www.CraneSoftwrights.com/resources/index.htm">Free resources</a></center>
+                  <center class="letterheadOther"><a class="nostate" href="http://www.CraneSoftwrights.com/schedule.htm">Training schedule and course syllabi</a></center>
+                  <center class="letterheadOther"><a class="nostate" href="http://www.CraneSoftwrights.com/training/licensed.htm">Training licensing</a></center>
+                  <center class="letterheadOther"><a class="nostate" href="http://www.CraneSoftwrights.com/training/testimon.htm">Testimonials</a></center>
+                  <center class="letterheadOther"><a class="nostate" href="http://www.CraneSoftwrights.com/bio/gkholman.htm">G. Ken Holman</a></center>
+                  <center class="letterheadOther"><a class="nostate" href="http://www.CraneSoftwrights.com/contact.htm">Company &amp; contact information</a></center>
+                  <center class="letterheadOther"><a class="nostate" href="http://www.CraneSoftwrights.com/goubl/index.htm">goUBL.com</a></center>
+                  <center class="letterheadOther"><a class="nostate" href="http://www.CraneSoftwrights.com/site.htm">Site map</a></center>
+               </div>
+               <div style="text-align:center; padding-top:1em">
+                  <div style="display:inline-block"><a href="http://www.CraneSoftwrights.com/links/ptux-coupon.htm" target="_blank"><img src="http://www.CraneSoftwrights.com/trainingblaze.png" target="_blank"></a></div>
+               </div>
+               <div class="letterheadAddress"><small><br>+1&nbsp;(613)&nbsp;489-0999&nbsp;(Voice)<br>+1&nbsp;(613)&nbsp;489-0995&nbsp;(Fax)<br><br><a href="mailto:info@CraneSoftwrights.com">info@CraneSoftwrights.com</a><br><br></small></div>
+            </td>
+         </tr>
+      </table>
+      <hr>
+      <p class="legend"><small><i><b>Link traversal:</b> This web site relies heavily on client-side redirection.  If certain links do not work for you, please ensure you have this
+               behaviour enabled in your browser.</i></small></p>
+      <p class="footerLinkHeadings">Page navigation:</p>
+      <div align="center" class="bannerTop banner"><span class="bannerEntry"><a href="#_top" class="nostate">Top</a></span> <span class="bannerEntry"><a class="nostate" href="#Sect1">1. XSLStyle&#8482;&nbsp;documentation&nbsp;environment&nbsp;for&nbsp;XSLT&nbsp;stylesheets</a></span>
+         
+      </div>
+      <p class="footerLinkHeadings">Site navigation:</p>
+      <div class="bannerTop">
+         <div align="center" class="banner"><span class="bannerEntry"><a class="nostate" href="http://www.CraneSoftwrights.com/index.htm">Home</a></span> <span class="bannerEntry"><a class="nostate" href="http://www.CraneSoftwrights.com/training/index.htm">Training&nbsp;videos,&nbsp;books&nbsp;&amp;&nbsp;free&nbsp;excerpts</a></span> <span class="bannerEntry"><a class="nostate" href="http://www.CraneSoftwrights.com/resources/index.htm">Free&nbsp;resources</a></span> <span class="bannerEntry"><a class="nostate" href="http://www.CraneSoftwrights.com/schedule.htm">Training&nbsp;schedule&nbsp;and&nbsp;course&nbsp;syllabi</a></span> <span class="bannerEntry"><a class="nostate" href="http://www.CraneSoftwrights.com/training/licensed.htm">Training&nbsp;licensing</a></span> <span class="bannerEntry"><a class="nostate" href="http://www.CraneSoftwrights.com/training/testimon.htm">Testimonials</a></span> <span class="bannerEntry"><a class="nostate" href="http://www.CraneSoftwrights.com/bio/gkholman.htm">G.&nbsp;Ken&nbsp;Holman</a></span> <span class="bannerEntry"><a class="nostate" href="http://www.CraneSoftwrights.com/contact.htm">Company&nbsp;&amp;&nbsp;contact&nbsp;information</a></span> <span class="bannerEntry"><a class="nostate" href="http://www.CraneSoftwrights.com/goubl/index.htm">goUBL.com</a></span> <span class="bannerEntry"><a class="nostate" href="http://www.CraneSoftwrights.com/site.htm">Site&nbsp;map</a></span> 
+         </div>
+      </div>
+      <p class="legend"><small><i><b>Small print:</b>
+               All use of this web site and all business conducted 
+               with Crane Softwrights Ltd. is subject to the legal disclaimers 
+               detailed at 
+               <a target="_blank" href="http://www.CraneSoftwrights.com/legal" class="external legenda">http://www.CraneSoftwrights.com/legal</a>
+               ... please contact us if you have any questions.
+               All trademarks, servicemarks, registered trademarks, and registered servicemarks are the property of their respective owners.
+               </i></small></p>
+      <p class="legend"><small><i><b>Link legend: </b>links that are
+               <span class="external legenda">marked with this dotted underline</span>
+               will open up a new browser window, otherwise the
+               same browser window is used for the link 
+               target.<small><a href="/donotlook.htm" class="robots">&nbsp;</a></small>
+               <!--the preceding link is only for the use of robots, not visitors--></i></small></p>
+      <p class="timestamp">Last changed: $Date: 2010/03/02 18:15:13 $(UTC) <a class="external" target="_blank" href="http://www.CraneSoftwrights.com/legal/privacy.htm">(Privacy policy)</a><br></p>
+   </body>
+</html>

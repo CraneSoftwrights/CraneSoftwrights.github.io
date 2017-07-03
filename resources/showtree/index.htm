@@ -1,0 +1,335 @@
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   
+      <title>SHOWTREE - Crane Softwrights Ltd.</title>
+      <link type="text/css" rel="stylesheet" href="../../site.css">
+      <link rel="shortcut icon" href="../../favicon.ico">
+      <meta name="description" content="Crane Softwrights Ltd. is a Computer Systems Analysis consulting and training company specializing in  structured text processing using the XML and SGML families of technologies.">
+      <meta name="keyword" content="XML Consulting - W3C XML">
+      <meta name="keyword" content="XSL Consulting - W3C XSL">
+      <meta name="keyword" content="XSL Training - W3C XSL">
+      <meta name="keywords" content="SGML,DSSSL,XML,XSLT,XSL-FO,XQuery,UBL,code list, Universal Business Language, OmniMark,consulting,training, Crane,Softwrights,ISO,Ottawa,Ontario,Canada,Ottawa">
+   </head>
+   <body class="body global"><a name="_top"></a><table class="global" summary="banner navigation">
+         <tr valign="top">
+            <td width="100%">
+               <div align="center" class="bannerTop banner"></div>
+               
+                 
+                 
+                 
+               <h2>SHOWTREE - XSLT Tree Display Stylesheet</h2>
+               
+               
+               <p>These stylesheets expose the node structure created by an XSLT
+                  engine for a given instance.
+               </p>
+               
+               
+               <p>The stylesheet will report the node structure and content of an
+                  input document, noting the ordinal positions in the hierarchy of
+                  each component of the ancestry.
+               </p>
+               
+               
+               <p>The stylesheet can expose all nodes of all types, but is
+                  configured by default to not access the namespace axis. Some tools
+                  (e.g.: XT) do not allow access to the namespace axis. Other tools
+                  (e.g.: Saxon) do allow access to the namespace axis. The
+                  documentation inside the stylesheet describes which lines to remove
+                  to engage access to the namespace axis.
+               </p>
+               
+               
+               <p>The stylesheet for the current W3C XSLT/XPath 1.0
+                  Recommendations can be obtained from: <a href="http://www.CraneSoftwrights.com/resources/showtree/showtree-20000610.xsl">
+                     http://www.CraneSoftwrights.com/resources/showtree/showtree-20000610.xsl</a>.
+                  It has been tested unmodified on XT (version 19991105) and modified
+                  as documented to report namespaces on Instant Saxon (version
+                  5.3.2). The stylesheet was last modified 2000-06-10.
+               </p>
+               
+               
+               <p>The stylesheet for the <u>original</u> Microsoft IE5 can be
+                  obtained from: <a href="http://www.CraneSoftwrights.com/resources/showtree/showtree-19990409.msxsl">
+                     http://www.CraneSoftwrights.com/resources/showtree/showtree-19990409.msxsl</a>.
+                  It has been tested on IE5 Version 5.00.2014.0216. The stylesheet
+                  was last modified 1999-04-09 09:20.
+               </p>
+               
+               
+               <p>The following session illustrates an example of output from the
+                  use of both the unmodified and modified stylesheet on the same XML
+                  file. Note the XML file is directly viewable from Internet Explorer
+                  5 because of the embeeded 
+                   stylesheet association processing instruction. When running the
+                  stylesheet from the DOS command line the stylesheet association
+                  processing instruction isn't acted upon, thus allowing any file to
+                  be examined with these diagnostic stylesheets. 
+                  
+               </p>
+               
+               <pre>
+
+
+<b>T:\ftemp&gt;</b>type model.xml
+&lt;?xml version="1.0"?&gt;
+&lt;?xml-stylesheet type="text/xsl" href="showtree.msxsl"?&gt;
+&lt;!--comment number 1--&gt;
+&lt;model
+  pub-id="+//ISBN 1-894049::CSL::Samples::SHOWTREE//Document SHOWTREE Test//EN"
+  attr2="Value of second attribute"
+  attr3="attr3"&gt;
+&lt;title test="value"&gt;A Course with &lt;emph&gt;mixed&lt;/emph&gt; content&lt;/title&gt;
+&lt;toc id="toc"/&gt;
+&lt;!--comment number 2--&gt;
+&lt;ext-links id="extlinks"/&gt;
+&lt;?pi2 value of pi2?&gt;
+&lt;prelude id="index" xmlns:abc="http://abc"&gt;
+&lt;tpane&gt;
+&lt;ttitle&gt;&lt;abc:line&gt;Presentation&lt;/abc:line&gt;&lt;line&gt;Test&lt;/line&gt;&lt;/ttitle&gt;
+&lt;?test a test processing instruction?&gt;
+&lt;stitle&gt;&lt;line&gt;Presentation&lt;/line&gt;&lt;line&gt;Subtitle&lt;/line&gt;&lt;/stitle&gt;
+&lt;emptyTest/&gt;
+&lt;/tpane&gt;
+&lt;/prelude&gt;
+
+&lt;/model&gt;
+<b>T:\ftemp&gt;</b>xt model.xml showtree.xsl model-subset.txt
+
+<b>T:\ftemp&gt;</b>type model-subset.txt
+SHOWTREE Stylesheet - http://www.CraneSoftwrights.com/resources/
+Processor: James Clark
+1  Proc. Inst. 'xml-stylesheet': {type="text/xsl" href="showtree.msxsl"}
+2  Comment: {comment number 1}
+3  Element 'model':
+3.A  Attribute 'pub-id': 
+{+//ISBN 1-894049::CSL::Samples::SHOWTREE//Document SHOWTREE Test//EN}
+3.B  Attribute 'attr2': {Value of second attribute}
+3.C  Attribute 'attr3': {attr3}
+3.1  Text (model): {
+}
+3.2  Element 'title' (model):
+3.2.A  Attribute 'test': {value}
+3.2.1  Text (model,title): {A Course with }
+3.2.2  Element 'emph' (model,title):
+3.2.2.1  Text (model,title,emph): {mixed}
+3.2.3  Text (model,title): { content}
+3.3  Text (model): {
+}
+3.4  Element 'toc' (model):
+3.4.A  Attribute 'id': {toc}
+3.5  Text (model): {
+}
+3.6  Comment (model): {comment number 2}
+3.7  Text (model): {
+}
+3.8  Element 'ext-links' (model):
+3.8.A  Attribute 'id': {extlinks}
+3.9  Text (model): {
+}
+3.10  Proc. Inst. 'pi2' (model): {value of pi2}
+3.11  Text (model): {
+}
+3.12  Element 'prelude' (model):
+3.12.A  Attribute 'id': {index}
+3.12.1  Text (model,prelude): {
+}
+3.12.2  Element 'tpane' (model,prelude):
+3.12.2.1  Text (model,prelude,tpane): {
+}
+3.12.2.2  Element 'ttitle' (model,prelude,tpane):
+3.12.2.2.1  Element '{http://abc}abc:line' (model,prelude,tpane,ttitle):
+3.12.2.2.1.1  Text (model,prelude,tpane,ttitle,abc:line): {Presentation}
+3.12.2.2.2  Element 'line' (model,prelude,tpane,ttitle):
+3.12.2.2.2.1  Text (model,prelude,tpane,ttitle,line): {Test}
+3.12.2.3  Text (model,prelude,tpane): {
+}
+3.12.2.4  Proc. Inst. 'test' (model,prelude,tpane): {a test processing instruction}
+3.12.2.5  Text (model,prelude,tpane): {
+}
+3.12.2.6  Element 'stitle' (model,prelude,tpane):
+3.12.2.6.1  Element 'line' (model,prelude,tpane,stitle):
+3.12.2.6.1.1  Text (model,prelude,tpane,stitle,line): {Presentation}
+3.12.2.6.2  Element 'line' (model,prelude,tpane,stitle):
+3.12.2.6.2.1  Text (model,prelude,tpane,stitle,line): {Subtitle}
+3.12.2.7  Text (model,prelude,tpane): {
+}
+3.12.2.8  Element 'emptyTest' (model,prelude,tpane):
+3.12.2.9  Text (model,prelude,tpane): {
+}
+3.12.3  Text (model,prelude): {
+}
+3.13  Text (model): {
+
+}
+<b>T:\ftemp&gt;</b>saxon -o model-all.txt model.xml showtree-modified.xsl
+
+<b>T:\ftemp&gt;</b>type model-all.txt
+SHOWTREE Stylesheet - http://www.CraneSoftwrights.com/resources/
+Processor: SAXON 5.3.2 from Michael Kay of ICL
+1  Proc. Inst. 'xml-stylesheet': {type="text/xsl" href="showtree.msxsl"}
+2  Comment: {comment number 1}
+3  Element 'model':
+3.I  Namespace 'xml': {http://www.w3.org/XML/1998/namespace}
+3.A  Attribute 'pub-id': 
+{+//ISBN 1-894049::CSL::Samples::SHOWTREE//Document SHOWTREE Test//EN}
+3.B  Attribute 'attr2': {Value of second attribute}
+3.C  Attribute 'attr3': {attr3}
+3.1  Text (model): {
+}
+3.2  Element 'title' (model):
+3.2.I  Namespace 'xml': {http://www.w3.org/XML/1998/namespace}
+3.2.A  Attribute 'test': {value}
+3.2.1  Text (model,title): {A Course with }
+3.2.2  Element 'emph' (model,title):
+3.2.2.I  Namespace 'xml': {http://www.w3.org/XML/1998/namespace}
+3.2.2.1  Text (model,title,emph): {mixed}
+3.2.3  Text (model,title): { content}
+3.3  Text (model): {
+}
+3.4  Element 'toc' (model):
+3.4.I  Namespace 'xml': {http://www.w3.org/XML/1998/namespace}
+3.4.A  Attribute 'id': {toc}
+3.5  Text (model): {
+}
+3.6  Comment (model): {comment number 2}
+3.7  Text (model): {
+}
+3.8  Element 'ext-links' (model):
+3.8.I  Namespace 'xml': {http://www.w3.org/XML/1998/namespace}
+3.8.A  Attribute 'id': {extlinks}
+3.9  Text (model): {
+}
+3.10  Proc. Inst. 'pi2' (model): {value of pi2}
+3.11  Text (model): {
+}
+3.12  Element 'prelude' (model):
+3.12.I  Namespace 'xml': {http://www.w3.org/XML/1998/namespace}
+3.12.II  Namespace 'abc': {http://abc}
+3.12.A  Attribute 'id': {index}
+3.12.1  Text (model,prelude): {
+}
+3.12.2  Element 'tpane' (model,prelude):
+3.12.2.I  Namespace 'xml': {http://www.w3.org/XML/1998/namespace}
+3.12.2.II  Namespace 'abc': {http://abc}
+3.12.2.1  Text (model,prelude,tpane): {
+}
+3.12.2.2  Element 'ttitle' (model,prelude,tpane):
+3.12.2.2.I  Namespace 'xml': {http://www.w3.org/XML/1998/namespace}
+3.12.2.2.II  Namespace 'abc': {http://abc}
+3.12.2.2.1  Element '{http://abc}abc:line' (model,prelude,tpane,ttitle):
+3.12.2.2.1.I  Namespace 'xml': {http://www.w3.org/XML/1998/namespace}
+3.12.2.2.1.II  Namespace 'abc': {http://abc}
+3.12.2.2.1.1  Text (model,prelude,tpane,ttitle,abc:line): {Presentation}
+3.12.2.2.2  Element 'line' (model,prelude,tpane,ttitle):
+3.12.2.2.2.I  Namespace 'xml': {http://www.w3.org/XML/1998/namespace}
+3.12.2.2.2.II  Namespace 'abc': {http://abc}
+3.12.2.2.2.1  Text (model,prelude,tpane,ttitle,line): {Test}
+3.12.2.3  Text (model,prelude,tpane): {
+}
+3.12.2.4  Proc. Inst. 'test' (model,prelude,tpane): {a test processing instruction}
+3.12.2.5  Text (model,prelude,tpane): {
+}
+3.12.2.6  Element 'stitle' (model,prelude,tpane):
+3.12.2.6.I  Namespace 'xml': {http://www.w3.org/XML/1998/namespace}
+3.12.2.6.II  Namespace 'abc': {http://abc}
+3.12.2.6.1  Element 'line' (model,prelude,tpane,stitle):
+3.12.2.6.1.I  Namespace 'xml': {http://www.w3.org/XML/1998/namespace}
+3.12.2.6.1.II  Namespace 'abc': {http://abc}
+3.12.2.6.1.1  Text (model,prelude,tpane,stitle,line): {Presentation}
+3.12.2.6.2  Element 'line' (model,prelude,tpane,stitle):
+3.12.2.6.2.I  Namespace 'xml': {http://www.w3.org/XML/1998/namespace}
+3.12.2.6.2.II  Namespace 'abc': {http://abc}
+3.12.2.6.2.1  Text (model,prelude,tpane,stitle,line): {Subtitle}
+3.12.2.7  Text (model,prelude,tpane): {
+}
+3.12.2.8  Element 'emptyTest' (model,prelude,tpane):
+3.12.2.8.I  Namespace 'xml': {http://www.w3.org/XML/1998/namespace}
+3.12.2.8.II  Namespace 'abc': {http://abc}
+3.12.2.9  Text (model,prelude,tpane): {
+}
+3.12.3  Text (model,prelude): {
+}
+3.13  Text (model): {
+
+}
+<b>T:\ftemp&gt;</b>rem end
+
+</pre>
+               
+               
+               <p>If anyone has comments on these stylesheets, they are welcome to
+                  send them to <samp><a href="mailto:showtree@CraneSoftwrights.com">
+                        showtree@CraneSoftwrights.com</a></samp>.
+               </p>
+               
+               
+               <p>For more information regarding XSLT, a free preview download of
+                  Crane's commercial XSLT training material can be obtained from <a href="http://www.CraneSoftwrights.com/training/">
+                     http://www.CraneSoftwrights.com/training/</a>.
+               </p>
+               
+               
+               <p>See also Mike Brown's <a href="http://www.CraneSoftwrights.com/links/fancyxml.htm">Fancy XML
+                     Tree Viewer</a> that produces a colourful table-based HTML display
+                  of the nested hierarchies in an XML document.
+               </p>
+               
+               
+            </td>
+            <td width="200" style="border-left:solid 1pt; padding-left:5px"><img src="http://www.CraneSoftwrights.com/crane.gif" height="113" width="140" alt="Crane logo"><div class="letterheadCompany"><b> CRANE<br> SOFTWRIGHTS<br> LTD.<br></b></div>
+               <div style="text-align:center;padding-top:1em"><small><a target="_blank" href="http://www.CraneSoftwrights.com/training/crane-courses.rss" class="button"><span style="background-color:orange;color:white;font-weight:bold">&nbsp;TRAINING&nbsp;RSS&nbsp;XML&nbsp;</span></a></small><br><small><a target="_blank" href="http://www.CraneSoftwrights.com/resources/crane-resources.rss" class="button"><span style="background-color:orange;color:white;font-weight:bold">&nbsp;RESOURCES&nbsp;RSS&nbsp;XML&nbsp;</span></a></small></div>
+               <div style="text-align:center">
+                  <div style="display:inline-block">
+                     <div style="text-align:center;padding-top:0pt;border:2px solid;border-radius:10px;width:120px;background-color:#f5deb3">
+                        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank"><small><br><i>Please consider to</i></small><br><input type="hidden" name="cmd" value="_s-xclick"><input type="hidden" name="hosted_button_id" value="M4JQ6QH6T9JB6"><input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!"><img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1"><br><small><i>towards our<br>free resources.</i></small></form>
+                     </div>
+                  </div>
+               </div>
+               <div class="letterheadSite" style="padding-top:0pt">
+                  <center class="letterheadTopic">SHOWTREE</center>
+                  <center class="letterheadOther"><a class="nostate" href="http://www.CraneSoftwrights.com/index.htm">Home</a></center>
+                  <center class="letterheadOther"><a class="nostate" href="http://www.CraneSoftwrights.com/training/index.htm">Training videos, books &amp; free excerpts</a></center>
+                  <center class="letterheadOther"><a class="nostate" href="http://www.CraneSoftwrights.com/resources/index.htm">Free resources</a></center>
+                  <center class="letterheadOther"><a class="nostate" href="http://www.CraneSoftwrights.com/schedule.htm">Training schedule and course syllabi</a></center>
+                  <center class="letterheadOther"><a class="nostate" href="http://www.CraneSoftwrights.com/training/licensed.htm">Training licensing</a></center>
+                  <center class="letterheadOther"><a class="nostate" href="http://www.CraneSoftwrights.com/training/testimon.htm">Testimonials</a></center>
+                  <center class="letterheadOther"><a class="nostate" href="http://www.CraneSoftwrights.com/bio/gkholman.htm">G. Ken Holman</a></center>
+                  <center class="letterheadOther"><a class="nostate" href="http://www.CraneSoftwrights.com/contact.htm">Company &amp; contact information</a></center>
+                  <center class="letterheadOther"><a class="nostate" href="http://www.CraneSoftwrights.com/goubl/index.htm">goUBL.com</a></center>
+                  <center class="letterheadOther"><a class="nostate" href="http://www.CraneSoftwrights.com/site.htm">Site map</a></center>
+               </div>
+               <div style="text-align:center; padding-top:1em">
+                  <div style="display:inline-block"><a href="http://www.CraneSoftwrights.com/links/ptux-coupon.htm" target="_blank"><img src="http://www.CraneSoftwrights.com/trainingblaze.png" target="_blank"></a></div>
+               </div>
+               <div class="letterheadAddress"><small><br>+1&nbsp;(613)&nbsp;489-0999&nbsp;(Voice)<br>+1&nbsp;(613)&nbsp;489-0995&nbsp;(Fax)<br><br><a href="mailto:info@CraneSoftwrights.com">info@CraneSoftwrights.com</a><br><br></small></div>
+            </td>
+         </tr>
+      </table>
+      <hr>
+      <p class="legend"><small><i><b>Link traversal:</b> This web site relies heavily on client-side redirection.  If certain links do not work for you, please ensure you have this
+               behaviour enabled in your browser.</i></small></p>
+      <p class="footerLinkHeadings">Site navigation:</p>
+      <div class="bannerTop">
+         <div align="center" class="banner"><span class="bannerEntry"><a class="nostate" href="http://www.CraneSoftwrights.com/index.htm">Home</a></span> <span class="bannerEntry"><a class="nostate" href="http://www.CraneSoftwrights.com/training/index.htm">Training&nbsp;videos,&nbsp;books&nbsp;&amp;&nbsp;free&nbsp;excerpts</a></span> <span class="bannerEntry"><a class="nostate" href="http://www.CraneSoftwrights.com/resources/index.htm">Free&nbsp;resources</a></span> <span class="bannerEntry"><a class="nostate" href="http://www.CraneSoftwrights.com/schedule.htm">Training&nbsp;schedule&nbsp;and&nbsp;course&nbsp;syllabi</a></span> <span class="bannerEntry"><a class="nostate" href="http://www.CraneSoftwrights.com/training/licensed.htm">Training&nbsp;licensing</a></span> <span class="bannerEntry"><a class="nostate" href="http://www.CraneSoftwrights.com/training/testimon.htm">Testimonials</a></span> <span class="bannerEntry"><a class="nostate" href="http://www.CraneSoftwrights.com/bio/gkholman.htm">G.&nbsp;Ken&nbsp;Holman</a></span> <span class="bannerEntry"><a class="nostate" href="http://www.CraneSoftwrights.com/contact.htm">Company&nbsp;&amp;&nbsp;contact&nbsp;information</a></span> <span class="bannerEntry"><a class="nostate" href="http://www.CraneSoftwrights.com/goubl/index.htm">goUBL.com</a></span> <span class="bannerEntry"><a class="nostate" href="http://www.CraneSoftwrights.com/site.htm">Site&nbsp;map</a></span> 
+         </div>
+      </div>
+      <p class="legend"><small><i><b>Small print:</b>
+               All use of this web site and all business conducted 
+               with Crane Softwrights Ltd. is subject to the legal disclaimers 
+               detailed at 
+               <a target="_blank" href="http://www.CraneSoftwrights.com/legal" class="external legenda">http://www.CraneSoftwrights.com/legal</a>
+               ... please contact us if you have any questions.
+               All trademarks, servicemarks, registered trademarks, and registered servicemarks are the property of their respective owners.
+               </i></small></p>
+      <p class="legend"><small><i><b>Link legend: </b>links that are
+               <span class="external legenda">marked with this dotted underline</span>
+               will open up a new browser window, otherwise the
+               same browser window is used for the link 
+               target.<small><a href="/donotlook.htm" class="robots">&nbsp;</a></small>
+               <!--the preceding link is only for the use of robots, not visitors--></i></small></p>
+      <p class="timestamp">Last changed: $Date: 2006/12/27 20:32:19 $(UTC) <a class="external" target="_blank" href="http://www.CraneSoftwrights.com/legal/privacy.htm">(Privacy policy)</a><br></p>
+   </body>
+</html>

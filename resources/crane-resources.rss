@@ -1,0 +1,740 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:site="http://www.CraneSoftwrights.com/ns/site" xmlns:html="http://www.w3.org/TR/REC-html40" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns="http://purl.org/rss/1.0/">
+   <channel rdf:about="http://www.CraneSoftwrights.com/resources/crane-resources.rss">
+      <title>Crane Softwrights Ltd. Freely-available Resources</title>
+      <link>http://www.CraneSoftwrights.com/resources/crane-resources.rss</link>
+      <description>This includes a summary list of the freely-available resources that can be downloaded from Crane Softwrights Ltd.'s web site.  The list is sorted with the most recently developed or revised resources first.</description>
+      <dc:date>2017-07-02T19:41:38-04:00</dc:date>
+      <items>
+         <rdf:Seq>
+            <rdf:li rdf:resource="urn:x-CraneSoftwrights.com:entry"/>
+            <rdf:li rdf:resource="urn:x-CraneSoftwrights.com:entry:oxygenubl"/>
+            <rdf:li rdf:resource="urn:x-CraneSoftwrights.com:entry:gc2obdndr"/>
+            <rdf:li rdf:resource="urn:x-CraneSoftwrights.com:entry:gc2odsxml"/>
+            <rdf:li rdf:resource="urn:x-CraneSoftwrights.com:entry:ods2obdgc"/>
+            <rdf:li rdf:resource="urn:x-CraneSoftwrights.com:entry:gc2ublndr"/>
+            <rdf:li rdf:resource="urn:x-CraneSoftwrights.com:entry:ISOSTS"/>
+            <rdf:li rdf:resource="urn:x-CraneSoftwrights.com:entry:gc2summary"/>
+            <rdf:li rdf:resource="urn:x-CraneSoftwrights.com:entry:ods2ublgc"/>
+            <rdf:li rdf:resource="urn:x-CraneSoftwrights.com:entry:dsig"/>
+            <rdf:li rdf:resource="urn:x-CraneSoftwrights.com:entry:UBL21ABIE"/>
+            <rdf:li rdf:resource="urn:x-CraneSoftwrights.com:entry:ublform"/>
+            <rdf:li rdf:resource="urn:x-CraneSoftwrights.com:entry:strategy4ubl2sql"/>
+            <rdf:li rdf:resource="urn:x-CraneSoftwrights.com:entry:csv"/>
+            <rdf:li rdf:resource="urn:x-CraneSoftwrights.com:entry:ublrnc"/>
+            <rdf:li rdf:resource="urn:x-CraneSoftwrights.com:entry:codess"/>
+            <rdf:li rdf:resource="urn:x-CraneSoftwrights.com:entry:tspython"/>
+            <rdf:li rdf:resource="urn:x-CraneSoftwrights.com:entry:cva2sch"/>
+            <rdf:li rdf:resource="urn:x-CraneSoftwrights.com:entry:csv2gc"/>
+            <rdf:li rdf:resource="urn:x-CraneSoftwrights.com:entry:literatexslt"/>
+            <rdf:li rdf:resource="urn:x-CraneSoftwrights.com:entry:gcExportSubset"/>
+            <rdf:li rdf:resource="urn:x-CraneSoftwrights.com:entry:ubl2-ss"/>
+            <rdf:li rdf:resource="urn:x-CraneSoftwrights.com:entry:XMP"/>
+            <rdf:li rdf:resource="urn:x-CraneSoftwrights.com:entry:digsig"/>
+            <rdf:li rdf:resource="urn:x-CraneSoftwrights.com:entry:ubl2modelreport-EN"/>
+            <rdf:li rdf:resource="urn:x-CraneSoftwrights.com:entry:ubl2modelreport-ES"/>
+            <rdf:li rdf:resource="urn:x-CraneSoftwrights.com:entry:ubl2modelreport-IT"/>
+            <rdf:li rdf:resource="urn:x-CraneSoftwrights.com:entry:ubl2modelreport-JP"/>
+            <rdf:li rdf:resource="urn:x-CraneSoftwrights.com:entry:xslstyle"/>
+            <rdf:li rdf:resource="urn:x-CraneSoftwrights.com:entry:filter"/>
+            <rdf:li rdf:resource="urn:x-CraneSoftwrights.com:entry:ubl2idd2genericode"/>
+            <rdf:li rdf:resource="urn:x-CraneSoftwrights.com:entry:StratML"/>
+            <rdf:li rdf:resource="urn:x-CraneSoftwrights.com:entry:psmi"/>
+            <rdf:li rdf:resource="urn:x-CraneSoftwrights.com:entry:xls2ods2xml"/>
+            <rdf:li rdf:resource="urn:x-CraneSoftwrights.com:entry:drag-n-drop"/>
+            <rdf:li rdf:resource="urn:x-CraneSoftwrights.com:entry:sch2html"/>
+            <rdf:li rdf:resource="urn:x-CraneSoftwrights.com:entry:showrddl"/>
+            <rdf:li rdf:resource="urn:x-CraneSoftwrights.com:entry:xpathrep"/>
+            <rdf:li rdf:resource="urn:x-CraneSoftwrights.com:entry:filterXSDDK"/>
+            <rdf:li rdf:resource="urn:x-CraneSoftwrights.com:entry:xpathins"/>
+            <rdf:li rdf:resource="urn:x-CraneSoftwrights.com:entry:ublcodex"/>
+            <rdf:li rdf:resource="urn:x-CraneSoftwrights.com:entry:odf-xslt"/>
+            <rdf:li rdf:resource="urn:x-CraneSoftwrights.com:entry:unlk-ss"/>
+            <rdf:li rdf:resource="urn:x-CraneSoftwrights.com:entry:aggreg"/>
+            <rdf:li rdf:resource="urn:x-CraneSoftwrights.com:entry:resultxslt"/>
+            <rdf:li rdf:resource="urn:x-CraneSoftwrights.com:entry:acid"/>
+            <rdf:li rdf:resource="urn:x-CraneSoftwrights.com:entry:n2x"/>
+            <rdf:li rdf:resource="urn:x-CraneSoftwrights.com:entry:bbi"/>
+            <rdf:li rdf:resource="urn:x-CraneSoftwrights.com:entry:dumpfo"/>
+            <rdf:li rdf:resource="urn:x-CraneSoftwrights.com:entry:bittest"/>
+            <rdf:li rdf:resource="urn:x-CraneSoftwrights.com:entry:xslkeys"/>
+            <rdf:li rdf:resource="urn:x-CraneSoftwrights.com:entry:debugmsxml"/>
+            <rdf:li rdf:resource="urn:x-CraneSoftwrights.com:entry:xsltexp"/>
+            <rdf:li rdf:resource="urn:x-CraneSoftwrights.com:entry:showtree"/>
+            <rdf:li rdf:resource="urn:x-CraneSoftwrights.com:entry:annot"/>
+            <rdf:li rdf:resource="urn:x-CraneSoftwrights.com:entry:color"/>
+            <rdf:li rdf:resource="urn:x-CraneSoftwrights.com:entry:presapp"/>
+         </rdf:Seq>
+      </items>
+   </channel>
+   <item rdf:about="urn:x-CraneSoftwrights.com:entry">
+      <title>Summary - Crane Softwrights Ltd. Freely-available Resources</title>
+      <link>http://www.CraneSoftwrights.com/resources/crane-resources.rss</link>
+      <description>This includes a summary list of the freely-available resources that can be downloaded from Crane Softwrights Ltd.'s web site.  The list is sorted with the most recently developed or revised resources first. (updated 2017-07-02 19:41:38-04:00)</description>
+   </item>
+   <item rdf:about="urn:x-CraneSoftwrights.com:entry:oxygenubl">
+      <title>2017-05-25 UBL Frameworks for oXygenXML editing tool</title>
+      <description>
+    The oXygenXML editing tool
+    includes the concept of a vocabulary framework for validation and
+    instance creation/editing.  Add the "UBL/" subdirectory from this package
+    to one of the directories listed in "Additional frameworks directories"
+    of the "Preferences / Document Type Association / Locations" settings.
+  
+    The frameworks included are for UBL 2.1, UBL 2.2 development and
+    UBL 2.2 Pre-award development.
+   (updated 2017-05-25 22:00:00Z)</description>
+      <link>http://www.CraneSoftwrights.com/resources/ubl/index.htm#oxygenubl</link>
+      <dc:date>2017-05-25T22:00:00Z</dc:date>
+      <dc:title>UBL Frameworks for oXygenXML editing tool</dc:title>
+      <dc:subject>OASIS UBL resources</dc:subject>
+   </item>
+   <item rdf:about="urn:x-CraneSoftwrights.com:entry:gc2obdndr">
+      <title>2017-01-13 Genericode to OBD NDR validation artefacts</title>
+      <description>
+Crane's environment to implement the OASIS Business Document Naming and Design Rules 1.1 XSD schemas, OASIS CVA (context/value association) files and JSON schemas from an input OASIS genericode expression of a compatible OBD NDR 1.0 CCTS (Core Component Technical Specification v2.01) spreadsheet.  This package can also be used to create document extension schemas and additional document schemas for any project using the OBD NDR 3.0.  Note that the genericode expression of the spreadsheet contents is used as a vendor-neutral expression of the information without relying on any particular brand of spreadsheet software.
+  This package includes the HTML summary creation tool Crane-gc2obdsummary. (updated 2017-01-13 21:30:00Z)</description>
+      <link>http://www.CraneSoftwrights.com/resources/ubl/index.htm#gc2obdndr</link>
+      <dc:date>2017-01-13T21:30:00Z</dc:date>
+      <dc:title>Genericode to OBD NDR validation artefacts</dc:title>
+      <dc:subject>OASIS Business Document NDR resources</dc:subject>
+   </item>
+   <item rdf:about="urn:x-CraneSoftwrights.com:entry:gc2odsxml">
+      <title>2016-12-08 Genericode conversion to OpenOffice spreadsheet files</title>
+      <description>
+  This is a standalone XSLT 2.0 stylesheet to create the files of an
+  OpenOffice spreadsheet .ODS ZIP from a combination of a genericode file
+  and a skeleton ODS file.
+ (updated 2016-12-08 16:50:00Z)</description>
+      <link>http://www.CraneSoftwrights.com/resources/ubl/index.htm#gc2odsxml</link>
+      <dc:date>2016-12-08T16:50:00Z</dc:date>
+      <dc:title>Genericode conversion to OpenOffice spreadsheet files</dc:title>
+      <dc:subject>OASIS Genericode and Context/Value Association (CVA) resources</dc:subject>
+   </item>
+   <item rdf:about="urn:x-CraneSoftwrights.com:entry:ods2obdgc">
+      <title>2016-11-29 OpenOffice spreadsheet conversion to OBD genericode file</title>
+      <description>This is a standalone XSLT 2.0 stylesheet to export a complete genericode file from one or more ODS spreadsheets. The input can either be the binary ODS file or the OpenDocument Format XML equivalent. When the input is a spreadsheet of CCTS constructs, the output is suitable for use with the Genericode to OBD NDR process to create XSD schemas and CVA files.
+    Note that there are invocation parameters such that the spreadsheet can
+    be output in a "raw" form with no presumption of use of the UBL NDR.  This
+    provides a method of converting any arbitrary spreadsheet with column head
+    values into a genericode XML document.
+   (updated 2016-11-29 20:30:00Z)</description>
+      <link>http://www.CraneSoftwrights.com/resources/ubl/index.htm#ods2obdgc</link>
+      <dc:date>2016-11-29T20:30:00Z</dc:date>
+      <dc:title>OpenOffice spreadsheet conversion to OBD genericode file</dc:title>
+      <dc:subject>OASIS Business Document NDR resources</dc:subject>
+   </item>
+   <item rdf:about="urn:x-CraneSoftwrights.com:entry:gc2ublndr">
+      <title>2015-07-26 Genericode to UBL NDR</title>
+      <description>
+(replaced in UBL 2.1+ with Crane-gc2obdndr) Crane's environment to implement the UBL Naming and Design Rules 3.0 XSD schemas and OASIS CVA (context/value association) files from an input OASIS genericode expression of a compatible UBL NDR 3.0 CCTS (Core Component Technical Specification v2.01) spreadsheet.  This package can be used in any project wanting to create schemas and CVA files following the UBL NDR 3.0, not just files for UBL.  This package can also be used to create document extension schemas and additional document schemas for any project using the UBL NDR 3.0.  Note that the genericode expression of the spreadsheet contents is used as a vendor-neutral expression of the information without relying on any particular brand of spreadsheet software.
+   (updated 2015-07-26 21:40:00Z)</description>
+      <link>http://www.CraneSoftwrights.com/resources/ubl/index.htm#gc2ublndr</link>
+      <dc:date>2015-07-26T21:40:00Z</dc:date>
+      <dc:title>Genericode to UBL NDR</dc:title>
+      <dc:subject>OASIS Business Document NDR resources</dc:subject>
+      <dc:subject>Archaic UBL NDR 2.0 support</dc:subject>
+   </item>
+   <item rdf:about="urn:x-CraneSoftwrights.com:entry:ISOSTS">
+      <title>2015-07-17 ISOSTS XML rendering PDF</title>
+      <description>
+    This stylesheet is used to render XML instances of ISOSTS 1.1, available
+    at http://www.iso.org/schema/isosts/, and described
+    by the document model found
+    at http://www.iso.org/schema/isosts/v1.1/doc
+    and by the document constraints found
+    at http://www.iso.org/schema/isosts/resources/schematron/ISOSTS_validation.sch. 
+  
+    The vocabulary is not entirely covered by these stylesheets, and the
+    renderings are not meant to be production ready.  Rather, the PDF rendering 
+    is a watermarked mock-up of
+    the production rendering, suitable for review before sending to ISO
+    for production processing.  See
+    the readme file for instructions regarding requesting more features
+    of the vocabulary to be implemented in the stylesheets.
+  
+    This library is expected to be updated often in response to requests for
+    new features and new interpretations of the vocabulary.  Check back here
+    frequently, or monitor our RSS Feed for
+    updates.
+  
+    These ISOSTS stylesheets are being incorporated, without the watermarks, as the publishing component of a standards management suite of work-flow tools. Please see 
+    http://setare.no/?page_id=222
+    for more details in this regard.
+   (updated 2015-07-17 01:00:00Z)</description>
+      <link>http://www.CraneSoftwrights.com/resources/index.htm#ISOSTS</link>
+      <dc:date>2015-07-17T01:00:00Z</dc:date>
+      <dc:title>ISOSTS XML rendering PDF</dc:title>
+      <dc:subject>XSL-FO Resources</dc:subject>
+   </item>
+   <item rdf:about="urn:x-CraneSoftwrights.com:entry:gc2summary">
+      <title>2015-06-27 Genericode to Summary HTML Reports</title>
+      <description>
+(replaced in UBL 2.1+ with Crane-gc2obdndr) Crane's environment to create hyperlinked HTML summary reports from a genericode expression of a CCTS model created following the UBL NDR.
+   (updated 2015-06-27 02:40:00Z)</description>
+      <link>http://www.CraneSoftwrights.com/resources/ubl/index.htm#gc2summary</link>
+      <dc:date>2015-06-27T02:40:00Z</dc:date>
+      <dc:title>Genericode to Summary HTML Reports</dc:title>
+      <dc:subject>OASIS Business Document NDR resources</dc:subject>
+      <dc:subject>Archaic UBL NDR 2.0 support</dc:subject>
+   </item>
+   <item rdf:about="urn:x-CraneSoftwrights.com:entry:ods2ublgc">
+      <title>2015-06-24 OpenOffice spreadsheet conversion to complete UBL genericode file</title>
+      <description>(Crane offers no equivalent for UBL 2.1+ for this) This is a standalone XSLT 2.0 stylesheet to export a complete genericode file from one or more ODS spreadsheets. The input can either be the binary ODS file or the OpenDocument Format XML equivalent. When the input is a spreadsheet of CCTS constructs, the output is suitable for use with the Genericode to UBL NDR process to create XSD
+schemas
+    Note that there are invocation parameters such that the spreadsheet can
+    be output in a "raw" form with no presumption of use of the UBL NDR.  This
+    provides a method of converting any arbitrary spreadsheet with column head
+    values into a genericode XML document.
+   (updated 2015-06-24 01:00:00Z)</description>
+      <link>http://www.CraneSoftwrights.com/resources/ubl/index.htm#ods2ublgc</link>
+      <dc:date>2015-06-24T01:00:00Z</dc:date>
+      <dc:title>OpenOffice spreadsheet conversion to complete UBL genericode file</dc:title>
+      <dc:subject>OASIS Business Document NDR resources</dc:subject>
+      <dc:subject>Archaic UBL NDR 2.0 support</dc:subject>
+   </item>
+   <item rdf:about="urn:x-CraneSoftwrights.com:entry:dsig">
+      <title>2015-02-15 Digitally signing XML documents</title>
+      <description>
+These tools are used to add W3C XML Digital Signatures to an XML document with simple signature requirements (signatures at the end of the document element).
+
+For documents with more complex requirements, such as signing UBL documents, please see Digitally signing UBL documents
+ (updated 2015-02-15 02:50:00Z)</description>
+      <link>http://www.CraneSoftwrights.com/resources/index.htm#dsig</link>
+      <dc:date>2015-02-15T02:50:00Z</dc:date>
+      <dc:title>Digitally signing XML documents</dc:title>
+      <dc:subject>XML Resources</dc:subject>
+   </item>
+   <item rdf:about="urn:x-CraneSoftwrights.com:entry:UBL21ABIE">
+      <title>2014-12-31 UBL 2.1 ABIE summary report</title>
+      <description>
+    This is a summary of all ABIEs in UBL 2.1, one ABIE per page, suitable for
+    excerpting for documentation purposes.  Many thanks to Andrew Schoka for
+    providing the page layout design.
+   (updated 2014-12-31 14:10:00Z)</description>
+      <link>http://www.CraneSoftwrights.com/resources/ubl/index.htm#UBL21ABIE</link>
+      <dc:date>2014-12-31T14:10:00Z</dc:date>
+      <dc:title>UBL 2.1 ABIE summary report</dc:title>
+      <dc:subject>OASIS UBL resources</dc:subject>
+      <dc:subject>
+UBL report resources</dc:subject>
+      <dc:subject>Miscellaneous UBL reports</dc:subject>
+   </item>
+   <item rdf:about="urn:x-CraneSoftwrights.com:entry:ublform">
+      <title>2014-04-01 Proof of concept UBL form data entry</title>
+      <description>
+    This is an XSLT 2.0 stylesheet running client-side in a web browser by
+    using Saxon-CE (Client Edition).  It is a demonstration of a bare-bones
+    data entry HTML form that synthesizes an OASIS UBL invoice document.
+    It is not meant for any production use, but can be built on in order to
+    create a full-featured data entry environment.
+  
+    This demonstration environment is up and running to test at:
+    
+      Crane-ublform.html.
+    
+   (updated 2014-04-01 16:20:00Z)</description>
+      <link>http://www.CraneSoftwrights.com/resources/ubl/index.htm#ublform</link>
+      <dc:date>2014-04-01T16:20:00Z</dc:date>
+      <dc:title>Proof of concept UBL form data entry</dc:title>
+      <dc:subject>OASIS UBL resources</dc:subject>
+   </item>
+   <item rdf:about="urn:x-CraneSoftwrights.com:entry:strategy4ubl2sql">
+      <title>2013-10-13 Strategy for UBL documents in SQL tables</title>
+      <description>
+Research working together with Stephen Rowlison of PureMethods has produced this strategy for marshalling and unmarshalling UBL documents from and to an SQL database.  Actual SQL table definition scripts are included, as well as the algorithm for loading the tables and traversing them, though no running code is yet part of the package due to the vagaries of different systems.  Unlike other SQL approaches attempting to model the UBL XSD expressions, this method successfully addresses the CCTS 2.01 model of UBL with no loss of information from any possible UBL document in XML.  Feedback is welcome, especially from implementers employing this approach in their work.  Note this method should work for any environment based on CCTS 2.01.  The UBL tables included in this package are defined for use with the final UBL 2.1 Committee Specification deliverables, which are identical to those of the OASIS UBL 2.1 Standard.
+   (updated 2013-10-13 00:20:00Z)</description>
+      <link>http://www.CraneSoftwrights.com/resources/ubl/index.htm#strategy4ubl2sql</link>
+      <dc:date>2013-10-13T00:20:00Z</dc:date>
+      <dc:title>Strategy for UBL documents in SQL tables</dc:title>
+      <dc:subject>OASIS UBL resources</dc:subject>
+   </item>
+   <item rdf:about="urn:x-CraneSoftwrights.com:entry:csv">
+      <title>2013-07-08 ParseCSV and ParseTSV - supporting CSV and TSV in XSLT 2</title>
+      <description>
+These are helpful called templates that read either a comma-separated values (CSV) file or a
+tab-separated values (TSV) file using XSLT 2 and creates an XML structure of elements expressing the records and fields. (updated 2013-07-08 20:10:00Z)</description>
+      <link>http://www.CraneSoftwrights.com/resources/index.htm#csv</link>
+      <dc:date>2013-07-08T20:10:00Z</dc:date>
+      <dc:title>ParseCSV and ParseTSV - supporting CSV and TSV in XSLT 2</dc:title>
+      <dc:subject>XSLT Resources</dc:subject>
+   </item>
+   <item rdf:about="urn:x-CraneSoftwrights.com:entry:ublrnc">
+      <title>2013-04-20 RELAX-NG schemas for UBL 2.0 documents</title>
+      <description>This is a package of RELAX-NG compact syntax schemas for validating and direct editing of XML instances of UBL 2.0 schemas. The UBL 2.1 release has the RELAX-NG schemas as part of the distribution. (updated 2013-04-20 01:10:00Z)</description>
+      <link>http://www.CraneSoftwrights.com/resources/ubl/index.htm#ublrnc</link>
+      <dc:date>2013-04-20T01:10:00Z</dc:date>
+      <dc:title>RELAX-NG schemas for UBL 2.0 documents</dc:title>
+      <dc:subject>OASIS UBL resources</dc:subject>
+   </item>
+   <item rdf:about="urn:x-CraneSoftwrights.com:entry:codess">
+      <title>2013-04-16 Genericode and CVA file stylesheets</title>
+      <description>Crane's genericode and context/value association file visualization stylesheets are used for reporting the information found inside of OASIS genericode files, version 1.0 http://docs.oasis-open.org/codelist/ns/genericode/1.0/ and inside OASIS context/value association files, committee draft 02 version http://docs.oasis-open.org/codelist/ns/ContextValueAssociation/1.0/.  The stylesheets available in this package are named Crane-cva2html.xsl, Crane-gc2html.xsl and Crane-cva2htmlXSLT.xsl. (updated 2013-04-16 00:40:00Z)</description>
+      <link>http://www.CraneSoftwrights.com/resources/ubl/index.htm#codess</link>
+      <dc:date>2013-04-16T00:40:00Z</dc:date>
+      <dc:title>Genericode and CVA file stylesheets</dc:title>
+      <dc:subject>OASIS Genericode and Context/Value Association (CVA) resources</dc:subject>
+   </item>
+   <item rdf:about="urn:x-CraneSoftwrights.com:entry:tspython">
+      <title>2013-04-13 Python-based API to the Tradeshift REST service</title>
+      <description>
+Crane has developed an application programmer's interface (API) to the
+Tradeshift cloud REST
+ interface for
+Python programmers.  Use this module in your Python application to access
+all of the API resources to enable one, for example, to despatch documents or
+to read, write and delete documents from your document storage on Tradeshift.
+Examples for each are included.
+
+  The package also includes a command-line interface that works entirely with
+file system files so that you can use the API without writing a single line of
+Python. The Python module is platform-independent and invocable from shell
+scripts, batch files, Ant scripts and any other invocation.
+Thus, one can use tools such as XSLT or XQuery
+in conjunction with this command-line tool in order to work with documents
+from your Tradeshift account without knowing Python.
+Note that versions of this library released after March 2013 are totally rewritten from the versions released in 2011.  Programs written to the 2011 interface must be modified to adapt to the April 2013 interface.
+  This Python API is free to download and use and exploit as you need
+ (noting the copyright obligations recorded in the source).  
+If you need
+assistance in adapting your software to either use this Python interface to 
+the Tradeshift API or use your own interface to the Tradeshift API, please 
+contact
+us
+regarding our commercial consulting services.
+Note we also have a face-to-face or one-on-one over-the-Internet hands-on training class that uses this Python API to help programmers get set up quickly on Tradeshift with working software.  They can then mimic in their own code what this Python code is doing. (updated 2013-04-13 21:00:00Z)</description>
+      <link>http://www.CraneSoftwrights.com/resources/ubl/index.htm#tspython</link>
+      <dc:date>2013-04-13T21:00:00Z</dc:date>
+      <dc:title>Python-based API to the Tradeshift REST service</dc:title>
+      <dc:subject>Tradeshift Resources</dc:subject>
+   </item>
+   <item rdf:about="urn:x-CraneSoftwrights.com:entry:cva2sch">
+      <title>2013-02-07 Schematron implementation of CVA files for validation</title>
+      <description>Crane has developed an XML document value validation implementation of OASIS context/value association files http://docs.oasis-open.org/codelist/ns/ContextValueAssociation/1.0/.  This validation creates an ISO 19757-3 Schematron assertion schema corresponding to the associations and any referenced code list and value enumerations.  The out-of-the-box implementation included is an XSLT implementation of ISO Schematron, though it can be used with any implementation of ISO Schematron.  The out-of-the-box implementation included supports OASIS genericode representations of the enumerations, though it can be adapted to any representation of code lists and value enumerations. (updated 2013-02-07 19:40:00Z)</description>
+      <link>http://www.CraneSoftwrights.com/resources/ubl/index.htm#cva2sch</link>
+      <dc:date>2013-02-07T19:40:00Z</dc:date>
+      <dc:title>Schematron implementation of CVA files for validation</dc:title>
+      <dc:subject>OASIS Genericode and Context/Value Association (CVA) resources</dc:subject>
+   </item>
+   <item rdf:about="urn:x-CraneSoftwrights.com:entry:csv2gc">
+      <title>2013-01-18 CSV to genericode transformation</title>
+      <description>
+  A stylesheet to transform a CSV file with an enumeration's list-level
+  metadata and rows of values and value-level metadata into a genericode file.
+ (updated 2013-01-18 23:00:00Z)</description>
+      <link>http://www.CraneSoftwrights.com/resources/ubl/index.htm#csv2gc</link>
+      <dc:date>2013-01-18T23:00:00Z</dc:date>
+      <dc:title>CSV to genericode transformation</dc:title>
+      <dc:subject>OASIS Genericode and Context/Value Association (CVA) resources</dc:subject>
+   </item>
+   <item rdf:about="urn:x-CraneSoftwrights.com:entry:literatexslt">
+      <title>2012-07-31 LiterateXSLT™ Stylesheet Synthesis</title>
+      <description>This is an environment for synthesizing XSLT stylesheets from prototypical result instances annotated with signals that create stylesheet constructs.  Validation and other benefits are described.  Various support tools are included and a discussion of a possible GUI interface.  Originally published as an experiment in July 2003, this has been updated in November 2008 to XSLT 2.0 and is maturing into a production environment. (updated 2012-07-31 23:30:00Z)</description>
+      <link>http://www.CraneSoftwrights.com/resources/index.htm#literatexslt</link>
+      <dc:date>2012-07-31T23:30:00Z</dc:date>
+      <dc:title>LiterateXSLT™ Stylesheet Synthesis</dc:title>
+      <dc:subject>XSLT Resources</dc:subject>
+   </item>
+   <item rdf:about="urn:x-CraneSoftwrights.com:entry:gcExportSubset">
+      <title>2011-11-11 OpenOffice spreadsheet export to genericode subset</title>
+      <description>(Crane offers no equivalent for UBL 2.1+ for this) This is an OpenOffice export filter that serializes the contents of a spreadsheet as a set of genericode rows, suitable for use in an OASIS genericode file.  Assumptions are made regarding the worksheet tab title and the first-row's use of column headings.This is not a standalone XSLT file, this is an export filter for OpenOffice. (updated 2011-11-11 20:00:00Z)</description>
+      <link>http://www.CraneSoftwrights.com/resources/ubl/index.htm#gcExportSubset</link>
+      <dc:date>2011-11-11T20:00:00Z</dc:date>
+      <dc:title>OpenOffice spreadsheet export to genericode subset</dc:title>
+      <dc:subject>OASIS Business Document NDR resources</dc:subject>
+      <dc:subject>Archaic UBL NDR 2.0 support</dc:subject>
+   </item>
+   <item rdf:about="urn:x-CraneSoftwrights.com:entry:ubl2-ss">
+      <title>2011-02-03 Printing and displaying UBL 2.0 instances to the UN Layout Key</title>
+      <description>
+This is a library for displaying and printing instances of UBL 2.0 document models to HTML files and PDF files according to the United Nations Layout Key.  The ZIP file includes all of the documentation required to obtain and, where necessary, install freely-available third-party software on your machine to do the rendering and printing.This library supports the completed formatting specifications from the UBL HISC committee.  At this time only the Invoice has been completed, thus it is the only one supported.  If you can contribute to the work of the committee, the committee home page has details of how you can help.A number of different languages are available for the box labels on the forms implemented by Crane:  Bosnian (PDF/HTML), Czech (PDF/HTML), Danish (PDF/HTML), Dutch (PDF/HTML), English (PDF/HTML), Finnish (PDF/HTML), French (PDF/HTML), German (PDF/HTML), Icelandic (PDF/HTML), Italian (PDF/HTML), Norwegian (PDF/HTML), Portuguese (PDF/HTML), Slovak (PDF/HTML) and Spanish (PDF/HTML) are supported at this time.  If you can contribute to Crane's library with a set of translations of box labels for another language, the ZIP file has the details of how you can do so.  We will make all of the UN Layout Key stylesheets on our web site freely available, thus your community of users will end up with a free UBL 2 to UN Layout Key PDF printing for download.This environment is based on XSLT and XSL-FO, but users don't need to know these details to use the stylesheets. (updated 2011-02-03 16:00:00Z)</description>
+      <link>http://www.CraneSoftwrights.com/resources/ublss/index.htm#ubl2-ss</link>
+      <dc:date>2011-02-03T16:00:00Z</dc:date>
+      <dc:title>Printing and displaying UBL 2.0 instances to the UN Layout Key</dc:title>
+   </item>
+   <item rdf:about="urn:x-CraneSoftwrights.com:entry:XMP">
+      <title>2011-01-29 PDF XMP Metadata file extraction</title>
+      <description>
+    This stylesheet is used on XMP metadata found in a PDF file, say that
+    created by an XSL-FO stylesheet and engine.  This stylesheet does not do
+    the exportation itself, only the extraction of file content found embedded
+    in an exported XMP instance.  The documentation includes manual exportation
+    instructions using Acrobat to export XMP metadata.  
+  
+    Also included is a Python application for extracting XMP metadata from
+    inside a PDF file using the command line.  The input is an unencrypted and
+    uncompressed PDF file and the output is the embedded XMP metadata packet.
+    The stylesheet can then be used on this packet to extract the embedded
+    file content.
+   (updated 2011-01-29 18:40:00Z)</description>
+      <link>http://www.CraneSoftwrights.com/resources/index.htm#XMP</link>
+      <dc:date>2011-01-29T18:40:00Z</dc:date>
+      <dc:title>PDF XMP Metadata file extraction</dc:title>
+      <dc:subject>XSL-FO Resources</dc:subject>
+   </item>
+   <item rdf:about="urn:x-CraneSoftwrights.com:entry:digsig">
+      <title>2010-11-27 Digitally signing UBL documents</title>
+      <description>
+Crane's UBL digital signature environment (utilizing the xmlsec application by Aleksey Sanin) is used to digitally sign a UBL document using a PKCS#12 key certificate file, and/or verify a UBL document's enveloped or detached signatures.  Guidance is given regarding obtaining at no charge your own certificate file to use for testing.
+  
+For documents with simpler requirements for digital signatures, please see Digitally signing XML documents.
+ (updated 2010-11-27 21:40:00Z)</description>
+      <link>http://www.CraneSoftwrights.com/resources/ubl/index.htm#digsig</link>
+      <dc:date>2010-11-27T21:40:00Z</dc:date>
+      <dc:title>Digitally signing UBL documents</dc:title>
+      <dc:subject>OASIS UBL resources</dc:subject>
+   </item>
+   <item rdf:about="urn:x-CraneSoftwrights.com:entry:ubl2modelreport-EN">
+      <title>2010-09-05 Crane's UBL 2.0 model summary reports in English</title>
+      <description>
+  This is a summary in English of all of the information items and document model spreadsheets for UBL 2.0, using the English IDD genericode file for the definition and alternative business terms fields.  The aggregate file is named CraneUBL20Reports-EN.html. (updated 2010-09-05 11:50:00Z)</description>
+      <link>http://www.CraneSoftwrights.com/resources/ubl/index.htm#ubl2modelreport-EN</link>
+      <dc:date>2010-09-05T11:50:00Z</dc:date>
+      <dc:title>Crane's UBL 2.0 model summary reports in English</dc:title>
+      <dc:subject>OASIS UBL resources</dc:subject>
+      <dc:subject>
+UBL report resources</dc:subject>
+      <dc:subject>Crane's UBL 2.0 model summary reports</dc:subject>
+   </item>
+   <item rdf:about="urn:x-CraneSoftwrights.com:entry:ubl2modelreport-ES">
+      <title>2010-09-05 Crane's UBL 2.0 model summary reports in Spanish</title>
+      <description>
+  This is a summary in Spanish of all of the information items and document model spreadsheets for UBL 2.0, using the Spanish IDD genericode file for the definition and alternative business terms fields.  The aggregate file is named CraneUBL20Reports-ES.html. (updated 2010-09-05 11:50:00Z)</description>
+      <link>http://www.CraneSoftwrights.com/resources/ubl/index.htm#ubl2modelreport-ES</link>
+      <dc:date>2010-09-05T11:50:00Z</dc:date>
+      <dc:title>Crane's UBL 2.0 model summary reports in Spanish</dc:title>
+      <dc:subject>OASIS UBL resources</dc:subject>
+      <dc:subject>
+UBL report resources</dc:subject>
+      <dc:subject>Crane's UBL 2.0 model summary reports</dc:subject>
+   </item>
+   <item rdf:about="urn:x-CraneSoftwrights.com:entry:ubl2modelreport-IT">
+      <title>2010-09-05 Crane's UBL 2.0 model summary reports in Italian</title>
+      <description>
+  This is a summary in Italian of all of the information items and document model spreadsheets for UBL 2.0, using the Italian IDD genericode file for the definition and alternative business terms fields.  The aggregate file is named CraneUBL20Reports-IT.html. (updated 2010-09-05 11:50:00Z)</description>
+      <link>http://www.CraneSoftwrights.com/resources/ubl/index.htm#ubl2modelreport-IT</link>
+      <dc:date>2010-09-05T11:50:00Z</dc:date>
+      <dc:title>Crane's UBL 2.0 model summary reports in Italian</dc:title>
+      <dc:subject>OASIS UBL resources</dc:subject>
+      <dc:subject>
+UBL report resources</dc:subject>
+      <dc:subject>Crane's UBL 2.0 model summary reports</dc:subject>
+   </item>
+   <item rdf:about="urn:x-CraneSoftwrights.com:entry:ubl2modelreport-JP">
+      <title>2010-09-05 Crane's UBL 2.0 model summary reports in Japanese</title>
+      <description>
+  This is a summary in Japanese of all of the information items and document model spreadsheets for UBL 2.0, using the Japanese IDD genericode file for the definition and alternative business terms fields.  The aggregate file is named CraneUBL20Reports-JP.html. (updated 2010-09-05 11:50:00Z)</description>
+      <link>http://www.CraneSoftwrights.com/resources/ubl/index.htm#ubl2modelreport-JP</link>
+      <dc:date>2010-09-05T11:50:00Z</dc:date>
+      <dc:title>Crane's UBL 2.0 model summary reports in Japanese</dc:title>
+      <dc:subject>OASIS UBL resources</dc:subject>
+      <dc:subject>
+UBL report resources</dc:subject>
+      <dc:subject>Crane's UBL 2.0 model summary reports</dc:subject>
+   </item>
+   <item rdf:about="urn:x-CraneSoftwrights.com:entry:xslstyle">
+      <title>2010-08-17 The XSLStyle™ XSLT documentation environment</title>
+      <description>
+With these XSLT documentation stylesheets, XSLT 1.0 and XSLT 2.0 stylesheets can be both documented and checked for inconsistencies such as completeness of the documentation of constructs used.  The delivered support is for one of the DocBook, DITA or HTML/XHTML vocabularies used as the embedded XSL documentation vocabulary within the XSLStyle™ scaffolding.  Here is a testimonial to its use. (updated 2010-08-17 02:40:00Z)</description>
+      <link>http://www.CraneSoftwrights.com/resources/index.htm#xslstyle</link>
+      <dc:date>2010-08-17T02:40:00Z</dc:date>
+      <dc:title>The XSLStyle™ XSLT documentation environment</dc:title>
+      <dc:subject>XSLT Resources</dc:subject>
+   </item>
+   <item rdf:about="urn:x-CraneSoftwrights.com:entry:filter">
+      <title>2008-10-26 UBL 2.0 instance filters</title>
+      <description>This is a collection of XSLT and Python filters used to create a pure UBL 2.0 instance by copying all elements defined by a UBL 2 specification and pruning those not defined by the specification by ignoring them.  There is an aggregate filter supporting all document types simultaneously as well as one filter for each document type.  As minor revisions of UBL are published by the UBL Technical Committee, Crane's library of filters will be updated to support each one.As depicted in the filter documentation, such filtering is important to a UBL deployment that needs to be forward compatible in a heterogeneous network where instances of different minor revisions are being used.  The validation of a filtered instance reflects any constraint violations to the minor version supported, not to any subsequent minor versions that are guaranteed to violate the earlier minor version constraints.  Thus, an application will not be prevented from inspecting the filtered instance to determine the original minor version level and know that some indeterminate information items have been removed by filtering. (updated 2008-10-26 14:20:00Z)</description>
+      <link>http://www.CraneSoftwrights.com/resources/ubl/index.htm#filter</link>
+      <dc:date>2008-10-26T14:20:00Z</dc:date>
+      <dc:title>UBL 2.0 instance filters</dc:title>
+      <dc:subject>OASIS UBL resources</dc:subject>
+   </item>
+   <item rdf:about="urn:x-CraneSoftwrights.com:entry:ubl2idd2genericode">
+      <title>2008-10-24 Crane's UBL 2.0 International Data Dictionary genericode files</title>
+      <description>
+This resource is a conversion of UBL 2.0 Update International Data Dictionary (IDD) prd1 spreadsheet files (announced at http://lists.oasis-open.org/archives/ubl/200810/msg00029.html) of various languages into a single HTML summary of the entire IDD and multiple OASIS genericode files. Each spreadsheet of each language's localization is converted to a genericode file.  In addition, all of the languages are aggregated into a single genericode file for the localization information of each UBL 2.0 document model.  User interfaces for programs and other multilingual applications may find it helpful to have some or all of the UBL IDD localization information in a generic keyed-table XML vocabulary. (updated 2008-10-24 21:20:00Z)</description>
+      <link>http://www.CraneSoftwrights.com/resources/ubl/index.htm#ubl2idd2genericode</link>
+      <dc:date>2008-10-24T21:20:00Z</dc:date>
+      <dc:title>Crane's UBL 2.0 International Data Dictionary genericode files</dc:title>
+      <dc:subject>OASIS UBL resources</dc:subject>
+      <dc:subject>
+UBL report resources</dc:subject>
+   </item>
+   <item rdf:about="urn:x-CraneSoftwrights.com:entry:StratML">
+      <title>2008-10-13 Demonstration HTML and PDF stylesheets for StratML</title>
+      <description>
+  This is a demonstration of alternative presentations of StratML documents in both HTML and PDF renderings. (updated 2008-10-13 17:00:00Z)</description>
+      <link>http://www.CraneSoftwrights.com/resources/index.htm#StratML</link>
+      <dc:date>2008-10-13T17:00:00Z</dc:date>
+      <dc:title>Demonstration HTML and PDF stylesheets for StratML</dc:title>
+      <dc:subject>XSLT Resources</dc:subject>
+   </item>
+   <item rdf:about="urn:x-CraneSoftwrights.com:entry:psmi">
+      <title>2008-08-05 PSMI - Interleaving page geometries</title>
+      <description>
+This XSL-FO customized semantic named 
+Page Sequence Master Interleave (PSMI) and associated stylesheet eases the task
+of creating a sequence of pages where the content of the flow influences the
+page geometry being used.
+ (updated 2008-08-05 00:50:00Z)</description>
+      <link>http://www.CraneSoftwrights.com/resources/index.htm#psmi</link>
+      <dc:date>2008-08-05T00:50:00Z</dc:date>
+      <dc:title>PSMI - Interleaving page geometries</dc:title>
+      <dc:subject>XSL-FO Resources</dc:subject>
+   </item>
+   <item rdf:about="urn:x-CraneSoftwrights.com:entry:xls2ods2xml">
+      <title>2008-07-15 Unattended conversion of XLS to ODS to XML</title>
+      <description>
+With this OpenOffice.org macro named CraneXLS2ODS, one can invoke the automated conversion of a Microsoft Excel spreadsheet into an Open Document Format spreadsheet in an unattended method from invocation arguments.Also included is an Ant script for the extraction of the Open Document Format XML fragment out of an Open Document Format spreadsheet file, and an XSLT 2.0 stylesheet fragment for accessing ODF tables. (updated 2008-07-15 23:30:00Z)</description>
+      <link>http://www.CraneSoftwrights.com/resources/index.htm#xls2ods2xml</link>
+      <dc:date>2008-07-15T23:30:00Z</dc:date>
+      <dc:title>Unattended conversion of XLS to ODS to XML</dc:title>
+      <dc:subject>
+OASIS Open Office Resources</dc:subject>
+   </item>
+   <item rdf:about="urn:x-CraneSoftwrights.com:entry:drag-n-drop">
+      <title>2008-07-07 Simple XSLT stylesheet drag and drop invocation</title>
+      <description>
+This illustrates a technique for simple drag and drop invocation of an XSLT stylesheet in, say, a Windows Explorer window.  The package includes a batch file, a JavaScript script and an XSLT stylesheet.  Using drag and drop from Windows Explorer to drop an XML file onto the batch file invokes the stylesheet and outputs an HTML file in the same directory as the XML file using an extended file name, then opens up the HTML file.  For those users who are not used to the command line, this invocation approach can hide any complexity of prompts and arguments.  If the Saxon XSLT processor JAR file is found in the directory then it is used, otherwise the built-in Windows MSXML DLL for XSLT is used. (updated 2008-07-07 21:00:00Z)</description>
+      <link>http://www.CraneSoftwrights.com/resources/index.htm#drag-n-drop</link>
+      <dc:date>2008-07-07T21:00:00Z</dc:date>
+      <dc:title>Simple XSLT stylesheet drag and drop invocation</dc:title>
+      <dc:subject>XSLT Resources</dc:subject>
+   </item>
+   <item rdf:about="urn:x-CraneSoftwrights.com:entry:sch2html">
+      <title>2008-07-07 Simple Schematron message summary reporting</title>
+      <description>
+This diagnostic stylesheet reads through a Schematron schema and its included Schematron fragments looking for assertions and reports, summarizing and enumerating all messages in an HTML result. (updated 2008-07-07 19:50:00Z)</description>
+      <link>http://www.CraneSoftwrights.com/resources/index.htm#sch2html</link>
+      <dc:date>2008-07-07T19:50:00Z</dc:date>
+      <dc:title>Simple Schematron message summary reporting</dc:title>
+      <dc:subject>XSLT Resources</dc:subject>
+   </item>
+   <item rdf:about="urn:x-CraneSoftwrights.com:entry:showrddl">
+      <title>2007-11-20 showrddl - XSLT RDDL information exposure stylesheet</title>
+      <description>
+This diagnostic stylesheet is useful to expose the otherwise hidden RDDL elements and anchor attributes in an XHTML instance.  When you are writing a RDDL document and you need to visually confirm that the invisible information is as desired, use this stylesheet to create a diagnostic rendering with two parts:  the first part is the original file unchanged, the second part has the information exposed in red for visual verification. (updated 2007-11-20 22:00:00Z)</description>
+      <link>http://www.CraneSoftwrights.com/resources/index.htm#showrddl</link>
+      <dc:date>2007-11-20T22:00:00Z</dc:date>
+      <dc:title>showrddl - XSLT RDDL information exposure stylesheet</dc:title>
+      <dc:subject>XSLT Resources</dc:subject>
+   </item>
+   <item rdf:about="urn:x-CraneSoftwrights.com:entry:xpathrep">
+      <title>2007-04-14 XPath reporting</title>
+      <description>
+Crane's XPath reporting application written in Python (named "xpath2report") is used to produce up to four different reports from an XPath file. (updated 2007-04-14 17:20:00Z)</description>
+      <link>http://www.CraneSoftwrights.com/resources/ubl/index.htm#xpathrep</link>
+      <dc:date>2007-04-14T17:20:00Z</dc:date>
+      <dc:title>XPath reporting</dc:title>
+      <dc:subject>OASIS UBL resources</dc:subject>
+      <dc:subject>UBL XPath file resources</dc:subject>
+   </item>
+   <item rdf:about="urn:x-CraneSoftwrights.com:entry:filterXSDDK">
+      <title>2006-12-21 Simplified UBL schema customization</title>
+      <description>
+Crane's schema customization environment is used to specify and produce multiple customizations of schemas for UBL document types used in different customization profiles.  This approach prunes the UBL standardized W3C Schema expressions by commenting out unneeded constructs as specified in a customization.  The resulting schemas can be used to validate instances of a customization.  Also included are hand-crafted demonstrative extension schema fragments to illustrate how these can supplement the customization subset with additional constructs not defined by standard UBL. (updated 2006-12-21 21:00:00Z)</description>
+      <link>http://www.CraneSoftwrights.com/resources/ubl/index.htm#filterXSDDK</link>
+      <dc:date>2006-12-21T21:00:00Z</dc:date>
+      <dc:title>Simplified UBL schema customization</dc:title>
+      <dc:subject>OASIS UBL resources</dc:subject>
+   </item>
+   <item rdf:about="urn:x-CraneSoftwrights.com:entry:xpathins">
+      <title>2006-12-04 XPath for XML instances</title>
+      <description>
+While XPath files were conceived for use only with XML document models, Crane's XPath for XML instances stylesheets (named "Crane-xml2xpath") are used to produce XPath reports directly from an XML instance. (updated 2006-12-04 15:20:00Z)</description>
+      <link>http://www.CraneSoftwrights.com/resources/ubl/index.htm#xpathins</link>
+      <dc:date>2006-12-04T15:20:00Z</dc:date>
+      <dc:title>XPath for XML instances</dc:title>
+      <dc:subject>OASIS UBL resources</dc:subject>
+      <dc:subject>UBL XPath file resources</dc:subject>
+   </item>
+   <item rdf:about="urn:x-CraneSoftwrights.com:entry:ublcodex">
+      <title>2006-11-08 UBL codex stylesheets</title>
+      <description>
+Crane's UBL instance visualization stylesheets are used for diagnostic and reporting purposes to expose the content of a UBL instance in manners that do not appear as XML syntax. (updated 2006-11-08 06:20:00Z)</description>
+      <link>http://www.CraneSoftwrights.com/resources/ublss/index.htm#ublcodex</link>
+      <dc:date>2006-11-08T06:20:00Z</dc:date>
+      <dc:title>UBL codex stylesheets</dc:title>
+   </item>
+   <item rdf:about="urn:x-CraneSoftwrights.com:entry:odf-xslt">
+      <title>2006-02-02 ODF XSLT filter stylesheet synthesis</title>
+      <description>
+With this experimental environment one can synthesize the stylesheets needed to enable the File/Open and File/Save menus of Open Office to read and write XML documents to and from Open Document Format for the Open Office user interface.  It is of limited but useful scope, especially with forms-like Open Office and Open Document Text files, as illustrated in the included example.  It is also an example of the installation of stylesheets in Open Office that can be followed when you have more elaborate stylesheets than those synthesized by this methodology. (updated 2006-02-02 19:50:00Z)</description>
+      <link>http://www.CraneSoftwrights.com/resources/index.htm#odf-xslt</link>
+      <dc:date>2006-02-02T19:50:00Z</dc:date>
+      <dc:title>ODF XSLT filter stylesheet synthesis</dc:title>
+      <dc:subject>
+OASIS Open Office Resources</dc:subject>
+   </item>
+   <item rdf:about="urn:x-CraneSoftwrights.com:entry:unlk-ss">
+      <title>2005-11-15 UN Layout Key for non-UBL documents</title>
+      <description>
+This is a modular collection of importable stylesheets fragments for the presentation of fields of information according to the United Nations Layout Key.  The Extensible Stylesheet Language Formatting Objects (XSL-FO) vocabulary is used to present the layout semantics.A revision to this library is already included in the UBL package noted above, so there is no need to also download this as well as the UBL library.
+Important note: this modular library is not sufficient on its own for transforming instances of any vocabulary, as these stylesheets are meant to be imported by vocabulary-aware stylesheets that understand the mapping of information to fields on the UN forms.  (updated 2005-11-15 04:40:00Z)</description>
+      <link>http://www.CraneSoftwrights.com/resources/ublss/index.htm#unlk-ss</link>
+      <dc:date>2005-11-15T04:40:00Z</dc:date>
+      <dc:title>UN Layout Key for non-UBL documents</dc:title>
+   </item>
+   <item rdf:about="urn:x-CraneSoftwrights.com:entry:aggreg">
+      <title>2004-11-14 Demonstration of XSLT-based aggregation</title>
+      <description>
+This is a demonstration of aggregation in support of a conference paper delivered on the fifth anniversary of XSLT 1.0/XPath 1.0 at XML'2004.  A copy of the paper is included in the package. (updated 2004-11-14 05:00:00Z)</description>
+      <link>http://www.CraneSoftwrights.com/resources/index.htm#aggreg</link>
+      <dc:date>2004-11-14T05:00:00Z</dc:date>
+      <dc:title>Demonstration of XSLT-based aggregation</dc:title>
+      <dc:subject>XSLT Resources</dc:subject>
+   </item>
+   <item rdf:about="urn:x-CraneSoftwrights.com:entry:resultxslt">
+      <title>2004-05-24 ResultXSLT™ Stylesheet Synthesis</title>
+      <description>This is a free environment for synthesizing XSLT stylesheet fragments (33K ZIP file) from result instances annotated with signals that create stylesheet constructs.  Validation and other benefits are described. (updated 2004-05-24 23:20:00Z)</description>
+      <link>http://www.CraneSoftwrights.com/resources/index.htm#resultxslt</link>
+      <dc:date>2004-05-24T23:20:00Z</dc:date>
+      <dc:title>ResultXSLT™ Stylesheet Synthesis</dc:title>
+      <dc:subject>XSLT Resources</dc:subject>
+   </item>
+   <item rdf:about="urn:x-CraneSoftwrights.com:entry:acid">
+      <title>2003-07-30 Acid test environment for entities</title>
+      <description>
+This test environment can be used to check XML processors for the proper handling of external entities.
+ (updated 2003-07-30)</description>
+      <link>http://www.CraneSoftwrights.com/resources/index.htm#acid</link>
+      <dc:date>2003-07-30</dc:date>
+      <dc:title>Acid test environment for entities</dc:title>
+      <dc:subject>XML Resources</dc:subject>
+   </item>
+   <item rdf:about="urn:x-CraneSoftwrights.com:entry:n2x">
+      <title>2003-03-01 N2X - Extended environment for SGML to XML transformation</title>
+      <description>
+This translation environment written in Python to create XML
+files from SGML files produces similar results to James Clark's SX tool, but
+supports additional features not available in SX.
+ (updated 2003-03-01 02:40:00)</description>
+      <link>http://www.CraneSoftwrights.com/resources/index.htm#n2x</link>
+      <dc:date>2003-03-01T02:40:00</dc:date>
+      <dc:title>N2X - Extended environment for SGML to XML transformation</dc:title>
+      <dc:subject>XML Resources</dc:subject>
+   </item>
+   <item rdf:about="urn:x-CraneSoftwrights.com:entry:bbi">
+      <title>2002-12-13 Back of the book index methodology</title>
+      <description>  This documented and demonstrated methodology
+shows how a back of the book index can be created using standard XSL-FO 1.0
+  and a composed page text extraction tool. (updated 2002-12-13 02:50:00)</description>
+      <link>http://www.CraneSoftwrights.com/resources/index.htm#bbi</link>
+      <dc:date>2002-12-13T02:50:00</dc:date>
+      <dc:title>Back of the book index methodology</dc:title>
+      <dc:subject>XSL-FO Resources</dc:subject>
+   </item>
+   <item rdf:about="urn:x-CraneSoftwrights.com:entry:dumpfo">
+      <title>2002-11-12 dumpfo - Print dump of Unicode characters</title>
+      <description>
+This diagnostic utility in Python using XSL-FO for
+  rendering dumps to a printed form
+the character contents of a supplied file assuming a particular 
+character encoding for the bytes in the file. Each character in 
+the file is displayed in a large font, with the corresponding 
+hexadecimal Unicode character code point displayed below. 
+ (updated 2002-11-12 20:50:00)</description>
+      <link>http://www.CraneSoftwrights.com/resources/index.htm#dumpfo</link>
+      <dc:date>2002-11-12T20:50:00</dc:date>
+      <dc:title>dumpfo - Print dump of Unicode characters</dc:title>
+      <dc:subject>XSL-FO Resources</dc:subject>
+   </item>
+   <item rdf:about="urn:x-CraneSoftwrights.com:entry:bittest">
+      <title>2001-02-22 Bit testing in XSLT</title>
+      <description>
+This presentation to conference attendees
+answers a submitted question regarding how to do bit-wise testing of numbers
+in XSLT. (updated 2001-02-22)</description>
+      <link>http://www.CraneSoftwrights.com/resources/index.htm#bittest</link>
+      <dc:date>2001-02-22</dc:date>
+      <dc:title>Bit testing in XSLT</dc:title>
+      <dc:subject>XSLT Resources</dc:subject>
+   </item>
+   <item rdf:about="urn:x-CraneSoftwrights.com:entry:xslkeys">
+      <title>2001-02-21 An Illustration of the XSLT Key Construct</title>
+      <description>
+This Illustration of the XSLT Key Construct
+attempts to depict the relationship between function arguments and XSLT
+instructions regarding the use of a feature in XSLT. (updated 2001-02-21)</description>
+      <link>http://www.CraneSoftwrights.com/resources/index.htm#xslkeys</link>
+      <dc:date>2001-02-21</dc:date>
+      <dc:title>An Illustration of the XSLT Key Construct</dc:title>
+      <dc:subject>XSLT Resources</dc:subject>
+   </item>
+   <item rdf:about="urn:x-CraneSoftwrights.com:entry:debugmsxml">
+      <title>2001-01-20 Static Creation and Debugging Stylesheets with MSXML Processing</title>
+      <description> 
+This Overview of a Debugging Methodology
+is useful when trying to understand what Microsoft's XSL engine in IE5 is doing with
+your XSL script.  When in IE5, asking to view the source of an XML document formatted with
+XSL will reveal the XML source but not the HTML that resulted from applying
+the XSL stylesheet.  This methodology reveals the HTML translated by the
+Microsoft XSL engine for a given XML source file and XSL stylesheet.
+The script has also been widely adopted for static page creation of HTML pages
+from XML source and XSL stylesheets ensuring consistency of non-IE5 browsing
+with IE5-based rendering. (updated 2001-01-20)</description>
+      <link>http://www.CraneSoftwrights.com/resources/index.htm#debugmsxml</link>
+      <dc:date>2001-01-20</dc:date>
+      <dc:title>Static Creation and Debugging Stylesheets with MSXML Processing</dc:title>
+      <dc:subject>XSLT Resources</dc:subject>
+   </item>
+   <item rdf:about="urn:x-CraneSoftwrights.com:entry:xsltexp">
+      <title>2000-12-07 Experiments Using XSLT With Topic Maps</title>
+      <description>
+This DOS/Saxon XSLT environment (152K self-extracting zip)
+and supporting paper (45K zip)
+describe an experimental environment for the synthesis of HTML navigation pages
+to an XTM Topic Map within a flexible rendering architecture. (updated 2000-12-07)</description>
+      <link>http://www.CraneSoftwrights.com/resources/index.htm#xsltexp</link>
+      <dc:date>2000-12-07</dc:date>
+      <dc:title>Experiments Using XSLT With Topic Maps</dc:title>
+      <dc:subject>XSLT Resources</dc:subject>
+   </item>
+   <item rdf:about="urn:x-CraneSoftwrights.com:entry:showtree">
+      <title>2000-06-10 SHOWTREE - XSLT Tree Display Stylesheet</title>
+      <description>
+The XSLT SHOWTREE Diagnostic Stylesheet
+is useful
+for learning the node structure created by an XSLT engine for a given instance.
+Stylesheets for various implementation capabilities and the original
+Microsoft IE5 implementation are provided. (updated 2000-06-10)</description>
+      <link>http://www.CraneSoftwrights.com/resources/index.htm#showtree</link>
+      <dc:date>2000-06-10</dc:date>
+      <dc:title>SHOWTREE - XSLT Tree Display Stylesheet</dc:title>
+      <dc:subject>XSLT Resources</dc:subject>
+   </item>
+   <item rdf:about="urn:x-CraneSoftwrights.com:entry:annot">
+      <title>1998-11-03 Annotatable DSSSL Stylesheet</title>
+      <description>
+This Annotatable DSSSL Stylesheet environment
+includes a document model and supporting DSSSL script to write annotated
+DSSSL scripts and generate the associated documentation.
+ (updated 1998-11-03)</description>
+      <link>http://www.CraneSoftwrights.com/resources/index.htm#annot</link>
+      <dc:date>1998-11-03</dc:date>
+      <dc:title>Annotatable DSSSL Stylesheet</dc:title>
+      <dc:subject>DSSSL Resources</dc:subject>
+   </item>
+   <item rdf:about="urn:x-CraneSoftwrights.com:entry:color">
+      <title>1998-06-16 Color Resources for DSSSL</title>
+      <description>
+These color resources are pre-defined
+entity files providing definitions for colors that can be referenced
+in DSSSL scripts. (updated 1998-06-16)</description>
+      <link>http://www.CraneSoftwrights.com/resources/index.htm#color</link>
+      <dc:date>1998-06-16</dc:date>
+      <dc:title>Color Resources for DSSSL</dc:title>
+      <dc:subject>DSSSL Resources</dc:subject>
+   </item>
+   <item rdf:about="urn:x-CraneSoftwrights.com:entry:presapp">
+      <title>1998-05-03 An example slide presentation application</title>
+      <description>
+  An SGML application for frame-based presentation slide-shows with
+DSSSL scripts for the rendering of the slides to HTML and RTF final forms.
+ (updated 1998-05-03)</description>
+      <link>http://www.CraneSoftwrights.com/resources/index.htm#presapp</link>
+      <dc:date>1998-05-03</dc:date>
+      <dc:title>An example slide presentation application</dc:title>
+      <dc:subject>DSSSL Resources</dc:subject>
+   </item>
+</rdf:RDF>
