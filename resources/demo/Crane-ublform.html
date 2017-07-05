@@ -1,0 +1,61 @@
+<html>
+  <!--$Id: Crane-ublform.html,v 1.6 2014/04/01 16:20:38 admin Exp $-->
+  <!--A conceptual form-filling application creating OASIS UBL instances
+      from user interaction using XSLT 2.0 behind the scenes-->
+  <head>
+    <title>Test of Saxon-CE for UBL document form-filling</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+ </head>
+  <body>
+    <!--first, engage Saxon-CE (Client Edition) from http://saxon.sf.net-->
+    <script type="text/javascript" language="javascript"
+          src="../Saxonce/Saxonce.nocache.js"></script>
+    <!--next engage the UBL form-filling stylesheet-->
+    <script type="application/xslt+xml" language="xslt2.0" 
+            src="Crane-ublform.xsl" data-source="Crane-ublform.xsl"></script>
+    
+    <!--create a skeleton within which pieces of the result will be written-->
+    <h2>Demonstration UBL Invoice data entry using Saxon-CE and XSLT 2.0</h2>
+    
+    <p>
+      Using template rules in XSLT 2.0, data entry into the HTML form
+      below is marshalled into an <a target="_blank" href="http://www.oasis-open.org/committees/ubl">OASIS UBL</a> invoice.
+      Fill in the fields, add and delete invoice lines, and at any time
+      press the "Reveal" button to generate the XML syntax for the invoice.
+    </p>
+    
+    <p>
+      For more information please see the stylesheet documentation at
+      <a target="_blank" href="../readme-Crane-ublform.html"><samp>readme-Crane-ublform.html</samp></a>.
+      Note that the documentation is created using Crane's
+      <a target="_blank" href="http://www.CraneSoftwrights.com/resources/index.htm#xslstyle">XSLStyle™</a>
+      annotation methodology for XSLT stylesheets.
+    </p>
+    <hr/>
+    <!--this table has the header information-->
+    <table width="100%">
+      <col width="1*"/>
+      <col width="1*"/>
+      <tbody id="header">
+        <tr><td></td></tr>
+      </tbody>
+    </table>
+    
+    <!--this table has the line items-->
+    <table width="100%" id="items">
+      <tbody>
+      <tr>
+        <td>Loading...</td>
+        </tr>
+      </tbody>
+    </table>
+    
+    <!--this section is used to act on the generated instance; in this case
+        simply to reveal the instance, but this can be changed to do other
+        things, such as a post-->
+    <div>
+     <input type="button" name="reveal" value="Reveal"/>
+     <pre id="result" style="white-space:pre"></pre>
+    </div>
+  </body>
+</html>

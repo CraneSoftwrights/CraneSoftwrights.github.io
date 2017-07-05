@@ -1,0 +1,197 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<title>Example for DSSSL Color Declarations: colorex.htm</title>
+<meta name="description" content="Example illustrating color declarations in colordef.dsl">
+<meta name="keywords" content="DSSSL,color,colour">
+</head>
+<body bgcolor="#ffffff">
+<table>
+<tr>
+<td valign=top>
+<h1>Crane Softwrights Ltd.</h1>
+<h2>Resource Library - Color - Examples</h2>
+<p>
+These are examples for using the
+<a href="colorkey.htm">DSSSL Color Declaration files</a> described
+in the <a href="colorkey.htm">colorkey.htm</a> file.  The examples are
+documented as transcripts of a working Windows'95 DOS window session running
+JADE.
+<p>
+It is assumed the reader is already familiar with DSSSL syntax and is
+refering to these code fragments solely for the detail of accessing
+the color declarations.
+<p>
+Two examples are included, one illustrating <a href="#direct">direct access</a>
+to the declarations, and the other illustrating <a href="#indirect">indirect access</a>
+to the declarations.
+</td>
+<td valign=top width=3>
+<img src="../../vbar.gif" alt=" " width=1 height=150>
+</td>
+<td valign=top>
+<img src="crane.gif" alt="Crane Logo" width=140 height=113>
+</td>
+</tr>
+</table>
+
+<h2>Sample SGML Open (OASIS) Format Catalog</h2>
+<p>The following file is used for an example, you can choose to use any
+public identifier you wish (or use system identifiers directly).
+
+<pre>
+S:\colour>type color.soc
+-- SGML Open Format Catalogue --
+
+PUBLIC "+//ISBN 1-894049::CSL::Resources//DOCUMENT DSSSL Color Declarations//EN"
+       "colordef.dsl"
+PUBLIC "+//ISBN 1-894049::CSL::Resources//ENTITIES DSSSL Color Declarations//EN"
+       "colordsl.ent"
+PUBLIC "+//ISBN 1-894049::CSL::Resources//ENTITIES Color Declarations//EN"
+       "colordef.ent"
+
+-- end of file --
+</pre>
+
+<a name="direct"><h2>Direct access to the declarations</h2></a>
+<p>The following transcript illustrates the direct use of the entities
+available in each of two DSSSL scripts, the first for HTML and the
+second for RTF.
+<p>
+Note the HTML declarations are in a parameter entity, while the DSSSL
+declarations are in a general entity.
+
+<pre>
+S:\colour>type testc.sgm
+&lt;!DOCTYPE doc [
+&lt;!ELEMENT doc - O (#PCDATA)>
+]>&lt;doc>This is a test&lt;/doc>
+
+S:\colour>type testch.dsl
+&lt;!DOCTYPE style-sheet PUBLIC "-//James Clark//DTD DSSSL Style Sheet//EN"
+[
+&lt;!-- declare, then include, the definitions of available entities -->
+&lt;!ENTITY % colorent
+ PUBLIC "+//ISBN 1-894049::CSL::Resources//ENTITIES Color Declarations//EN">
+%colorent;
+]>
+
+(declare-flow-object-class element
+  "UNREGISTERED::James Clark//Flow Object Class::element")
+
+(element doc
+    (make element
+        gi: "FONT"
+        attributes: '(("COLOR" "&amp;color-purple;"))
+        (make element
+            gi: "H1"
+            (process-children))))
+
+&lt;!-- end of file -->
+
+
+S:\colour>type testcr.dsl
+&lt;!DOCTYPE style-sheet PUBLIC "-//James Clark//DTD DSSSL Style Sheet//EN"
+[
+&lt;!-- declare the DSSSL code fragment declaring the color definitions -->
+&lt;!ENTITY colordef
+ PUBLIC "+//ISBN 1-894049::CSL::Resources//DOCUMENT DSSSL Color Declarations//EN">
+]>
+&amp;colordef;                              ;include the DSSSL code fragment
+
+(element doc
+    (make paragraph
+        font-size:    20pt
+        line-spacing: 20pt
+        font-weight:  'bold
+        color:        color-purple
+        (process-children)))
+
+&lt;!-- end of file -->
+
+S:\colour>jade -c p:\jade\jadecurr\catalog -c color.soc -t sgml -d testch.dsl   >testc.htm testc.sgm
+
+S:\colour>jade -c p:\jade\jadecurr\catalog -c color.soc -t rtf  -d testcr.dsl -o testc.rtf testc.sgm
+</pre>
+
+<a name="indirect"><h2>Indirect access to the declarations</h2></a>
+<p>
+In this example, note how a common entity file uses a general entity
+in the definition of a general entity named "<samp>&amp;text-color;</samp>".
+The two DSSSL scripts are modified
+to reference the common general entity, which itself is defined using the
+general entity of the declaration.  Since the DSSSL variables are referenced
+by their name, the DSSSL entity file is only a set of declarations of
+entities whose values are equivalent to their names.
+<p>
+In this way, the same general entity can be used in both kinds of scripts.
+
+<pre>
+S:\colour>type testcmn.ent
+&lt;!-- testcmn.ent: a common declaration of a color to use in scripts
+                  targetted for RTF and SGML -->
+
+&lt;!ENTITY  text-color  "&amp;color-darkgreen;">
+
+&lt;!-- end of file -->
+
+S:\colour>type testch2.dsl
+&lt;!DOCTYPE style-sheet PUBLIC "-//James Clark//DTD DSSSL Style Sheet//EN"
+[
+&lt;!-- declare, then include, the definitions of available entities -->
+&lt;!ENTITY % colorent
+ PUBLIC "+//ISBN 1-894049::CSL::Resources//ENTITIES Color Declarations//EN">
+%colorent;
+
+&lt;!-- declare, then include, the common definitions for both scripts -->
+&lt;!ENTITY % testcmn SYSTEM "testcmn.ent">
+%testcmn;
+]>
+
+(declare-flow-object-class element
+  "UNREGISTERED::James Clark//Flow Object Class::element")
+
+(element doc
+    (make element
+        gi: "FONT"
+        attributes: '(("COLOR" "&amp;text-color;"))
+        (make element
+            gi: "H1"
+            (process-children))))
+
+&lt;!-- end of file -->
+
+
+S:\colour>type testcr2.dsl
+&lt;!DOCTYPE style-sheet PUBLIC "-//James Clark//DTD DSSSL Style Sheet//EN"
+[
+&lt;!-- declare the DSSSL code fragment declaring the color definitions -->
+&lt;!ENTITY colordef
+ PUBLIC "+//ISBN 1-894049::CSL::Resources//DOCUMENT DSSSL Color Declarations//EN">
+
+&lt;!-- declare, then include, the definitions of available entities -->
+&lt;!ENTITY % colorent
+ PUBLIC "+//ISBN 1-894049::CSL::Resources//ENTITIES DSSSL Color Declarations//EN">
+%colorent;
+&lt;!-- declare, then include, the common definitions for both scripts -->
+&lt;!ENTITY % testcmn SYSTEM "testcmn.ent">
+%testcmn;
+]>
+&amp;colordef;
+
+(element doc
+    (make paragraph
+        font-size:    20pt
+        line-spacing: 20pt
+        font-weight:  'bold
+        color:        &amp;text-color;
+        (process-children)))
+
+&lt;!-- end of file -->
+
+S:\colour>jade -c p:\jade\jadecurr\catalog -c color.soc -t sgml -d testch2.dsl   >testc2.htm testc.sgm
+
+S:\colour>jade -c p:\jade\jadecurr\catalog -c color.soc -t rtf  -d testcr2.dsl -o testc2.rtf testc.sgm
+</pre>
+
+<h5>98-06-15 15:30</h5>
