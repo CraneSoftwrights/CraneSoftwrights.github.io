@@ -4,7 +4,7 @@
       <title>Crane Softwrights Ltd. Freely-available Resources</title>
       <link>http://www.CraneSoftwrights.com/resources/crane-resources.rss</link>
       <description>This includes a summary list of the freely-available resources that can be downloaded from Crane Softwrights Ltd.'s web site.  The list is sorted with the most recently developed or revised resources first.</description>
-      <dc:date>2017-07-05T09:31:49-04:00</dc:date>
+      <dc:date>2017-07-05T20:02:17-04:00</dc:date>
       <items>
          <rdf:Seq>
             <rdf:li rdf:resource="urn:x-CraneSoftwrights.com:entry"/>
@@ -70,7 +70,7 @@
    <item rdf:about="urn:x-CraneSoftwrights.com:entry">
       <title>Summary - Crane Softwrights Ltd. Freely-available Resources</title>
       <link>http://www.CraneSoftwrights.com/resources/crane-resources.rss</link>
-      <description>This includes a summary list of the freely-available resources that can be downloaded from Crane Softwrights Ltd.'s web site.  The list is sorted with the most recently developed or revised resources first. (updated 2017-07-05 09:31:49-04:00)</description>
+      <description>This includes a summary list of the freely-available resources that can be downloaded from Crane Softwrights Ltd.'s web site.  The list is sorted with the most recently developed or revised resources first. (updated 2017-07-05 20:02:17-04:00)</description>
    </item>
    <item rdf:about="urn:x-CraneSoftwrights.com:entry:oxygenubl">
       <title>2017-05-25 UBL Frameworks for oXygenXML editing tool</title>
