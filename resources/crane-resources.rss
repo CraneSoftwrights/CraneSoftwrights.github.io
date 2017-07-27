@@ -4,7 +4,7 @@
       <title>Crane Softwrights Ltd. Freely-available Resources</title>
       <link>http://www.CraneSoftwrights.com/resources/crane-resources.rss</link>
       <description>This includes a summary list of the freely-available resources that can be downloaded from Crane Softwrights Ltd.'s web site.  The list is sorted with the most recently developed or revised resources first.</description>
-      <dc:date>2017-07-26T21:18:53-04:00</dc:date>
+      <dc:date>2017-07-26T21:28:42-04:00</dc:date>
       <items>
          <rdf:Seq>
             <rdf:li rdf:resource="urn:x-CraneSoftwrights.com:entry"/>
@@ -70,7 +70,7 @@
    <item rdf:about="urn:x-CraneSoftwrights.com:entry">
       <title>Summary - Crane Softwrights Ltd. Freely-available Resources</title>
       <link>http://www.CraneSoftwrights.com/resources/crane-resources.rss</link>
-      <description>This includes a summary list of the freely-available resources that can be downloaded from Crane Softwrights Ltd.'s web site.  The list is sorted with the most recently developed or revised resources first. (updated 2017-07-26 21:18:53-04:00)</description>
+      <description>This includes a summary list of the freely-available resources that can be downloaded from Crane Softwrights Ltd.'s web site.  The list is sorted with the most recently developed or revised resources first. (updated 2017-07-26 21:28:42-04:00)</description>
    </item>
    <item rdf:about="urn:x-CraneSoftwrights.com:entry:ods2obdgc">
       <title>2017-07-27 OpenOffice spreadsheet conversion to OBD genericode file</title>
@@ -127,7 +127,7 @@ Crane's environment to implement the OASIS Business Document Naming and Design R
    <item rdf:about="urn:x-CraneSoftwrights.com:entry:gc2ublndr">
       <title>2015-07-26 Genericode to UBL NDR</title>
       <description>
-(replaced in UBL 2.1+ with Crane-gc2obdndr) Crane's environment to implement the UBL Naming and Design Rules 3.0 XSD schemas and OASIS CVA (context/value association) files from an input OASIS genericode expression of a compatible UBL NDR 3.0 CCTS (Core Component Technical Specification v2.01) spreadsheet.  This package can be used in any project wanting to create schemas and CVA files following the UBL NDR 3.0, not just files for UBL.  This package can also be used to create document extension schemas and additional document schemas for any project using the UBL NDR 3.0.  Note that the genericode expression of the spreadsheet contents is used as a vendor-neutral expression of the information without relying on any particular brand of spreadsheet software.
+(replaced for UBL 2.1+ with Crane-gc2obdndr) Crane's environment to implement the UBL Naming and Design Rules 3.0 XSD schemas and OASIS CVA (context/value association) files from an input OASIS genericode expression of a compatible UBL NDR 3.0 CCTS (Core Component Technical Specification v2.01) spreadsheet.  This package can be used in any project wanting to create schemas and CVA files following the UBL NDR 3.0, not just files for UBL.  This package can also be used to create document extension schemas and additional document schemas for any project using the UBL NDR 3.0.  Note that the genericode expression of the spreadsheet contents is used as a vendor-neutral expression of the information without relying on any particular brand of spreadsheet software.
    (updated 2015-07-26 21:40:00Z)</description>
       <link>http://www.CraneSoftwrights.com/resources/ubl/index.htm#gc2ublndr</link>
       <dc:date>2015-07-26T21:40:00Z</dc:date>
@@ -170,7 +170,7 @@ Crane's environment to implement the OASIS Business Document Naming and Design R
    <item rdf:about="urn:x-CraneSoftwrights.com:entry:gc2summary">
       <title>2015-06-27 Genericode to Summary HTML Reports</title>
       <description>
-(replaced in UBL 2.1+ with Crane-gc2obdndr) Crane's environment to create hyperlinked HTML summary reports from a genericode expression of a CCTS model created following the UBL NDR.
+(replaced for UBL 2.1+ with Crane-gc2obdndr) Crane's environment to create hyperlinked HTML summary reports from a genericode expression of a CCTS model created following the UBL NDR.
    (updated 2015-06-27 02:40:00Z)</description>
       <link>http://www.CraneSoftwrights.com/resources/ubl/index.htm#gc2summary</link>
       <dc:date>2015-06-27T02:40:00Z</dc:date>
@@ -180,7 +180,7 @@ Crane's environment to implement the OASIS Business Document Naming and Design R
    </item>
    <item rdf:about="urn:x-CraneSoftwrights.com:entry:ods2ublgc">
       <title>2015-06-24 OpenOffice spreadsheet conversion to complete UBL genericode file</title>
-      <description>(Crane offers no equivalent for UBL 2.1+ for this) This is a standalone XSLT 2.0 stylesheet to export a complete genericode file from one or more ODS spreadsheets. The input can either be the binary ODS file or the OpenDocument Format XML equivalent. When the input is a spreadsheet of CCTS constructs, the output is suitable for use with the Genericode to UBL NDR process to create XSD
+      <description>(replaced for UBL 2.1+ with Crane-ods2obdgc) This is a standalone XSLT 2.0 stylesheet to export a complete genericode file from one or more ODS spreadsheets. The input can either be the binary ODS file or the OpenDocument Format XML equivalent. When the input is a spreadsheet of CCTS constructs, the output is suitable for use with the Genericode to UBL NDR process to create XSD
 schemas
     Note that there are invocation parameters such that the spreadsheet can
     be output in a "raw" form with no presumption of use of the UBL NDR.  This
