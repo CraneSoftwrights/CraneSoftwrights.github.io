@@ -4,14 +4,14 @@
       <title>Crane Softwrights Ltd. Freely-available Resources</title>
       <link>http://www.CraneSoftwrights.com/resources/crane-resources.rss</link>
       <description>This includes a summary list of the freely-available resources that can be downloaded from Crane Softwrights Ltd.'s web site.  The list is sorted with the most recently developed or revised resources first.</description>
-      <dc:date>2017-07-26T22:24:11-04:00</dc:date>
+      <dc:date>2017-08-04T14:03:09-04:00</dc:date>
       <items>
          <rdf:Seq>
             <rdf:li rdf:resource="urn:x-CraneSoftwrights.com:entry"/>
+            <rdf:li rdf:resource="urn:x-CraneSoftwrights.com:entry:gc2obdndr"/>
             <rdf:li rdf:resource="urn:x-CraneSoftwrights.com:entry:gc2odsxml"/>
             <rdf:li rdf:resource="urn:x-CraneSoftwrights.com:entry:ods2obdgc"/>
             <rdf:li rdf:resource="urn:x-CraneSoftwrights.com:entry:oxygenubl"/>
-            <rdf:li rdf:resource="urn:x-CraneSoftwrights.com:entry:gc2obdndr"/>
             <rdf:li rdf:resource="urn:x-CraneSoftwrights.com:entry:gc2ublndr"/>
             <rdf:li rdf:resource="urn:x-CraneSoftwrights.com:entry:ISOSTS"/>
             <rdf:li rdf:resource="urn:x-CraneSoftwrights.com:entry:gc2summary"/>
@@ -70,7 +70,17 @@
    <item rdf:about="urn:x-CraneSoftwrights.com:entry">
       <title>Summary - Crane Softwrights Ltd. Freely-available Resources</title>
       <link>http://www.CraneSoftwrights.com/resources/crane-resources.rss</link>
-      <description>This includes a summary list of the freely-available resources that can be downloaded from Crane Softwrights Ltd.'s web site.  The list is sorted with the most recently developed or revised resources first. (updated 2017-07-26 22:24:11-04:00)</description>
+      <description>This includes a summary list of the freely-available resources that can be downloaded from Crane Softwrights Ltd.'s web site.  The list is sorted with the most recently developed or revised resources first. (updated 2017-08-04 14:03:09-04:00)</description>
+   </item>
+   <item rdf:about="urn:x-CraneSoftwrights.com:entry:gc2obdndr">
+      <title>2017-08-04 Genericode to OBD NDR validation artefacts</title>
+      <description>
+Crane's environment to implement the OASIS Business Document Naming and Design Rules 1.1 XSD schemas, OASIS CVA (context/value association) files and JSON schemas from an input OASIS genericode expression of a compatible OBD NDR 1.0 CCTS (Core Component Technical Specification v2.01) spreadsheet.  This package can also be used to create document extension schemas and additional document schemas for any project using the OBD NDR 3.0.  Note that the genericode expression of the spreadsheet contents is used as a vendor-neutral expression of the information without relying on any particular brand of spreadsheet software.
+  This package includes the HTML summary creation tool Crane-gc2obdsummary. (updated 2017-08-04 17:10:00Z)</description>
+      <link>http://www.CraneSoftwrights.com/resources/ubl/index.htm#gc2obdndr</link>
+      <dc:date>2017-08-04T17:10:00Z</dc:date>
+      <dc:title>Genericode to OBD NDR validation artefacts</dc:title>
+      <dc:subject>OASIS Business Document NDR resources</dc:subject>
    </item>
    <item rdf:about="urn:x-CraneSoftwrights.com:entry:gc2odsxml">
       <title>2017-07-27 Genericode conversion to OpenOffice spreadsheet files</title>
@@ -113,16 +123,6 @@
       <dc:date>2017-07-19T21:30:00Z</dc:date>
       <dc:title>UBL Frameworks for oXygenXML editing tool</dc:title>
       <dc:subject>OASIS UBL resources</dc:subject>
-   </item>
-   <item rdf:about="urn:x-CraneSoftwrights.com:entry:gc2obdndr">
-      <title>2017-01-13 Genericode to OBD NDR validation artefacts</title>
-      <description>
-Crane's environment to implement the OASIS Business Document Naming and Design Rules 1.1 XSD schemas, OASIS CVA (context/value association) files and JSON schemas from an input OASIS genericode expression of a compatible OBD NDR 1.0 CCTS (Core Component Technical Specification v2.01) spreadsheet.  This package can also be used to create document extension schemas and additional document schemas for any project using the OBD NDR 3.0.  Note that the genericode expression of the spreadsheet contents is used as a vendor-neutral expression of the information without relying on any particular brand of spreadsheet software.
-  This package includes the HTML summary creation tool Crane-gc2obdsummary. (updated 2017-01-13 21:30:00Z)</description>
-      <link>http://www.CraneSoftwrights.com/resources/ubl/index.htm#gc2obdndr</link>
-      <dc:date>2017-01-13T21:30:00Z</dc:date>
-      <dc:title>Genericode to OBD NDR validation artefacts</dc:title>
-      <dc:subject>OASIS Business Document NDR resources</dc:subject>
    </item>
    <item rdf:about="urn:x-CraneSoftwrights.com:entry:gc2ublndr">
       <title>2015-07-26 Genericode to UBL NDR</title>
