@@ -4,7 +4,7 @@
       <title>Crane Softwrights Ltd. Freely-available Resources</title>
       <link>http://www.CraneSoftwrights.com/resources/crane-resources.rss</link>
       <description>This includes a summary list of the freely-available resources that can be downloaded from Crane Softwrights Ltd.'s web site.  The list is sorted with the most recently developed or revised resources first.</description>
-      <dc:date>2017-10-29T15:30:27-04:00</dc:date>
+      <dc:date>2017-11-01T09:01:36-04:00</dc:date>
       <items>
          <rdf:Seq>
             <rdf:li rdf:resource="urn:x-CraneSoftwrights.com:entry"/>
@@ -71,15 +71,15 @@
    <item rdf:about="urn:x-CraneSoftwrights.com:entry">
       <title>Summary - Crane Softwrights Ltd. Freely-available Resources</title>
       <link>http://www.CraneSoftwrights.com/resources/crane-resources.rss</link>
-      <description>This includes a summary list of the freely-available resources that can be downloaded from Crane Softwrights Ltd.'s web site.  The list is sorted with the most recently developed or revised resources first. (updated 2017-10-29 15:30:27-04:00)</description>
+      <description>This includes a summary list of the freely-available resources that can be downloaded from Crane Softwrights Ltd.'s web site.  The list is sorted with the most recently developed or revised resources first. (updated 2017-11-01 09:01:36-04:00)</description>
    </item>
    <item rdf:about="urn:x-CraneSoftwrights.com:entry:gc2obdndr">
-      <title>2017-10-29 Genericode to OBD NDR validation artefacts</title>
+      <title>2017-10-31 Genericode to OBD NDR validation artefacts</title>
       <description>
 Crane's environment to implement the OASIS Business Document Naming and Design Rules 1.1 XSD schemas, OASIS CVA (context/value association) files and JSON schemas from an input OASIS genericode expression of a compatible OBD NDR 1.0 CCTS (Core Component Technical Specification v2.01) spreadsheet.  This package can also be used to create document extension schemas and additional document schemas for any project using the OBD NDR 3.0.  Note that the genericode expression of the spreadsheet contents is used as a vendor-neutral expression of the information without relying on any particular brand of spreadsheet software.
-  This package includes the HTML summary creation tool Crane-gc2obdsummary. (updated 2017-10-29 18:40:00Z)</description>
+  This package includes the HTML summary creation tool Crane-gc2obdsummary. (updated 2017-10-31 18:50:00Z)</description>
       <link>http://www.CraneSoftwrights.com/resources/ubl/index.htm#gc2obdndr</link>
-      <dc:date>2017-10-29T18:40:00Z</dc:date>
+      <dc:date>2017-10-31T18:50:00Z</dc:date>
       <dc:title>Genericode to OBD NDR validation artefacts</dc:title>
       <dc:subject>OASIS Business Document NDR resources</dc:subject>
    </item>
