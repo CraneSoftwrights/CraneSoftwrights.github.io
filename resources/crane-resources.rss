@@ -4,10 +4,11 @@
       <title>Crane Softwrights Ltd. Freely-available Resources</title>
       <link>http://www.CraneSoftwrights.com/resources/crane-resources.rss</link>
       <description>This includes a summary list of the freely-available resources that can be downloaded from Crane Softwrights Ltd.'s web site.  The list is sorted with the most recently developed or revised resources first.</description>
-      <dc:date>2017-11-01T15:47:37-04:00</dc:date>
+      <dc:date>2017-11-03T22:36:26-04:00</dc:date>
       <items>
          <rdf:Seq>
             <rdf:li rdf:resource="urn:x-CraneSoftwrights.com:entry"/>
+            <rdf:li rdf:resource="urn:x-CraneSoftwrights.com:entry:oxygengc"/>
             <rdf:li rdf:resource="urn:x-CraneSoftwrights.com:entry:gc2obdndr"/>
             <rdf:li rdf:resource="urn:x-CraneSoftwrights.com:entry:codelists4ubl"/>
             <rdf:li rdf:resource="urn:x-CraneSoftwrights.com:entry:gc2odsxml"/>
@@ -71,7 +72,21 @@
    <item rdf:about="urn:x-CraneSoftwrights.com:entry">
       <title>Summary - Crane Softwrights Ltd. Freely-available Resources</title>
       <link>http://www.CraneSoftwrights.com/resources/crane-resources.rss</link>
-      <description>This includes a summary list of the freely-available resources that can be downloaded from Crane Softwrights Ltd.'s web site.  The list is sorted with the most recently developed or revised resources first. (updated 2017-11-01 15:47:37-04:00)</description>
+      <description>This includes a summary list of the freely-available resources that can be downloaded from Crane Softwrights Ltd.'s web site.  The list is sorted with the most recently developed or revised resources first. (updated 2017-11-03 22:36:26-04:00)</description>
+   </item>
+   <item rdf:about="urn:x-CraneSoftwrights.com:entry:oxygengc">
+      <title>2017-11-04 OASIS genericode frameworks for oXygenXML editing tool</title>
+      <description>
+    The oXygenXML editing tool
+    includes the concept of a vocabulary framework for validation and
+    instance creation/editing.  Add the "OASIS-genericode/" subdirectory from this package
+    to one of the directories listed in "Additional frameworks directories"
+    of the "Preferences / Document Type Association / Locations" settings.
+   (updated 2017-11-04 02:30:00Z)</description>
+      <link>http://www.CraneSoftwrights.com/resources/ubl/index.htm#oxygengc</link>
+      <dc:date>2017-11-04T02:30:00Z</dc:date>
+      <dc:title>OASIS genericode frameworks for oXygenXML editing tool</dc:title>
+      <dc:subject>OASIS Genericode and Context/Value Association (CVA) resources</dc:subject>
    </item>
    <item rdf:about="urn:x-CraneSoftwrights.com:entry:gc2obdndr">
       <title>2017-10-31 Genericode to OBD NDR validation artefacts</title>
@@ -119,7 +134,7 @@ The OASIS UBL distribution includes a number of default code lists that are in O
       <dc:subject>OASIS Business Document NDR resources</dc:subject>
    </item>
    <item rdf:about="urn:x-CraneSoftwrights.com:entry:oxygenubl">
-      <title>2017-07-19 UBL Frameworks for oXygenXML editing tool</title>
+      <title>2017-07-19 UBL frameworks for oXygenXML editing tool</title>
       <description>
     The oXygenXML editing tool
     includes the concept of a vocabulary framework for validation and
@@ -132,7 +147,7 @@ The OASIS UBL distribution includes a number of default code lists that are in O
    (updated 2017-07-19 21:30:00Z)</description>
       <link>http://www.CraneSoftwrights.com/resources/ubl/index.htm#oxygenubl</link>
       <dc:date>2017-07-19T21:30:00Z</dc:date>
-      <dc:title>UBL Frameworks for oXygenXML editing tool</dc:title>
+      <dc:title>UBL frameworks for oXygenXML editing tool</dc:title>
       <dc:subject>OASIS UBL resources</dc:subject>
    </item>
    <item rdf:about="urn:x-CraneSoftwrights.com:entry:gc2ublndr">
