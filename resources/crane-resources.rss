@@ -4,7 +4,7 @@
       <title>Crane Softwrights Ltd. Freely-available Resources</title>
       <link>http://www.CraneSoftwrights.com/resources/crane-resources.rss</link>
       <description>This includes a summary list of the freely-available resources that can be downloaded from Crane Softwrights Ltd.'s web site.  The list is sorted with the most recently developed or revised resources first.</description>
-      <dc:date>2017-11-03T22:36:26-04:00</dc:date>
+      <dc:date>2017-11-05T09:21:58-05:00</dc:date>
       <items>
          <rdf:Seq>
             <rdf:li rdf:resource="urn:x-CraneSoftwrights.com:entry"/>
@@ -72,19 +72,19 @@
    <item rdf:about="urn:x-CraneSoftwrights.com:entry">
       <title>Summary - Crane Softwrights Ltd. Freely-available Resources</title>
       <link>http://www.CraneSoftwrights.com/resources/crane-resources.rss</link>
-      <description>This includes a summary list of the freely-available resources that can be downloaded from Crane Softwrights Ltd.'s web site.  The list is sorted with the most recently developed or revised resources first. (updated 2017-11-03 22:36:26-04:00)</description>
+      <description>This includes a summary list of the freely-available resources that can be downloaded from Crane Softwrights Ltd.'s web site.  The list is sorted with the most recently developed or revised resources first. (updated 2017-11-05 09:21:58-05:00)</description>
    </item>
    <item rdf:about="urn:x-CraneSoftwrights.com:entry:oxygengc">
-      <title>2017-11-04 OASIS genericode frameworks for oXygenXML editing tool</title>
+      <title>2017-11-05 OASIS genericode frameworks for oXygenXML editing tool</title>
       <description>
     The oXygenXML editing tool
     includes the concept of a vocabulary framework for validation and
     instance creation/editing.  Add the "OASIS-genericode/" subdirectory from this package
     to one of the directories listed in "Additional frameworks directories"
     of the "Preferences / Document Type Association / Locations" settings.
-   (updated 2017-11-04 02:30:00Z)</description>
+   (updated 2017-11-05 14:20:00Z)</description>
       <link>http://www.CraneSoftwrights.com/resources/ubl/index.htm#oxygengc</link>
-      <dc:date>2017-11-04T02:30:00Z</dc:date>
+      <dc:date>2017-11-05T14:20:00Z</dc:date>
       <dc:title>OASIS genericode frameworks for oXygenXML editing tool</dc:title>
       <dc:subject>OASIS Genericode and Context/Value Association (CVA) resources</dc:subject>
    </item>
