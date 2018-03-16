@@ -4,10 +4,11 @@
       <title>Crane Softwrights Ltd. Freely-available Resources</title>
       <link>http://www.CraneSoftwrights.com/resources/crane-resources.rss</link>
       <description>This includes a summary list of the freely-available resources that can be downloaded from Crane Softwrights Ltd.'s web site.  The list is sorted with the most recently developed or revised resources first.</description>
-      <dc:date>2018-03-08T22:39:01-05:00</dc:date>
+      <dc:date>2018-03-16T19:22:43-04:00</dc:date>
       <items>
          <rdf:Seq>
             <rdf:li rdf:resource="urn:x-CraneSoftwrights.com:entry"/>
+            <rdf:li rdf:resource="urn:x-CraneSoftwrights.com:entry:literatexslt"/>
             <rdf:li rdf:resource="urn:x-CraneSoftwrights.com:entry:gc2obdndr"/>
             <rdf:li rdf:resource="urn:x-CraneSoftwrights.com:entry:oxygengc"/>
             <rdf:li rdf:resource="urn:x-CraneSoftwrights.com:entry:codelists4ubl"/>
@@ -28,7 +29,6 @@
             <rdf:li rdf:resource="urn:x-CraneSoftwrights.com:entry:tspython"/>
             <rdf:li rdf:resource="urn:x-CraneSoftwrights.com:entry:cva2sch"/>
             <rdf:li rdf:resource="urn:x-CraneSoftwrights.com:entry:csv2gc"/>
-            <rdf:li rdf:resource="urn:x-CraneSoftwrights.com:entry:literatexslt"/>
             <rdf:li rdf:resource="urn:x-CraneSoftwrights.com:entry:gcExportSubset"/>
             <rdf:li rdf:resource="urn:x-CraneSoftwrights.com:entry:ubl2-ss"/>
             <rdf:li rdf:resource="urn:x-CraneSoftwrights.com:entry:XMP"/>
@@ -72,7 +72,15 @@
    <item rdf:about="urn:x-CraneSoftwrights.com:entry">
       <title>Summary - Crane Softwrights Ltd. Freely-available Resources</title>
       <link>http://www.CraneSoftwrights.com/resources/crane-resources.rss</link>
-      <description>This includes a summary list of the freely-available resources that can be downloaded from Crane Softwrights Ltd.'s web site.  The list is sorted with the most recently developed or revised resources first. (updated 2018-03-08 22:39:01-05:00)</description>
+      <description>This includes a summary list of the freely-available resources that can be downloaded from Crane Softwrights Ltd.'s web site.  The list is sorted with the most recently developed or revised resources first. (updated 2018-03-16 19:22:43-04:00)</description>
+   </item>
+   <item rdf:about="urn:x-CraneSoftwrights.com:entry:literatexslt">
+      <title>2018-03-16 LiterateXSLT™ Stylesheet Synthesis</title>
+      <description>This is an environment for synthesizing XSLT stylesheets from prototypical result instances annotated with signals that create stylesheet constructs.  Validation and other benefits are described.  Various support tools are included and a discussion of a possible GUI interface.  Originally published as an experiment in July 2003, this has been updated in November 2008 to XSLT 2.0 for production use.  New features are being conceived and added as necessary. (updated 2018-03-16 23:20:00Z)</description>
+      <link>http://www.CraneSoftwrights.com/resources/index.htm#literatexslt</link>
+      <dc:date>2018-03-16T23:20:00Z</dc:date>
+      <dc:title>LiterateXSLT™ Stylesheet Synthesis</dc:title>
+      <dc:subject>XSLT Resources</dc:subject>
    </item>
    <item rdf:about="urn:x-CraneSoftwrights.com:entry:gc2obdndr">
       <title>2018-03-09 Genericode to OBD NDR validation artefacts</title>
@@ -352,14 +360,6 @@ Note we also have a face-to-face or one-on-one over-the-Internet hands-on traini
       <dc:date>2013-01-18T23:00:00Z</dc:date>
       <dc:title>CSV to genericode transformation</dc:title>
       <dc:subject>OASIS Genericode and Context/Value Association (CVA) resources</dc:subject>
-   </item>
-   <item rdf:about="urn:x-CraneSoftwrights.com:entry:literatexslt">
-      <title>2012-07-31 LiterateXSLT™ Stylesheet Synthesis</title>
-      <description>This is an environment for synthesizing XSLT stylesheets from prototypical result instances annotated with signals that create stylesheet constructs.  Validation and other benefits are described.  Various support tools are included and a discussion of a possible GUI interface.  Originally published as an experiment in July 2003, this has been updated in November 2008 to XSLT 2.0 and is maturing into a production environment. (updated 2012-07-31 23:30:00Z)</description>
-      <link>http://www.CraneSoftwrights.com/resources/index.htm#literatexslt</link>
-      <dc:date>2012-07-31T23:30:00Z</dc:date>
-      <dc:title>LiterateXSLT™ Stylesheet Synthesis</dc:title>
-      <dc:subject>XSLT Resources</dc:subject>
    </item>
    <item rdf:about="urn:x-CraneSoftwrights.com:entry:gcExportSubset">
       <title>2011-11-11 OpenOffice spreadsheet export to genericode subset</title>
