@@ -4,16 +4,16 @@
       <title>Crane Softwrights Ltd. Freely-available Resources</title>
       <link>http://www.CraneSoftwrights.com/resources/crane-resources.rss</link>
       <description>This includes a summary list of the freely-available resources that can be downloaded from Crane Softwrights Ltd.'s web site.  The list is sorted with the most recently developed or revised resources first.</description>
-      <dc:date>2018-05-01T20:19:38-04:00</dc:date>
+      <dc:date>2018-10-24T19:31:20-04:00</dc:date>
       <items>
          <rdf:Seq>
             <rdf:li rdf:resource="urn:x-CraneSoftwrights.com:entry"/>
-            <rdf:li rdf:resource="urn:x-CraneSoftwrights.com:entry:literatexslt"/>
             <rdf:li rdf:resource="urn:x-CraneSoftwrights.com:entry:gc2obdndr"/>
+            <rdf:li rdf:resource="urn:x-CraneSoftwrights.com:entry:ods2obdgc"/>
+            <rdf:li rdf:resource="urn:x-CraneSoftwrights.com:entry:literatexslt"/>
             <rdf:li rdf:resource="urn:x-CraneSoftwrights.com:entry:oxygengc"/>
             <rdf:li rdf:resource="urn:x-CraneSoftwrights.com:entry:codelists4ubl"/>
             <rdf:li rdf:resource="urn:x-CraneSoftwrights.com:entry:gc2odsxml"/>
-            <rdf:li rdf:resource="urn:x-CraneSoftwrights.com:entry:ods2obdgc"/>
             <rdf:li rdf:resource="urn:x-CraneSoftwrights.com:entry:oxygenubl"/>
             <rdf:li rdf:resource="urn:x-CraneSoftwrights.com:entry:gc2ublndr"/>
             <rdf:li rdf:resource="urn:x-CraneSoftwrights.com:entry:ISOSTS"/>
@@ -72,7 +72,30 @@
    <item rdf:about="urn:x-CraneSoftwrights.com:entry">
       <title>Summary - Crane Softwrights Ltd. Freely-available Resources</title>
       <link>http://www.CraneSoftwrights.com/resources/crane-resources.rss</link>
-      <description>This includes a summary list of the freely-available resources that can be downloaded from Crane Softwrights Ltd.'s web site.  The list is sorted with the most recently developed or revised resources first. (updated 2018-05-01 20:19:38-04:00)</description>
+      <description>This includes a summary list of the freely-available resources that can be downloaded from Crane Softwrights Ltd.'s web site.  The list is sorted with the most recently developed or revised resources first. (updated 2018-10-24 19:31:20-04:00)</description>
+   </item>
+   <item rdf:about="urn:x-CraneSoftwrights.com:entry:gc2obdndr">
+      <title>2018-10-24 Genericode to OBD NDR validation artefacts</title>
+      <description>
+Crane's environment to implement the OASIS Business Document Naming and Design Rules 1.1 XSD schemas, OASIS CVA (context/value association) files and JSON schemas from an input OASIS genericode expression of a compatible OBD NDR 1.0 CCTS (Core Component Technical Specification v2.01) spreadsheet.  This package can also be used to create document extension schemas and additional document schemas for any project using the OBD NDR 3.0.  Note that the genericode expression of the spreadsheet contents is used as a vendor-neutral expression of the information without relying on any particular brand of spreadsheet software.
+  This package includes the HTML summary creation tool Crane-gc2obdsummary. (updated 2018-10-24 23:20:00Z)</description>
+      <link>http://www.CraneSoftwrights.com/resources/ubl/index.htm#gc2obdndr</link>
+      <dc:date>2018-10-24T23:20:00Z</dc:date>
+      <dc:title>Genericode to OBD NDR validation artefacts</dc:title>
+      <dc:subject>OASIS Business Document NDR resources</dc:subject>
+   </item>
+   <item rdf:about="urn:x-CraneSoftwrights.com:entry:ods2obdgc">
+      <title>2018-09-21 OpenOffice spreadsheet conversion to OBD genericode file</title>
+      <description>This is a standalone XSLT 2.0 stylesheet to export a complete genericode file from one or more ODS spreadsheets. The input can either be the binary ODS file or the OpenDocument Format XML equivalent. When the input is a spreadsheet of CCTS constructs, the output is suitable for use with the Genericode to OBD NDR process to create XSD schemas and CVA files.
+    Note that there are invocation parameters such that the spreadsheet can
+    be output in a "raw" form with no presumption of use of the UBL NDR.  This
+    provides a method of converting any arbitrary spreadsheet with column head
+    values into a genericode XML document.
+   (updated 2018-09-21 20:10:00Z)</description>
+      <link>http://www.CraneSoftwrights.com/resources/ubl/index.htm#ods2obdgc</link>
+      <dc:date>2018-09-21T20:10:00Z</dc:date>
+      <dc:title>OpenOffice spreadsheet conversion to OBD genericode file</dc:title>
+      <dc:subject>OASIS Business Document NDR resources</dc:subject>
    </item>
    <item rdf:about="urn:x-CraneSoftwrights.com:entry:literatexslt">
       <title>2018-05-02 LiterateXSLT™ Stylesheet Synthesis</title>
@@ -81,16 +104,6 @@
       <dc:date>2018-05-02T00:20:00Z</dc:date>
       <dc:title>LiterateXSLT™ Stylesheet Synthesis</dc:title>
       <dc:subject>XSLT Resources</dc:subject>
-   </item>
-   <item rdf:about="urn:x-CraneSoftwrights.com:entry:gc2obdndr">
-      <title>2018-04-27 Genericode to OBD NDR validation artefacts</title>
-      <description>
-Crane's environment to implement the OASIS Business Document Naming and Design Rules 1.1 XSD schemas, OASIS CVA (context/value association) files and JSON schemas from an input OASIS genericode expression of a compatible OBD NDR 1.0 CCTS (Core Component Technical Specification v2.01) spreadsheet.  This package can also be used to create document extension schemas and additional document schemas for any project using the OBD NDR 3.0.  Note that the genericode expression of the spreadsheet contents is used as a vendor-neutral expression of the information without relying on any particular brand of spreadsheet software.
-  This package includes the HTML summary creation tool Crane-gc2obdsummary. (updated 2018-04-27 18:20:00Z)</description>
-      <link>http://www.CraneSoftwrights.com/resources/ubl/index.htm#gc2obdndr</link>
-      <dc:date>2018-04-27T18:20:00Z</dc:date>
-      <dc:title>Genericode to OBD NDR validation artefacts</dc:title>
-      <dc:subject>OASIS Business Document NDR resources</dc:subject>
    </item>
    <item rdf:about="urn:x-CraneSoftwrights.com:entry:oxygengc">
       <title>2017-11-05 OASIS genericode frameworks for oXygenXML editing tool</title>
@@ -127,19 +140,6 @@ The OASIS UBL distribution includes a number of default code lists that are in O
       <dc:date>2017-07-27T02:20:00Z</dc:date>
       <dc:title>Genericode conversion to OpenOffice spreadsheet files</dc:title>
       <dc:subject>OASIS Genericode and Context/Value Association (CVA) resources</dc:subject>
-   </item>
-   <item rdf:about="urn:x-CraneSoftwrights.com:entry:ods2obdgc">
-      <title>2017-07-27 OpenOffice spreadsheet conversion to OBD genericode file</title>
-      <description>This is a standalone XSLT 2.0 stylesheet to export a complete genericode file from one or more ODS spreadsheets. The input can either be the binary ODS file or the OpenDocument Format XML equivalent. When the input is a spreadsheet of CCTS constructs, the output is suitable for use with the Genericode to OBD NDR process to create XSD schemas and CVA files.
-    Note that there are invocation parameters such that the spreadsheet can
-    be output in a "raw" form with no presumption of use of the UBL NDR.  This
-    provides a method of converting any arbitrary spreadsheet with column head
-    values into a genericode XML document.
-   (updated 2017-07-27 01:10:00Z)</description>
-      <link>http://www.CraneSoftwrights.com/resources/ubl/index.htm#ods2obdgc</link>
-      <dc:date>2017-07-27T01:10:00Z</dc:date>
-      <dc:title>OpenOffice spreadsheet conversion to OBD genericode file</dc:title>
-      <dc:subject>OASIS Business Document NDR resources</dc:subject>
    </item>
    <item rdf:about="urn:x-CraneSoftwrights.com:entry:oxygenubl">
       <title>2017-07-19 UBL frameworks for oXygenXML editing tool</title>
