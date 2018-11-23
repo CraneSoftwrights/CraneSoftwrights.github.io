@@ -4,7 +4,7 @@
       <title>Crane Softwrights Ltd. Freely-available Resources</title>
       <link>http://www.CraneSoftwrights.com/resources/crane-resources.rss</link>
       <description>This includes a summary list of the freely-available resources that can be downloaded from Crane Softwrights Ltd.'s web site.  The list is sorted with the most recently developed or revised resources first.</description>
-      <dc:date>2018-11-11T22:05:29-05:00</dc:date>
+      <dc:date>2018-11-23T15:29:00-05:00</dc:date>
       <items>
          <rdf:Seq>
             <rdf:li rdf:resource="urn:x-CraneSoftwrights.com:entry"/>
@@ -72,7 +72,7 @@
    <item rdf:about="urn:x-CraneSoftwrights.com:entry">
       <title>Summary - Crane Softwrights Ltd. Freely-available Resources</title>
       <link>http://www.CraneSoftwrights.com/resources/crane-resources.rss</link>
-      <description>This includes a summary list of the freely-available resources that can be downloaded from Crane Softwrights Ltd.'s web site.  The list is sorted with the most recently developed or revised resources first. (updated 2018-11-11 22:05:29-05:00)</description>
+      <description>This includes a summary list of the freely-available resources that can be downloaded from Crane Softwrights Ltd.'s web site.  The list is sorted with the most recently developed or revised resources first. (updated 2018-11-23 15:29:00-05:00)</description>
    </item>
    <item rdf:about="urn:x-CraneSoftwrights.com:entry:gc2obdndr">
       <title>2018-11-12 Genericode to OBD NDR validation artefacts</title>
@@ -182,18 +182,11 @@ The OASIS UBL distribution includes a number of default code lists that are in O
     The vocabulary is not entirely covered by these stylesheets, and the
     renderings are not meant to be production ready.  Rather, the PDF rendering 
     is a watermarked mock-up of
-    the production rendering, suitable for review before sending to ISO
-    for production processing.  See
-    the readme file for instructions regarding requesting more features
-    of the vocabulary to be implemented in the stylesheets.
+    the production rendering, suitable for review before sending the XML to ISO
+    for production processing.
   
-    This library is expected to be updated often in response to requests for
-    new features and new interpretations of the vocabulary.  Check back here
-    frequently, or monitor our RSS Feed for
-    updates.
-  
-    These ISOSTS stylesheets are being incorporated, without the watermarks, as the publishing component of a standards management suite of work-flow tools. Please see 
-    http://setare.no/?page_id=222
+    Upgraded versions of these STS stylesheets are being incorporated, without the watermarks, as the publishing component of a standards management suite of work-flow tools. Please see 
+    http://setare.co.uk
     for more details in this regard.
    (updated 2015-07-17 01:00:00Z)</description>
       <link>http://www.CraneSoftwrights.com/resources/index.htm#ISOSTS</link>
