@@ -4,13 +4,13 @@
       <title>Crane Softwrights Ltd. Freely-available Resources</title>
       <link>http://www.CraneSoftwrights.com/resources/crane-resources.rss</link>
       <description>This includes a summary list of the freely-available resources that can be downloaded from Crane Softwrights Ltd.'s web site.  The list is sorted with the most recently developed or revised resources first.</description>
-      <dc:date>2019-03-23T21:26:28-04:00</dc:date>
+      <dc:date>2019-04-11T17:59:33-04:00</dc:date>
       <items>
          <rdf:Seq>
             <rdf:li rdf:resource="urn:x-CraneSoftwrights.com:entry"/>
+            <rdf:li rdf:resource="urn:x-CraneSoftwrights.com:entry:literatexslt"/>
             <rdf:li rdf:resource="urn:x-CraneSoftwrights.com:entry:codelists4ubl"/>
             <rdf:li rdf:resource="urn:x-CraneSoftwrights.com:entry:gc2obdndr"/>
-            <rdf:li rdf:resource="urn:x-CraneSoftwrights.com:entry:literatexslt"/>
             <rdf:li rdf:resource="urn:x-CraneSoftwrights.com:entry:ods2obdgc"/>
             <rdf:li rdf:resource="urn:x-CraneSoftwrights.com:entry:oxygengc"/>
             <rdf:li rdf:resource="urn:x-CraneSoftwrights.com:entry:gc2odsxml"/>
@@ -72,7 +72,15 @@
    <item rdf:about="urn:x-CraneSoftwrights.com:entry">
       <title>Summary - Crane Softwrights Ltd. Freely-available Resources</title>
       <link>http://www.CraneSoftwrights.com/resources/crane-resources.rss</link>
-      <description>This includes a summary list of the freely-available resources that can be downloaded from Crane Softwrights Ltd.'s web site.  The list is sorted with the most recently developed or revised resources first. (updated 2019-03-23 21:26:28-04:00)</description>
+      <description>This includes a summary list of the freely-available resources that can be downloaded from Crane Softwrights Ltd.'s web site.  The list is sorted with the most recently developed or revised resources first. (updated 2019-04-11 17:59:33-04:00)</description>
+   </item>
+   <item rdf:about="urn:x-CraneSoftwrights.com:entry:literatexslt">
+      <title>2019-04-11 LiterateXSLT™ Stylesheet Synthesis</title>
+      <description>This is an environment for synthesizing XSLT stylesheets from prototypical result instances annotated with signals that create stylesheet constructs.  Validation and other benefits are described.  Various support tools are included and a discussion of a possible GUI interface.  Originally published as an experiment in July 2003, this has been updated in November 2008 to XSLT 2.0 for production use.  New features are being conceived and added as necessary. (updated 2019-04-11 21:50:00Z)</description>
+      <link>http://www.CraneSoftwrights.com/resources/index.htm#literatexslt</link>
+      <dc:date>2019-04-11T21:50:00Z</dc:date>
+      <dc:title>LiterateXSLT™ Stylesheet Synthesis</dc:title>
+      <dc:subject>XSLT Resources</dc:subject>
    </item>
    <item rdf:about="urn:x-CraneSoftwrights.com:entry:codelists4ubl">
       <title>2019-03-24 Code list generation for UBL distribution</title>
@@ -93,14 +101,6 @@ Crane's environment to implement the OASIS Business Document Naming and Design R
       <dc:date>2019-03-20T01:40:00Z</dc:date>
       <dc:title>Genericode to OBD NDR validation artefacts</dc:title>
       <dc:subject>OASIS Business Document NDR resources</dc:subject>
-   </item>
-   <item rdf:about="urn:x-CraneSoftwrights.com:entry:literatexslt">
-      <title>2019-02-17 LiterateXSLT™ Stylesheet Synthesis</title>
-      <description>This is an environment for synthesizing XSLT stylesheets from prototypical result instances annotated with signals that create stylesheet constructs.  Validation and other benefits are described.  Various support tools are included and a discussion of a possible GUI interface.  Originally published as an experiment in July 2003, this has been updated in November 2008 to XSLT 2.0 for production use.  New features are being conceived and added as necessary. (updated 2019-02-17 16:50:00Z)</description>
-      <link>http://www.CraneSoftwrights.com/resources/index.htm#literatexslt</link>
-      <dc:date>2019-02-17T16:50:00Z</dc:date>
-      <dc:title>LiterateXSLT™ Stylesheet Synthesis</dc:title>
-      <dc:subject>XSLT Resources</dc:subject>
    </item>
    <item rdf:about="urn:x-CraneSoftwrights.com:entry:ods2obdgc">
       <title>2018-09-21 OpenOffice spreadsheet conversion to OBD genericode file</title>
