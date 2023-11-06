@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8"?><html xmlns="http://www.w3.org/1999/xhtml">
+   
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      
+      <meta name="generator" content="HTML Tidy for HTML5 for Apple macOS version 5.8.0" />
+      
+      <meta charset="utf-8" />
+      <title></title>
+      </head>
+   
+   <body>
+      
+      <h1 id="design-resources">Design resources</h1>
+      
+      <p>Copyright © Crane Softwrights Ltd.<br />
+         Development: <a href="https://github.com/CraneSoftwrights/board-baseball"><code>https://github.com/CraneSoftwrights/board-baseball</code></a><br />
+         
+         Tip jar: <a href="https://paypal.me/CraneSoftwrights"><code>https://paypal.me/CraneSoftwrights</code></a></p>
+      
+      <p>In <a href="https://github.com/CraneSoftwrights/board-baseball/blob/qa/design">this <code>design/</code> directory</a>
+         is information regarding the SVG design files, what is needed for
+         them, how they are expected to be used, and how to prepare them for
+         creating the <a href="burn.md.html"><code>../burn</code></a> directory
+         files and release through the tools found in the <a href="build.md.html"><code>../build</code></a> directory.
+      </p>
+      
+      <h2 id="development-reminders">1. Development reminders</h2>
+      
+      <h3 id="initiating-new-svg-work-after-releasing-to-qa-for-testing">
+         1.1 Initiating new SVG work after releasing to QA for testing
+      </h3>
+      
+      <p>The process of a release creates a number of burn and print
+         files in the <a href="https://github.com/CraneSoftwrights/board-baseball/blob/qa/burn"><code>../burn</code></a>
+         subdirectories that reflect the content of the design SVG file.
+      </p>
+      
+      <p>Thus, as soon as the SVG file is touched, the burn files no
+         longer are guaranteed to reflect what is in the SVG.
+      </p>
+      
+      <p>When starting new work after a snapshot has been moved to QA for
+         testing, be sure to delete all files except the
+         <code>README.md</code> file in the <a href="https://github.com/CraneSoftwrights/board-baseball/blob/qa/burn/svg"><code>../burn/svg</code> directory</a> and the
+         <a href="https://github.com/CraneSoftwrights/board-baseball/blob/qa/burn/pdf"><code>../burn/pdf</code> directory</a>. This
+         way anyone visiting the site will find files only in the QA branch
+         and main branch.
+      </p>
+      
+      <p>Also, the version number in the SVG file needs to be changed
+         early in two different layers (one for print and one for burn) so
+         there is no confusion regarding the SVG file not reflecting the
+         published files. See the “Update the version string” subsection
+         below for details.
+      </p>
+      
+      <h3 id="svg-layers-for-the-physical-levels">1.2 SVG layers for the
+         physical levels
+      </h3>
+      
+      <p>The <a href="https://inkscape.org">Inkscape</a> application
+         helps to manage layers of content. The “Layers and Objects” panel
+         reveals: - layers of print and burn detail content, organized
+         semantically regarding content and use - singleton layers used in
+         their own context - empty layers representing content levels - the
+         title of the combined level dictates the combination of other
+         layers - see discussion below regarding assembling design and
+         content layers - layers of scratch-pad work
+      </p>
+      
+      <p>The typical format of the way a detail layer is labeled is:
+         <code>L#:B#</code> representing: - <code>L#</code>{level of the
+         physical board}<code>:B#</code>{burn index for the level} -
+         supplemental layer for the level - layer 1 has the main objects
+         layer for the given level - layer 2 has the outside cuts and the
+         alignment holes - layer 3 has the peg holes
+      </p>
+      
+      <p>The actual components of the label before and after are
+         arbitrary and can be in any format. As described below regarding
+         assembly, labels are collected by the label prefix; the label
+         suffix is used only for distinction.
+      </p>
+      
+      <h2 id="fonts">2. Fonts</h2>
+      
+      <p>These design files use the “Noto Serif” and “Noto Sans”
+         available for free from the <a href="https://fonts.google.com/noto"><code>https://fonts.google.com/noto</code></a>
+         site. The compressed and extra-compressed font variants are used
+         predominantly.
+      </p>
+      
+      <p>As part of the production process, all text in the review copy
+         of the design file is converted to paths and so there is no need
+         for the PDF reading tool attached to the cutting machine to have
+         these fonts pre-loaded.
+      </p>
+      
+      <h2 id="cuts">3. Cuts</h2>
+      
+      <p>It is assumed that in the PDF file sent to the laser cutter, a
+         stroke with a stroke width of .001in is a “cut” instruction to
+         device. Otherwise, the surface of the material is etched. No
+         consideration for colour is made in the etching.
+      </p>
+      
+      <p>For design management purposes, all SVG strokes with magenta
+         #ff00ffff stroke paint, regardless of stroke width, are interpreted
+         in the production process as needing to be converted to have a
+         stroke width of .001in. During design these strokes are drawn with
+         a stroke width of 1.5mm assuming that to be the (generous) width of
+         the laser kerf.
+      </p>
+      
+      <h2 id="release-notes">4. Release notes</h2>
+      
+      <p>These are the steps undertaken to make a final release suitable
+         for checking into QA for testing. They are documented to help the
+         developers remember to do everything, since there are many steps
+         that need to be followed.
+      </p>
+      
+      <p>Remember to save frequently as Inkscape appears to crash easily
+         when working with layers.
+      </p>
+      
+      <h3 id="update-the-version-string">4.1 Update the version
+         string
+      </h3>
+      
+      <p>Update the version strings (two), one for print and the other
+         for burning.
+      </p>
+      
+      <p>Look in the “Layers and Objects” panel for the two layers with
+         “+ version” in the layer name. Un-hide the layer but leave the
+         layer locked. Open up the nested groups until you find the text
+         string labeled “Version”. Select it and press “3” to zoom in on the
+         string. Press “T” to enter text mode and make the change. Press
+         “Esc” to get out of editing the string. Hide the layer again.
+      </p>
+      
+      <h3 id="preparing-each-layer-for-use-in-assembling-levels">4.2
+         Preparing each layer for use in assembling levels
+      </h3>
+      
+      <p>In the course of work on any given layer, the SVG objects end up
+         becoming ungrouped. This makes for a pain point when dealing with
+         selecting the layers in Inkscape because Inkscape automatically
+         opens up the layer’s contents for the (in)convenience of the
+         user.
+      </p>
+      
+      <p>Walk through each of the design layers, introducing a top-level
+         group that groups everything in that layer. That way, selecting the
+         layer opens up only a single object and not many objects, thus
+         making navigation of the layers more manageable.
+      </p>
+      
+      <h3 id="assembling-design-layers-into-combined-levels">4.3
+         Assembling design layers into combined levels
+      </h3>
+      
+      <p>Assembling design layers into combined levels is accomplished by
+         naming conventions used in the layer titles in the SVG. These
+         combining layers should be empty because they are replaced in their
+         entirety during the production process.
+      </p>
+      
+      <p>Individual design layers include labels as described above for
+         levels but can be any pattern of
+         <code>{label}:{distinction}</code>.
+      </p>
+      
+      <p>A combined layer’s title directs the assembly of all of the
+         layers in the order needed. The beginning of the title is the
+         assembly name, followed by an equal sign “=” (separated with
+         spaces), followed by as many <code>{label}:*</code> indications, in
+         order and separated by spaces, of the collections of SVG layers to
+         assemble. Consider this example:
+      </p>
+      
+      <ul>
+         
+         <li><code>L1-crop-9x12 = CropMarks9x12:* Crop9x12:* L1:*</code>
+            
+            <ul>
+               
+               <li>pull in three sets of SVG layers, in order, into a single
+                  assembly
+               </li>
+               
+            </ul>
+            
+         </li>
+         
+      </ul>
+      
+      <p>In turn, collages also are empty layers that use the same
+         conventions in the layer title to pull in assemblies:
+      </p>
+      
+      <ul>
+         
+         <li><code>13-9x24-collage = L1-crop-9x12:* L3-crop-9x12:*
+               Tiling-9x24:*</code></li>
+         
+      </ul>
+      
+      <p>The actual assembly is accomplished in the production steps by
+         XSLT stylesheets that read the design SVG XML and output a review
+         SVG XML of all assemblies. This process is very quick and so it
+         makes sense to use it to create the assemblies for review.
+      </p>
+      
+      <p>The review SVG file is then burst into individual SVG files, one
+         for each collage and print assembly. The collage and print SVG
+         files need some manual intervention before converting the SVG files
+         to PDF using the synthesized batch script. The resulting PDF files
+         need some manual intervention to orient them as desired for the
+         laser cutter, as well as a one-last-time review of their accuracy
+         before use.
+      </p>
+      
+      <h2 id="create-the-individual-level-svg-files-and-burn-files">5.
+         Create the individual level SVG files and burn files
+      </h2>
+      
+      <p>Close the <code>design-board-baseball-crane.svg</code> file to
+         prevent it from being disturbed. And if it does get disturbed, one
+         can replace it from the last copy committed to git.
+      </p>
+      
+      <p>Follow the instructions in the “Burn files” section in <a href="build.md.html"><code>build.md</code></a> regarding creating the
+         individual SVG and burn file collages.
+      </p>
+      
+   </body>
+   
+</html>

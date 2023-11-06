@@ -1,0 +1,877 @@
+<?xml version="1.0" encoding="UTF-8"?><html xmlns="http://www.w3.org/1999/xhtml">
+   
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      
+      <meta name="generator" content="HTML Tidy for HTML5 for Apple macOS version 5.8.0" />
+      
+      <meta charset="utf-8" />
+      <title></title>
+      </head>
+   
+   <body>
+      
+      <h1 id="build-resources">Build resources</h1>
+      
+      <p>Copyright © Crane Softwrights Ltd.<br />
+         Development: <a href="https://github.com/CraneSoftwrights/board-baseball"><code>https://github.com/CraneSoftwrights/board-baseball</code></a><br />
+         
+         Tip jar: <a href="https://paypal.me/CraneSoftwrights"><code>https://paypal.me/CraneSoftwrights</code></a></p>
+      
+      <p>In <a href="https://github.com/CraneSoftwrights/board-baseball/blob/qa/build">this <code>build/</code> directory</a> are
+         the resources used to build two versions of the game using a laser
+         cutter to etch and cut material: - a 3-dimensional box with six
+         layers of 1/8”-3mm material, and
+      </p>
+      
+      <ul>
+         
+         <li>
+            
+            <p><img alt="" src="../shared/box1.jpg" style="height:300px" />
+               <img alt="" src="../shared/box2.jpg" style="height:300px" /></p>
+            
+         </li>
+         
+         <li>
+            
+            <p>a single-board (of any thickness) with information on both
+               sides
+            </p>
+            
+            <ul>
+               
+               <li><img alt="" src="../shared/sbf.jpg" style="height:300px" />
+                  <img alt="" src="../shared/sbb.jpg" style="height:300px" /></li>
+               
+            </ul>
+            
+         </li>
+         
+      </ul>
+      
+      <h2 id="terminology">1. Terminology</h2>
+      
+      <table>
+         
+         <colgroup>
+            
+            <col style="width: 50%" />
+            
+            <col style="width: 50%" />
+         </colgroup>
+         
+         <thead>
+            
+            <tr class="header">
+               
+               <th>Legend</th>
+               
+               <th>Key</th>
+               
+            </tr>
+            
+         </thead>
+         
+         <tbody>
+            
+            <tr class="odd">
+               
+               <td><strong>A</strong> = alignment hole<br />
+                  <br />
+                  <strong>B</strong> = panel trench<br />
+                  <br />
+                  <strong>C</strong> = panel<br />
+                  <br />
+                  <strong>D</strong> = panel cradle<br />
+                  <br />
+                  <strong>E</strong> = compartment<br />
+                  <br />
+                  <strong>F</strong> = compartment lid<br />
+                  <br />
+                  <strong>G</strong> = main board
+               </td>
+               
+               <td><img alt="" src="../shared/terminology.png" style="height:300px" /></td>
+               
+            </tr>
+            
+         </tbody>
+         
+      </table>
+      
+      <h2 id="board-levels-and-svg-layers">2. Board levels and SVG
+         layers
+      </h2>
+      
+      <h3 id="six-layer-3d-game-boards">2.1 Six-layer 3D game boards</h3>
+      
+      <p>The design is optimized for six levels of 1/8”=3mm material that
+         are laminated together to create a box 3/4”=19mm tall.
+         Alternatively, one can use 3/16”=5mm material, but of course this
+         would make the box 3/8” taller at 9/8”=29mm. This is mentioned
+         because quality 1/8”=3mm material may be hard to find.
+      </p>
+      
+      <p>Each level is made up of a number of SVG layers in the <a href="https://github.com/CraneSoftwrights/board-baseball/blob/qa/design/design-board-baseball-crane.svg">design SVG master
+            file</a>. See the <a href="https://github.com/CraneSoftwrights/board-baseball/blob/qa/design/#readme">design notes</a>.
+      </p>
+      
+      <p>The levels are numbered to be distinguished from each other. At
+         this time there are two choices for the back level: number 6 is
+         blank and number 7 has a simple border. It is anticipated that
+         future candidate back covers might include a written or graphic
+         summary of the rules of play.
+      </p>
+      
+      <p>Levels 2 and 5 are special in that they have no visible printed
+         or play content, only holes, chambers, and printed magnet polarity
+         indicators. This property permits you to use an alternative
+         material for levels 2 and 5 than for the other levels. All of the
+         other levels have at least some exposure to the user, and the
+         burning is designed to work if the material has only one “good”
+         side, so it is not necessary to purchase material that has two
+         “good” sides.
+      </p>
+      
+      <p>The test level is positioned such that it can overlay level 2.
+         After burning the test level, one can burn a second test on the
+         flip side of the same piece of material. Thus, one could do a first
+         test burn, adjust the settings and orient the surface positioning a
+         different level 2 at the home position and do a second test burn
+         with the new parameters. Then level 2 burns can overlay the test
+         burns.
+      </p>
+      
+      <h3 id="two-sided-single-board-2d-game-boards">2.2 Two-sided
+         single-board 2D game boards
+      </h3>
+      
+      <p>Two of the levels are designed to create single-board game
+         boards, SBF (single board front) and SBB (single board back).
+      </p>
+      
+      <p>Many of the layers of the 3D game boards are used in the
+         single-board game boards.
+      </p>
+      
+      <h2 id="materials">3. Materials</h2>
+      
+      <h3 id="materials-list">3.1 Materials list</h3>
+      
+      <p>In addition to the board material being cut and assembled, the
+         following items are useful in construction and play. Included are
+         illustrative examples of the commercial availability of some of the
+         materials, though these are not to be regarded as recommendations
+         or requirements, just examples of materials that have worked for
+         the two designers:
+      </p>
+      
+      <ul>
+         
+         <li>levels of burn and cut material
+            
+            <ul>
+               
+               <li>1-count only for the single board version</li>
+               
+               <li>6-count in total for the box, possibly combined in larger
+                  dimensions of material
+               </li>
+               
+               <li>9”x12” is assumed for every burn, accommodating 8”x10” and
+                  200mmx248mm centred in 9”x12” frames
+               </li>
+               
+               <li>choice of dimensions and assuming thickness of 1/8”=3mm
+                  (alternatively 3/8”=5mm):
+                  
+                  <ul>
+                     
+                     <li>9”x12” rectangles (burn includes alignment holes and crop
+                        marks)
+                     </li>
+                     
+                     <li>8”x10” rectangles (no alignment holes or crop marks)</li>
+                     
+                     <li>“content” 200x248mm with rounded corners (no alignment holes or
+                        crop marks)
+                     </li>
+                     
+                  </ul>
+                  
+               </li>
+               
+               <li>the equipment available to the designers works with either
+                  9”x24”, 18”x24”, or 27”x24” pieces of material, thus governing the
+                  sizes below
+                  
+                  <ul>
+                     
+                     <li>using Inkscape one could build any arbitrary combination
+                        of<br /></li>
+                     
+                  </ul>
+                  
+               </li>
+               
+               <li>the masters below accommodate your use of either 9”x12”,
+                  9”x24”, 18”x24”, or 27”x24” material dimensions
+               </li>
+               
+               <li>the play area is 200x248mm which fits both on A4 and US-letter
+                  paper page sizes and 8”x10” blanks
+               </li>
+               
+               <li>when working with acrylic, the local shop prohibits
+                  polycarbonates and permits polymethyl methacrylate (PMMA)
+               </li>
+               
+            </ul>
+            
+         </li>
+         
+         <li>12mm D6 dice
+            
+            <ul>
+               
+               <li>basic play - 2-count</li>
+               
+               <li>extended play - 4-count optionally in three colours - one for
+                  pitching, two for batting, one for running
+                  
+                  <ul>
+                     
+                     <li>if only two dice are available, the pitcher throws one, then
+                        the batter throws both, then the batter throws one for the
+                        runner
+                     </li>
+                     
+                  </ul>
+                  
+               </li>
+               
+               <li>e.g. <a href="https://www.amazon.ca/dp/B08F72SLYD"><code>https://www.amazon.ca/dp/B08F72SLYD</code></a></li>
+               
+            </ul>
+            
+         </li>
+         
+         <li>cribbage pegs
+            
+            <ul>
+               
+               <li>basic play - 14-count optionally in up to three colours (see
+                  <a href="../shared/Z-SETUP.md.html">Basic setup</a>)
+               </li>
+               
+               <li>extended play - 22-count optionally in up to three colours (see
+                  <a href="../shared/X-SETUP.md.html">Extended setup</a>)
+               </li>
+               
+               <li>e.g. <a href="https://www.amazon.ca/dp/B08B41LNS4"><code>https://www.amazon.ca/dp/B08B41LNS4</code></a>
+                  
+                  <ul>
+                     
+                     <li>note that 7 packages of 32 pegs makes up 10 games of 22 pegs
+                        with only four unused and the optimum 10+10+2 combination (use the
+                        <a href="https://github.com/CraneSoftwrights/board-baseball/blob/qa/design/32-pegs.svg">worksheet</a> to create game
+                        sets)
+                     </li>
+                     
+                  </ul>
+                  
+               </li>
+               
+            </ul>
+            
+         </li>
+         
+         <li>single board version only:
+            
+            <ul>
+               
+               <li>15mm or less diameter feet
+                  
+                  <ul>
+                     
+                     <li>4-count</li>
+                     
+                     <li>e.g. <a href="https://www.amazon.ca/dp/B07RYCRYY3"><code>https://www.amazon.ca/dp/B07RYCRYY3</code></a>
+                        but the screws provided are too long so 3/16”-length screws need to
+                        be purchased separately
+                     </li>
+                     
+                  </ul>
+                  
+               </li>
+               
+            </ul>
+            
+         </li>
+         
+         <li>box version only:
+            
+            <ul>
+               
+               <li>12mm x 3mm earth magnets
+                  
+                  <ul>
+                     
+                     <li>18- or 20-count (see laminating steps)</li>
+                     
+                     <li>e.g. <a href="https://www.amazon.ca/dp/B09XJ4SS23"><code>https://www.amazon.ca/dp/B09XJ4SS23</code></a>
+                        and <a href="https://www.amazon.ca/dp/B09XVBL8SK"><code>https://www.amazon.ca/dp/B09XVBL8SK</code></a><br />
+                        
+                     </li>
+                     
+                  </ul>
+                  
+               </li>
+               
+               <li>1/4” bolt, nut, and two wide washers for alignment holes during
+                  board gluing
+                  
+                  <ul>
+                     
+                     <li>6-count: two for the board, two for the compartment lid, two
+                        for the play panel
+                     </li>
+                     
+                  </ul>
+                  
+               </li>
+               
+               <li>when using 3/16”=5mm thick material, one needs 12mm outside
+                  diameter washers 1/16” thick as filler to bring the 1/8” magnets
+                  flush with the surface of the material
+                  
+                  <ul>
+                     
+                     <li>8-count</li>
+                     
+                  </ul>
+                  
+               </li>
+               
+            </ul>
+            
+         </li>
+         
+      </ul>
+      
+      <h3 id="important-safety-note">3.2 Important safety note</h3>
+      
+      <p>Remember that the magnets are small and dangerous for children
+         should they become loose, much like the small dice and cribbage
+         pegs only moreso.
+      </p>
+      
+      <h2 id="working-with-the-magnets">4. Working with the magnets</h2>
+      
+      <p>It isn’t important to know which side of the earth magnets is
+         positive and which is negative, so long as you are consistent in
+         making the interpretation the same for every magnet you are using.
+         One helpful tip is to “label” your choice of positive for each
+         magnet with a small piece of masking tape. Once all the magnets are
+         in position for a given level, the tape can be removed before
+         binding on the next level.
+      </p>
+      
+      <p>Each magnet hole has next to it an indication of which polarity
+         is “up” when the material is placed flat on the table. Note that
+         after laminating level 2 onto level 3 and all that is left is to
+         laminate level 1, there are four vertically-mounted magnets near
+         the top of the box. Each is annotated with the polarity direction
+         for dropping in the magnet.
+      </p>
+      
+      <p>The earth magnets are very fragile and will shatter or shear off
+         pieces if they are allowed to hit each other at rapid speed.
+      </p>
+      
+      <h2 id="laminating-thoughts">5. Laminating thoughts</h2>
+      
+      <p>Two approaches for assembling the six levels have been practiced
+         by the designers:
+      </p>
+      
+      <ul>
+         
+         <li>one session with all six levels:
+            
+            <ul>
+               
+               <li>place the bottom level facing down with the alignment bolts
+                  with a washer facing up
+               </li>
+               
+               <li>put adhesive on the back of level 5 and position on level
+                  6
+               </li>
+               
+               <li>put adhesive on the front of level 5</li>
+               
+               <li>place magnets in the appropriate locations with the indicated
+                  polarity facing up
+               </li>
+               
+               <li>position level 4 on level 5</li>
+               
+               <li>put adhesive on the back of level 3 and position on level
+                  4
+               </li>
+               
+               <li>put adhesive on the front of level 3 and position level 2 on
+                  level 3
+               </li>
+               
+               <li>put adhesive on the front of level 2 and position level 1 on
+                  level 2
+               </li>
+               
+               <li>place magnets in the appropriate locations with the indicated
+                  polarity facing up
+               </li>
+               
+               <li>anchor alignment bolts with a washer and the nut</li>
+               
+               <li>clamp/weigh the assembly for drying/curing</li>
+               
+            </ul>
+            
+         </li>
+         
+         <li>two sessions, the first with five levels not including the
+            backing level:
+            
+            <ul>
+               
+               <li>transcribe with a pen on the back of level 5 the polarity of
+                  the vertical magnet holes
+               </li>
+               
+               <li>transcribe with a pen on the back of level 5 the opposite
+                  polarity of the horizontal magnet holes
+               </li>
+               
+               <li>place level 5 facing up with the alignment bolts with a washer
+                  facing up
+               </li>
+               
+               <li>put adhesive on the front of level 5 and position level 4 on
+                  level 5
+               </li>
+               
+               <li>put adhesive on the back of level 3 and position on level
+                  4
+               </li>
+               
+               <li>put adhesive on the front of level 3 and position level 2 on
+                  level 3
+               </li>
+               
+               <li>put adhesive on the front of level 2 and position level 1 on
+                  level 2
+               </li>
+               
+               <li>anchor alignment bolts with a washer and the nut</li>
+               
+               <li>clamp/weigh the 5-piece assembly for drying/curing</li>
+               
+               <li>inspect the completed assembly for any peg holes that need to
+                  be drilled out with a 1/8” bit, drilling from the back to the
+                  front
+               </li>
+               
+               <li>place the assembly facing down with the alignment bolts with a
+                  washer facing up
+               </li>
+               
+               <li>put adhesive on the back of level 5</li>
+               
+               <li>place the magnets in the horizontal holes with the indicated
+                  handwritten changed polarity facing up
+               </li>
+               
+               <li>place the magnets in the vertical magnet holes with indicated
+                  handwritten unchanged polarity
+               </li>
+               
+               <li>position the backing level on level 5</li>
+               
+               <li>clamp/weigh the 6-piece assembly for drying/curing</li>
+               
+            </ul>
+            
+         </li>
+         
+      </ul>
+      
+      <p>When working with both the panel and the compartment lid:</p>
+      
+      <ul>
+         
+         <li>place level 3 facing down with the alignment bolts with a
+            washer facing up
+         </li>
+         
+         <li>put adhesive on the back of level 2 and position on level
+            3
+         </li>
+         
+         <li>put adhesive on the front of level 2</li>
+         
+         <li>place magnets in the appropriate locations with the indicated
+            polarity facing up
+         </li>
+         
+         <li>position level 1 on level 2</li>
+         
+         <li>clamp/weigh the 3-piece assembly for drying/curing</li>
+         
+      </ul>
+      
+      <h2 id="burn-files">6. Burn files</h2>
+      
+      <h3 id="summary-of-files-created-during-this-process">6.1 Summary
+         of files created during this process
+      </h3>
+      
+      <p>Pages with a single digit are levels of a physical 3-D playing
+         board.
+      </p>
+      
+      <p>The abbreviations “F” and “B” are, respectively, the front and
+         back of the single-board playing board.
+      </p>
+      
+      <p>These are the files used to burn in a laser cutter, tested in an
+         Epilog Helix branded machine:
+      </p>
+      
+      <p>9”x12” frame: <a href="https://github.com/CraneSoftwrights/board-baseball/blob/qa/burn/pdf/pdf/L1-frame-9x12-board-baseball-crane.pdf"><img alt="" src="../shared/1-collage.png" style="height:60px" /></a>,
+         <a href="https://github.com/CraneSoftwrights/board-baseball/blob/qa/burn/pdf/pdf/L2-frame-9x12-board-baseball-crane.pdf"><img alt="" src="../shared/2-collage.png" style="height:60px" /></a>,
+         <a href="https://github.com/CraneSoftwrights/board-baseball/blob/qa/burn/pdf/L3-frame-9x12-board-baseball-crane.pdf"><img alt="" src="../shared/3-collage.png" style="height:60px" /></a>, <a href="https://github.com/CraneSoftwrights/board-baseball/blob/qa/burn/pdf/L4-frame-9x12-board-baseball-crane.pdf"><img alt="" src="../shared/4-collage.png" style="height:60px" /></a>, <a href="https://github.com/CraneSoftwrights/board-baseball/blob/qa/burn/pdf/L5-frame-9x12-board-baseball-crane.pdf"><img alt="" src="../shared/5-collage.png" style="height:60px" /></a>, <a href="https://github.com/CraneSoftwrights/board-baseball/blob/qa/burn/pdf/L7-frame-9x12-board-baseball-crane.pdf"><img alt="" src="../shared/7-collage.png" style="height:60px" /></a>, and
+         <a href="https://github.com/CraneSoftwrights/board-baseball/blob/qa/burn/pdf/LT-frame-9x12-board-baseball-crane.pdf"><img alt="" src="../shared/T-collage.png" style="height:60px" /></a>.
+      </p>
+      
+      <p>9”x12” crop: <a href="https://github.com/CraneSoftwrights/board-baseball/blob/qa/burn/pdf/L1-crop-9x12-board-baseball-crane.pdf"><img alt="" src="../shared/1-collage.png" style="height:60px" /></a>, <a href="https://github.com/CraneSoftwrights/board-baseball/blob/qa/burn/pdf/L2-crop-9x12-board-baseball-crane.pdf"><img alt="" src="../shared/2-collage.png" style="height:60px" /></a>, <a href="https://github.com/CraneSoftwrights/board-baseball/blob/qa/burn/pdf/L3-crop-9x12-board-baseball-crane.pdf"><img alt="" src="../shared/3-collage.png" style="height:60px" /></a>, <a href="https://github.com/CraneSoftwrights/board-baseball/blob/qa/burn/pdf/L4-crop-9x12-board-baseball-crane.pdf"><img alt="" src="../shared/4-collage.png" style="height:60px" /></a>, <a href="https://github.com/CraneSoftwrights/board-baseball/blob/qa/burn/pdf/L5-crop-9x12-board-baseball-crane.pdf"><img alt="" src="../shared/5-collage.png" style="height:60px" /></a>,<br />
+         <a href="https://github.com/CraneSoftwrights/board-baseball/blob/qa/burn/pdf/L6-crop-9x12-board-baseball-crane.pdf"><img alt="" src="../shared/6-collage.png" style="height:60px" /></a>, <a href="https://github.com/CraneSoftwrights/board-baseball/blob/qa/burn/pdf/L7-crop-9x12-board-baseball-crane.pdf"><img alt="" src="../shared/7-collage.png" style="height:60px" /></a>, <a href="https://github.com/CraneSoftwrights/board-baseball/blob/qa/burn/pdf/SBB-frame-9x12-board-baseball-crane.pdf"><img alt="" src="../shared/B-collage.png" style="height:60px" /></a>, and
+         <a href="https://github.com/CraneSoftwrights/board-baseball/blob/qa/burn/pdf/SBF-frame-9x12-board-baseball-crane.pdf"><img alt="" src="../shared/F-collage.png" style="height:60px" /></a>.
+      </p>
+      
+      <p>20mmx248mm cut: <a href="https://github.com/CraneSoftwrights/board-baseball/blob/qa/burn/pdf/L1-cut-200x248-board-baseball-crane.pdf"><img alt="" src="../shared/1-collage.png" style="height:60px" /></a>, <a href="https://github.com/CraneSoftwrights/board-baseball/blob/qa/burn/pdf/L2-cut-200x248-board-baseball-crane.pdf"><img alt="" src="../shared/2-collage.png" style="height:60px" /></a>, <a href="https://github.com/CraneSoftwrights/board-baseball/blob/qa/burn/pdf/L3-cut-200x248-board-baseball-crane.pdf"><img alt="" src="../shared/3-collage.png" style="height:60px" /></a>, <a href="https://github.com/CraneSoftwrights/board-baseball/blob/qa/burn/pdf/L4-cut-200x248-board-baseball-crane.pdf"><img alt="" src="../shared/4-collage.png" style="height:60px" /></a>, <a href="https://github.com/CraneSoftwrights/board-baseball/blob/qa/burn/pdf/L5-cut-200x248-board-baseball-crane.pdf"><img alt="" src="../shared/5-collage.png" style="height:60px" /></a>,<br />
+         <a href="https://github.com/CraneSoftwrights/board-baseball/blob/qa/burn/pdf/L6-cut-200x248-board-baseball-crane.pdf"><img alt="" src="../shared/6-collage.png" style="height:60px" /></a>, <a href="https://github.com/CraneSoftwrights/board-baseball/blob/qa/burn/pdf/L7-cut-200x248-board-baseball-crane.pdf"><img alt="" src="../shared/7-collage.png" style="height:60px" /></a>, <a href="https://github.com/CraneSoftwrights/board-baseball/blob/qa/burn/pdf/SBB-cut-200x248-board-baseball-crane.pdf"><img alt="" src="../shared/B-collage.png" style="height:60px" /></a>, and
+         <a href="https://github.com/CraneSoftwrights/board-baseball/blob/qa/burn/pdf/SBF-cut-200x248-board-baseball-crane.pdf"><img alt="" src="../shared/F-collage.png" style="height:60px" /></a>.
+      </p>
+      
+      <p>These are collages of level images arranged tête-à-tête for
+         board levels with a finished side that are user-facing:
+      </p>
+      
+      <p>18”x24”: <a href="https://github.com/CraneSoftwrights/board-baseball/blob/qa/burn/pdf/1364-18x24-board-baseball-crane.pdf"><img alt="" src="../shared/1364-collage.png" style="height:120px" /></a> and
+         <a href="https://github.com/CraneSoftwrights/board-baseball/blob/qa/burn/pdf/1374-18x24-board-baseball-crane.pdf"><img alt="" src="../shared/1374-collage.png" style="height:120px" /></a><br />
+         9”x24”: <a href="https://github.com/CraneSoftwrights/board-baseball/blob/qa/burn/pdf/13-9x24-board-baseball-crane.pdf"><img alt="" src="../shared/13-collage.png" style="height:60px" /></a>, <a href="https://github.com/CraneSoftwrights/board-baseball/blob/qa/burn/pdf/46-9x24-board-baseball-crane.pdf"><img alt="" src="../shared/46-collage.png" style="height:60px" /></a>, and <a href="https://github.com/CraneSoftwrights/board-baseball/blob/qa/burn/pdf/47-9x24-board-baseball-crane.pdf"><img alt="" src="../shared/47-collage.png" style="height:60px" /></a></p>
+      
+      <p>These are collages of level images arranged tête-à-tête for
+         internal unfinished board levels that are not user-facing:
+      </p>
+      
+      <p>18”x24”: <a href="https://github.com/CraneSoftwrights/board-baseball/blob/qa/burn/pdf/2552-18x24-board-baseball-crane.pdf"><img alt="" src="../shared/2552-collage.png" style="height:120px" /></a> 9”x24”:
+         <a href="https://github.com/CraneSoftwrights/board-baseball/blob/qa/burn/pdf/25-9x24-board-baseball-crane.pdf"><img alt="" src="../shared/25-collage.png" style="height:60px" /></a></p>
+      
+      <p>These are collages of level images arranged tête-à-tête for all
+         boards in a single burn:
+      </p>
+      
+      <p>27”x24”: <a href="https://github.com/CraneSoftwrights/board-baseball/blob/qa/burn/pdf/134625-18x24-board-baseball-crane.pdf"><img alt="" src="../shared/134625-collage.png" style="height:180px" /></a> and
+         <a href="https://github.com/CraneSoftwrights/board-baseball/blob/qa/burn/pdf/134725-18x24-board-baseball-crane.pdf"><img alt="" src="../shared/134725-collage.png" style="height:180px" /></a></p>
+      
+      <p>Two frame cutting patterns are available in order to make the
+         scaffolding to hold a piece of material less than 9”x12” within the
+         9”x12” workspace:
+      </p>
+      
+      <p>8”x10” rectangle in 9”x12”: <a href="https://github.com/CraneSoftwrights/board-baseball/blob/qa/..cuts/frame-8x10-in-9x12.pdf"><img alt="" src="../shared/frame-8x10.png" style="height:120px" /></a></p>
+      
+      <p>200x248mm rounded rectangle in 9”x12”: <a href="https://github.com/CraneSoftwrights/board-baseball/blob/qa/..cuts/frame-200x248-in-9x12.pdf"><img alt="" src="../shared/frame-200x248.png" style="height:120px" /></a></p>
+      
+      <p>A number of convenience cutting files (without any text) are
+         available should you wish to carve up pieces of material with
+         simple cuts:
+      </p>
+      
+      <p>8”x10”: <a href="https://github.com/CraneSoftwrights/board-baseball/blob/qa/cut-8x10-from-larger.pdf"><img alt="" src="../shared/8x10-from-larger.png" style="height:80px" /></a></p>
+      
+      <p>18”x24”: <a href="https://github.com/CraneSoftwrights/board-baseball/blob/qa/cut-9x12-from-18x24.pdf"><img alt="" src="../shared/9x12-from-18x24.png" style="height:120px" /></a>,
+         <a href="https://github.com/CraneSoftwrights/board-baseball/blob/qa/cut-9x24-from-18x24.pdf"><img alt="" src="../shared/9x24-from-18x24.png" style="height:120px" /></a>, and
+         <a href="https://github.com/CraneSoftwrights/board-baseball/blob/qa/cut-18x12-from-18x24.pdf"><img alt="" src="../shared/18x12-from-18x24.png" style="height:120px" /></a><br />
+         18”x12”: <a href="https://github.com/CraneSoftwrights/board-baseball/blob/qa/cut-9x12-from-18x12.pdf"><img alt="" src="../shared/9x12-from-18x12.png" style="height:120px" /></a> 9”x24”:
+         <a href="https://github.com/CraneSoftwrights/board-baseball/blob/qa/cut-9x12-from-9x24.pdf"><img alt="" src="../shared/9x12-from-9x24.png" style="height:60px" /></a></p>
+      
+      <h3 id="creating-the-burn-files">6.2 Creating the burn files</h3>
+      
+      <p>If the prior version of the burn files haven’t been deleted,
+         delete every <code>.pdf</code> and <code>.svg</code> file in the
+         <a href="https://github.com/CraneSoftwrights/board-baseball/blob/qa/burn"><code>burn/</code></a> directory, leaving only
+         the <code>README.md</code> file in the directory.
+      </p>
+      
+      <p>Using the command line from the base git directory, create the
+         <a href="https://github.com/CraneSoftwrights/board-baseball/blob/qa/burn/svg/review-board-baseball-crane.svg"><code>burn/svg/review-board-baseball-crane.svg</code></a>
+         file by running the <code>design2review</code> script: - in
+         Windows: <code>build\design2review.bat</code> - in Shell: <code>sh
+            build/design2review.sh</code></p>
+      
+      <p>Open the <a href="https://github.com/CraneSoftwrights/board-baseball/blob/qa/burn/svg/review-board-baseball-crane.svg"><code>burn/svg/review-board-baseball-crane.svg</code></a>
+         file and perform the following steps from within the “Layers and
+         Objects” panel: - select the top-most “Select this group…” group
+         and use <code>Path/Object to Path</code> menu item to convert every
+         object in every layer to a path (this ensures
+         installed-font-independent portability) - <em>(the designers have
+            experienced problems with the conversion being successful the first
+            time; sometimes a second time helps; before continuing check that
+            the version string has been changed into a path from its original
+            text object)</em> - un-group the top-most group - review any of the
+         combined layers that each represent the new output file by
+         un-hiding the top-most layer of the combination - save the SVG file
+         before continuing
+      </p>
+      
+      <p>Using the command line from the base git directory,
+         automatically create the individual burn SVG files by running the
+         <code>review2burn</code> script: - in Windows:
+         <code>build\review2burn.bat</code> - in Shell: <code>sh
+            build/review2burn.sh</code></p>
+      
+      <p>Open each of the nine collage SVG files and perform the
+         following steps from within the “Layers and Objects” panel: - press
+         “4” to show the entire set of objects - select the “tiling”
+         sublayer and confirm the handles around the white rectangle - in
+         the “Document Properties” panel select “Resize to content” so that
+         the new page background is only the tiling rectangle - back in the
+         “Layers and Objects” panel, select a content sublayer and: - use
+         one of the Rotate functions (clockwise or counterclockwise) as
+         appropriate - use the “Align and Distribute” panel to position the
+         rotated layer to the edges or centre of the new page size - save
+         the SVG file and then close it
+      </p>
+      
+      <p>Open each of the four print SVG files and perform the following
+         steps without selecting any layers or objects: - in the “Document
+         Properties” panel select “Resize to content” so that the new page
+         size is only the content seen without the white margins around the
+         content - in the “Export” panel, export the entire contents to PNG
+         files in the “shared” directory for use in documentation: -
+         <code>burn/svg/SBF-print-combo-board-baseball-crane.svg</code> to
+         <a href="https://github.com/CraneSoftwrights/board-baseball/blob/qa/shared/combo-board-baseball-crane.png"><code>shared/combo-board-baseball-crane.png</code></a>
+         - <code>burn/svg/SBF-print-basic-board-baseball-crane.svg</code> to
+         <a href="https://github.com/CraneSoftwrights/board-baseball/blob/qa/shared/basic-board-baseball-crane.png"><code>shared/basic-board-baseball-crane.png</code></a>
+         - <code>burn/svg/SBF-print-extended-board-baseball-crane.svg</code>
+         to <a href="https://github.com/CraneSoftwrights/board-baseball/blob/qa/shared/extended-board-baseball-crane.png"><code>shared/extended-board-baseball-crane.png</code></a>
+         - <code>burn/svg/SBB-print-board-baseball-crane.svg</code> to
+         <a href="https://github.com/CraneSoftwrights/board-baseball/blob/qa/shared/back-board-baseball-crane.png"><code>shared/back-board-baseball-crane.png</code></a>
+         - save the SVG file and then close it
+      </p>
+      
+      <p>Using the command line from the base git directory,
+         automatically create the individual burn PDF files by running the
+         <code>burn2pdf</code> script: - in Windows:
+         <code>burn\burn2pdf.bat</code> - in Shell: <code>sh
+            burn/burn2pdf.sh 2&gt;/dev/null</code> <em>(you may get away
+            without redirecting stderr, but Inkscape burps a lot)</em></p>
+      
+      <p>The end result is 38 PDF files listed alphabetically as
+         follows:
+      </p>
+      
+      <p><a href="https://github.com/CraneSoftwrights/board-baseball/blob/qa/burn/pdf/13-9x24-collage-board-baseball-crane.pdf"><code>burn/pdf/13-9x24-collage-board-baseball-crane.pdf</code></a><br />
+         
+         <a href="https://github.com/CraneSoftwrights/board-baseball/blob/qa/burn/pdf/134625-27x24-collage-board-baseball-crane.pdf"><code>burn/pdf/134625-27x24-collage-board-baseball-crane.pdf</code></a><br />
+         
+         <a href="https://github.com/CraneSoftwrights/board-baseball/blob/qa/burn/pdf/134725-27x24-collage-board-baseball-crane.pdf"><code>burn/pdf/134725-27x24-collage-board-baseball-crane.pdf</code></a><br />
+         
+         <a href="https://github.com/CraneSoftwrights/board-baseball/blob/qa/burn/pdf/1364-18x24-collage-board-baseball-crane.pdf"><code>burn/pdf/1364-18x24-collage-board-baseball-crane.pdf</code></a><br />
+         
+         <a href="https://github.com/CraneSoftwrights/board-baseball/blob/qa/burn/pdf/1374-18x24-collage-board-baseball-crane.pdf"><code>burn/pdf/1374-18x24-collage-board-baseball-crane.pdf</code></a><br />
+         
+         <a href="https://github.com/CraneSoftwrights/board-baseball/blob/qa/burn/pdf/25-9x24-collage-board-baseball-crane.pdf"><code>burn/pdf/25-9x24-collage-board-baseball-crane.pdf</code></a><br />
+         
+         <a href="https://github.com/CraneSoftwrights/board-baseball/blob/qa/burn/pdf/2552-18x24-collage-board-baseball-crane.pdf"><code>burn/pdf/2552-18x24-collage-board-baseball-crane.pdf</code></a><br />
+         
+         <a href="https://github.com/CraneSoftwrights/board-baseball/blob/qa/burn/pdf/46-9x24-collage-board-baseball-crane.pdf"><code>burn/pdf/46-9x24-collage-board-baseball-crane.pdf</code></a><br />
+         
+         <a href="https://github.com/CraneSoftwrights/board-baseball/blob/qa/burn/pdf/47-9x24-collage-board-baseball-crane.pdf"><code>burn/pdf/47-9x24-collage-board-baseball-crane.pdf</code></a><br />
+         
+         <a href="https://github.com/CraneSoftwrights/board-baseball/blob/qa/burn/pdf/L1-crop-9x12-board-baseball-crane.pdf"><code>burn/pdf/L1-crop-9x12-board-baseball-crane.pdf</code></a><br />
+         
+         <a href="https://github.com/CraneSoftwrights/board-baseball/blob/qa/burn/pdf/L1-cut-200x248-board-baseball-crane.pdf"><code>burn/pdf/L1-cut-200x248-board-baseball-crane.pdf</code></a><br />
+         
+         <a href="https://github.com/CraneSoftwrights/board-baseball/blob/qa/burn/pdf/L1-frame-9x12-board-baseball-crane.pdf"><code>burn/pdf/L1-frame-9x12-board-baseball-crane.pdf</code></a><br />
+         
+         <a href="https://github.com/CraneSoftwrights/board-baseball/blob/qa/burn/pdf/L2-crop-9x12-board-baseball-crane.pdf"><code>burn/pdf/L2-crop-9x12-board-baseball-crane.pdf</code></a><br />
+         
+         <a href="https://github.com/CraneSoftwrights/board-baseball/blob/qa/burn/pdf/L2-cut-200x248-board-baseball-crane.pdf"><code>burn/pdf/L2-cut-200x248-board-baseball-crane.pdf</code></a><br />
+         
+         <a href="https://github.com/CraneSoftwrights/board-baseball/blob/qa/burn/pdf/L2-frame-9x12-board-baseball-crane.pdf"><code>burn/pdf/L2-frame-9x12-board-baseball-crane.pdf</code></a><br />
+         
+         <a href="https://github.com/CraneSoftwrights/board-baseball/blob/qa/burn/pdf/L3-crop-9x12-board-baseball-crane.pdf"><code>burn/pdf/L3-crop-9x12-board-baseball-crane.pdf</code></a><br />
+         
+         <a href="https://github.com/CraneSoftwrights/board-baseball/blob/qa/burn/pdf/L3-cut-200x248-board-baseball-crane.pdf"><code>burn/pdf/L3-cut-200x248-board-baseball-crane.pdf</code></a><br />
+         
+         <a href="https://github.com/CraneSoftwrights/board-baseball/blob/qa/burn/pdf/L3-frame-9x12-board-baseball-crane.pdf"><code>burn/pdf/L3-frame-9x12-board-baseball-crane.pdf</code></a><br />
+         
+         <a href="https://github.com/CraneSoftwrights/board-baseball/blob/qa/burn/pdf/L4-crop-9x12-board-baseball-crane.pdf"><code>burn/pdf/L4-crop-9x12-board-baseball-crane.pdf</code></a><br />
+         
+         <a href="https://github.com/CraneSoftwrights/board-baseball/blob/qa/burn/pdf/L4-cut-200x248-board-baseball-crane.pdf"><code>burn/pdf/L4-cut-200x248-board-baseball-crane.pdf</code></a><br />
+         
+         <a href="https://github.com/CraneSoftwrights/board-baseball/blob/qa/burn/pdf/L4-frame-9x12-board-baseball-crane.pdf"><code>burn/pdf/L4-frame-9x12-board-baseball-crane.pdf</code></a><br />
+         
+         <a href="https://github.com/CraneSoftwrights/board-baseball/blob/qa/burn/pdf/L5-crop-9x12-board-baseball-crane.pdf"><code>burn/pdf/L5-crop-9x12-board-baseball-crane.pdf</code></a><br />
+         
+         <a href="https://github.com/CraneSoftwrights/board-baseball/blob/qa/burn/pdf/L5-cut-200x248-board-baseball-crane.pdf"><code>burn/pdf/L5-cut-200x248-board-baseball-crane.pdf</code></a><br />
+         
+         <a href="https://github.com/CraneSoftwrights/board-baseball/blob/qa/burn/pdf/L5-frame-9x12-board-baseball-crane.pdf"><code>burn/pdf/L5-frame-9x12-board-baseball-crane.pdf</code></a><br />
+         
+         <a href="https://github.com/CraneSoftwrights/board-baseball/blob/qa/burn/pdf/L6-crop-9x12-board-baseball-crane.pdf"><code>burn/pdf/L6-crop-9x12-board-baseball-crane.pdf</code></a><br />
+         
+         <a href="https://github.com/CraneSoftwrights/board-baseball/blob/qa/burn/pdf/L6-cut-200x248-board-baseball-crane.pdf"><code>burn/pdf/L6-cut-200x248-board-baseball-crane.pdf</code></a><br />
+         
+         <a href="https://github.com/CraneSoftwrights/board-baseball/blob/qa/burn/pdf/L7-crop-9x12-board-baseball-crane.pdf"><code>burn/pdf/L7-crop-9x12-board-baseball-crane.pdf</code></a><br />
+         
+         <a href="https://github.com/CraneSoftwrights/board-baseball/blob/qa/burn/pdf/L7-cut-200x248-board-baseball-crane.pdf"><code>burn/pdf/L7-cut-200x248-board-baseball-crane.pdf</code></a><br />
+         
+         <a href="https://github.com/CraneSoftwrights/board-baseball/blob/qa/burn/pdf/L7-frame-9x12-board-baseball-crane.pdf"><code>burn/pdf/L7-frame-9x12-board-baseball-crane.pdf</code></a><br />
+         
+         <a href="https://github.com/CraneSoftwrights/board-baseball/blob/qa/burn/pdf/LT-frame-9x12-board-baseball-crane.pdf"><code>burn/pdf/LT-frame-9x12-board-baseball-crane.pdf</code></a><br />
+         
+         <a href="https://github.com/CraneSoftwrights/board-baseball/blob/qa/burn/pdf/SBB-cut-200x248-board-baseball-crane.pdf"><code>burn/pdf/SBB-cut-200x248-board-baseball-crane.pdf</code></a><br />
+         
+         <a href="https://github.com/CraneSoftwrights/board-baseball/blob/qa/burn/pdf/SBB-frame-9x12-board-baseball-crane.pdf"><code>burn/pdf/SBB-frame-9x12-board-baseball-crane.pdf</code></a><br />
+         
+         <a href="https://github.com/CraneSoftwrights/board-baseball/blob/qa/burn/pdf/SBB-print-board-baseball-crane.pdf"><code>burn/pdf/SBB-print-board-baseball-crane.pdf</code></a><br />
+         
+         <a href="https://github.com/CraneSoftwrights/board-baseball/blob/qa/burn/pdf/SBF-cut-200x248-board-baseball-crane.pdf"><code>burn/pdf/SBF-cut-200x248-board-baseball-crane.pdf</code></a><br />
+         
+         <a href="https://github.com/CraneSoftwrights/board-baseball/blob/qa/burn/pdf/SBF-frame-9x12-board-baseball-crane.pdf"><code>burn/pdf/SBF-frame-9x12-board-baseball-crane.pdf</code></a><br />
+         
+         <a href="https://github.com/CraneSoftwrights/board-baseball/blob/qa/burn/pdf/SBF-print-basic-board-baseball-crane.pdf"><code>burn/pdf/SBF-print-basic-board-baseball-crane.pdf</code></a><br />
+         
+         <a href="https://github.com/CraneSoftwrights/board-baseball/blob/qa/burn/pdf/SBF-print-combo-board-baseball-crane.pdf"><code>burn/pdf/SBF-print-combo-board-baseball-crane.pdf</code></a><br />
+         
+         <a href="https://github.com/CraneSoftwrights/board-baseball/blob/qa/burn/pdf/SBF-print-extended-board-baseball-crane.pdf"><code>burn/pdf/SBF-print-extended-board-baseball-crane.pdf</code></a></p>
+      
+      <p>Open every PDF file and: - perform one final check on the
+         content of the page - if necessary, use your PDF tool to rotate the
+         image to the orientation needed for your cutter - save your PDF
+         rotated as needed
+      </p>
+      
+      <p>At this point the production is complete and the new version can
+         be committed to git and pushed to the server.
+      </p>
+      
+      <p>The PDF files in the <code>cuts/</code> directory shouldn’t need
+         to change:
+      </p>
+      
+      <p><a href="https://github.com/CraneSoftwrights/board-baseball/blob/qa/cuts/frame-8x10-in-9x12.pdf"><code>cuts/frame-8x10-in-9x12.pdf</code></a><br />
+         
+         <a href="https://github.com/CraneSoftwrights/board-baseball/blob/qa/cuts/frame-220x248-in-9x12.pdf"><code>cuts/frame-220x248-in-9x12.pdf</code></a><br />
+         
+         <a href="https://github.com/CraneSoftwrights/board-baseball/blob/qa/cuts/cut-8x10-from-larger.pdf"><code>cuts/cut-8x10-from-larger.pdf</code></a><br />
+         
+         <a href="https://github.com/CraneSoftwrights/board-baseball/blob/qa/cuts/cut-9x12-from-9x24.pdf"><code>cuts/cut-9x12-from-9x24.pdf</code></a><br />
+         
+         <a href="https://github.com/CraneSoftwrights/board-baseball/blob/qa/cuts/cut-9x12-from-18x12.pdf"><code>cuts/cut-9x12-from-18x12.pdf</code></a><br />
+         
+         <a href="https://github.com/CraneSoftwrights/board-baseball/blob/qa/cuts/cut-9x12-from-18x24.pdf"><code>cuts/cut-9x12-from-18x24.pdf</code></a><br />
+         
+         <a href="https://github.com/CraneSoftwrights/board-baseball/blob/qa/cuts/cut-9x24-from-18x24.pdf"><code>cuts/cut-9x24-from-18x24.pdf</code></a><br />
+         
+         <a href="https://github.com/CraneSoftwrights/board-baseball/blob/qa/cuts/cut-18x12-from-18x24.pdf"><code>cuts/cut-18x12-from-18x24.pdf</code></a></p>
+      
+      <h2 id="scorecard-production">7. Scorecard production</h2>
+      
+      <p>Open <a href="https://github.com/CraneSoftwrights/board-baseball/blob/qa/design/scorecard-board-baseball-crane.svg">scorecard SVG
+            file</a>:
+      </p>
+      
+      <ol type="1">
+         
+         <li>Make edits as required</li>
+         
+         <li>Save SVG master with the watermark</li>
+         
+         <li>Save SVG to a junk location for printing purposes</li>
+         
+         <li>In the <code>Layers and Objects</code> panel, select the
+            scorecard apex item
+         </li>
+         
+         <li>Use <code>Path/Object to Path</code> menu item to convert every
+            object to a path (this ensures installed-font-independent
+            portability)
+         </li>
+         
+         <li>Confirm that the Version string no longer is a text object but
+            now is a path
+         </li>
+         
+         <li>Delete the watermark reminding of the conversion step</li>
+         
+         <li>Save the junk SVG</li>
+         
+         <li>Export the contents to
+            <code>../shared/scorecard-board-baseball-crane.png</code></li>
+         
+         <li>Remember to print the PNG file at 100%</li>
+         
+      </ol>
+      
+      <h2 id="creating-a-zip-of-the-xhtml-of-the-markdown-files">8.
+         Creating a ZIP of the XHTML of the Markdown files
+      </h2>
+      
+      <ol type="1">
+         
+         <li>Run: <code>sh build/all-md2xhtml.sh</code> to create
+            <code>md2xhtml.zip</code></li>
+         
+      </ol>
+      
+      <h2 id="creating-a-git-release-from-qa-or-final">9. Creating a git
+         release from QA or Final
+      </h2>
+      
+      <ol type="1">
+         
+         <li>Set the tag to be <code>CCYYMMDD-HHMMz-QA</code> or
+            <code>CCYYMMDD-HHMMz-Final</code></li>
+         
+         <li>Use the “Generate release notes” button to populate the
+            notes
+         </li>
+         
+         <li>Attach the four board PNG files to the release as binaries</li>
+         
+         <li>Publish the release</li>
+         
+         <li>Confirm the latest release on the home page</li>
+         
+      </ol>
+      
+      <h2 id="assembly">10. Assembly</h2>
+      
+      <p>Our second test build is documented with photographs <a href="../build/test-20230728.md.html">here:
+            <code>../build/test-20230728.md</code></a>.
+      </p>
+      
+      <p>Various timings of other test builds are documented <a href="../build/other-tests.md.html">here:
+            <code>../build/other-tests.md</code></a>.
+      </p>
+      
+   </body>
+   
+</html>
