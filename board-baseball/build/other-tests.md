@@ -2,6 +2,15 @@
 
 For the record, timings of other tests are recorded here for future reference.
 
+## Prototype 20231105
+
+1374:
+Raster - 1:03:51
+Vector - 0:18:12
+
+25:
+Raster - 0:03:11
+
 ## Prototype 20230804
 
 2525:  

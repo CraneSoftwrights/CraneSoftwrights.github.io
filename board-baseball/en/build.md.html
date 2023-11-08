@@ -16,28 +16,31 @@
       <p>Copyright © Crane Softwrights Ltd.<br />
          Development: <a href="https://github.com/CraneSoftwrights/board-baseball"><code>https://github.com/CraneSoftwrights/board-baseball</code></a><br />
          
-         Tip jar: <a href="https://paypal.me/CraneSoftwrights"><code>https://paypal.me/CraneSoftwrights</code></a></p>
+         Tip jar: <a href="https://paypal.me/CraneSoftwrights"><code>https://paypal.me/CraneSoftwrights</code></a><br />
+         
+         Browser pages: <a href="https://cranesoftwrights.github.io/board-baseball/en/build.md.html">
+            <code>https://cranesoftwrights.github.io/board-baseball/en/build.md.html</code></a></p>
       
       <p>In <a href="https://github.com/CraneSoftwrights/board-baseball/blob/qa/build">this <code>build/</code> directory</a> are
          the resources used to build two versions of the game using a laser
-         cutter to etch and cut material: - a 3-dimensional box with six
-         layers of 1/8”-3mm material, and
+         cutter to etch and cut material:
       </p>
       
       <ul>
          
-         <li>
+         <li>a 3-dimensional box with six layers of 1/8”-3mm material, and
             
-            <p><img alt="" src="../shared/box1.jpg" style="height:300px" />
-               <img alt="" src="../shared/box2.jpg" style="height:300px" /></p>
+            <ul>
+               
+               <li><img alt="" src="../shared/box1.jpg" style="height:300px" />
+                  <img alt="" src="../shared/box2.jpg" style="height:300px" /></li>
+               
+            </ul>
             
          </li>
          
-         <li>
-            
-            <p>a single-board (of any thickness) with information on both
-               sides
-            </p>
+         <li>a single-board (of any thickness) with information on both
+            sides
             
             <ul>
                
@@ -593,9 +596,9 @@
          9”x12” workspace:
       </p>
       
-      <p>8”x10” rectangle in 9”x12”: <a href="https://github.com/CraneSoftwrights/board-baseball/blob/qa/..cuts/frame-8x10-in-9x12.pdf"><img alt="" src="../shared/frame-8x10.png" style="height:120px" /></a></p>
+      <p>8”x10” rectangle in 9”x12”: <a href="https://github.com/CraneSoftwrights/board-baseball/blob/qa/..cuts/pdf/frame-8x10-in-9x12.pdf"><img alt="" src="../shared/frame-8x10.png" style="height:120px" /></a></p>
       
-      <p>200x248mm rounded rectangle in 9”x12”: <a href="https://github.com/CraneSoftwrights/board-baseball/blob/qa/..cuts/frame-200x248-in-9x12.pdf"><img alt="" src="../shared/frame-200x248.png" style="height:120px" /></a></p>
+      <p>200x248mm rounded rectangle in 9”x12”: <a href="https://github.com/CraneSoftwrights/board-baseball/blob/qa/..cuts/pdf/frame-200x248-in-9x12.pdf"><img alt="" src="../shared/frame-200x248.png" style="height:120px" /></a></p>
       
       <p>A number of convenience cutting files (without any text) are
          available should you wish to carve up pieces of material with
@@ -620,67 +623,151 @@
       
       <p>Using the command line from the base git directory, create the
          <a href="https://github.com/CraneSoftwrights/board-baseball/blob/qa/burn/svg/review-board-baseball-crane.svg"><code>burn/svg/review-board-baseball-crane.svg</code></a>
-         file by running the <code>design2review</code> script: - in
-         Windows: <code>build\design2review.bat</code> - in Shell: <code>sh
-            build/design2review.sh</code></p>
+         file by running the <code>design2review</code> script:
+      </p>
+      
+      <ul>
+         
+         <li>in Windows: <code>build\design2review.bat</code></li>
+         
+         <li>in Shell: <code>sh build/design2review.sh</code></li>
+         
+      </ul>
       
       <p>Open the <a href="https://github.com/CraneSoftwrights/board-baseball/blob/qa/burn/svg/review-board-baseball-crane.svg"><code>burn/svg/review-board-baseball-crane.svg</code></a>
          file and perform the following steps from within the “Layers and
-         Objects” panel: - select the top-most “Select this group…” group
-         and use <code>Path/Object to Path</code> menu item to convert every
-         object in every layer to a path (this ensures
-         installed-font-independent portability) - <em>(the designers have
-            experienced problems with the conversion being successful the first
-            time; sometimes a second time helps; before continuing check that
-            the version string has been changed into a path from its original
-            text object)</em> - un-group the top-most group - review any of the
-         combined layers that each represent the new output file by
-         un-hiding the top-most layer of the combination - save the SVG file
-         before continuing
+         Objects” panel:
       </p>
+      
+      <ul>
+         
+         <li>select the top-most “Select this group…” group and use
+            <code>Path/Object to Path</code> menu item to convert every object
+            in every layer to a path (this ensures installed-font-independent
+            portability)
+            
+            <ul>
+               
+               <li><em>(the designers have experienced problems with the
+                     conversion being successful the first time; sometimes a second time
+                     helps; before continuing check that the version string has been
+                     changed into a path from its original text object)</em></li>
+               
+            </ul>
+            
+         </li>
+         
+         <li>un-group the top-most group</li>
+         
+         <li>review any of the combined layers that each represent the new
+            output file by un-hiding the top-most layer of the combination
+         </li>
+         
+         <li>save the SVG file before continuing</li>
+         
+      </ul>
       
       <p>Using the command line from the base git directory,
          automatically create the individual burn SVG files by running the
-         <code>review2burn</code> script: - in Windows:
-         <code>build\review2burn.bat</code> - in Shell: <code>sh
-            build/review2burn.sh</code></p>
+         <code>review2burn</code> script:
+      </p>
+      
+      <ul>
+         
+         <li>in Windows: <code>build\review2burn.bat</code></li>
+         
+         <li>in Shell: <code>sh build/review2burn.sh</code></li>
+         
+      </ul>
       
       <p>Open each of the nine collage SVG files and perform the
-         following steps from within the “Layers and Objects” panel: - press
-         “4” to show the entire set of objects - select the “tiling”
-         sublayer and confirm the handles around the white rectangle - in
-         the “Document Properties” panel select “Resize to content” so that
-         the new page background is only the tiling rectangle - back in the
-         “Layers and Objects” panel, select a content sublayer and: - use
-         one of the Rotate functions (clockwise or counterclockwise) as
-         appropriate - use the “Align and Distribute” panel to position the
-         rotated layer to the edges or centre of the new page size - save
-         the SVG file and then close it
+         following steps from within the “Layers and Objects” panel:
       </p>
       
+      <ul>
+         
+         <li>press “4” to show the entire set of objects</li>
+         
+         <li>select the “tiling” sublayer and confirm the handles around the
+            white rectangle
+         </li>
+         
+         <li>in the “Document Properties” panel select “Resize to content”
+            so that the new page background is only the tiling rectangle
+         </li>
+         
+         <li>back in the “Layers and Objects” panel, select a content
+            sublayer and:
+            
+            <ul>
+               
+               <li>use one of the Rotate functions (clockwise or counterclockwise)
+                  as appropriate
+               </li>
+               
+               <li>use the “Align and Distribute” panel to position the rotated
+                  layer to the edges or centre of the new page size
+               </li>
+               
+            </ul>
+            
+         </li>
+         
+         <li>save the SVG file and then close it</li>
+         
+      </ul>
+      
       <p>Open each of the four print SVG files and perform the following
-         steps without selecting any layers or objects: - in the “Document
-         Properties” panel select “Resize to content” so that the new page
-         size is only the content seen without the white margins around the
-         content - in the “Export” panel, export the entire contents to PNG
-         files in the “shared” directory for use in documentation: -
-         <code>burn/svg/SBF-print-combo-board-baseball-crane.svg</code> to
-         <a href="https://github.com/CraneSoftwrights/board-baseball/blob/qa/shared/combo-board-baseball-crane.png"><code>shared/combo-board-baseball-crane.png</code></a>
-         - <code>burn/svg/SBF-print-basic-board-baseball-crane.svg</code> to
-         <a href="https://github.com/CraneSoftwrights/board-baseball/blob/qa/shared/basic-board-baseball-crane.png"><code>shared/basic-board-baseball-crane.png</code></a>
-         - <code>burn/svg/SBF-print-extended-board-baseball-crane.svg</code>
-         to <a href="https://github.com/CraneSoftwrights/board-baseball/blob/qa/shared/extended-board-baseball-crane.png"><code>shared/extended-board-baseball-crane.png</code></a>
-         - <code>burn/svg/SBB-print-board-baseball-crane.svg</code> to
-         <a href="https://github.com/CraneSoftwrights/board-baseball/blob/qa/shared/back-board-baseball-crane.png"><code>shared/back-board-baseball-crane.png</code></a>
-         - save the SVG file and then close it
+         steps without selecting any layers or objects:
       </p>
+      
+      <ul>
+         
+         <li>in the “Document Properties” panel select “Resize to content”
+            so that the new page size is only the content seen without the
+            white margins around the content
+         </li>
+         
+         <li>in the “Export” panel, export the entire contents to PNG files
+            in the “shared” directory for use in documentation:
+            
+            <ul>
+               
+               <li><code>burn/svg/SBF-print-combo-board-baseball-crane.svg</code>
+                  to <a href="https://github.com/CraneSoftwrights/board-baseball/blob/qa/shared/combo-board-baseball-crane.png"><code>shared/combo-board-baseball-crane.png</code></a></li>
+               
+               <li><code>burn/svg/SBF-print-basic-board-baseball-crane.svg</code>
+                  to <a href="https://github.com/CraneSoftwrights/board-baseball/blob/qa/shared/basic-board-baseball-crane.png"><code>shared/basic-board-baseball-crane.png</code></a></li>
+               
+               <li>
+                  <code>burn/svg/SBF-print-extended-board-baseball-crane.svg</code>
+                  to <a href="https://github.com/CraneSoftwrights/board-baseball/blob/qa/shared/extended-board-baseball-crane.png"><code>shared/extended-board-baseball-crane.png</code></a></li>
+               
+               <li><code>burn/svg/SBB-print-board-baseball-crane.svg</code> to
+                  <a href="https://github.com/CraneSoftwrights/board-baseball/blob/qa/shared/back-board-baseball-crane.png"><code>shared/back-board-baseball-crane.png</code></a></li>
+               
+            </ul>
+            
+         </li>
+         
+         <li>save the SVG file and then close it</li>
+         
+      </ul>
       
       <p>Using the command line from the base git directory,
          automatically create the individual burn PDF files by running the
-         <code>burn2pdf</code> script: - in Windows:
-         <code>burn\burn2pdf.bat</code> - in Shell: <code>sh
-            burn/burn2pdf.sh 2&gt;/dev/null</code> <em>(you may get away
-            without redirecting stderr, but Inkscape burps a lot)</em></p>
+         <code>burn2pdf</code> script:
+      </p>
+      
+      <ul>
+         
+         <li>in Windows: <code>burn\burn2pdf.bat</code></li>
+         
+         <li>in Shell: <code>sh burn/burn2pdf.sh 2&gt;/dev/null</code>
+            <em>(you may get away without redirecting stderr, but Inkscape
+               burps a lot)</em></li>
+         
+      </ul>
       
       <p>The end result is 38 PDF files listed alphabetically as
          follows:
@@ -762,35 +849,43 @@
          
          <a href="https://github.com/CraneSoftwrights/board-baseball/blob/qa/burn/pdf/SBF-print-extended-board-baseball-crane.pdf"><code>burn/pdf/SBF-print-extended-board-baseball-crane.pdf</code></a></p>
       
-      <p>Open every PDF file and: - perform one final check on the
-         content of the page - if necessary, use your PDF tool to rotate the
-         image to the orientation needed for your cutter - save your PDF
-         rotated as needed
-      </p>
+      <p>Open every PDF file and:</p>
+      
+      <ul>
+         
+         <li>perform one final check on the content of the page</li>
+         
+         <li>if necessary, use your PDF tool to rotate the image to the
+            orientation needed for your cutter
+         </li>
+         
+         <li>save your PDF rotated as needed</li>
+         
+      </ul>
       
       <p>At this point the production is complete and the new version can
          be committed to git and pushed to the server.
       </p>
       
-      <p>The PDF files in the <code>cuts/</code> directory shouldn’t need
-         to change:
+      <p>The PDF files in the <code>cuts/pdf/</code> directory shouldn’t
+         need to change:
       </p>
       
-      <p><a href="https://github.com/CraneSoftwrights/board-baseball/blob/qa/cuts/frame-8x10-in-9x12.pdf"><code>cuts/frame-8x10-in-9x12.pdf</code></a><br />
+      <p><a href="https://github.com/CraneSoftwrights/board-baseball/blob/qa/cuts/pdf/frame-8x10-in-9x12.pdf"><code>cuts/pdf/frame-8x10-in-9x12.pdf</code></a><br />
          
-         <a href="https://github.com/CraneSoftwrights/board-baseball/blob/qa/cuts/frame-220x248-in-9x12.pdf"><code>cuts/frame-220x248-in-9x12.pdf</code></a><br />
+         <a href="https://github.com/CraneSoftwrights/board-baseball/blob/qa/cuts/pdf/frame-220x248-in-9x12.pdf"><code>cuts/pdf/frame-220x248-in-9x12.pdf</code></a><br />
          
-         <a href="https://github.com/CraneSoftwrights/board-baseball/blob/qa/cuts/cut-8x10-from-larger.pdf"><code>cuts/cut-8x10-from-larger.pdf</code></a><br />
+         <a href="https://github.com/CraneSoftwrights/board-baseball/blob/qa/cuts/pdf/cut-8x10-from-larger.pdf"><code>cuts/pdf/cut-8x10-from-larger.pdf</code></a><br />
          
-         <a href="https://github.com/CraneSoftwrights/board-baseball/blob/qa/cuts/cut-9x12-from-9x24.pdf"><code>cuts/cut-9x12-from-9x24.pdf</code></a><br />
+         <a href="https://github.com/CraneSoftwrights/board-baseball/blob/qa/cuts/pdf/cut-9x12-from-9x24.pdf"><code>cuts/pdf/cut-9x12-from-9x24.pdf</code></a><br />
          
-         <a href="https://github.com/CraneSoftwrights/board-baseball/blob/qa/cuts/cut-9x12-from-18x12.pdf"><code>cuts/cut-9x12-from-18x12.pdf</code></a><br />
+         <a href="https://github.com/CraneSoftwrights/board-baseball/blob/qa/cuts/pdf/cut-9x12-from-18x12.pdf"><code>cuts/pdf/cut-9x12-from-18x12.pdf</code></a><br />
          
-         <a href="https://github.com/CraneSoftwrights/board-baseball/blob/qa/cuts/cut-9x12-from-18x24.pdf"><code>cuts/cut-9x12-from-18x24.pdf</code></a><br />
+         <a href="https://github.com/CraneSoftwrights/board-baseball/blob/qa/cuts/pdf/cut-9x12-from-18x24.pdf"><code>cuts/pdf/cut-9x12-from-18x24.pdf</code></a><br />
          
-         <a href="https://github.com/CraneSoftwrights/board-baseball/blob/qa/cuts/cut-9x24-from-18x24.pdf"><code>cuts/cut-9x24-from-18x24.pdf</code></a><br />
+         <a href="https://github.com/CraneSoftwrights/board-baseball/blob/qa/cuts/pdf/cut-9x24-from-18x24.pdf"><code>cuts/pdf/cut-9x24-from-18x24.pdf</code></a><br />
          
-         <a href="https://github.com/CraneSoftwrights/board-baseball/blob/qa/cuts/cut-18x12-from-18x24.pdf"><code>cuts/cut-18x12-from-18x24.pdf</code></a></p>
+         <a href="https://github.com/CraneSoftwrights/board-baseball/blob/qa/cuts/pdf/cut-18x12-from-18x24.pdf"><code>cuts/pdf/cut-18x12-from-18x24.pdf</code></a></p>
       
       <h2 id="scorecard-production">7. Scorecard production</h2>
       

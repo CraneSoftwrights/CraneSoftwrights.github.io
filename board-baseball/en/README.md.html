@@ -18,9 +18,13 @@
       <p>Copyright © Crane Softwrights Ltd.<br />
          Development: <a href="https://github.com/CraneSoftwrights/board-baseball"><code>https://github.com/CraneSoftwrights/board-baseball</code></a><br />
          
-         Tip jar: <a href="https://paypal.me/CraneSoftwrights"><code>https://paypal.me/CraneSoftwrights</code></a></p>
+         Tip jar: <a href="https://paypal.me/CraneSoftwrights"><code>https://paypal.me/CraneSoftwrights</code></a><br />
+         
+         Browser pages: <a href="https://cranesoftwrights.github.io/board-baseball/en/README.md.html">
+            <code>https://cranesoftwrights.github.io/board-baseball/en/README.md.html</code></a></p>
       
-      <p><em>(Skip the introduction and jump to: <a href="#basic-mode-play">Basic Play</a> or <a href="#extended-mode-play">Extended Play</a> or <a href="#scoring-a-game">Scoring a game</a>)</em></p>
+      <p><em>(Skip the introduction and jump to: <a href="#basic-mode-play">Basic Play</a>, <a href="#extended-mode-play">Extended Play</a>, <a href="#scoring-a-game">Scoring a game</a>, <a href="#design-process">Design process</a>, or <a href="#physical-box-and-board-representations">Physical box and board
+               representations</a>)</em></p>
       
       <p>This project develops a board game along the lines of the basic
          long-played baseball board game, but brought up to date to include
@@ -38,8 +42,8 @@
          documented for consideration.
       </p>
       
-      <p>Both the original basic “only batter rolls dice” and this new
-         extended “batter and pitcher both roll dice” are played on the same
+      <p>Both the original basic “only pitcher rolls dice” and this new
+         extended “pitcher and batter both roll dice” are played on the same
          board with the basic mode using only a subset of the play pieces.
          The setup and play involved for both basic and extended modes of
          play are described below.
@@ -141,7 +145,7 @@
       
       <ul>
          
-         <li>in the basic mode there is no pitching</li>
+         <li>in the basic mode there is no separate pitching</li>
          
       </ul>
       
@@ -149,9 +153,10 @@
       
       <ul>
          
-         <li>the player batting rolls two dice to determine the play
-            according to the instructions at the dice combination below (click
-            on the dice combination for details of each play):
+         <li>the player pitching rolls two dice to determine how the batter
+            moves their pegs for the play according to the instructions at the
+            dice combination below (click on the dice combination for details
+            of each play):
          </li>
          
       </ul>
@@ -308,11 +313,16 @@
       
       <ul>
          
-         <li>the team associated with the top or bottom of the inning goes
-            up to bat
+         <li>the team associated with the top (visiting) or bottom (home) of
+            the inning goes up to bat and the opposing team pitches
          </li>
          
-         <li>first some definitions
+         <li>the pitcher uses one die (of a colour different from the dice
+            used by the batter if available) to determine which pitch is thrown
+            at the batter
+         </li>
+         
+         <li>first some definitions on which pitching and batting are based:
             
             <ul>
                
@@ -338,17 +348,6 @@
                
             </ul>
             
-         </li>
-         
-         <li>the tally of runs and hits is recorded for the batter and
-            always is reported in the order of number of balls before the
-            number of strikes (e.g. a count of “2 and 1” means “two balls
-            and one strike”)
-         </li>
-         
-         <li>the pitching team rolls one die (of a colour different from the
-            dice used by the batter if available) to determine which pitch is
-            thrown by the pitcher
          </li>
          
          <li>three of the pitches result in no contact with the bat:
@@ -388,7 +387,7 @@
                               <ul>
                                  
                                  <li><img alt="" src="../shared/caught-stealing.png" style="height:20px" /> throwing a <img alt="" src="../shared/d1.png" style="height:22px" /> or <img alt="" src="../shared/d2.png" style="height:22px" /> indicates that the runner was caught stealing and
-                                    the runner is called out and leaves the pitch
+                                    the runner is called out and leaves the field
                                  </li>
                                  
                                  <li><img alt="" src="../shared/stolen-2b.png" style="height:20px" /> throwing a <img alt="" src="../shared/d3.png" style="height:22px" />, <img alt="" src="../shared/d4.png" style="height:22px" />, <img alt="" src="../shared/d5.png" style="height:22px" />, or <img alt="" src="../shared/d6.png" style="height:22px" /> indicates that the runner successfully stole
@@ -470,6 +469,12 @@
                
             </ul>
             
+         </li>
+         
+         <li>the tally of runs and hits is recorded for the batter and
+            always is reported in the order of number of balls before the
+            number of strikes (e.g. a count of “2 and 1” means “two balls
+            and one strike”)
          </li>
          
       </ul>
@@ -640,21 +645,42 @@
          release of files.
       </p>
       
-      <h2 id="physical-box-and-board-assemblies">Physical box and board
-         assemblies
+      <h2 id="physical-box-and-board-representations">Physical box and
+         board representations
       </h2>
       
+      <p>The playing surfaces are PNG files that can be printed at 200mm
+         x 248mm at 100% scale; suitable for both A4 and US-letter page
+         sizes:
+      </p>
+      
+      <ul>
+         
+         <li><a href="https://github.com/CraneSoftwrights/board-baseball/blob/qa/shared/basic-board-baseball-crane.png">Basic-mode
+               play surface</a></li>
+         
+         <li><a href="https://github.com/CraneSoftwrights/board-baseball/blob/qa/shared/extended-board-baseball-crane.png">Extended-mode play
+               surface</a></li>
+         
+         <li><a href="https://github.com/CraneSoftwrights/board-baseball/blob/qa/shared/combo-board-baseball-crane.png">Combination
+               dual-mode play surface</a></li>
+         
+         <li><a href="https://github.com/CraneSoftwrights/board-baseball/blob/qa/shared/back-board-baseball-crane.png">Backing
+               surface</a></li>
+         
+      </ul>
+      
       <p>See the <a href="build.md.html">building instructions</a> for how the
-         burn image files are created from the design files.
+         laser burn image files are created from the design files.
       </p>
       
       <p>See the <a href="https://github.com/CraneSoftwrights/board-baseball/blob/qa/burn">burn directory</a> and <a href="burn.md.html">burn README</a> for a collection of image files for laser
-         engraving/cutting of game pieces
+         engraving/cutting of game boards
       </p>
       
       <p>See the <a href="https://github.com/CraneSoftwrights/board-baseball/blob/qa/cuts">cuts directory</a> and <a href="cuts.md.html">cuts README</a> for a collection of image files for laser
          cutting of raw materials in preparation for engraving and cutting
-         of game pieces.
+         of game boards.
       </p>
       
       <p>See the <a href="https://github.com/CraneSoftwrights/board-baseball/blob/qa/shared">shared directory</a> and <a href="shared.md.html">shared README</a> for a collection of images used in
