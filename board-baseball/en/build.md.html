@@ -570,6 +570,8 @@
          back of the single-board playing board.
       </p>
       
+      <h4 id="single-surface-files">6.1.1 Single surface files</h4>
+      
       <p>These are the files used to burn in a laser cutter, tested in an
          Epilog Helix branded machine:
       </p>
@@ -590,20 +592,22 @@
          <a href="https://github.com/CraneSoftwrights/board-baseball/blob/main/burn/pdf/SBF-cut-200x248-board-baseball-crane.pdf"><img alt="" src="../shared/F-collage.png" style="height:60px" /></a>.
       </p>
       
+      <h4 id="collage-files">6.1.2 Collage files</h4>
+      
       <p>These are collages of level images arranged tête-à-tête for
          board levels with a finished side that are user-facing:
       </p>
       
-      <p>18”x24”: <a href="https://github.com/CraneSoftwrights/board-baseball/blob/main/burn/pdf/1364-18x24-board-baseball-crane.pdf"><img alt="" src="../shared/1364-collage.png" style="height:120px" /></a> and
-         <a href="https://github.com/CraneSoftwrights/board-baseball/blob/main/burn/pdf/1374-18x24-board-baseball-crane.pdf"><img alt="" src="../shared/1374-collage.png" style="height:120px" /></a><br />
-         9”x24”: <a href="https://github.com/CraneSoftwrights/board-baseball/blob/main/burn/pdf/13-9x24-board-baseball-crane.pdf"><img alt="" src="../shared/13-collage.png" style="height:60px" /></a>, <a href="https://github.com/CraneSoftwrights/board-baseball/blob/main/burn/pdf/46-9x24-board-baseball-crane.pdf"><img alt="" src="../shared/46-collage.png" style="height:60px" /></a>, and <a href="https://github.com/CraneSoftwrights/board-baseball/blob/main/burn/pdf/47-9x24-board-baseball-crane.pdf"><img alt="" src="../shared/47-collage.png" style="height:60px" /></a></p>
+      <p>9”x24”: <a href="https://github.com/CraneSoftwrights/board-baseball/blob/main/burn/pdf/13-9x24-board-baseball-crane.pdf"><img alt="" src="../shared/13-collage.png" style="height:60px" /></a>, <a href="https://github.com/CraneSoftwrights/board-baseball/blob/main/burn/pdf/46-9x24-board-baseball-crane.pdf"><img alt="" src="../shared/46-collage.png" style="height:60px" /></a>, and <a href="https://github.com/CraneSoftwrights/board-baseball/blob/main/burn/pdf/47-9x24-board-baseball-crane.pdf"><img alt="" src="../shared/47-collage.png" style="height:60px" /></a> 18”x24”:
+         <a href="https://github.com/CraneSoftwrights/board-baseball/blob/main/burn/pdf/1364-18x24-board-baseball-crane.pdf"><img alt="" src="../shared/1364-collage.png" style="height:120px" /></a> and
+         <a href="https://github.com/CraneSoftwrights/board-baseball/blob/main/burn/pdf/1374-18x24-board-baseball-crane.pdf"><img alt="" src="../shared/1374-collage.png" style="height:120px" /></a></p>
       
       <p>These are collages of level images arranged tête-à-tête for
          internal unfinished board levels that are not user-facing:
       </p>
       
-      <p>18”x24”: <a href="https://github.com/CraneSoftwrights/board-baseball/blob/main/burn/pdf/2552-18x24-board-baseball-crane.pdf"><img alt="" src="../shared/2552-collage.png" style="height:120px" /></a> 9”x24”:
-         <a href="https://github.com/CraneSoftwrights/board-baseball/blob/main/burn/pdf/25-9x24-board-baseball-crane.pdf"><img alt="" src="../shared/25-collage.png" style="height:60px" /></a></p>
+      <p>9”x24”: <a href="https://github.com/CraneSoftwrights/board-baseball/blob/main/burn/pdf/25-9x24-board-baseball-crane.pdf"><img alt="" src="../shared/25-collage.png" style="height:60px" /></a><br />
+         18”x24”: <a href="https://github.com/CraneSoftwrights/board-baseball/blob/main/burn/pdf/2552-18x24-board-baseball-crane.pdf"><img alt="" src="../shared/2552-collage.png" style="height:120px" /></a></p>
       
       <p>These are collages of level images arranged tête-à-tête for all
          boards in a single burn:
@@ -611,6 +615,10 @@
       
       <p>27”x24”: <a href="https://github.com/CraneSoftwrights/board-baseball/blob/main/burn/pdf/134625-18x24-board-baseball-crane.pdf"><img alt="" src="../shared/134625-collage.png" style="height:180px" /></a> and
          <a href="https://github.com/CraneSoftwrights/board-baseball/blob/main/burn/pdf/134725-18x24-board-baseball-crane.pdf"><img alt="" src="../shared/134725-collage.png" style="height:180px" /></a></p>
+      
+      <h4 id="convenience-cutting-files">6.1.3 Convenience cutting
+         files
+      </h4>
       
       <p>Two frame cutting patterns are available in order to make the
          scaffolding to hold a piece of material less than 9”x12” within the
@@ -637,9 +645,10 @@
       <h3 id="creating-the-burn-files">6.2 Creating the burn files</h3>
       
       <p>If the prior version of the burn files haven’t been deleted,
-         delete every <code>.pdf</code> and <code>.svg</code> file in the
-         <a href="https://github.com/CraneSoftwrights/board-baseball/blob/main/burn"><code>burn/</code></a> directory, leaving only
-         the <code>README.md</code> file in the directory.
+         delete every <code>.pdf</code> file in the <a href="https://github.com/CraneSoftwrights/board-baseball/blob/main/burn/pdf"><code>burn/pdf/</code></a> directory and every
+         <code>.svg</code> file in the <a href="https://github.com/CraneSoftwrights/board-baseball/blob/main/burn/svg"><code>burn/svg/</code></a> directory, leaving only
+         the <code>README.md</code> file and <code>README.md.html</code>
+         files in the directory.
       </p>
       
       <p>Using the command line from the base git directory, create the
@@ -670,9 +679,9 @@
             <ul>
                
                <li><em>(the designers have experienced problems with the
-                     conversion being successful the first time; sometimes a second time
-                     helps; before continuing check that the version string has been
-                     changed into a path from its original text object)</em></li>
+                     conversion being unsuccessful the first time; sometimes a second
+                     time helps; before continuing check that the version string has
+                     been changed into a path from its original text object)</em></li>
                
             </ul>
             
@@ -701,7 +710,7 @@
          
       </ul>
       
-      <p>Open each of the nine collage SVG files and perform the
+      <p>Open each of the nine collage SVG files (illustrated in <a href="https://github.com/CraneSoftwrights/board-baseball/blob/main/#612-collage-files">6.1.2 Collage files</a> and perform the
          following steps from within the “Layers and Objects” panel:
       </p>
       
@@ -717,13 +726,33 @@
             so that the new page background is only the tiling rectangle
          </li>
          
-         <li>back in the “Layers and Objects” panel, select a content
-            sublayer and:
+         <li>back in the “Layers and Objects” panel, for each content
+            sublayer:
             
             <ul>
                
                <li>use one of the Rotate functions (clockwise or counterclockwise)
-                  as appropriate
+                  as appropriate to put the top of each page in the middle of the
+                  content area
+                  
+                  <ul>
+                     
+                     <li>for examples:
+                        
+                        <ul>
+                           
+                           <li>9”x24”: <a href="https://github.com/CraneSoftwrights/board-baseball/blob/main/burn/pdf/13-9x24-board-baseball-crane.pdf"><img alt="" src="../shared/13-collage.png" style="height:60px" /></a></li>
+                           
+                           <li>18”x24”: <a href="https://github.com/CraneSoftwrights/board-baseball/blob/main/burn/pdf/1364-18x24-board-baseball-crane.pdf"><img alt="" src="../shared/1364-collage.png" style="height:120px" /></a></li>
+                           
+                           <li>27”x24”: <a href="https://github.com/CraneSoftwrights/board-baseball/blob/main/burn/pdf/134625-18x24-board-baseball-crane.pdf"><img alt="" src="../shared/134625-collage.png" style="height:180px" /></a></li>
+                           
+                        </ul>
+                        
+                     </li>
+                     
+                  </ul>
+                  
                </li>
                
                <li>use the “Align and Distribute” panel to position the rotated
@@ -734,12 +763,13 @@
             
          </li>
          
-         <li>save the SVG file and then close it</li>
+         <li>save the SVG file</li>
          
       </ul>
       
-      <p>Open each of the four print SVG files and perform the following
-         steps without selecting any layers or objects:
+      <p>Open each of the four print SVG files (<code>SBF-print-*</code>
+         and <code>SBB-print-*</code>) and perform the following steps
+         without selecting any layers or objects:
       </p>
       
       <ul>
@@ -749,8 +779,13 @@
             white margins around the content
          </li>
          
-         <li>in the “Export” panel, export the entire contents to PNG files
-            in the “shared” directory for use in documentation:
+         <li>in the “Export” panel, select the “Document” tab and the
+            preview at the bottom should show no margin around the page
+            content
+         </li>
+         
+         <li>export the entire contents to PNG files in the “shared”
+            directory for use in documentation:
             
             <ul>
                
@@ -878,14 +913,25 @@
          
          <li>if necessary, use your PDF tool to rotate the image to the
             orientation needed for your cutter
+            
+            <ul>
+               
+               <li>in the case of the PDF files stored in git, all single surface
+                  PDF files have been rotated according to the indications in
+                  <a href="https://github.com/CraneSoftwrights/board-baseball/blob/main/#611-single-surface-files">6.1.1 Single surface
+                     files</a></li>
+               
+            </ul>
+            
          </li>
          
          <li>save your PDF rotated as needed</li>
          
       </ul>
       
-      <p>At this point the production is complete and the new version can
-         be committed to git and pushed to the server.
+      <p>At this point the production of the burn files is complete and
+         the new version can be committed to git and pushed to the
+         server.
       </p>
       
       <p>The PDF files in the <code>cuts/pdf/</code> directory shouldn’t
